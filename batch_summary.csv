@@ -1,0 +1,6 @@
+﻿pdb_id,processing_status,graph_file_exists,features_json_exists,outputs_valid,output_dir,graph_file,features_json,qc_message,batch_run_name,batch_mode,report_generated_at
+7WTU,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7WTU,,,Missing or invalid required output files,protein_batch_v1,TEST,2026-11-07T02:35:11.471808
+7W37,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7W37,,,Missing or invalid required output files,protein_batch_v1,TEST,2026-11-07T02:35:11.471808
+7Q0G,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G,,,Missing or invalid required output files,protein_batch_v1,TEST,2026-11-07T02:35:11.471808
+7VYS,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7VYS,,,Missing or invalid required output files,protein_batch_v1,TEST,2026-11-07T02:35:11.471808
+7X8R,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R,,,Missing or invalid required output files,protein_batch_v1,TEST,2026-11-07T02:35:11.471808

@@ -1,0 +1,6 @@
+﻿pdb_id,processing_status,graph_file_exists,features_json_exists,outputs_valid,output_dir,graph_file,features_json,qc_message
+7WTU,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7WTU,,,Missing or invalid required output files
+7W37,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7W37,,,Missing or invalid required output files
+7Q0G,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G,,,Missing or invalid required output files
+7VYS,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7VYS,,,Missing or invalid required output files
+7X8R,FAILED,False,False,False,C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R,,,Missing or invalid required output files
