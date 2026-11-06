@@ -1,0 +1,2725 @@
+
+============================================================
+BATCH PROCESSING LOG
+============================================================
+
+PDB ID: 7Q0G
+
+Started: 2026-11-07T02:34:32.558692
+Finished: 2026-11-07T02:34:43.701226
+
+Duration: 11.14 seconds
+
+Status: FAILED
+
+Kernel: python3
+
+Skipped installation cells:
+3
+
+Output validation:
+{}
+
+============================================================
+NOTEBOOK OUTPUT
+============================================================
+
+Batch PDB ID: 7Q0G
+Component configuration: {}
+Notebook kernel: python3
+
+===========================================================================
+PROTEIN STRUCTURE ANALYSIS
+===========================================================================
+Processing mode:    SINGLE
+Selection source:   external input
+---------------------------------------------------------------------------
+Project root:       C:\apex\APEX\МИФИ\СНО\medic
+Dataset root:       C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset
+Selection CSV:      C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\05_final_dataset\protein_final_100.csv
+---------------------------------------------------------------------------
+Available PDBs:     100
+Processing count:   1
+Start index:        0
+Processing limit:   None
+---------------------------------------------------------------------------
+Current PDB ID:     7Q0G
+Is selected PDB:    True
+Selection order:    3
+Functional category: Immune
+---------------------------------------------------------------------------
+Project directory:  C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis
+Data directory:     C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\structures
+Results root:       C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results
+Current PDB folder: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G
+Current CIF file:   C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\structures\7Q0G.cif
+---------------------------------------------------------------------------
+PDB IDS TO PROCESS:
+  1. 7Q0G
+===========================================================================
+CELL 2 CONFIGURATION COMPLETED
+
+======================================================================
+PROTEIN STRUCTURE ANALYSIS REPORT
+======================================================================
+PDB ID: 7Q0G
+Report file: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G\7Q0G_analysis_report.txt
+ 
+
+  pdb_id chain_id chain_id_display hetero_flag  residue_id insertion_code  \
+0   7Q0G        E                E                     333                  
+1   7Q0G        E                E                     334                  
+2   7Q0G        E                E                     335                  
+3   7Q0G        E                E                     336                  
+4   7Q0G        E                E                     337                  
+5   7Q0G        E                E                     338                  
+6   7Q0G        E                E                     339                  
+7   7Q0G        E                E                     340                  
+8   7Q0G        E                E                     341                  
+9   7Q0G        E                E                     342                  
+
+  residue_name amino_acid  atom_count  has_N  has_CA  has_C  has_O  \
+0          THR          T           7   True    True   True   True   
+1          ASN          N           8   True    True   True   True   
+2          LEU          L           8   True    True   True   True   
+3          CYS          C           6   True    True   True   True   
+4          PRO          P           7   True    True   True   True   
+5          PHE          F          11   True    True   True   True   
+6          GLY          G           4   True    True   True   True   
+7          GLU          E           9   True    True   True   True   
+8          VAL          V           7   True    True   True   True   
+9          PHE          F          11   True    True   True   True   
+
+  present_backbone_atoms missing_backbone_atoms  missing_backbone_atom_count  \
+0               N,CA,C,O                                                   0   
+1               N,CA,C,O                                                   0   
+2               N,CA,C,O                                                   0   
+3               N,CA,C,O                                                   0   
+4               N,CA,C,O                                                   0   
+5               N,CA,C,O                                                   0   
+6               N,CA,C,O                                                   0   
+7               N,CA,C,O                                                   0   
+8               N,CA,C,O                                                   0   
+9               N,CA,C,O                                                   0   
+
+   is_nonstandard  is_custom_mapped  is_unknown  
+0           False             False       False  
+1           False             False       False  
+2           False             False       False  
+3           False             False       False  
+4           False             False       False  
+5           False             False       False  
+6           False             False       False  
+7           False             False       False  
+8           False             False       False  
+9           False             False       False  
+  pdb_id chain_id chain_id_display  residue_count  atom_count  \
+0   7Q0G        E                E            196        1549   
+1   7Q0G        H                H            218        1620   
+2   7Q0G        L                L            214        1640   
+3   7Q0G        B                B            216        1656   
+4   7Q0G        A                A            219        1603   
+
+   complete_backbone_count  incomplete_backbone_count  unknown_residue_count  \
+0                      196                          0                      0   
+1                      218                          0                      0   
+2                      214                          0                      0   
+3                      216                          0                      0   
+4                      219                          0                      0   
+
+   nonstandard_residue_count  custom_mapped_residue_count  
+0                          0                            0  
+1                          0                            0  
+2                          0                            0  
+3                          0                            0  
+4                          0                            0  
+  pdb_id chain_id chain_id_display  residue_count  sequence_length  \
+0   7Q0G        E                E            196              196   
+1   7Q0G        H                H            218              218   
+2   7Q0G        L                L            214              214   
+3   7Q0G        B                B            216              216   
+4   7Q0G        A                A            219              219   
+5   7Q0G        C                C              0                0   
+
+   length_matches  sequence_matches  matches  
+0            True              True     True  
+1            True              True     True  
+2            True              True     True  
+3            True              True     True  
+4            True              True     True  
+5            True              True     True  
+  pdb_id chain_id chain_id_display  cell4_protein_residues  \
+0   7Q0G        E                E                     196   
+1   7Q0G        H                H                     218   
+2   7Q0G        L                L                     214   
+3   7Q0G        B                B                     216   
+4   7Q0G        A                A                     219   
+5   7Q0G        C                C                       0   
+
+   cell6_protein_residues  matches  
+0                     196     True  
+1                     218     True  
+2                     214     True  
+3                     216     True  
+4                     219     True  
+5                       0     True  
+  pdb_id chain_id       residue_key hetero_flag  residue_id insertion_code  \
+0   7Q0G        E  ["E"," ",333,""]                     333                  
+1   7Q0G        E  ["E"," ",333,""]                     333                  
+2   7Q0G        E  ["E"," ",333,""]                     333                  
+3   7Q0G        E  ["E"," ",333,""]                     333                  
+4   7Q0G        E  ["E"," ",333,""]                     333                  
+5   7Q0G        E  ["E"," ",333,""]                     333                  
+6   7Q0G        E  ["E"," ",333,""]                     333                  
+7   7Q0G        E  ["E"," ",334,""]                     334                  
+8   7Q0G        E  ["E"," ",334,""]                     334                  
+9   7Q0G        E  ["E"," ",334,""]                     334                  
+
+  residue_name amino_acid  atom_serial atom_name atom_fullname element  \
+0          THR          T            1         N             N       N   
+1          THR          T            2        CA            CA       C   
+2          THR          T            3         C             C       C   
+3          THR          T            4         O             O       O   
+4          THR          T            5        CB            CB       C   
+5          THR          T            6       OG1           OG1       O   
+6          THR          T            7       CG2           CG2       C   
+7          ASN          N            8         N             N       N   
+8          ASN          N            9        CA            CA       C   
+9          ASN          N           10         C             C       C   
+
+           x         y          z  occupancy   bfactor altloc  is_backbone  \
+0 -42.099411 -11.57372  96.258850        1.0  75.94100                True   
+1 -41.858959 -12.21246  97.553886        1.0  89.26176                True   
+2 -40.369049 -12.58302  97.773117        1.0  73.20987                True   
+3 -40.004978 -13.13033  98.812469        1.0  55.21033                True   
+4 -42.739140 -13.47556  97.710251        1.0  73.40274               False   
+5 -42.476120 -14.09156  98.975082        1.0  91.53181               False   
+6 -42.455120 -14.47650  96.596458        1.0  78.17326               False   
+7 -39.523949 -12.26564  96.790123        1.0  58.88829                True   
+8 -38.080399 -12.45302  96.865913        1.0  59.09136                True   
+9 -37.374279 -11.19406  96.389618        1.0  52.44178                True   
+
+   is_hydrogen  
+0        False  
+1        False  
+2        False  
+3        False  
+4        False  
+5        False  
+6        False  
+7        False  
+8        False  
+9        False  
+  element  atom_count
+0       C        5083
+1       O        1596
+2       N        1355
+3       S          34
+  chain_id  atom_count  residue_count  backbone_atom_count  \
+0        E        1549            196                  784   
+1        H        1620            218                  872   
+2        L        1640            214                  856   
+3        B        1656            216                  864   
+4        A        1603            219                  876   
+
+   hydrogen_atom_count  altloc_atom_count  mean_occupancy  mean_bfactor  
+0                    0                  0             1.0     52.276972  
+1                    0                  0             1.0     40.323379  
+2                    0                  0             1.0     44.386486  
+3                    0                  0             1.0     51.004258  
+4                    0                  0             1.0     45.624302  
+  chain_id hetero_flag  residue_id insertion_code residue_name  \
+0        A                       1                         GLU   
+1        A                       2                         VAL   
+2        A                       3                         GLN   
+3        A                       4                         LEU   
+4        A                       5                         VAL   
+5        A                       6                         GLN   
+6        A                       7                         SER   
+7        A                       8                         GLY   
+8        A                       9                         ALA   
+9        A                      10                         GLU   
+
+   cell6_atom_count  cell7_atom_count _merge  atom_count_match  \
+0                 5                 5   both              True   
+1                 7                 7   both              True   
+2                 9                 9   both              True   
+3                 8                 8   both              True   
+4                 7                 7   both              True   
+5                 9                 9   both              True   
+6                 6                 6   both              True   
+7                 4                 4   both              True   
+8                 5                 5   both              True   
+9                 9                 9   both              True   
+
+   residue_present_in_both  
+0                     True  
+1                     True  
+2                     True  
+3                     True  
+4                     True  
+5                     True  
+6                     True  
+7                     True  
+8                     True  
+9                     True  
+  residue_name                 component_type  occurrence_count  \
+0           CL                    Single atom                14   
+1            K        Single metal atom / ion                14   
+2          GOL  Organic non-protein component                13   
+3          TAR  Organic non-protein component                 3   
+4          NAG  Organic non-protein component                 2   
+5          BMA  Organic non-protein component                 1   
+6          FUC  Organic non-protein component                 1   
+7          MAN  Organic non-protein component                 1   
+
+   total_atom_count  chains  
+0                14       5  
+1                14       5  
+2                78       5  
+3                30       2  
+4                28       1  
+5                11       1  
+6                10       1  
+7                11       1  
+                     expected_cell_4  observed_cell_8  matches
+nonprotein_residues               49               49     True
+water_residues                   317              317     True
+nonprotein_atoms                 196              196     True
+water_atoms                      317              317     True
+<Figure size 1000x800 with 1 Axes>
+                                     Parameter  Count  \
+0  Unobserved / zero-occupancy residue records     22   
+1     Unobserved / zero-occupancy atom records     21   
+
+                                   Status  
+0  Категория присутствует, имеются записи  
+1  Категория присутствует, имеются записи  
+           table  atom_count  zero_occupancy_count  missing_occupancy_count  \
+0  Protein atoms        8068                     0                        0   
+1   Hetero atoms         196                     0                        0   
+2    Water atoms         317                     0                        0   
+
+   invalid_occupancy_count  occupancy_column_available  
+0                        0                        True  
+1                        0                        True  
+2                        0                        True  
+   _pdbx_unobs_or_zero_occ_residues.id  \
+0                                    1   
+1                                    2   
+2                                    3   
+3                                    4   
+4                                    5   
+5                                    6   
+6                                    7   
+7                                    8   
+8                                    9   
+9                                   10   
+10                                  11   
+11                                  12   
+12                                  13   
+13                                  14   
+14                                  15   
+15                                  16   
+16                                  17   
+17                                  18   
+18                                  19   
+19                                  20   
+
+   _pdbx_unobs_or_zero_occ_residues.PDB_model_num  \
+0                                               1   
+1                                               1   
+2                                               1   
+3                                               1   
+4                                               1   
+5                                               1   
+6                                               1   
+7                                               1   
+8                                               1   
+9                                               1   
+10                                              1   
+11                                              1   
+12                                              1   
+13                                              1   
+14                                              1   
+15                                              1   
+16                                              1   
+17                                              1   
+18                                              1   
+19                                              1   
+
+   _pdbx_unobs_or_zero_occ_residues.polymer_flag  \
+0                                              Y   
+1                                              Y   
+2                                              Y   
+3                                              Y   
+4                                              Y   
+5                                              Y   
+6                                              Y   
+7                                              Y   
+8                                              Y   
+9                                              Y   
+10                                             Y   
+11                                             Y   
+12                                             Y   
+13                                             Y   
+14                                             Y   
+15                                             Y   
+16                                             Y   
+17                                             Y   
+18                                             Y   
+19                                             Y   
+
+   _pdbx_unobs_or_zero_occ_residues.occupancy_flag  \
+0                                                1   
+1                                                1   
+2                                                1   
+3                                                1   
+4                                                1   
+5                                                1   
+6                                                1   
+7                                                1   
+8                                                1   
+9                                                1   
+10                                               1   
+11                                               1   
+12                                               1   
+13                                               1   
+14                                               1   
+15                                               1   
+16                                               1   
+17                                               1   
+18                                               1   
+19                                               1   
+
+   _pdbx_unobs_or_zero_occ_residues.auth_asym_id  \
+0                                              E   
+1                                              E   
+2                                              E   
+3                                              E   
+4                                              E   
+5                                              E   
+6                                              E   
+7                                              E   
+8                                              E   
+9                                              E   
+10                                             E   
+11                                             E   
+12                                             E   
+13                                             E   
+14                                             H   
+15                                             H   
+16                                             H   
+17                                             H   
+18                                             A   
+19                                             A   
+
+   _pdbx_unobs_or_zero_occ_residues.auth_comp_id  \
+0                                            MET   
+1                                            GLY   
+2                                            CYS   
+3                                            VAL   
+4                                            ALA   
+5                                            GLU   
+6                                            THR   
+7                                            GLY   
+8                                            HIS   
+9                                            HIS   
+10                                           HIS   
+11                                           HIS   
+12                                           HIS   
+13                                           HIS   
+14                                           SER   
+15                                           CYS   
+16                                           ASP   
+17                                           LYS   
+18                                           SER   
+19                                           CYS   
+
+   _pdbx_unobs_or_zero_occ_residues.auth_seq_id  \
+0                                           319   
+1                                           320   
+2                                           321   
+3                                           322   
+4                                           323   
+5                                           324   
+6                                           325   
+7                                           326   
+8                                           327   
+9                                           328   
+10                                          329   
+11                                          330   
+12                                          331   
+13                                          332   
+14                                          219   
+15                                          220   
+16                                          221   
+17                                          222   
+18                                          220   
+19                                          221   
+
+   _pdbx_unobs_or_zero_occ_residues.PDB_ins_code  \
+0                                           None   
+1                                           None   
+2                                           None   
+3                                           None   
+4                                           None   
+5                                           None   
+6                                           None   
+7                                           None   
+8                                           None   
+9                                           None   
+10                                          None   
+11                                          None   
+12                                          None   
+13                                          None   
+14                                          None   
+15                                          None   
+16                                          None   
+17                                          None   
+18                                          None   
+19                                          None   
+
+   _pdbx_unobs_or_zero_occ_residues.label_asym_id  \
+0                                               A   
+1                                               A   
+2                                               A   
+3                                               A   
+4                                               A   
+5                                               A   
+6                                               A   
+7                                               A   
+8                                               A   
+9                                               A   
+10                                              A   
+11                                              A   
+12                                              A   
+13                                              A   
+14                                              B   
+15                                              B   
+16                                              B   
+17                                              B   
+18                                              E   
+19                                              E   
+
+   _pdbx_unobs_or_zero_occ_residues.label_comp_id  \
+0                                             MET   
+1                                             GLY   
+2                                             CYS   
+3                                             VAL   
+4                                             ALA   
+5                                             GLU   
+6                                             THR   
+7                                             GLY   
+8                                             HIS   
+9                                             HIS   
+10                                            HIS   
+11                                            HIS   
+12                                            HIS   
+13                                            HIS   
+14                                            SER   
+15                                            CYS   
+16                                            ASP   
+17                                            LYS   
+18                                            SER   
+19                                            CYS   
+
+   _pdbx_unobs_or_zero_occ_residues.label_seq_id  
+0                                              1  
+1                                              2  
+2                                              3  
+3                                              4  
+4                                              5  
+5                                              6  
+6                                              7  
+7                                              8  
+8                                              9  
+9                                             10  
+10                                            11  
+11                                            12  
+12                                            13  
+13                                            14  
+14                                           219  
+15                                           220  
+16                                           221  
+17                                           222  
+18                                           220  
+19                                           221  
+   _pdbx_unobs_or_zero_occ_atoms.id  \
+0                                 1   
+1                                 2   
+2                                 3   
+3                                 4   
+4                                 5   
+5                                 6   
+6                                 7   
+7                                 8   
+8                                 9   
+9                                10   
+10                               11   
+11                               12   
+12                               13   
+13                               14   
+14                               15   
+15                               16   
+16                               17   
+17                               18   
+18                               19   
+19                               20   
+
+   _pdbx_unobs_or_zero_occ_atoms.PDB_model_num  \
+0                                            1   
+1                                            1   
+2                                            1   
+3                                            1   
+4                                            1   
+5                                            1   
+6                                            1   
+7                                            1   
+8                                            1   
+9                                            1   
+10                                           1   
+11                                           1   
+12                                           1   
+13                                           1   
+14                                           1   
+15                                           1   
+16                                           1   
+17                                           1   
+18                                           1   
+19                                           1   
+
+   _pdbx_unobs_or_zero_occ_atoms.polymer_flag  \
+0                                           Y   
+1                                           Y   
+2                                           Y   
+3                                           Y   
+4                                           Y   
+5                                           Y   
+6                                           Y   
+7                                           Y   
+8                                           Y   
+9                                           Y   
+10                                          Y   
+11                                          Y   
+12                                          Y   
+13                                          Y   
+14                                          Y   
+15                                          Y   
+16                                          Y   
+17                                          Y   
+18                                          Y   
+19                                          Y   
+
+   _pdbx_unobs_or_zero_occ_atoms.occupancy_flag  \
+0                                             1   
+1                                             1   
+2                                             1   
+3                                             1   
+4                                             1   
+5                                             1   
+6                                             1   
+7                                             1   
+8                                             1   
+9                                             1   
+10                                            1   
+11                                            1   
+12                                            1   
+13                                            1   
+14                                            1   
+15                                            1   
+16                                            1   
+17                                            1   
+18                                            1   
+19                                            1   
+
+   _pdbx_unobs_or_zero_occ_atoms.auth_asym_id  \
+0                                           E   
+1                                           E   
+2                                           E   
+3                                           E   
+4                                           E   
+5                                           E   
+6                                           E   
+7                                           E   
+8                                           L   
+9                                           A   
+10                                          A   
+11                                          A   
+12                                          A   
+13                                          A   
+14                                          A   
+15                                          A   
+16                                          A   
+17                                          A   
+18                                          A   
+19                                          A   
+
+   _pdbx_unobs_or_zero_occ_atoms.auth_comp_id  \
+0                                         LYS   
+1                                         LYS   
+2                                         LYS   
+3                                         LYS   
+4                                         LYS   
+5                                         LYS   
+6                                         LYS   
+7                                         LYS   
+8                                         CYS   
+9                                         GLU   
+10                                        GLU   
+11                                        GLU   
+12                                        GLU   
+13                                        LYS   
+14                                        LYS   
+15                                        LYS   
+16                                        LYS   
+17                                        LYS   
+18                                        LYS   
+19                                        LYS   
+
+   _pdbx_unobs_or_zero_occ_atoms.auth_seq_id  \
+0                                        527   
+1                                        527   
+2                                        527   
+3                                        527   
+4                                        528   
+5                                        528   
+6                                        528   
+7                                        528   
+8                                        214   
+9                                          1   
+10                                         1   
+11                                         1   
+12                                         1   
+13                                       134   
+14                                       134   
+15                                       134   
+16                                       134   
+17                                       219   
+18                                       219   
+19                                       219   
+
+   _pdbx_unobs_or_zero_occ_atoms.PDB_ins_code  \
+0                                        None   
+1                                        None   
+2                                        None   
+3                                        None   
+4                                        None   
+5                                        None   
+6                                        None   
+7                                        None   
+8                                        None   
+9                                        None   
+10                                       None   
+11                                       None   
+12                                       None   
+13                                       None   
+14                                       None   
+15                                       None   
+16                                       None   
+17                                       None   
+18                                       None   
+19                                       None   
+
+   _pdbx_unobs_or_zero_occ_atoms.auth_atom_id  \
+0                                          CG   
+1                                          CD   
+2                                          CE   
+3                                          NZ   
+4                                          CG   
+5                                          CD   
+6                                          CE   
+7                                          NZ   
+8                                          SG   
+9                                          CG   
+10                                         CD   
+11                                        OE1   
+12                                        OE2   
+13                                         CG   
+14                                         CD   
+15                                         CE   
+16                                         NZ   
+17                                         CG   
+18                                         CD   
+19                                         CE   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_alt_id  \
+0                                        None   
+1                                        None   
+2                                        None   
+3                                        None   
+4                                        None   
+5                                        None   
+6                                        None   
+7                                        None   
+8                                        None   
+9                                        None   
+10                                       None   
+11                                       None   
+12                                       None   
+13                                       None   
+14                                       None   
+15                                       None   
+16                                       None   
+17                                       None   
+18                                       None   
+19                                       None   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_asym_id  \
+0                                            A   
+1                                            A   
+2                                            A   
+3                                            A   
+4                                            A   
+5                                            A   
+6                                            A   
+7                                            A   
+8                                            C   
+9                                            E   
+10                                           E   
+11                                           E   
+12                                           E   
+13                                           E   
+14                                           E   
+15                                           E   
+16                                           E   
+17                                           E   
+18                                           E   
+19                                           E   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_comp_id  \
+0                                          LYS   
+1                                          LYS   
+2                                          LYS   
+3                                          LYS   
+4                                          LYS   
+5                                          LYS   
+6                                          LYS   
+7                                          LYS   
+8                                          CYS   
+9                                          GLU   
+10                                         GLU   
+11                                         GLU   
+12                                         GLU   
+13                                         LYS   
+14                                         LYS   
+15                                         LYS   
+16                                         LYS   
+17                                         LYS   
+18                                         LYS   
+19                                         LYS   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_seq_id  \
+0                                         209   
+1                                         209   
+2                                         209   
+3                                         209   
+4                                         210   
+5                                         210   
+6                                         210   
+7                                         210   
+8                                         214   
+9                                           1   
+10                                          1   
+11                                          1   
+12                                          1   
+13                                        134   
+14                                        134   
+15                                        134   
+16                                        134   
+17                                        219   
+18                                        219   
+19                                        219   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_atom_id  
+0                                           CG  
+1                                           CD  
+2                                           CE  
+3                                           NZ  
+4                                           CG  
+5                                           CD  
+6                                           CE  
+7                                           NZ  
+8                                           SG  
+9                                           CG  
+10                                          CD  
+11                                         OE1  
+12                                         OE2  
+13                                          CG  
+14                                          CD  
+15                                          CE  
+16                                          NZ  
+17                                          CG  
+18                                          CD  
+19                                          CE  
+             table  check                                   message
+0      df_residues   True  Все записи относятся к текущей структуре
+1         df_atoms   True  Все записи относятся к текущей структуре
+2        df_hetero   True  Все записи относятся к текущей структуре
+3         df_water   True  Все записи относятся к текущей структуре
+4  df_hetero_atoms   True  Все записи относятся к текущей структуре
+5   df_water_atoms   True  Все записи относятся к текущей структуре
+                    category  count  percentage
+0        Counted amino acids   1063       100.0
+1      Ambiguous amino acids      0         0.0
+2        Unknown amino acids      0         0.0
+3  Missing amino acid values      0         0.0
+4  Invalid amino acid values      0         0.0
+   amino_acid  count  percentage  cumulative_percentage
+0           S    147       13.83                  13.83
+1           V     90        8.47                  22.30
+2           G     85        8.00                  30.29
+3           T     83        7.81                  38.10
+4           L     76        7.15                  45.25
+5           A     69        6.49                  51.74
+6           K     59        5.55                  57.29
+7           P     57        5.36                  62.65
+8           Y     53        4.99                  67.64
+9           Q     51        4.80                  72.44
+10          N     45        4.23                  76.67
+11          F     42        3.95                  80.62
+12          D     39        3.67                  84.29
+13          E     39        3.67                  87.96
+14          R     35        3.29                  91.25
+15          I     32        3.01                  94.26
+16          C     26        2.45                  96.71
+17          W     16        1.51                  98.21
+18          H     10        0.94                  99.15
+19          M      9        0.85                 100.00
+   chain_id_display amino_acid  count  percentage
+0                 A          S     35       15.98
+1                 A          V     24       10.96
+2                 A          G     20        9.13
+3                 A          T     19        8.68
+4                 A          A     16        7.31
+..              ...        ...    ...         ...
+94                L          R      6        2.80
+95                L          C      5        2.34
+96                L          H      2        0.93
+97                L          W      2        0.93
+98                L          M      1        0.47
+
+[99 rows x 4 columns]
+  chain_id_display  counted_residue_count
+0                A                    219
+1                B                    216
+2                E                    196
+3                H                    218
+4                L                    214
+<Figure size 1200x500 with 1 Axes>
+<Figure size 1200x500 with 1 Axes>
+                                    file_name extension  size_bytes  size_kb  \
+0          7Q0G_amino_acid_classification.csv      .csv         184     0.18   
+1            7Q0G_amino_acid_distribution.csv      .csv         391     0.38   
+2            7Q0G_amino_acid_distribution.png      .png       81328    79.42   
+3   7Q0G_amino_acid_distribution_by_chain.csv      .csv        1285     1.25   
+4              7Q0G_amino_acid_percentage.png      .png       78583    76.74   
+5                7Q0G_amino_acid_summary.json     .json        1743     1.70   
+6                    7Q0G_analysis_report.txt      .txt       27880    27.23   
+7             7Q0G_atom_analysis_summary.json     .json         921     0.90   
+8                 7Q0G_cell4_verification.csv      .csv         225     0.22   
+9              7Q0G_chain_atom_statistics.csv      .csv         335     0.33   
+10                  7Q0G_chain_statistics.csv      .csv         473     0.46   
+11                7Q0G_duplicate_residues.csv      .csv         252     0.25   
+12                7Q0G_element_statistics.csv      .csv          53     0.05   
+13                   7Q0G_invalid_bfactor.csv      .csv         193     0.19   
+14               7Q0G_invalid_coordinates.csv      .csv         193     0.19   
+15                 7Q0G_invalid_occupancy.csv      .csv         193     0.19   
+16                          7Q0G_metadata.csv      .csv         846     0.83   
+17                         7Q0G_metadata.json     .json        4974     4.86   
+18            7Q0G_missing_backbone_atoms.csv      .csv         252     0.25   
+19                 7Q0G_occupancy_summary.csv      .csv         205     0.20   
+20                     7Q0G_protein_atoms.csv      .csv     1125836  1099.45   
+21                  7Q0G_residue_analysis.csv      .csv       81827    79.91   
+22         7Q0G_residue_analysis_summary.json     .json         660     0.64   
+23           7Q0G_residue_atom_comparison.csv      .csv       35105    34.28   
+24           7Q0G_residue_atom_mismatches.csv      .csv         146     0.14   
+25          7Q0G_residue_chain_statistics.csv      .csv         343     0.33   
+26                          7Q0G_residues.csv      .csv       81827    79.91   
+27               7Q0G_sequence_statistics.csv      .csv         423     0.41   
+28                 7Q0G_sequence_summary.json     .json        3273     3.20   
+29             7Q0G_sequence_verification.csv      .csv        2475     2.42   
+30                       7Q0G_sequences.fasta    .fasta        1168     1.14   
+31             7Q0G_structure_statistics.json     .json         679     0.66   
+32                           7Q0G_summary.csv      .csv         247     0.24   
+33                          7Q0G_summary.json     .json       28171    27.51   
+34                  7Q0G_unobserved_atoms.csv      .csv        1378     1.35   
+35               7Q0G_unobserved_residues.csv      .csv        1154     1.13   
+36                7Q0G_unobserved_summary.csv      .csv         270     0.26   
+37            component_analysis_summary.json     .json        3009     2.94   
+38                   component_statistics.csv      .csv         385     0.38   
+39                           hetero_atoms.csv      .csv       32121    31.37   
+40                        hetero_residues.csv      .csv        4288     4.19   
+41          invalid_component_coordinates.csv      .csv         190     0.19   
+42               protein_geometry_summary.csv      .csv         557     0.54   
+43              protein_geometry_summary.json     .json        1832     1.79   
+44             protein_structure_geometry.png      .png      776360   758.16   
+45                            water_atoms.csv      .csv       41189    40.22   
+46                         water_residues.csv      .csv       17887    17.47   
+
+    exists  
+0     True  
+1     True  
+2     True  
+3     True  
+4     True  
+5     True  
+6     True  
+7     True  
+8     True  
+9     True  
+10    True  
+11    True  
+12    True  
+13    True  
+14    True  
+15    True  
+16    True  
+17    True  
+18    True  
+19    True  
+20    True  
+21    True  
+22    True  
+23    True  
+24    True  
+25    True  
+26    True  
+27    True  
+28    True  
+29    True  
+30    True  
+31    True  
+32    True  
+33    True  
+34    True  
+35    True  
+36    True  
+37    True  
+38    True  
+39    True  
+40    True  
+41    True  
+42    True  
+43    True  
+44    True  
+45    True  
+46    True  
+  entity_id  sequence_length                            sequence_source
+0         1              210  _entity_poly.pdbx_seq_one_letter_code_can
+1         2              222  _entity_poly.pdbx_seq_one_letter_code_can
+2         3              214  _entity_poly.pdbx_seq_one_letter_code_can
+3         4              216  _entity_poly.pdbx_seq_one_letter_code_can
+4         5              223  _entity_poly.pdbx_seq_one_letter_code_can
+  chain_id entity_id mapping_status candidate_entities  candidate_count
+0        E         1         Direct                  1                1
+1        H         2         Direct                  2                1
+2        L         3         Direct                  3                1
+3        B         4         Direct                  4                1
+4        A         5         Direct                  5                1
+5        C      None      Not found                                   0
+  chain_id entity_id mapping_status comparison_method mapping_confidence  \
+0        E         1         Direct     Mapped entity             Direct   
+1        H         2         Direct     Mapped entity             Direct   
+2        L         3         Direct     Mapped entity             Direct   
+3        B         4         Direct     Mapped entity             Direct   
+4        A         5         Direct     Mapped entity             Direct   
+
+   reference_length  experimental_length  alignment_score  normalized_score  \
+0               210                  196            382.5            0.9107   
+1               222                  218            431.5            0.9718   
+2               214                  214            428.0            1.0000   
+3               216                  216            432.0            1.0000   
+4               223                  219            433.5            0.9720   
+
+   matches  mismatches  identity_percent  reference_coverage_percent  \
+0      196           0             100.0                       93.33   
+1      218           0             100.0                       98.20   
+2      214           0             100.0                      100.00   
+3      216           0             100.0                      100.00   
+4      219           0             100.0                       98.21   
+
+   experimental_coverage_percent  aligned_positions  \
+0                          100.0                196   
+1                          100.0                218   
+2                          100.0                214   
+3                          100.0                216   
+4                          100.0                219   
+
+   missing_reference_residues  extra_experimental_residues  
+0                          14                            0  
+1                           4                            0  
+2                           0                            0  
+3                           0                            0  
+4                           4                            0  
+   record_id chain_id residue_name sequence_id insertion_code model_number
+0          1        E          MET         319           None            1
+1          2        E          GLY         320           None            1
+2          3        E          CYS         321           None            1
+3          4        E          VAL         322           None            1
+4          5        E          ALA         323           None            1
+5          6        E          GLU         324           None            1
+6          7        E          THR         325           None            1
+7          8        E          GLY         326           None            1
+8          9        E          HIS         327           None            1
+9         10        E          HIS         328           None            1
+10        11        E          HIS         329           None            1
+11        12        E          HIS         330           None            1
+12        13        E          HIS         331           None            1
+13        14        E          HIS         332           None            1
+14        15        H          SER         219           None            1
+15        16        H          CYS         220           None            1
+16        17        H          ASP         221           None            1
+17        18        H          LYS         222           None            1
+18        19        A          SER         220           None            1
+19        20        A          CYS         221           None            1
+   record_id chain_id residue_name sequence_id atom_name insertion_code  \
+0          1        E          LYS         527        CG           None   
+1          2        E          LYS         527        CD           None   
+2          3        E          LYS         527        CE           None   
+3          4        E          LYS         527        NZ           None   
+4          5        E          LYS         528        CG           None   
+5          6        E          LYS         528        CD           None   
+6          7        E          LYS         528        CE           None   
+7          8        E          LYS         528        NZ           None   
+8          9        L          CYS         214        SG           None   
+9         10        A          GLU           1        CG           None   
+10        11        A          GLU           1        CD           None   
+11        12        A          GLU           1       OE1           None   
+12        13        A          GLU           1       OE2           None   
+13        14        A          LYS         134        CG           None   
+14        15        A          LYS         134        CD           None   
+15        16        A          LYS         134        CE           None   
+16        17        A          LYS         134        NZ           None   
+17        18        A          LYS         219        CG           None   
+18        19        A          LYS         219        CD           None   
+19        20        A          LYS         219        CE           None   
+
+   model_number  
+0             1  
+1             1  
+2             1  
+3             1  
+4             1  
+5             1  
+6             1  
+7             1  
+8             1  
+9             1  
+10            1  
+11            1  
+12            1  
+13            1  
+14            1  
+15            1  
+16            1  
+17            1  
+18            1  
+19            1  
+Empty DataFrame
+Columns: [model_index, model_id, chain_id, residue_key, hetero_flag, residue_id, insertion_code, residue_name, atom_name, element, x, y, z, occupancy, bfactor, altloc, coordinates_valid]
+Index: []
+<Figure size 900x500 with 1 Axes>
+   model_index model_id chain_id chain_id_display  atom_conformer_count  \
+0            1        0        A                A                  1603   
+1            1        0        B                B                  1656   
+2            1        0        E                E                  1549   
+3            1        0        H                H                  1620   
+4            1        0        L                L                  1640   
+
+   unique_residue_count  unique_atom_site_count  altloc_atom_record_count  \
+0                   219                    1603                         0   
+1                   216                    1656                         0   
+2                   196                    1549                         0   
+3                   218                    1620                         0   
+4                   214                    1640                         0   
+
+   altloc_unique_site_count  low_occupancy_count  missing_occupancy_count  \
+0                         0                    0                        0   
+1                         0                    0                        0   
+2                         0                    0                        0   
+3                         0                    0                        0   
+4                         0                    0                        0   
+
+   invalid_occupancy_count  invalid_coordinate_count  
+0                        0                         0  
+1                        0                         0  
+2                        0                         0  
+3                        0                         0  
+4                        0                         0  
+                                            Parameter Value
+0                                    Number of models     1
+1   Observed protein atom conformer records (all m...  8068
+2              Unique protein atom sites (all models)  8068
+3                        Additional conformer records     0
+4              Observed protein residues (all models)  1063
+5             Observed protein residues (first model)  1063
+6         Unobserved / zero-occupancy residue records    22
+7            Unobserved / zero-occupancy atom records    21
+8             Atom records with alternative positions     0
+9        Unique atom sites with alternative positions     0
+10                    Atom records with low occupancy     0
+11                Atom records with missing occupancy     0
+12                Atom records with invalid occupancy     0
+13              Atom records with invalid coordinates     0
+14                 Reference residue category present  True
+15                    Reference atom category present  True
+16                                  CELL 7 atom count  8068
+17            CELL 7 matches first-model atom records  True
+18                               CELL 6 residue count  1063
+19           CELL 6 matches first-model residue count  True
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[19], line 30[0m
+[0;32m     27[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mpathlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Path
+[0;32m     29[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m PDBIO, Select
+[1;32m---> 30[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;21;01m.[39;00m[38;5;21;01mMMCIFIO[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m MMCIFIO
+[0;32m     31[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPolypeptide[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m is_aa
+[0;32m     34[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124m=[39m[38;5;124m"[39m [38;5;241m*[39m [38;5;241m70[39m)
+
+[1;31mModuleNotFoundError[0m: No module named 'Bio.PDB.MMCIFIO'
+
+============================================================
+ERROR
+============================================================
+
+Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_20072\2401576057.py", line 536, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# ============================================================
+# CELL 15. SEPARATE PROTEIN CHAINS AND HETERO COMPONENTS
+# ============================================================
+# Назначение:
+# 1. Разделение белковых атомов и остатков.
+# 2. Отдельное сохранение небелковых компонентов и воды.
+# 3. Формирование сводки небелковых компонентов.
+# 4. Сохранение отдельных файлов белковых цепей.
+# 5. Проверка согласованности с CELL 6–8.
+#
+# ВАЖНО:
+# - Используется первая модель структуры.
+# - CELL 6 и CELL 7 уже содержат белковые данные.
+# - Альтернативные положения атомов анализируются в CELL 14.
+# - Небелковые компоненты не считаются автоматически
+#   лекарственными лигандами.
+# - Для цепей с идентификаторами длиннее одного символа
+#   используется mmCIF, поскольку PDB ограничивает
+#   длину идентификатора цепи одним символом.
+# ============================================================
+
+import json
+import re
+import numpy as np
+import pandas as pd
+
+from pathlib import Path
+
+from Bio.PDB import PDBIO, Select
+from Bio.PDB.MMCIFIO import MMCIFIO
+from Bio.PDB.Polypeptide import is_aa
+
+
+print("=" * 70)
+print("CELL 15. SEPARATE PROTEIN CHAINS AND HETERO COMPONENTS")
+print("=" * 70)
+
+
+# ------------------------------------------------------------
+# 1. Проверка входных данных
+# ------------------------------------------------------------
+
+required_variables = [
+    "PDB_ID",
+    "structure",
+    "PDB_RESULTS_DIR",
+    "df_atoms",
+    "df_residues",
+    "df_hetero",
+    "df_water"
+]
+
+for variable in required_variables:
+
+    if variable not in globals():
+
+        raise NameError(
+            f"Переменная {variable} не определена. "
+            "Проверьте выполнение предыдущих ячеек."
+        )
+
+
+PDB_ID = str(PDB_ID).strip().upper()
+
+if not re.fullmatch(r"[A-Z0-9]{4}", PDB_ID):
+
+    raise ValueError(
+        f"Некорректный PDB ID: {PDB_ID}"
+    )
+
+
+PDB_RESULTS_DIR = Path(PDB_RESULTS_DIR)
+
+if PDB_RESULTS_DIR.name.upper() != PDB_ID:
+
+    raise ValueError(
+        "Папка результатов не соответствует текущему PDB ID.\n"
+        f"PDB_ID: {PDB_ID}\n"
+        f"Папка: {PDB_RESULTS_DIR}"
+    )
+
+
+PDB_RESULTS_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+input_tables = {
+
+    "df_atoms": df_atoms,
+
+    "df_residues": df_residues,
+
+    "df_hetero": df_hetero,
+
+    "df_water": df_water
+
+}
+
+
+for table_name, table in input_tables.items():
+
+    if not isinstance(table, pd.DataFrame):
+
+        raise TypeError(
+            f"{table_name} должен быть pandas DataFrame."
+        )
+
+
+if df_atoms.empty:
+
+    raise ValueError(
+        "Таблица df_atoms не содержит белковых атомов."
+    )
+
+
+if df_residues.empty:
+
+    raise ValueError(
+        "Таблица df_residues не содержит белковых остатков."
+    )
+
+
+required_atom_columns = {
+
+    "pdb_id",
+
+    "chain_id",
+
+    "residue_key",
+
+    "atom_name"
+
+}
+
+
+missing_atom_columns = (
+    required_atom_columns - set(df_atoms.columns)
+)
+
+
+if missing_atom_columns:
+
+    raise KeyError(
+        "В df_atoms отсутствуют столбцы: "
+        f"{sorted(missing_atom_columns)}"
+    )
+
+
+required_residue_columns = {
+
+    "pdb_id",
+
+    "chain_id",
+
+    "residue_key"
+
+}
+
+
+missing_residue_columns = (
+    required_residue_columns - set(df_residues.columns)
+)
+
+
+if missing_residue_columns:
+
+    raise KeyError(
+        "В df_residues отсутствуют столбцы: "
+        f"{sorted(missing_residue_columns)}"
+    )
+
+
+# ------------------------------------------------------------
+# 2. Проверка принадлежности таблиц текущей структуре
+# ------------------------------------------------------------
+
+def validate_table_pdb_id(table_name, table, required=True):
+
+    if "pdb_id" not in table.columns:
+
+        if required:
+
+            raise KeyError(
+                f"В {table_name} отсутствует столбец pdb_id."
+            )
+
+        print(
+            f"WARNING: в {table_name} нет столбца pdb_id."
+        )
+
+        return
+
+    if table["pdb_id"].isna().any():
+
+        raise ValueError(
+            f"{table_name} содержит пустые значения pdb_id."
+        )
+
+    pdb_ids = (
+        table["pdb_id"]
+        .astype(str)
+        .str.strip()
+        .str.upper()
+        .unique()
+    )
+
+    if set(pdb_ids) != {PDB_ID}:
+
+        raise ValueError(
+            f"{table_name} содержит PDB ID, "
+            f"не соответствующие текущей структуре: "
+            f"{sorted(pdb_ids)}"
+        )
+
+
+validate_table_pdb_id(
+    "df_atoms",
+    df_atoms
+)
+
+validate_table_pdb_id(
+    "df_residues",
+    df_residues
+)
+
+validate_table_pdb_id(
+    "df_hetero",
+    df_hetero,
+    required=False
+)
+
+validate_table_pdb_id(
+    "df_water",
+    df_water,
+    required=False
+)
+
+
+print(f"PDB ID: {PDB_ID}")
+print(f"Results directory: {PDB_RESULTS_DIR}")
+
+
+# ------------------------------------------------------------
+# 3. Выбор первой модели
+# ------------------------------------------------------------
+
+models = list(
+    structure.get_models()
+)
+
+
+if not models:
+
+    raise ValueError(
+        "В структуре отсутствуют модели."
+    )
+
+
+first_model = models[0]
+
+MODEL_INDEX = 1
+
+
+print("\nMODEL INFORMATION")
+
+print(
+    f"Total models in structure: {len(models)}"
+)
+
+print(
+    f"Selected model ID: {first_model.id}"
+)
+
+print(
+    f"Selected model index: {MODEL_INDEX}"
+)
+
+print(
+    "Analysis scope: first model only"
+)
+
+
+# ------------------------------------------------------------
+# 4. Вспомогательные функции
+# ------------------------------------------------------------
+
+def normalize_chain_id(value):
+    """
+    Сохраняет пустой идентификатор цепи как пустую строку.
+    """
+
+    if value is None or pd.isna(value):
+
+        return ""
+
+    return str(value).strip()
+
+
+def display_chain_id(value):
+
+    normalized = normalize_chain_id(value)
+
+    return normalized if normalized else "<blank>"
+
+
+def safe_filename(value):
+
+    value = str(value).strip()
+
+    if not value:
+
+        return "blank"
+
+    return re.sub(
+        r"[^A-Za-z0-9_-]",
+        "_",
+        value
+    )
+
+
+def make_residue_key(chain_id, hetero_flag, residue_id, insertion_code):
+
+    """
+    Формат ключа согласован с CELL 6–8:
+    chain_id:hetero_flag:residue_id:insertion_code
+    """
+
+    return (
+        f"{chain_id}:"
+        f"{hetero_flag}:"
+        f"{residue_id}:"
+        f"{insertion_code}"
+    )
+
+
+def json_safe(value):
+    """
+    Рекурсивное преобразование значений pandas/NumPy
+    в JSON-совместимые типы.
+    """
+
+    if value is None:
+
+        return None
+
+    if isinstance(value, dict):
+
+        return {
+            str(key): json_safe(item)
+            for key, item in value.items()
+        }
+
+    if isinstance(value, (list, tuple, set)):
+
+        return [
+            json_safe(item)
+            for item in value
+        ]
+
+    if isinstance(value, np.ndarray):
+
+        return [
+            json_safe(item)
+            for item in value.tolist()
+        ]
+
+    if isinstance(value, (np.integer,)):
+
+        return int(value)
+
+    if isinstance(value, (np.floating, float)):
+
+        value = float(value)
+
+        return (
+            value
+            if np.isfinite(value)
+            else None
+        )
+
+    if isinstance(value, (np.bool_, bool)):
+
+        return bool(value)
+
+    if isinstance(value, Path):
+
+        return str(value)
+
+    if isinstance(value, pd.Timestamp):
+
+        return value.isoformat()
+
+    if value is pd.NA or value is pd.NaT:
+
+        return None
+
+    if isinstance(value, (str, int)):
+
+        return value
+
+    try:
+
+        missing = pd.isna(value)
+
+        if isinstance(missing, (bool, np.bool_)) and missing:
+
+            return None
+
+    except (TypeError, ValueError):
+
+        pass
+
+    return str(value)
+
+
+# ------------------------------------------------------------
+# 5. Определение белковых цепей первой модели
+# ------------------------------------------------------------
+
+protein_chain_ids = set()
+
+protein_residue_records = []
+
+structure_atom_count = 0
+
+
+for chain in first_model:
+
+    chain_id = normalize_chain_id(chain.id)
+
+    for residue in chain:
+
+        if not is_aa(
+            residue,
+            standard=False
+        ):
+
+            continue
+
+        protein_chain_ids.add(chain_id)
+
+        residue_atoms = list(
+            residue.get_atoms()
+        )
+
+        structure_atom_count += len(
+            residue_atoms
+        )
+
+        hetero_flag = str(
+            residue.id[0]
+        ).strip()
+
+        residue_id = int(
+            residue.id[1]
+        )
+
+        insertion_code = str(
+            residue.id[2]
+        ).strip()
+
+
+        residue_key = make_residue_key(
+
+            chain_id,
+
+            hetero_flag,
+
+            residue_id,
+
+            insertion_code
+
+        )
+
+
+        protein_residue_records.append({
+
+            "pdb_id": PDB_ID,
+
+            "model_index": MODEL_INDEX,
+
+            "model_id": first_model.id,
+
+            "chain_id": chain_id,
+
+            "chain_id_display": display_chain_id(
+                chain_id
+            ),
+
+            "residue_key": residue_key,
+
+            "hetero_flag": hetero_flag,
+
+            "residue_id": residue_id,
+
+            "insertion_code": insertion_code,
+
+            "residue_name": residue.resname.strip(),
+
+            "atom_count": len(residue_atoms)
+
+        })
+
+
+df_structure_protein_residues = pd.DataFrame(
+    protein_residue_records
+)
+
+
+if not protein_chain_ids:
+
+    raise ValueError(
+        "В первой модели не обнаружены белковые цепи."
+    )
+
+
+if df_structure_protein_residues["residue_key"].duplicated().any():
+
+    raise RuntimeError(
+        "Обнаружены повторяющиеся residue_key "
+        "в таблице остатков первой модели."
+    )
+
+
+print("\n" + "-" * 70)
+print("PROTEIN STRUCTURE")
+print("-" * 70)
+
+print(
+    f"Protein chains: {len(protein_chain_ids)}"
+)
+
+print(
+    f"Protein residues: {len(df_structure_protein_residues)}"
+)
+
+print(
+    f"Protein atoms in first model: {structure_atom_count}"
+)
+
+print(
+    "Chain IDs:",
+    [
+        display_chain_id(x)
+        for x in sorted(protein_chain_ids)
+    ]
+)
+
+
+# ------------------------------------------------------------
+# 6. Формирование отдельных таблиц
+# ------------------------------------------------------------
+
+# CELL 6 и CELL 7 уже содержат белковые данные.
+# Повторная фильтрация не выполняется.
+
+df_protein_atoms = df_atoms.copy()
+
+df_protein_residues = df_residues.copy()
+
+
+# Небелковые компоненты.
+
+df_hetero_components = df_hetero.copy()
+
+
+# Сохраняем исходное имя для совместимости с последующими
+# ячейками, если оно где-либо используется.
+#
+# ВАЖНО: это не подтверждённый набор лекарственных лигандов.
+# Это все небелковые компоненты из CELL 8.
+
+df_ligand_candidates = df_hetero_components.copy()
+
+
+# Вода.
+
+df_water_components = df_water.copy()
+
+
+# ------------------------------------------------------------
+# 7. Проверка согласованности CELL 6 и CELL 7
+# ------------------------------------------------------------
+
+print("\n" + "-" * 70)
+print("DATAFRAME CONSISTENCY CHECK")
+print("-" * 70)
+
+
+# 7.1. Проверка количества атомов.
+
+cell7_atom_count = len(
+    df_protein_atoms
+)
+
+atom_count_match = (
+    cell7_atom_count == structure_atom_count
+)
+
+
+print(
+    f"Atoms in structure: {structure_atom_count}"
+)
+
+print(
+    f"Atoms in CELL 7: {cell7_atom_count}"
+)
+
+print(
+    f"Atom count matches: {atom_count_match}"
+)
+
+
+# 7.2. Проверка количества остатков.
+
+structure_residue_count = len(
+    df_structure_protein_residues
+)
+
+cell6_residue_count = len(
+    df_protein_residues
+)
+
+residue_count_match = (
+    structure_residue_count == cell6_residue_count
+)
+
+
+print(
+    f"Residues in structure: {structure_residue_count}"
+)
+
+print(
+    f"Residues in CELL 6: {cell6_residue_count}"
+)
+
+print(
+    f"Residue count matches: {residue_count_match}"
+)
+
+
+# 7.3. Сверка residue_key.
+
+structure_residue_keys = set(
+    df_structure_protein_residues["residue_key"]
+    .astype(str)
+)
+
+cell6_residue_keys = set(
+    df_protein_residues["residue_key"]
+    .astype(str)
+)
+
+
+residue_keys_match = (
+    structure_residue_keys == cell6_residue_keys
+)
+
+
+missing_in_cell6 = sorted(
+    structure_residue_keys - cell6_residue_keys
+)
+
+extra_in_cell6 = sorted(
+    cell6_residue_keys - structure_residue_keys
+)
+
+
+print(
+    f"Residue keys match: {residue_keys_match}"
+)
+
+print(
+    f"Missing residue keys in CELL 6: {len(missing_in_cell6)}"
+)
+
+print(
+    f"Extra residue keys in CELL 6: {len(extra_in_cell6)}"
+)
+
+
+# 7.4. Проверка цепей.
+
+structure_chain_ids = set(
+    protein_chain_ids
+)
+
+
+cell7_chain_ids = set(
+    df_protein_atoms["chain_id"]
+    .map(normalize_chain_id)
+)
+
+
+cell6_chain_ids = set(
+    df_protein_residues["chain_id"]
+    .map(normalize_chain_id)
+)
+
+
+chain_ids_match = (
+    structure_chain_ids == cell7_chain_ids
+)
+
+
+residue_chain_ids_match = (
+    structure_chain_ids == cell6_chain_ids
+)
+
+
+print(
+    "Chain IDs in structure:",
+    sorted(structure_chain_ids)
+)
+
+print(
+    "Chain IDs in CELL 7:",
+    sorted(cell7_chain_ids)
+)
+
+print(
+    "Chain IDs in CELL 6:",
+    sorted(cell6_chain_ids)
+)
+
+print(
+    f"Structure / CELL 7 chain match: {chain_ids_match}"
+)
+
+print(
+    f"Structure / CELL 6 chain match: "
+    f"{residue_chain_ids_match}"
+)
+
+
+# 7.5. Проверка уникальности residue_key в исходных таблицах.
+
+cell6_duplicate_keys = int(
+    df_protein_residues["residue_key"].duplicated().sum()
+)
+
+
+cell7_residue_key_count = (
+    df_protein_atoms["residue_key"].nunique()
+)
+
+
+cell7_residue_key_match = (
+    cell7_residue_key_count == structure_residue_count
+)
+
+
+print(
+    f"Duplicate residue keys in CELL 6: "
+    f"{cell6_duplicate_keys}"
+)
+
+print(
+    f"Unique residue keys in CELL 7: "
+    f"{cell7_residue_key_count}"
+)
+
+print(
+    f"CELL 7 residue key count matches structure: "
+    f"{cell7_residue_key_match}"
+)
+
+
+# Критические проверки.
+
+if not atom_count_match:
+
+    raise RuntimeError(
+        "Количество белковых атомов в структуре "
+        "не совпадает с CELL 7. "
+        "Проверьте обработку altloc."
+    )
+
+
+if not residue_count_match:
+
+    raise RuntimeError(
+        "Количество белковых остатков в структуре "
+        "не совпадает с CELL 6."
+    )
+
+
+if not residue_keys_match:
+
+    raise RuntimeError(
+        "Наборы residue_key не совпадают между структурой "
+        "и CELL 6."
+    )
+
+
+if not chain_ids_match:
+
+    raise RuntimeError(
+        "Наборы цепей не совпадают между структурой "
+        "и CELL 7."
+    )
+
+
+if not residue_chain_ids_match:
+
+    raise RuntimeError(
+        "Наборы цепей не совпадают между структурой "
+        "и CELL 6."
+    )
+
+
+if cell6_duplicate_keys > 0:
+
+    raise RuntimeError(
+        "В CELL 6 обнаружены повторяющиеся residue_key."
+    )
+
+
+if not cell7_residue_key_match:
+
+    raise RuntimeError(
+        "Число уникальных residue_key в CELL 7 "
+        "не совпадает с количеством остатков структуры."
+    )
+
+
+# ------------------------------------------------------------
+# 8. Сводка небелковых компонентов
+# ------------------------------------------------------------
+
+df_component_summary = pd.DataFrame(
+
+    columns=[
+        "residue_name",
+        "component_type",
+        "occurrence_count"
+    ]
+
+)
+
+
+if not df_hetero_components.empty:
+
+    residue_name_col = next(
+
+        (
+            column
+            for column in [
+                "residue_name",
+                "resname",
+                "component_name"
+            ]
+            if column in df_hetero_components.columns
+        ),
+
+        None
+
+    )
+
+
+    component_type_col = next(
+
+        (
+            column
+            for column in [
+                "component_type",
+                "classification",
+                "component_class"
+            ]
+            if column in df_hetero_components.columns
+        ),
+
+        None
+
+    )
+
+
+    if residue_name_col is not None:
+
+        component_data = df_hetero_components.copy()
+
+
+        component_data["residue_name"] = (
+            component_data[residue_name_col]
+            .fillna("UNKNOWN")
+            .astype(str)
+            .str.strip()
+        )
+
+
+        if component_type_col is not None:
+
+            component_data["component_type"] = (
+                component_data[component_type_col]
+                .fillna("Not classified")
+                .astype(str)
+                .str.strip()
+            )
+
+        else:
+
+            component_data["component_type"] = (
+                "Not classified"
+            )
+
+
+        df_component_summary = (
+
+            component_data
+            .groupby(
+                [
+                    "residue_name",
+                    "component_type"
+                ],
+                dropna=False
+            )
+            .size()
+            .reset_index(
+                name="occurrence_count"
+            )
+
+        )
+
+
+print("\n" + "-" * 70)
+print("HETERO COMPONENTS")
+print("-" * 70)
+
+print(
+    f"Total hetero component records: "
+    f"{len(df_hetero_components)}"
+)
+
+
+if not df_component_summary.empty:
+
+    display(
+        df_component_summary
+    )
+
+else:
+
+    print(
+        "No hetero components found or residue names unavailable."
+    )
+
+
+# ------------------------------------------------------------
+# 9. Сохранение отдельных файлов белковых цепей
+# ------------------------------------------------------------
+
+class ProteinChainSelect(Select):
+
+    """
+    Сохраняет одну белковую цепь выбранной модели.
+    """
+
+    def __init__(self, chain_id, model_id):
+
+        self.chain_id = chain_id
+
+        self.model_id = model_id
+
+
+    def accept_model(self, model):
+
+        return model.id == self.model_id
+
+
+    def accept_chain(self, chain):
+
+        return (
+            normalize_chain_id(chain.id)
+            == self.chain_id
+        )
+
+
+    def accept_residue(self, residue):
+
+        return is_aa(
+            residue,
+            standard=False
+        )
+
+
+CHAIN_DIR = (
+    PDB_RESULTS_DIR / "protein_chains"
+)
+
+
+CHAIN_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+saved_chain_files = []
+
+chain_file_records = []
+
+
+for chain_index, chain_id in enumerate(
+    sorted(protein_chain_ids),
+    start=1
+):
+
+    safe_chain = safe_filename(
+        chain_id
+    )
+
+
+    output_stem = (
+        f"{PDB_ID}_chain_{chain_index:02d}_{safe_chain}"
+    )
+
+
+    selector = ProteinChainSelect(
+        chain_id,
+        first_model.id
+    )
+
+
+    # PDB поддерживает только однобуквенный chain ID.
+    # Для многосимвольных идентификаторов сохраняем mmCIF,
+    # чтобы не потерять исходный идентификатор цепи.
+
+    if len(chain_id) <= 1:
+
+        output_path = (
+            CHAIN_DIR / f"{output_stem}.pdb"
+        )
+
+        io = PDBIO()
+
+        io.set_structure(
+            structure
+        )
+
+        io.save(
+            str(output_path),
+            selector
+        )
+
+        output_format = "PDB"
+
+    else:
+
+        output_path = (
+            CHAIN_DIR / f"{output_stem}.cif"
+        )
+
+        io = MMCIFIO()
+
+        io.set_structure(
+            structure
+        )
+
+        io.save(
+            str(output_path),
+            selector
+        )
+
+        output_format = "mmCIF"
+
+
+    if not output_path.is_file():
+
+        raise FileNotFoundError(
+            f"Файл цепи не сохранён: {output_path}"
+        )
+
+
+    if output_path.stat().st_size == 0:
+
+        raise RuntimeError(
+            f"Файл цепи пустой: {output_path}"
+        )
+
+
+    saved_chain_files.append(
+        output_path
+    )
+
+
+    chain_file_records.append({
+
+        "pdb_id": PDB_ID,
+
+        "model_index": MODEL_INDEX,
+
+        "model_id": str(first_model.id),
+
+        "chain_id": chain_id,
+
+        "chain_id_display": display_chain_id(
+            chain_id
+        ),
+
+        "file_name": output_path.name,
+
+        "file_format": output_format,
+
+        "file_size_bytes": output_path.stat().st_size
+
+    })
+
+
+    print(
+        f"Saved chain {display_chain_id(chain_id)}: "
+        f"{output_path.name} [{output_format}]"
+    )
+
+
+df_chain_files = pd.DataFrame(
+    chain_file_records
+)
+
+
+# ------------------------------------------------------------
+# 10. Проверка сохранённых цепей
+# ------------------------------------------------------------
+
+print("\n" + "-" * 70)
+print("CHAIN FILE VALIDATION")
+print("-" * 70)
+
+
+if len(saved_chain_files) != len(protein_chain_ids):
+
+    raise RuntimeError(
+        "Количество сохранённых файлов "
+        "не совпадает с количеством белковых цепей."
+    )
+
+
+for path in saved_chain_files:
+
+    if not path.is_file() or path.stat().st_size == 0:
+
+        raise RuntimeError(
+            f"Некорректный файл цепи: {path}"
+        )
+
+
+    print(
+        f"{path.name}: "
+        f"{path.stat().st_size:,} bytes"
+    )
+
+
+# ------------------------------------------------------------
+# 11. Сохранение отдельных таблиц
+# ------------------------------------------------------------
+
+output_tables = {
+
+    "separated_protein_atoms": (
+        df_protein_atoms
+    ),
+
+    "separated_protein_residues": (
+        df_protein_residues
+    ),
+
+    "separated_hetero_components": (
+        df_hetero_components
+    ),
+
+    "separated_water_components": (
+        df_water_components
+    ),
+
+    "separated_structure_protein_residues": (
+        df_structure_protein_residues
+    ),
+
+    "separated_component_summary": (
+        df_component_summary
+    ),
+
+    "separated_chain_files": (
+        df_chain_files
+    )
+
+}
+
+
+saved_table_files = {}
+
+
+for name, table in output_tables.items():
+
+    output_path = (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_{name}.csv"
+    )
+
+
+    table.to_csv(
+
+        output_path,
+
+        index=False,
+
+        encoding="utf-8-sig"
+
+    )
+
+
+    saved_table_files[name] = output_path
+
+
+    print(
+        f"Saved: {output_path.name}"
+    )
+
+
+# ------------------------------------------------------------
+# 12. Сохранение JSON-сводки
+# ------------------------------------------------------------
+
+SEPARATION_JSON_PATH = (
+    PDB_RESULTS_DIR
+    / f"{PDB_ID}_component_separation.json"
+)
+
+
+separation_summary = {
+
+    "PDB_ID": PDB_ID,
+
+    "analysis_scope": {
+
+        "selected_model_index": MODEL_INDEX,
+
+        "selected_model_id": str(first_model.id),
+
+        "total_models_in_structure": len(models),
+
+        "note": (
+            "Protein chain separation uses the first model. "
+            "This is consistent with CELL 4-11."
+        )
+
+    },
+
+    "protein": {
+
+        "number_of_protein_chains": len(
+            protein_chain_ids
+        ),
+
+        "protein_chain_ids": sorted(
+            protein_chain_ids
+        ),
+
+        "number_of_protein_residues": len(
+            df_protein_residues
+        ),
+
+        "number_of_protein_atoms": len(
+            df_protein_atoms
+        )
+
+    },
+
+    "hetero_components": {
+
+        "number_of_component_records": len(
+            df_hetero_components
+        ),
+
+        "classification_available": (
+            "component_type" in df_component_summary.columns
+            and not df_component_summary.empty
+        ),
+
+        "component_summary_records": (
+            df_component_summary.to_dict(
+                orient="records"
+            )
+        ),
+
+        "note": (
+            "Hetero components are not automatically "
+            "classified as drug-like ligands."
+        )
+
+    },
+
+    "water": {
+
+        "number_of_water_component_records": len(
+            df_water_components
+        )
+
+    },
+
+    "validation": {
+
+        "atom_count_matches_structure": atom_count_match,
+
+        "residue_count_matches_structure": residue_count_match,
+
+        "residue_keys_match": residue_keys_match,
+
+        "chain_ids_match_structure": chain_ids_match,
+
+        "residue_chain_ids_match_structure": (
+            residue_chain_ids_match
+        ),
+
+        "cell7_residue_key_count_matches": (
+            cell7_residue_key_match
+        ),
+
+        "number_of_saved_chain_files": len(
+            saved_chain_files
+        )
+
+    },
+
+    "saved_chain_files": (
+
+        df_chain_files.to_dict(
+            orient="records"
+        )
+
+    )
+
+}
+
+
+with open(
+    SEPARATION_JSON_PATH,
+    "w",
+    encoding="utf-8"
+) as file:
+
+    json.dump(
+
+        json_safe(separation_summary),
+
+        file,
+
+        ensure_ascii=False,
+
+        indent=4,
+
+        allow_nan=False
+
+    )
+
+
+# ------------------------------------------------------------
+# 13. Итоговая статистика
+# ------------------------------------------------------------
+
+print("\n" + "=" * 70)
+print("COMPONENT SEPARATION SUMMARY")
+print("=" * 70)
+
+print(
+    f"Protein chains: {len(protein_chain_ids)}"
+)
+
+print(
+    f"Protein residues: {len(df_protein_residues)}"
+)
+
+print(
+    f"Protein atoms: {len(df_protein_atoms)}"
+)
+
+print(
+    f"Hetero components: {len(df_hetero_components)}"
+)
+
+print(
+    f"Water components: {len(df_water_components)}"
+)
+
+print(
+    f"Saved chain files: {len(saved_chain_files)}"
+)
+
+print(
+    f"Output directory: {PDB_RESULTS_DIR}"
+)
+
+
+# ------------------------------------------------------------
+# 14. Проверка сохранённых результатов
+# ------------------------------------------------------------
+
+all_output_files = (
+
+    list(saved_table_files.values())
+
+    + saved_chain_files
+
+    + [SEPARATION_JSON_PATH]
+
+)
+
+
+print("\n" + "-" * 70)
+print("OUTPUT FILE VERIFICATION")
+print("-" * 70)
+
+
+output_check_records = []
+
+
+for path in all_output_files:
+
+    exists = (
+
+        path.is_file()
+
+        and path.stat().st_size > 0
+
+    )
+
+
+    output_check_records.append({
+
+        "file_name": path.name,
+
+        "exists": bool(exists),
+
+        "file_size_bytes": (
+            path.stat().st_size
+            if path.is_file()
+            else 0
+        )
+
+    })
+
+
+    print(
+        f"{path.name}: "
+        f"{'OK' if exists else 'ERROR'}"
+    )
+
+
+df_cell15_output_checks = pd.DataFrame(
+    output_check_records
+)
+
+
+all_outputs_saved = bool(
+    df_cell15_output_checks["exists"].all()
+)
+
+
+if not all_outputs_saved:
+
+    raise RuntimeError(
+        "Не все результаты разделения структуры сохранены."
+    )
+
+
+# ------------------------------------------------------------
+# 15. Итог
+# ------------------------------------------------------------
+
+print("\n" + "-" * 70)
+print("CELL 15 FINAL STATUS")
+print("-" * 70)
+
+print(
+    f"Atom count validation: "
+    f"{'OK' if atom_count_match else 'ERROR'}"
+)
+
+print(
+    f"Residue count validation: "
+    f"{'OK' if residue_count_match else 'ERROR'}"
+)
+
+print(
+    f"Residue key validation: "
+    f"{'OK' if residue_keys_match else 'ERROR'}"
+)
+
+print(
+    f"Chain validation: "
+    f"{'OK' if chain_ids_match else 'ERROR'}"
+)
+
+print(
+    f"Saved output files: {len(all_output_files)}"
+)
+
+print(
+    f"Results directory: {PDB_RESULTS_DIR}"
+)
+
+print("\nСтатус: OK")
+
+print("=" * 70)
+print("CELL 15 COMPLETED")
+print("=" * 70)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[19], line 30[0m
+[0;32m     27[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mpathlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Path
+[0;32m     29[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m PDBIO, Select
+[1;32m---> 30[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;21;01m.[39;00m[38;5;21;01mMMCIFIO[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m MMCIFIO
+[0;32m     31[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPolypeptide[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m is_aa
+[0;32m     34[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124m=[39m[38;5;124m"[39m [38;5;241m*[39m [38;5;241m70[39m)
+
+[1;31mModuleNotFoundError[0m: No module named 'Bio.PDB.MMCIFIO'
+
+

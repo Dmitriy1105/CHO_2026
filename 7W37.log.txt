@@ -1,0 +1,3698 @@
+
+============================================================
+BATCH PROCESSING LOG
+============================================================
+
+PDB ID: 7W37
+
+Started: 2026-11-07T02:34:01.550609
+Finished: 2026-11-07T02:34:32.545174
+
+Duration: 30.99 seconds
+
+Status: FAILED
+
+Kernel: python3
+
+Skipped installation cells:
+3
+
+Output validation:
+{}
+
+============================================================
+NOTEBOOK OUTPUT
+============================================================
+
+Batch PDB ID: 7W37
+Component configuration: {}
+Notebook kernel: python3
+
+===========================================================================
+PROTEIN STRUCTURE ANALYSIS
+===========================================================================
+Processing mode:    SINGLE
+Selection source:   external input
+---------------------------------------------------------------------------
+Project root:       C:\apex\APEX\МИФИ\СНО\medic
+Dataset root:       C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset
+Selection CSV:      C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\05_final_dataset\protein_final_100.csv
+---------------------------------------------------------------------------
+Available PDBs:     100
+Processing count:   1
+Start index:        0
+Processing limit:   None
+---------------------------------------------------------------------------
+Current PDB ID:     7W37
+Is selected PDB:    True
+Selection order:    2
+Functional category: Protein Degradation
+---------------------------------------------------------------------------
+Project directory:  C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis
+Data directory:     C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\structures
+Results root:       C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results
+Current PDB folder: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7W37
+Current CIF file:   C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\structures\7W37.cif
+---------------------------------------------------------------------------
+PDB IDS TO PROCESS:
+  1. 7W37
+===========================================================================
+CELL 2 CONFIGURATION COMPLETED
+
+======================================================================
+PROTEIN STRUCTURE ANALYSIS REPORT
+======================================================================
+PDB ID: 7W37
+Report file: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7W37\7W37_analysis_report.txt
+ 
+
+  pdb_id chain_id chain_id_display hetero_flag  residue_id insertion_code  \
+0   7W37        A                A                      21                  
+1   7W37        A                A                      22                  
+2   7W37        A                A                      23                  
+3   7W37        A                A                      24                  
+4   7W37        A                A                      25                  
+5   7W37        A                A                      26                  
+6   7W37        A                A                      27                  
+7   7W37        A                A                      28                  
+8   7W37        A                A                      29                  
+9   7W37        A                A                      30                  
+
+  residue_name amino_acid  atom_count  has_N  has_CA  has_C  has_O  \
+0          PRO          P           7   True    True   True   True   
+1          ILE          I           8   True    True   True   True   
+2          ARG          R          11   True    True   True   True   
+3          ALA          A           5   True    True   True   True   
+4          LEU          L           8   True    True   True   True   
+5          ASP          D           8   True    True   True   True   
+6          GLU          E           9   True    True   True   True   
+7          GLY          G           4   True    True   True   True   
+8          ASP          D           8   True    True   True   True   
+9          ILE          I           8   True    True   True   True   
+
+  present_backbone_atoms missing_backbone_atoms  missing_backbone_atom_count  \
+0               N,CA,C,O                                                   0   
+1               N,CA,C,O                                                   0   
+2               N,CA,C,O                                                   0   
+3               N,CA,C,O                                                   0   
+4               N,CA,C,O                                                   0   
+5               N,CA,C,O                                                   0   
+6               N,CA,C,O                                                   0   
+7               N,CA,C,O                                                   0   
+8               N,CA,C,O                                                   0   
+9               N,CA,C,O                                                   0   
+
+   is_nonstandard  is_custom_mapped  is_unknown  
+0           False             False       False  
+1           False             False       False  
+2           False             False       False  
+3           False             False       False  
+4           False             False       False  
+5           False             False       False  
+6           False             False       False  
+7           False             False       False  
+8           False             False       False  
+9           False             False       False  
+   pdb_id chain_id chain_id_display  residue_count  atom_count  \
+0    7W37        A                A            413        3240   
+1    7W37        B                B            388        3042   
+2    7W37        C                C            379        2968   
+3    7W37        D                D            380        3039   
+4    7W37        E                E            375        2860   
+5    7W37        F                F            376        2858   
+6    7W37        G                G            244        1889   
+7    7W37        H                H            232        1805   
+8    7W37        I                I            250        1955   
+9    7W37        J                J            239        1880   
+10   7W37        K                K            234        1777   
+11   7W37        L                L            238        1866   
+12   7W37        M                M            240        1876   
+13   7W37        N                N            202        1514   
+14   7W37        O                O            220        1649   
+15   7W37        P                P            204        1587   
+16   7W37        Q                Q            199        1588   
+17   7W37        R                R            201        1559   
+18   7W37        S                S            213        1641   
+19   7W37        T                T            216        1683   
+20   7W37        U                U            862        6748   
+21   7W37        V                V            472        3754   
+22   7W37        W                W            446        3635   
+23   7W37        X                X            380        3009   
+24   7W37        Y                Y            378        3115   
+25   7W37        Z                Z            286        2281   
+26   7W37        a                a            373        2995   
+27   7W37        b                b            191        1458   
+28   7W37        c                c            287        2260   
+29   7W37        d                d            257        2116   
+30   7W37        g                g            244        1880   
+31   7W37        h                h            232        1805   
+32   7W37        i                i            250        1955   
+33   7W37        j                j            239        1861   
+34   7W37        k                k            234        1782   
+35   7W37        l                l            238        1861   
+36   7W37        m                m            240        1881   
+37   7W37        n                n            202        1510   
+38   7W37        o                o            220        1659   
+39   7W37        p                p            204        1591   
+40   7W37        q                q            199        1588   
+41   7W37        r                r            201        1559   
+42   7W37        s                s            213        1654   
+43   7W37        t                t            216        1687   
+44   7W37        f                f            889        6866   
+45   7W37        x                x             81         626   
+46   7W37        e                e             50         425   
+
+    complete_backbone_count  incomplete_backbone_count  unknown_residue_count  \
+0                       413                          0                      0   
+1                       388                          0                      0   
+2                       379                          0                      0   
+3                       380                          0                      0   
+4                       375                          0                      0   
+5                       376                          0                      0   
+6                       244                          0                      0   
+7                       232                          0                      0   
+8                       250                          0                      0   
+9                       239                          0                      0   
+10                      234                          0                      0   
+11                      238                          0                      0   
+12                      240                          0                      0   
+13                      202                          0                      0   
+14                      220                          0                      0   
+15                      204                          0                      0   
+16                      199                          0                      0   
+17                      201                          0                      0   
+18                      213                          0                      0   
+19                      216                          0                      0   
+20                      862                          0                      0   
+21                      472                          0                      0   
+22                      446                          0                      0   
+23                      380                          0                      0   
+24                      378                          0                      0   
+25                      286                          0                      0   
+26                      373                          0                      0   
+27                      191                          0                      0   
+28                      287                          0                      0   
+29                      257                          0                      0   
+30                      244                          0                      0   
+31                      232                          0                      0   
+32                      250                          0                      0   
+33                      239                          0                      0   
+34                      234                          0                      0   
+35                      238                          0                      0   
+36                      240                          0                      0   
+37                      202                          0                      0   
+38                      220                          0                      0   
+39                      204                          0                      0   
+40                      199                          0                      0   
+41                      201                          0                      0   
+42                      213                          0                      0   
+43                      216                          0                      0   
+44                      889                          0                      0   
+45                       81                          0                      0   
+46                       50                          0                      0   
+
+    nonstandard_residue_count  custom_mapped_residue_count  
+0                           0                            0  
+1                           0                            0  
+2                           0                            0  
+3                           0                            0  
+4                           0                            0  
+5                           0                            0  
+6                           0                            0  
+7                           0                            0  
+8                           0                            0  
+9                           0                            0  
+10                          0                            0  
+11                          0                            0  
+12                          0                            0  
+13                          0                            0  
+14                          0                            0  
+15                          0                            0  
+16                          0                            0  
+17                          0                            0  
+18                          0                            0  
+19                          0                            0  
+20                          0                            0  
+21                          0                            0  
+22                          0                            0  
+23                          0                            0  
+24                          0                            0  
+25                          0                            0  
+26                          0                            0  
+27                          0                            0  
+28                          0                            0  
+29                          0                            0  
+30                          0                            0  
+31                          0                            0  
+32                          0                            0  
+33                          0                            0  
+34                          0                            0  
+35                          0                            0  
+36                          0                            0  
+37                          0                            0  
+38                          0                            0  
+39                          0                            0  
+40                          0                            0  
+41                          0                            0  
+42                          0                            0  
+43                          0                            0  
+44                          0                            0  
+45                          0                            0  
+46                          0                            0  
+   pdb_id chain_id chain_id_display  residue_count  sequence_length  \
+0    7W37        A                A            413              413   
+1    7W37        B                B            388              388   
+2    7W37        C                C            379              379   
+3    7W37        D                D            380              380   
+4    7W37        E                E            375              375   
+5    7W37        F                F            376              376   
+6    7W37        G                G            244              244   
+7    7W37        H                H            232              232   
+8    7W37        I                I            250              250   
+9    7W37        J                J            239              239   
+10   7W37        K                K            234              234   
+11   7W37        L                L            238              238   
+12   7W37        M                M            240              240   
+13   7W37        N                N            202              202   
+14   7W37        O                O            220              220   
+15   7W37        P                P            204              204   
+16   7W37        Q                Q            199              199   
+17   7W37        R                R            201              201   
+18   7W37        S                S            213              213   
+19   7W37        T                T            216              216   
+20   7W37        U                U            862              862   
+21   7W37        V                V            472              472   
+22   7W37        W                W            446              446   
+23   7W37        X                X            380              380   
+24   7W37        Y                Y            378              378   
+25   7W37        Z                Z            286              286   
+26   7W37        a                a            373              373   
+27   7W37        b                b            191              191   
+28   7W37        c                c            287              287   
+29   7W37        d                d            257              257   
+30   7W37        g                g            244              244   
+31   7W37        h                h            232              232   
+32   7W37        i                i            250              250   
+33   7W37        j                j            239              239   
+34   7W37        k                k            234              234   
+35   7W37        l                l            238              238   
+36   7W37        m                m            240              240   
+37   7W37        n                n            202              202   
+38   7W37        o                o            220              220   
+39   7W37        p                p            204              204   
+40   7W37        q                q            199              199   
+41   7W37        r                r            201              201   
+42   7W37        s                s            213              213   
+43   7W37        t                t            216              216   
+44   7W37        f                f            889              889   
+45   7W37        x                x             81               81   
+46   7W37        e                e             50               50   
+
+    length_matches  sequence_matches  matches  
+0             True              True     True  
+1             True              True     True  
+2             True              True     True  
+3             True              True     True  
+4             True              True     True  
+5             True              True     True  
+6             True              True     True  
+7             True              True     True  
+8             True              True     True  
+9             True              True     True  
+10            True              True     True  
+11            True              True     True  
+12            True              True     True  
+13            True              True     True  
+14            True              True     True  
+15            True              True     True  
+16            True              True     True  
+17            True              True     True  
+18            True              True     True  
+19            True              True     True  
+20            True              True     True  
+21            True              True     True  
+22            True              True     True  
+23            True              True     True  
+24            True              True     True  
+25            True              True     True  
+26            True              True     True  
+27            True              True     True  
+28            True              True     True  
+29            True              True     True  
+30            True              True     True  
+31            True              True     True  
+32            True              True     True  
+33            True              True     True  
+34            True              True     True  
+35            True              True     True  
+36            True              True     True  
+37            True              True     True  
+38            True              True     True  
+39            True              True     True  
+40            True              True     True  
+41            True              True     True  
+42            True              True     True  
+43            True              True     True  
+44            True              True     True  
+45            True              True     True  
+46            True              True     True  
+   pdb_id chain_id chain_id_display  cell4_protein_residues  \
+0    7W37        A                A                     413   
+1    7W37        B                B                     388   
+2    7W37        C                C                     379   
+3    7W37        D                D                     380   
+4    7W37        E                E                     375   
+5    7W37        F                F                     376   
+6    7W37        G                G                     244   
+7    7W37        H                H                     232   
+8    7W37        I                I                     250   
+9    7W37        J                J                     239   
+10   7W37        K                K                     234   
+11   7W37        L                L                     238   
+12   7W37        M                M                     240   
+13   7W37        N                N                     202   
+14   7W37        O                O                     220   
+15   7W37        P                P                     204   
+16   7W37        Q                Q                     199   
+17   7W37        R                R                     201   
+18   7W37        S                S                     213   
+19   7W37        T                T                     216   
+20   7W37        U                U                     862   
+21   7W37        V                V                     472   
+22   7W37        W                W                     446   
+23   7W37        X                X                     380   
+24   7W37        Y                Y                     378   
+25   7W37        Z                Z                     286   
+26   7W37        a                a                     373   
+27   7W37        b                b                     191   
+28   7W37        c                c                     287   
+29   7W37        d                d                     257   
+30   7W37        g                g                     244   
+31   7W37        h                h                     232   
+32   7W37        i                i                     250   
+33   7W37        j                j                     239   
+34   7W37        k                k                     234   
+35   7W37        l                l                     238   
+36   7W37        m                m                     240   
+37   7W37        n                n                     202   
+38   7W37        o                o                     220   
+39   7W37        p                p                     204   
+40   7W37        q                q                     199   
+41   7W37        r                r                     201   
+42   7W37        s                s                     213   
+43   7W37        t                t                     216   
+44   7W37        f                f                     889   
+45   7W37        x                x                      81   
+46   7W37        e                e                      50   
+
+    cell6_protein_residues  matches  
+0                      413     True  
+1                      388     True  
+2                      379     True  
+3                      380     True  
+4                      375     True  
+5                      376     True  
+6                      244     True  
+7                      232     True  
+8                      250     True  
+9                      239     True  
+10                     234     True  
+11                     238     True  
+12                     240     True  
+13                     202     True  
+14                     220     True  
+15                     204     True  
+16                     199     True  
+17                     201     True  
+18                     213     True  
+19                     216     True  
+20                     862     True  
+21                     472     True  
+22                     446     True  
+23                     380     True  
+24                     378     True  
+25                     286     True  
+26                     373     True  
+27                     191     True  
+28                     287     True  
+29                     257     True  
+30                     244     True  
+31                     232     True  
+32                     250     True  
+33                     239     True  
+34                     234     True  
+35                     238     True  
+36                     240     True  
+37                     202     True  
+38                     220     True  
+39                     204     True  
+40                     199     True  
+41                     201     True  
+42                     213     True  
+43                     216     True  
+44                     889     True  
+45                      81     True  
+46                      50     True  
+  pdb_id chain_id      residue_key hetero_flag  residue_id insertion_code  \
+0   7W37        A  ["A"," ",21,""]                      21                  
+1   7W37        A  ["A"," ",21,""]                      21                  
+2   7W37        A  ["A"," ",21,""]                      21                  
+3   7W37        A  ["A"," ",21,""]                      21                  
+4   7W37        A  ["A"," ",21,""]                      21                  
+5   7W37        A  ["A"," ",21,""]                      21                  
+6   7W37        A  ["A"," ",21,""]                      21                  
+7   7W37        A  ["A"," ",22,""]                      22                  
+8   7W37        A  ["A"," ",22,""]                      22                  
+9   7W37        A  ["A"," ",22,""]                      22                  
+
+  residue_name amino_acid  atom_serial atom_name atom_fullname element  \
+0          PRO          P            1         N             N       N   
+1          PRO          P            2        CA            CA       C   
+2          PRO          P            3         C             C       C   
+3          PRO          P            4         O             O       O   
+4          PRO          P            5        CB            CB       C   
+5          PRO          P            6        CG            CG       C   
+6          PRO          P            7        CD            CD       C   
+7          ILE          I            8         N             N       N   
+8          ILE          I            9        CA            CA       C   
+9          ILE          I           10         C             C       C   
+
+            x           y           z  occupancy  bfactor altloc  is_backbone  \
+0  243.746994  192.990997  147.044998        1.0   312.71                True   
+1  243.917007  192.169998  145.841003        1.0   312.71                True   
+2  244.634995  190.852005  146.119995        1.0   312.71                True   
+3  244.893005  190.518997  147.276993        1.0   312.71                True   
+4  244.757004  193.063004  144.923004        1.0   312.71               False   
+5  245.466995  193.992996  145.845001        1.0   312.71               False   
+6  244.509995  194.248001  146.968002        1.0   312.71               False   
+7  244.949997  190.113007  145.057999        1.0   315.44                True   
+8  245.626999  188.826996  145.177994        1.0   315.44                True   
+9  246.983002  188.819000  144.481995        1.0   315.44                True   
+
+   is_hydrogen  
+0        False  
+1        False  
+2        False  
+3        False  
+4        False  
+5        False  
+6        False  
+7        False  
+8        False  
+9        False  
+  element  atom_count
+0       C       66953
+1       O       20070
+2       N       18202
+3       S         612
+   chain_id  atom_count  residue_count  backbone_atom_count  \
+0         A        3240            413                 1652   
+1         B        3042            388                 1552   
+2         C        2968            379                 1516   
+3         D        3039            380                 1520   
+4         E        2860            375                 1500   
+5         F        2858            376                 1504   
+6         G        1889            244                  976   
+7         H        1805            232                  929   
+8         I        1955            250                 1000   
+9         J        1880            239                  956   
+10        K        1777            234                  937   
+11        L        1866            238                  952   
+12        M        1876            240                  960   
+13        N        1514            202                  808   
+14        O        1649            220                  880   
+15        P        1587            204                  817   
+16        Q        1588            199                  796   
+17        R        1559            201                  804   
+18        S        1641            213                  853   
+19        T        1683            216                  864   
+20        U        6748            862                 3448   
+21        V        3754            472                 1888   
+22        W        3635            446                 1785   
+23        X        3009            380                 1521   
+24        Y        3115            378                 1513   
+25        Z        2281            286                 1144   
+26        a        2995            373                 1493   
+27        b        1458            191                  764   
+28        c        2260            287                 1149   
+29        d        2116            257                 1029   
+30        g        1880            244                  976   
+31        h        1805            232                  929   
+32        i        1955            250                 1000   
+33        j        1861            239                  956   
+34        k        1782            234                  936   
+35        l        1861            238                  952   
+36        m        1881            240                  960   
+37        n        1510            202                  808   
+38        o        1659            220                  880   
+39        p        1591            204                  817   
+40        q        1588            199                  796   
+41        r        1559            201                  804   
+42        s        1654            213                  853   
+43        t        1687            216                  864   
+44        f        6866            889                 3556   
+45        x         626             81                  324   
+46        e         425             50                  200   
+
+    hydrogen_atom_count  altloc_atom_count  mean_occupancy  mean_bfactor  
+0                     0                  0        1.000000    122.162935  
+1                     0                  0        1.000000    119.947860  
+2                     0                  0        1.000000    105.390229  
+3                     0                  0        1.000000    107.262076  
+4                     0                  0        1.000000    116.261119  
+5                     0                  0        1.000000    105.238065  
+6                     0                  0        1.000000     88.939164  
+7                     0                  0        1.000000     83.125490  
+8                     0                  3        0.997954     94.244174  
+9                     0                  0        1.000000    103.216207  
+10                    0                  0        0.998593     86.796595  
+11                    0                  0        0.995981     77.868767  
+12                    0                  0        0.999200     95.283412  
+13                    0                  0        0.999009     93.654472  
+14                    0                  0        0.996968    107.594251  
+15                    0                  0        0.994644     98.452313  
+16                    0                  0        0.996851     87.498092  
+17                    0                  0        0.994291    109.087960  
+18                    0                  0        0.999269    105.802169  
+19                    0                  0        0.998515     93.596684  
+20                    0                  0        1.000000    165.680848  
+21                    0                  0        1.000000    170.522262  
+22                    0                  0        1.000000    184.970223  
+23                    0                  0        0.997022    137.684995  
+24                    0                  0        1.000000    127.711400  
+25                    0                  0        1.000000    187.753652  
+26                    0                  0        1.000000    213.190351  
+27                    0                  0        0.997160    248.373196  
+28                    0                  0        0.999770    141.834712  
+29                    0                  0        0.995808    168.930520  
+30                    0                  0        1.000000    108.892378  
+31                    0                  0        0.996399    109.092925  
+32                    0                  0        0.998721    113.500716  
+33                    0                  0        1.000000    120.073477  
+34                    0                  0        0.996072    108.271723  
+35                    0                  0        1.000000    117.274138  
+36                    0                  0        0.994684    104.096002  
+37                    0                  0        0.998344    103.501397  
+38                    0                  0        0.996082     95.865533  
+39                    0                  0        0.986801    108.470302  
+40                    0                  0        0.995277    105.359219  
+41                    0                  0        1.000000    176.622284  
+42                    0                  0        0.998368    114.230961  
+43                    0                  0        1.000000     94.952727  
+44                    0                  0        1.000000    192.248179  
+45                    0                  0        1.000000    317.852796  
+46                    0                  0        1.000000    126.934706  
+  chain_id hetero_flag  residue_id insertion_code residue_name  \
+0        A                      21                         PRO   
+1        A                      22                         ILE   
+2        A                      23                         ARG   
+3        A                      24                         ALA   
+4        A                      25                         LEU   
+5        A                      26                         ASP   
+6        A                      27                         GLU   
+7        A                      28                         GLY   
+8        A                      29                         ASP   
+9        A                      30                         ILE   
+
+   cell6_atom_count  cell7_atom_count _merge  atom_count_match  \
+0                 7                 7   both              True   
+1                 8                 8   both              True   
+2                11                11   both              True   
+3                 5                 5   both              True   
+4                 8                 8   both              True   
+5                 8                 8   both              True   
+6                 9                 9   both              True   
+7                 4                 4   both              True   
+8                 8                 8   both              True   
+9                 8                 8   both              True   
+
+   residue_present_in_both  
+0                     True  
+1                     True  
+2                     True  
+3                     True  
+4                     True  
+5                     True  
+6                     True  
+7                     True  
+8                     True  
+9                     True  
+  residue_name                 component_type  occurrence_count  \
+0           MG        Single metal atom / ion                 6   
+1          ATP  Organic non-protein component                 4   
+2          ADP  Organic non-protein component                 2   
+3           ZN        Single metal atom / ion                 1   
+
+   total_atom_count  chains  
+0                 6       6  
+1               124       4  
+2                54       2  
+3                 1       1  
+                     expected_cell_4  observed_cell_8  matches
+nonprotein_residues               13               13     True
+water_residues                     0                0     True
+nonprotein_atoms                 185              185     True
+water_atoms                        0                0     True
+<Figure size 1000x800 with 1 Axes>
+                                     Parameter  Count  \
+0  Unobserved / zero-occupancy residue records   1855   
+1     Unobserved / zero-occupancy atom records    556   
+
+                                   Status  
+0  Категория присутствует, имеются записи  
+1  Категория присутствует, имеются записи  
+           table  atom_count  zero_occupancy_count  missing_occupancy_count  \
+0  Protein atoms      105837                     4                        0   
+1   Hetero atoms         185                     0                        0   
+2    Water atoms           0                     0                        0   
+
+   invalid_occupancy_count  occupancy_column_available  
+0                        0                        True  
+1                        0                        True  
+2                        0                        True  
+   _pdbx_unobs_or_zero_occ_residues.id  \
+0                                    1   
+1                                    2   
+2                                    3   
+3                                    4   
+4                                    5   
+5                                    6   
+6                                    7   
+7                                    8   
+8                                    9   
+9                                   10   
+10                                  11   
+11                                  12   
+12                                  13   
+13                                  14   
+14                                  15   
+15                                  16   
+16                                  17   
+17                                  18   
+18                                  19   
+19                                  20   
+
+   _pdbx_unobs_or_zero_occ_residues.PDB_model_num  \
+0                                               1   
+1                                               1   
+2                                               1   
+3                                               1   
+4                                               1   
+5                                               1   
+6                                               1   
+7                                               1   
+8                                               1   
+9                                               1   
+10                                              1   
+11                                              1   
+12                                              1   
+13                                              1   
+14                                              1   
+15                                              1   
+16                                              1   
+17                                              1   
+18                                              1   
+19                                              1   
+
+   _pdbx_unobs_or_zero_occ_residues.polymer_flag  \
+0                                              Y   
+1                                              Y   
+2                                              Y   
+3                                              Y   
+4                                              Y   
+5                                              Y   
+6                                              Y   
+7                                              Y   
+8                                              Y   
+9                                              Y   
+10                                             Y   
+11                                             Y   
+12                                             Y   
+13                                             Y   
+14                                             Y   
+15                                             Y   
+16                                             Y   
+17                                             Y   
+18                                             Y   
+19                                             Y   
+
+   _pdbx_unobs_or_zero_occ_residues.occupancy_flag  \
+0                                                1   
+1                                                1   
+2                                                1   
+3                                                1   
+4                                                1   
+5                                                1   
+6                                                1   
+7                                                1   
+8                                                1   
+9                                                1   
+10                                               1   
+11                                               1   
+12                                               1   
+13                                               1   
+14                                               1   
+15                                               1   
+16                                               1   
+17                                               1   
+18                                               1   
+19                                               1   
+
+   _pdbx_unobs_or_zero_occ_residues.auth_asym_id  \
+0                                              A   
+1                                              A   
+2                                              A   
+3                                              A   
+4                                              A   
+5                                              A   
+6                                              A   
+7                                              A   
+8                                              A   
+9                                              A   
+10                                             A   
+11                                             A   
+12                                             A   
+13                                             A   
+14                                             A   
+15                                             A   
+16                                             A   
+17                                             A   
+18                                             A   
+19                                             A   
+
+   _pdbx_unobs_or_zero_occ_residues.auth_comp_id  \
+0                                            MET   
+1                                            PRO   
+2                                            ASP   
+3                                            TYR   
+4                                            LEU   
+5                                            GLY   
+6                                            ALA   
+7                                            ASP   
+8                                            GLN   
+9                                            ARG   
+10                                           LYS   
+11                                           THR   
+12                                           LYS   
+13                                           GLU   
+14                                           ASP   
+15                                           GLU   
+16                                           LYS   
+17                                           ASP   
+18                                           ASP   
+19                                           LYS   
+
+   _pdbx_unobs_or_zero_occ_residues.auth_seq_id  \
+0                                             1   
+1                                             2   
+2                                             3   
+3                                             4   
+4                                             5   
+5                                             6   
+6                                             7   
+7                                             8   
+8                                             9   
+9                                            10   
+10                                           11   
+11                                           12   
+12                                           13   
+13                                           14   
+14                                           15   
+15                                           16   
+16                                           17   
+17                                           18   
+18                                           19   
+19                                           20   
+
+   _pdbx_unobs_or_zero_occ_residues.PDB_ins_code  \
+0                                           None   
+1                                           None   
+2                                           None   
+3                                           None   
+4                                           None   
+5                                           None   
+6                                           None   
+7                                           None   
+8                                           None   
+9                                           None   
+10                                          None   
+11                                          None   
+12                                          None   
+13                                          None   
+14                                          None   
+15                                          None   
+16                                          None   
+17                                          None   
+18                                          None   
+19                                          None   
+
+   _pdbx_unobs_or_zero_occ_residues.label_asym_id  \
+0                                               A   
+1                                               A   
+2                                               A   
+3                                               A   
+4                                               A   
+5                                               A   
+6                                               A   
+7                                               A   
+8                                               A   
+9                                               A   
+10                                              A   
+11                                              A   
+12                                              A   
+13                                              A   
+14                                              A   
+15                                              A   
+16                                              A   
+17                                              A   
+18                                              A   
+19                                              A   
+
+   _pdbx_unobs_or_zero_occ_residues.label_comp_id  \
+0                                             MET   
+1                                             PRO   
+2                                             ASP   
+3                                             TYR   
+4                                             LEU   
+5                                             GLY   
+6                                             ALA   
+7                                             ASP   
+8                                             GLN   
+9                                             ARG   
+10                                            LYS   
+11                                            THR   
+12                                            LYS   
+13                                            GLU   
+14                                            ASP   
+15                                            GLU   
+16                                            LYS   
+17                                            ASP   
+18                                            ASP   
+19                                            LYS   
+
+   _pdbx_unobs_or_zero_occ_residues.label_seq_id  
+0                                              1  
+1                                              2  
+2                                              3  
+3                                              4  
+4                                              5  
+5                                              6  
+6                                              7  
+7                                              8  
+8                                              9  
+9                                             10  
+10                                            11  
+11                                            12  
+12                                            13  
+13                                            14  
+14                                            15  
+15                                            16  
+16                                            17  
+17                                            18  
+18                                            19  
+19                                            20  
+   _pdbx_unobs_or_zero_occ_atoms.id  \
+0                                 1   
+1                                 2   
+2                                 3   
+3                                 4   
+4                                 5   
+5                                 6   
+6                                 7   
+7                                 8   
+8                                 9   
+9                                10   
+10                               11   
+11                               12   
+12                               13   
+13                               14   
+14                               15   
+15                               16   
+16                               17   
+17                               18   
+18                               19   
+19                               20   
+
+   _pdbx_unobs_or_zero_occ_atoms.PDB_model_num  \
+0                                            1   
+1                                            1   
+2                                            1   
+3                                            1   
+4                                            1   
+5                                            1   
+6                                            1   
+7                                            1   
+8                                            1   
+9                                            1   
+10                                           1   
+11                                           1   
+12                                           1   
+13                                           1   
+14                                           1   
+15                                           1   
+16                                           1   
+17                                           1   
+18                                           1   
+19                                           1   
+
+   _pdbx_unobs_or_zero_occ_atoms.polymer_flag  \
+0                                           Y   
+1                                           Y   
+2                                           Y   
+3                                           Y   
+4                                           Y   
+5                                           Y   
+6                                           Y   
+7                                           Y   
+8                                           Y   
+9                                           Y   
+10                                          Y   
+11                                          Y   
+12                                          Y   
+13                                          Y   
+14                                          Y   
+15                                          Y   
+16                                          Y   
+17                                          Y   
+18                                          Y   
+19                                          Y   
+
+   _pdbx_unobs_or_zero_occ_atoms.occupancy_flag  \
+0                                             1   
+1                                             1   
+2                                             1   
+3                                             1   
+4                                             1   
+5                                             1   
+6                                             1   
+7                                             1   
+8                                             1   
+9                                             1   
+10                                            1   
+11                                            1   
+12                                            1   
+13                                            1   
+14                                            1   
+15                                            1   
+16                                            1   
+17                                            1   
+18                                            1   
+19                                            1   
+
+   _pdbx_unobs_or_zero_occ_atoms.auth_asym_id  \
+0                                           A   
+1                                           A   
+2                                           A   
+3                                           A   
+4                                           A   
+5                                           B   
+6                                           B   
+7                                           B   
+8                                           B   
+9                                           B   
+10                                          B   
+11                                          B   
+12                                          B   
+13                                          B   
+14                                          B   
+15                                          B   
+16                                          C   
+17                                          C   
+18                                          C   
+19                                          C   
+
+   _pdbx_unobs_or_zero_occ_atoms.auth_comp_id  \
+0                                         LYS   
+1                                         ARG   
+2                                         ARG   
+3                                         ARG   
+4                                         ILE   
+5                                         GLU   
+6                                         GLU   
+7                                         GLU   
+8                                         GLU   
+9                                         THR   
+10                                        HIS   
+11                                        HIS   
+12                                        GLU   
+13                                        GLU   
+14                                        GLU   
+15                                        GLU   
+16                                        ASP   
+17                                        ASP   
+18                                        ASP   
+19                                        THR   
+
+   _pdbx_unobs_or_zero_occ_atoms.auth_seq_id  \
+0                                        100   
+1                                        144   
+2                                        144   
+3                                        144   
+4                                        403   
+5                                         95   
+6                                         95   
+7                                         95   
+8                                         95   
+9                                        125   
+10                                       157   
+11                                       157   
+12                                       209   
+13                                       209   
+14                                       209   
+15                                       209   
+16                                       100   
+17                                       100   
+18                                       100   
+19                                       109   
+
+   _pdbx_unobs_or_zero_occ_atoms.PDB_ins_code  \
+0                                        None   
+1                                        None   
+2                                        None   
+3                                        None   
+4                                        None   
+5                                        None   
+6                                        None   
+7                                        None   
+8                                        None   
+9                                        None   
+10                                       None   
+11                                       None   
+12                                       None   
+13                                       None   
+14                                       None   
+15                                       None   
+16                                       None   
+17                                       None   
+18                                       None   
+19                                       None   
+
+   _pdbx_unobs_or_zero_occ_atoms.auth_atom_id  \
+0                                          NZ   
+1                                          CZ   
+2                                         NH1   
+3                                         NH2   
+4                                         CG2   
+5                                          CG   
+6                                          CD   
+7                                         OE1   
+8                                         OE2   
+9                                         CG2   
+10                                        CD2   
+11                                        NE2   
+12                                         CG   
+13                                         CD   
+14                                        OE1   
+15                                        OE2   
+16                                         CG   
+17                                        OD1   
+18                                        OD2   
+19                                        CG2   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_alt_id  \
+0                                        None   
+1                                        None   
+2                                        None   
+3                                        None   
+4                                        None   
+5                                        None   
+6                                        None   
+7                                        None   
+8                                        None   
+9                                        None   
+10                                       None   
+11                                       None   
+12                                       None   
+13                                       None   
+14                                       None   
+15                                       None   
+16                                       None   
+17                                       None   
+18                                       None   
+19                                       None   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_asym_id  \
+0                                            A   
+1                                            A   
+2                                            A   
+3                                            A   
+4                                            A   
+5                                            B   
+6                                            B   
+7                                            B   
+8                                            B   
+9                                            B   
+10                                           B   
+11                                           B   
+12                                           B   
+13                                           B   
+14                                           B   
+15                                           B   
+16                                           C   
+17                                           C   
+18                                           C   
+19                                           C   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_comp_id  \
+0                                          LYS   
+1                                          ARG   
+2                                          ARG   
+3                                          ARG   
+4                                          ILE   
+5                                          GLU   
+6                                          GLU   
+7                                          GLU   
+8                                          GLU   
+9                                          THR   
+10                                         HIS   
+11                                         HIS   
+12                                         GLU   
+13                                         GLU   
+14                                         GLU   
+15                                         GLU   
+16                                         ASP   
+17                                         ASP   
+18                                         ASP   
+19                                         THR   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_seq_id  \
+0                                         100   
+1                                         144   
+2                                         144   
+3                                         144   
+4                                         403   
+5                                          95   
+6                                          95   
+7                                          95   
+8                                          95   
+9                                         125   
+10                                        157   
+11                                        157   
+12                                        209   
+13                                        209   
+14                                        209   
+15                                        209   
+16                                         92   
+17                                         92   
+18                                         92   
+19                                        101   
+
+   _pdbx_unobs_or_zero_occ_atoms.label_atom_id  
+0                                           NZ  
+1                                           CZ  
+2                                          NH1  
+3                                          NH2  
+4                                          CG2  
+5                                           CG  
+6                                           CD  
+7                                          OE1  
+8                                          OE2  
+9                                          CG2  
+10                                         CD2  
+11                                         NE2  
+12                                          CG  
+13                                          CD  
+14                                         OE1  
+15                                         OE2  
+16                                          CG  
+17                                         OD1  
+18                                         OD2  
+19                                         CG2  
+             table check                                   message
+0      df_residues  True  Все записи относятся к текущей структуре
+1         df_atoms  True  Все записи относятся к текущей структуре
+2        df_hetero  True  Все записи относятся к текущей структуре
+3         df_water  None                             Таблица пуста
+4  df_hetero_atoms  True  Все записи относятся к текущей структуре
+5   df_water_atoms  None                             Таблица пуста
+                    category  count  percentage
+0        Counted amino acids  13527       100.0
+1      Ambiguous amino acids      0         0.0
+2        Unknown amino acids      0         0.0
+3  Missing amino acid values      0         0.0
+4  Invalid amino acid values      0         0.0
+   amino_acid  count  percentage  cumulative_percentage
+0           L   1382       10.22                  10.22
+1           A   1098        8.12                  18.33
+2           E   1016        7.51                  25.84
+3           V    980        7.24                  33.09
+4           K    894        6.61                  39.70
+5           G    889        6.57                  46.27
+6           I    802        5.93                  52.20
+7           D    782        5.78                  57.98
+8           S    778        5.75                  63.73
+9           R    736        5.44                  69.17
+10          T    716        5.29                  74.47
+11          Q    547        4.04                  78.51
+12          Y    526        3.89                  82.40
+13          N    493        3.64                  86.04
+14          P    473        3.50                  89.54
+15          F    450        3.33                  92.87
+16          M    415        3.07                  95.93
+17          H    268        1.98                  97.92
+18          C    201        1.49                  99.40
+19          W     81        0.60                 100.00
+    chain_id_display amino_acid  count  percentage
+0                  A          L     36        8.72
+1                  A          A     32        7.75
+2                  A          E     31        7.51
+3                  A          I     31        7.51
+4                  A          D     30        7.26
+..               ...        ...    ...         ...
+917                x          I      2        2.47
+918                x          S      2        2.47
+919                x          W      2        2.47
+920                x          R      1        1.23
+921                x          Y      1        1.23
+
+[922 rows x 4 columns]
+   chain_id_display  counted_residue_count
+0                 A                    413
+1                 B                    388
+2                 C                    379
+3                 D                    380
+4                 E                    375
+5                 F                    376
+6                 G                    244
+7                 H                    232
+8                 I                    250
+9                 J                    239
+10                K                    234
+11                L                    238
+12                M                    240
+13                N                    202
+14                O                    220
+15                P                    204
+16                Q                    199
+17                R                    201
+18                S                    213
+19                T                    216
+20                U                    862
+21                V                    472
+22                W                    446
+23                X                    380
+24                Y                    378
+25                Z                    286
+26                a                    373
+27                b                    191
+28                c                    287
+29                d                    257
+30                e                     50
+31                f                    889
+32                g                    244
+33                h                    232
+34                i                    250
+35                j                    239
+36                k                    234
+37                l                    238
+38                m                    240
+39                n                    202
+40                o                    220
+41                p                    204
+42                q                    199
+43                r                    201
+44                s                    213
+45                t                    216
+46                x                     81
+<Figure size 1200x500 with 1 Axes>
+<Figure size 1200x500 with 1 Axes>
+                                    file_name extension  size_bytes   size_kb  \
+0          7W37_amino_acid_classification.csv      .csv         185      0.18   
+1            7W37_amino_acid_distribution.csv      .csv         411      0.40   
+2            7W37_amino_acid_distribution.png      .png       85900     83.89   
+3   7W37_amino_acid_distribution_by_chain.csv      .csv       11621     11.35   
+4              7W37_amino_acid_percentage.png      .png       75933     74.15   
+5                7W37_amino_acid_summary.json     .json        1748      1.71   
+6                    7W37_analysis_report.txt      .txt       66907     65.34   
+7             7W37_atom_analysis_summary.json     .json         947      0.92   
+8                 7W37_cell4_verification.csv      .csv        1168      1.14   
+9              7W37_chain_atom_statistics.csv      .csv        2499      2.44   
+10                  7W37_chain_statistics.csv      .csv        2185      2.13   
+11                7W37_duplicate_residues.csv      .csv         252      0.25   
+12                7W37_element_statistics.csv      .csv          57      0.06   
+13                   7W37_invalid_bfactor.csv      .csv         193      0.19   
+14               7W37_invalid_coordinates.csv      .csv         193      0.19   
+15                 7W37_invalid_occupancy.csv      .csv         193      0.19   
+16                          7W37_metadata.csv      .csv         771      0.75   
+17                         7W37_metadata.json     .json        4804      4.69   
+18            7W37_missing_backbone_atoms.csv      .csv         252      0.25   
+19                 7W37_occupancy_summary.csv      .csv         205      0.20   
+20                     7W37_protein_atoms.csv      .csv    14502875  14162.96   
+21                  7W37_residue_analysis.csv      .csv     1039392   1015.03   
+22         7W37_residue_analysis_summary.json     .json         665      0.65   
+23           7W37_residue_atom_comparison.csv      .csv      446141    435.68   
+24           7W37_residue_atom_mismatches.csv      .csv         146      0.14   
+25          7W37_residue_chain_statistics.csv      .csv        1639      1.60   
+26                          7W37_residues.csv      .csv     1039392   1015.03   
+27               7W37_sequence_statistics.csv      .csv        1900      1.86   
+28                 7W37_sequence_summary.json     .json       22055     21.54   
+29             7W37_sequence_verification.csv      .csv       28838     28.16   
+30                       7W37_sequences.fasta    .fasta       14606     14.26   
+31             7W37_structure_statistics.json     .json         682      0.67   
+32                           7W37_summary.csv      .csv         249      0.24   
+33                          7W37_summary.json     .json      153757    150.15   
+34                  7W37_unobserved_atoms.csv      .csv       22186     21.67   
+35               7W37_unobserved_residues.csv      .csv       59773     58.37   
+36                7W37_unobserved_summary.csv      .csv         273      0.27   
+37            component_analysis_summary.json     .json        2905      2.84   
+38                   component_statistics.csv      .csv         226      0.22   
+39                           hetero_atoms.csv      .csv       30947     30.22   
+40                        hetero_residues.csv      .csv        1376      1.34   
+41          invalid_component_coordinates.csv      .csv         190      0.19   
+42               protein_geometry_summary.csv      .csv         565      0.55   
+43              protein_geometry_summary.json     .json        1841      1.80   
+44             protein_structure_geometry.png      .png      501859    490.10   
+45                            water_atoms.csv      .csv         190      0.19   
+46                         water_residues.csv      .csv         135      0.13   
+
+    exists  
+0     True  
+1     True  
+2     True  
+3     True  
+4     True  
+5     True  
+6     True  
+7     True  
+8     True  
+9     True  
+10    True  
+11    True  
+12    True  
+13    True  
+14    True  
+15    True  
+16    True  
+17    True  
+18    True  
+19    True  
+20    True  
+21    True  
+22    True  
+23    True  
+24    True  
+25    True  
+26    True  
+27    True  
+28    True  
+29    True  
+30    True  
+31    True  
+32    True  
+33    True  
+34    True  
+35    True  
+36    True  
+37    True  
+38    True  
+39    True  
+40    True  
+41    True  
+42    True  
+43    True  
+44    True  
+45    True  
+46    True  
+   entity_id  sequence_length                            sequence_source
+0          1              433  _entity_poly.pdbx_seq_one_letter_code_can
+1          2              440  _entity_poly.pdbx_seq_one_letter_code_can
+2          3              398  _entity_poly.pdbx_seq_one_letter_code_can
+3          4              418  _entity_poly.pdbx_seq_one_letter_code_can
+4          5              403  _entity_poly.pdbx_seq_one_letter_code_can
+5          6              439  _entity_poly.pdbx_seq_one_letter_code_can
+6          7              246  _entity_poly.pdbx_seq_one_letter_code_can
+7          8              234  _entity_poly.pdbx_seq_one_letter_code_can
+8          9              261  _entity_poly.pdbx_seq_one_letter_code_can
+9         10              248  _entity_poly.pdbx_seq_one_letter_code_can
+10        11              241  _entity_poly.pdbx_seq_one_letter_code_can
+11        12              269  _entity_poly.pdbx_seq_one_letter_code_can
+12        13              255  _entity_poly.pdbx_seq_one_letter_code_can
+13        14              239  _entity_poly.pdbx_seq_one_letter_code_can
+14        15              277  _entity_poly.pdbx_seq_one_letter_code_can
+15        16              205  _entity_poly.pdbx_seq_one_letter_code_can
+16        17              201  _entity_poly.pdbx_seq_one_letter_code_can
+17        18              263  _entity_poly.pdbx_seq_one_letter_code_can
+18        19              241  _entity_poly.pdbx_seq_one_letter_code_can
+19        20              264  _entity_poly.pdbx_seq_one_letter_code_can
+20        21              953  _entity_poly.pdbx_seq_one_letter_code_can
+21        22              534  _entity_poly.pdbx_seq_one_letter_code_can
+22        23              456  _entity_poly.pdbx_seq_one_letter_code_can
+23        24              422  _entity_poly.pdbx_seq_one_letter_code_can
+24        25              389  _entity_poly.pdbx_seq_one_letter_code_can
+25        26              324  _entity_poly.pdbx_seq_one_letter_code_can
+26        27              376  _entity_poly.pdbx_seq_one_letter_code_can
+27        28              377  _entity_poly.pdbx_seq_one_letter_code_can
+28        29              310  _entity_poly.pdbx_seq_one_letter_code_can
+29        30              350  _entity_poly.pdbx_seq_one_letter_code_can
+30        31              908  _entity_poly.pdbx_seq_one_letter_code_can
+31        32              494  _entity_poly.pdbx_seq_one_letter_code_can
+32        33               70  _entity_poly.pdbx_seq_one_letter_code_can
+   chain_id entity_id mapping_status candidate_entities  candidate_count
+0         A         1         Direct                  1                1
+1         B         2         Direct                  2                1
+2         C         3         Direct                  3                1
+3         D         4         Direct                  4                1
+4         E         5         Direct                  5                1
+5         F         6         Direct                  6                1
+6         G         7         Direct                  7                1
+7         H         8         Direct                  8                1
+8         I         9         Direct                  9                1
+9         J        10         Direct                 10                1
+10        K        11         Direct                 11                1
+11        L        12         Direct                 12                1
+12        M        13         Direct                 13                1
+13        N        14         Direct                 14                1
+14        O        15         Direct                 15                1
+15        P        16         Direct                 16                1
+16        Q        17         Direct                 17                1
+17        R        18         Direct                 18                1
+18        S        19         Direct                 19                1
+19        T        20         Direct                 20                1
+20        U        21         Direct                 21                1
+21        V        22         Direct                 22                1
+22        W        23         Direct                 23                1
+23        X        24         Direct                 24                1
+24        Y        25         Direct                 25                1
+25        Z        26         Direct                 26                1
+26        a        27         Direct                 27                1
+27        b        28         Direct                 28                1
+28        c        29         Direct                 29                1
+29        d        30         Direct                 30                1
+30        g         7         Direct                  7                1
+31        h         8         Direct                  8                1
+32        i         9         Direct                  9                1
+33        j        10         Direct                 10                1
+34        k        11         Direct                 11                1
+35        l        12         Direct                 12                1
+36        m        13         Direct                 13                1
+37        n        14         Direct                 14                1
+38        o        15         Direct                 15                1
+39        p        16         Direct                 16                1
+40        q        17         Direct                 17                1
+41        r        18         Direct                 18                1
+42        s        19         Direct                 19                1
+43        t        20         Direct                 20                1
+44        f        31         Direct                 31                1
+45        x        32         Direct                 32                1
+46        e        33         Direct                 33                1
+   chain_id entity_id mapping_status comparison_method mapping_confidence  \
+0         A         1         Direct     Mapped entity             Direct   
+1         B         2         Direct     Mapped entity             Direct   
+2         C         3         Direct     Mapped entity             Direct   
+3         D         4         Direct     Mapped entity             Direct   
+4         E         5         Direct     Mapped entity             Direct   
+5         F         6         Direct     Mapped entity             Direct   
+6         G         7         Direct     Mapped entity             Direct   
+7         H         8         Direct     Mapped entity             Direct   
+8         I         9         Direct     Mapped entity             Direct   
+9         J        10         Direct     Mapped entity             Direct   
+10        K        11         Direct     Mapped entity             Direct   
+11        L        12         Direct     Mapped entity             Direct   
+12        M        13         Direct     Mapped entity             Direct   
+13        N        14         Direct     Mapped entity             Direct   
+14        O        15         Direct     Mapped entity             Direct   
+15        P        16         Direct     Mapped entity             Direct   
+16        Q        17         Direct     Mapped entity             Direct   
+17        R        18         Direct     Mapped entity             Direct   
+18        S        19         Direct     Mapped entity             Direct   
+19        T        20         Direct     Mapped entity             Direct   
+20        U        21         Direct     Mapped entity             Direct   
+21        V        22         Direct     Mapped entity             Direct   
+22        W        23         Direct     Mapped entity             Direct   
+23        X        24         Direct     Mapped entity             Direct   
+24        Y        25         Direct     Mapped entity             Direct   
+25        Z        26         Direct     Mapped entity             Direct   
+26        a        27         Direct     Mapped entity             Direct   
+27        b        28         Direct     Mapped entity             Direct   
+28        c        29         Direct     Mapped entity             Direct   
+29        d        30         Direct     Mapped entity             Direct   
+30        g         7         Direct     Mapped entity             Direct   
+31        h         8         Direct     Mapped entity             Direct   
+32        i         9         Direct     Mapped entity             Direct   
+33        j        10         Direct     Mapped entity             Direct   
+34        k        11         Direct     Mapped entity             Direct   
+35        l        12         Direct     Mapped entity             Direct   
+36        m        13         Direct     Mapped entity             Direct   
+37        n        14         Direct     Mapped entity             Direct   
+38        o        15         Direct     Mapped entity             Direct   
+39        p        16         Direct     Mapped entity             Direct   
+40        q        17         Direct     Mapped entity             Direct   
+41        r        18         Direct     Mapped entity             Direct   
+42        s        19         Direct     Mapped entity             Direct   
+43        t        20         Direct     Mapped entity             Direct   
+44        f        31         Direct     Mapped entity             Direct   
+45        x        32         Direct     Mapped entity             Direct   
+46        e        33         Direct     Mapped entity             Direct   
+
+    reference_length  experimental_length  alignment_score  normalized_score  \
+0                433                  413            813.5            0.9394   
+1                440                  388            745.0            0.8466   
+2                398                  379            743.5            0.9340   
+3                418                  380            738.5            0.8834   
+4                403                  375            733.5            0.9100   
+5                439                  376            715.5            0.8149   
+6                246                  244            482.0            0.9797   
+7                234                  232            460.5            0.9840   
+8                261                  250            489.5            0.9377   
+9                248                  239            468.5            0.9446   
+10               241                  234            462.0            0.9585   
+11               269                  238            455.5            0.8467   
+12               255                  240            467.5            0.9167   
+13               239                  202            380.5            0.7960   
+14               277                  220            406.5            0.7338   
+15               205                  204            405.0            0.9878   
+16               201                  199            394.5            0.9813   
+17               263                  201            366.0            0.6958   
+18               241                  213            409.5            0.8496   
+19               264                  216            403.0            0.7633   
+20               953                  862           1671.0            0.8767   
+21               534                  472            908.0            0.8502   
+22               456                  446            884.5            0.9698   
+23               422                  380            736.5            0.8726   
+24               389                  378            748.0            0.9614   
+25               324                  286            548.0            0.8457   
+26               376                  373            742.0            0.9867   
+27               377                  191            286.5            0.3800   
+28               310                  287            560.0            0.9032   
+29               350                  257            465.0            0.6643   
+30               246                  244            482.0            0.9797   
+31               234                  232            460.5            0.9840   
+32               261                  250            489.5            0.9377   
+33               248                  239            468.5            0.9446   
+34               241                  234            462.0            0.9585   
+35               269                  238            455.5            0.8467   
+36               255                  240            467.5            0.9167   
+37               239                  202            380.5            0.7960   
+38               277                  220            406.5            0.7338   
+39               205                  204            405.0            0.9878   
+40               201                  199            394.5            0.9813   
+41               263                  201            366.0            0.6958   
+42               241                  213            409.5            0.8496   
+43               264                  216            403.0            0.7633   
+44               908                  889           1766.0            0.9725   
+45               494                   81            -47.0           -0.0476   
+46                70                   50             85.0            0.6071   
+
+    matches  mismatches  identity_percent  reference_coverage_percent  \
+0       413           0             100.0                       95.38   
+1       388           0             100.0                       88.18   
+2       379           0             100.0                       95.23   
+3       380           0             100.0                       90.91   
+4       375           0             100.0                       93.05   
+5       376           0             100.0                       85.65   
+6       244           0             100.0                       99.19   
+7       232           0             100.0                       99.15   
+8       250           0             100.0                       95.79   
+9       239           0             100.0                       96.37   
+10      234           0             100.0                       97.10   
+11      238           0             100.0                       88.48   
+12      240           0             100.0                       94.12   
+13      202           0             100.0                       84.52   
+14      220           0             100.0                       79.42   
+15      204           0             100.0                       99.51   
+16      199           0             100.0                       99.00   
+17      201           0             100.0                       76.43   
+18      213           0             100.0                       88.38   
+19      216           0             100.0                       81.82   
+20      862           0             100.0                       90.45   
+21      472           0             100.0                       88.39   
+22      446           0             100.0                       97.81   
+23      380           0             100.0                       90.05   
+24      378           0             100.0                       97.17   
+25      286           0             100.0                       88.27   
+26      373           0             100.0                       99.20   
+27      191           0             100.0                       50.66   
+28      287           0             100.0                       92.58   
+29      257           0             100.0                       73.43   
+30      244           0             100.0                       99.19   
+31      232           0             100.0                       99.15   
+32      250           0             100.0                       95.79   
+33      239           0             100.0                       96.37   
+34      234           0             100.0                       97.10   
+35      238           0             100.0                       88.48   
+36      240           0             100.0                       94.12   
+37      202           0             100.0                       84.52   
+38      220           0             100.0                       79.42   
+39      204           0             100.0                       99.51   
+40      199           0             100.0                       99.00   
+41      201           0             100.0                       76.43   
+42      213           0             100.0                       88.38   
+43      216           0             100.0                       81.82   
+44      889           0             100.0                       97.91   
+45       81           0             100.0                       16.40   
+46       50           0             100.0                       71.43   
+
+    experimental_coverage_percent  aligned_positions  \
+0                           100.0                413   
+1                           100.0                388   
+2                           100.0                379   
+3                           100.0                380   
+4                           100.0                375   
+5                           100.0                376   
+6                           100.0                244   
+7                           100.0                232   
+8                           100.0                250   
+9                           100.0                239   
+10                          100.0                234   
+11                          100.0                238   
+12                          100.0                240   
+13                          100.0                202   
+14                          100.0                220   
+15                          100.0                204   
+16                          100.0                199   
+17                          100.0                201   
+18                          100.0                213   
+19                          100.0                216   
+20                          100.0                862   
+21                          100.0                472   
+22                          100.0                446   
+23                          100.0                380   
+24                          100.0                378   
+25                          100.0                286   
+26                          100.0                373   
+27                          100.0                191   
+28                          100.0                287   
+29                          100.0                257   
+30                          100.0                244   
+31                          100.0                232   
+32                          100.0                250   
+33                          100.0                239   
+34                          100.0                234   
+35                          100.0                238   
+36                          100.0                240   
+37                          100.0                202   
+38                          100.0                220   
+39                          100.0                204   
+40                          100.0                199   
+41                          100.0                201   
+42                          100.0                213   
+43                          100.0                216   
+44                          100.0                889   
+45                          100.0                 81   
+46                          100.0                 50   
+
+    missing_reference_residues  extra_experimental_residues  
+0                           20                            0  
+1                           52                            0  
+2                           19                            0  
+3                           38                            0  
+4                           28                            0  
+5                           63                            0  
+6                            2                            0  
+7                            2                            0  
+8                           11                            0  
+9                            9                            0  
+10                           7                            0  
+11                          31                            0  
+12                          15                            0  
+13                          37                            0  
+14                          57                            0  
+15                           1                            0  
+16                           2                            0  
+17                          62                            0  
+18                          28                            0  
+19                          48                            0  
+20                          91                            0  
+21                          62                            0  
+22                          10                            0  
+23                          42                            0  
+24                          11                            0  
+25                          38                            0  
+26                           3                            0  
+27                         186                            0  
+28                          23                            0  
+29                          93                            0  
+30                           2                            0  
+31                           2                            0  
+32                          11                            0  
+33                           9                            0  
+34                           7                            0  
+35                          31                            0  
+36                          15                            0  
+37                          37                            0  
+38                          57                            0  
+39                           1                            0  
+40                           2                            0  
+41                          62                            0  
+42                          28                            0  
+43                          48                            0  
+44                          19                            0  
+45                         413                            0  
+46                          20                            0  
+   record_id chain_id residue_name sequence_id insertion_code model_number
+0          1        A          MET           1           None            1
+1          2        A          PRO           2           None            1
+2          3        A          ASP           3           None            1
+3          4        A          TYR           4           None            1
+4          5        A          LEU           5           None            1
+5          6        A          GLY           6           None            1
+6          7        A          ALA           7           None            1
+7          8        A          ASP           8           None            1
+8          9        A          GLN           9           None            1
+9         10        A          ARG          10           None            1
+10        11        A          LYS          11           None            1
+11        12        A          THR          12           None            1
+12        13        A          LYS          13           None            1
+13        14        A          GLU          14           None            1
+14        15        A          ASP          15           None            1
+15        16        A          GLU          16           None            1
+16        17        A          LYS          17           None            1
+17        18        A          ASP          18           None            1
+18        19        A          ASP          19           None            1
+19        20        A          LYS          20           None            1
+   record_id chain_id residue_name sequence_id atom_name insertion_code  \
+0          1        A          LYS         100        NZ           None   
+1          2        A          ARG         144        CZ           None   
+2          3        A          ARG         144       NH1           None   
+3          4        A          ARG         144       NH2           None   
+4          5        A          ILE         403       CG2           None   
+5          6        B          GLU          95        CG           None   
+6          7        B          GLU          95        CD           None   
+7          8        B          GLU          95       OE1           None   
+8          9        B          GLU          95       OE2           None   
+9         10        B          THR         125       CG2           None   
+10        11        B          HIS         157       CD2           None   
+11        12        B          HIS         157       NE2           None   
+12        13        B          GLU         209        CG           None   
+13        14        B          GLU         209        CD           None   
+14        15        B          GLU         209       OE1           None   
+15        16        B          GLU         209       OE2           None   
+16        17        C          ASP         100        CG           None   
+17        18        C          ASP         100       OD1           None   
+18        19        C          ASP         100       OD2           None   
+19        20        C          THR         109       CG2           None   
+
+   model_number  
+0             1  
+1             1  
+2             1  
+3             1  
+4             1  
+5             1  
+6             1  
+7             1  
+8             1  
+9             1  
+10            1  
+11            1  
+12            1  
+13            1  
+14            1  
+15            1  
+16            1  
+17            1  
+18            1  
+19            1  
+  altloc  atom_record_count
+0      A                  3
+1      B                  3
+       model_index model_id chain_id residue_key hetero_flag  residue_id  \
+21750            1        0        I       I::7:                       7   
+21751            1        0        I       I::7:                       7   
+21754            1        0        I       I::7:                       7   
+21755            1        0        I       I::7:                       7   
+21756            1        0        I       I::7:                       7   
+21757            1        0        I       I::7:                       7   
+
+      insertion_code residue_name atom_name element           x           y  \
+21750                         SER        CA       C  208.587006  226.203995   
+21751                         SER        CA       C  208.587006  226.205002   
+21754                         SER        CB       C  208.720001  224.893997   
+21755                         SER        CB       C  208.722000  224.895004   
+21756                         SER        OG       O  207.667007  224.759995   
+21757                         SER        OG       O  207.597000  224.692001   
+
+                z  occupancy  bfactor altloc  coordinates_valid  
+21750  208.177002        0.5    76.14      A               True  
+21751  208.177002        0.5    76.14      B               True  
+21754  208.966003        0.5    76.14      A               True  
+21755  208.966995        0.5    76.14      B               True  
+21756  209.903000        0.5    76.14      A               True  
+21757  209.802994        0.5    76.14      B               True  
+       model_index model_id chain_id residue_key hetero_flag  residue_id  \
+21750            1        0        I       I::7:                       7   
+21751            1        0        I       I::7:                       7   
+21754            1        0        I       I::7:                       7   
+21755            1        0        I       I::7:                       7   
+21756            1        0        I       I::7:                       7   
+21757            1        0        I       I::7:                       7   
+21902            1        0        I      I::25:                      25   
+21905            1        0        I      I::25:                      25   
+21906            1        0        I      I::25:                      25   
+21907            1        0        I      I::25:                      25   
+21908            1        0        I      I::25:                      25   
+26389            1        0        K     K::120:                     120   
+26390            1        0        K     K::120:                     120   
+26391            1        0        K     K::120:                     120   
+26392            1        0        K     K::120:                     120   
+26393            1        0        K     K::120:                     120   
+27792            1        0        L      L::65:                      65   
+27795            1        0        L      L::65:                      65   
+27796            1        0        L      L::65:                      65   
+27797            1        0        L      L::65:                      65   
+27798            1        0        L      L::65:                      65   
+27799            1        0        L      L::65:                      65   
+27800            1        0        L      L::65:                      65   
+27855            1        0        L      L::73:                      73   
+27858            1        0        L      L::73:                      73   
+27859            1        0        L      L::73:                      73   
+28468            1        0        L     L::152:                     152   
+28471            1        0        L     L::152:                     152   
+28472            1        0        L     L::152:                     152   
+28473            1        0        L     L::152:                     152   
+
+      insertion_code residue_name atom_name element           x           y  \
+21750                         SER        CA       C  208.587006  226.203995   
+21751                         SER        CA       C  208.587006  226.205002   
+21754                         SER        CB       C  208.720001  224.893997   
+21755                         SER        CB       C  208.722000  224.895004   
+21756                         SER        OG       O  207.667007  224.759995   
+21757                         SER        OG       O  207.597000  224.692001   
+21902                         MET        CA       C  208.462006  207.697006   
+21905                         MET        CB       C  208.264008  207.787994   
+21906                         MET        CG       C  206.835007  207.537994   
+21907                         MET        SD       S  206.475998  208.246002   
+21908                         MET        CE       C  204.686005  208.223007   
+26389                         ALA         N       N  189.675003  245.056000   
+26390                         ALA        CA       C  191.128998  245.102997   
+26391                         ALA         C       C  191.643005  245.647003   
+26392                         ALA         O       O  190.953003  246.397003   
+26393                         ALA        CB       C  191.634003  245.962997   
+27792                         HIS        CA       C  182.339005  265.635010   
+27795                         HIS        CB       C  181.117996  265.998993   
+27796                         HIS        CG       C  179.949005  266.490997   
+27797                         HIS       ND1       N  179.024002  265.641998   
+27798                         HIS       CD2       C  179.546997  267.744995   
+27799                         HIS       CE1       C  178.106995  266.351990   
+27800                         HIS       NE2       N  178.401001  267.631012   
+27855                         SER        CA       C  191.367004  266.402008   
+27858                         SER        CB       C  192.091003  267.704010   
+27859                         SER        OG       O  193.005997  267.507996   
+28468                         ASN        CA       C  198.932999  262.519012   
+28471                         ASN        CB       C  200.425995  262.786011   
+28472                         ASN        CG       C  200.697998  263.799988   
+28473                         ASN       OD1       O  199.772995  264.346008   
+
+                z  occupancy  bfactor altloc  coordinates_valid  
+21750  208.177002        0.5    76.14      A               True  
+21751  208.177002        0.5    76.14      B               True  
+21754  208.966003        0.5    76.14      A               True  
+21755  208.966995        0.5    76.14      B               True  
+21756  209.903000        0.5    76.14      A               True  
+21757  209.802994        0.5    76.14      B               True  
+21902  204.018005        0.5    91.95   None               True  
+21905  202.505997        0.5    91.95   None               True  
+21906  202.059006        0.5    91.95   None               True  
+21907  200.442001        0.5    91.95   None               True  
+21908  200.457001        0.5    91.95   None               True  
+26389  193.841003        0.5    63.34   None               True  
+26390  193.835007        0.5    63.34   None               True  
+26391  195.162003        0.5    63.34   None               True  
+26392  195.858994        0.5    63.34   None               True  
+26393  192.677994        0.5    63.34   None               True  
+27792  197.653000        0.5    64.63   None               True  
+27795  196.807999        0.5    64.63   None               True  
+27796  197.602997        0.5    64.63   None               True  
+27797  198.171005        0.5    64.63   None               True  
+27798  197.912994        0.5    64.63   None               True  
+27799  198.802002        0.5    64.63   None               True  
+27800  198.660995        0.5    64.63   None               True  
+27855  197.955002        0.5    62.19   None               True  
+27858  197.606003        0.5    62.19   None               True  
+27859  196.544998        0.5    62.19   None               True  
+28468  212.360992        0.5    67.76   None               True  
+28471  212.556000        0.5    67.76   None               True  
+28472  213.643997        0.5    67.76   None               True  
+28473  214.244995        0.5    67.76   None               True  
+<Figure size 900x500 with 1 Axes>
+    model_index model_id chain_id chain_id_display  atom_conformer_count  \
+0             1        0        A                A                  3240   
+1             1        0        B                B                  3042   
+2             1        0        C                C                  2968   
+3             1        0        D                D                  3039   
+4             1        0        E                E                  2860   
+5             1        0        F                F                  2858   
+6             1        0        G                G                  1889   
+7             1        0        H                H                  1805   
+8             1        0        I                I                  1958   
+9             1        0        J                J                  1880   
+10            1        0        K                K                  1777   
+11            1        0        L                L                  1866   
+12            1        0        M                M                  1876   
+13            1        0        N                N                  1514   
+14            1        0        O                O                  1649   
+15            1        0        P                P                  1587   
+16            1        0        Q                Q                  1588   
+17            1        0        R                R                  1559   
+18            1        0        S                S                  1641   
+19            1        0        T                T                  1683   
+20            1        0        U                U                  6748   
+21            1        0        V                V                  3754   
+22            1        0        W                W                  3635   
+23            1        0        X                X                  3009   
+24            1        0        Y                Y                  3115   
+25            1        0        Z                Z                  2281   
+26            1        0        a                a                  2995   
+27            1        0        b                b                  1458   
+28            1        0        c                c                  2260   
+29            1        0        d                d                  2116   
+30            1        0        e                e                   425   
+31            1        0        f                f                  6866   
+32            1        0        g                g                  1880   
+33            1        0        h                h                  1805   
+34            1        0        i                i                  1955   
+35            1        0        j                j                  1861   
+36            1        0        k                k                  1782   
+37            1        0        l                l                  1861   
+38            1        0        m                m                  1881   
+39            1        0        n                n                  1510   
+40            1        0        o                o                  1659   
+41            1        0        p                p                  1591   
+42            1        0        q                q                  1588   
+43            1        0        r                r                  1559   
+44            1        0        s                s                  1654   
+45            1        0        t                t                  1687   
+46            1        0        x                x                   626   
+
+    unique_residue_count  unique_atom_site_count  altloc_atom_record_count  \
+0                    413                    3240                         0   
+1                    388                    3042                         0   
+2                    379                    2968                         0   
+3                    380                    3039                         0   
+4                    375                    2860                         0   
+5                    376                    2858                         0   
+6                    244                    1889                         0   
+7                    232                    1805                         0   
+8                    250                    1955                         6   
+9                    239                    1880                         0   
+10                   234                    1777                         0   
+11                   238                    1866                         0   
+12                   240                    1876                         0   
+13                   202                    1514                         0   
+14                   220                    1649                         0   
+15                   204                    1587                         0   
+16                   199                    1588                         0   
+17                   201                    1559                         0   
+18                   213                    1641                         0   
+19                   216                    1683                         0   
+20                   862                    6748                         0   
+21                   472                    3754                         0   
+22                   446                    3635                         0   
+23                   380                    3009                         0   
+24                   378                    3115                         0   
+25                   286                    2281                         0   
+26                   373                    2995                         0   
+27                   191                    1458                         0   
+28                   287                    2260                         0   
+29                   257                    2116                         0   
+30                    50                     425                         0   
+31                   889                    6866                         0   
+32                   244                    1880                         0   
+33                   232                    1805                         0   
+34                   250                    1955                         0   
+35                   239                    1861                         0   
+36                   234                    1782                         0   
+37                   238                    1861                         0   
+38                   240                    1881                         0   
+39                   202                    1510                         0   
+40                   220                    1659                         0   
+41                   204                    1591                         0   
+42                   199                    1588                         0   
+43                   201                    1559                         0   
+44                   213                    1654                         0   
+45                   216                    1687                         0   
+46                    81                     626                         0   
+
+    altloc_unique_site_count  low_occupancy_count  missing_occupancy_count  \
+0                          0                    0                        0   
+1                          0                    0                        0   
+2                          0                    0                        0   
+3                          0                    0                        0   
+4                          0                    0                        0   
+5                          0                    0                        0   
+6                          0                    0                        0   
+7                          0                    0                        0   
+8                          3                   11                        0   
+9                          0                    0                        0   
+10                         0                    5                        0   
+11                         0                   15                        0   
+12                         0                    3                        0   
+13                         0                    5                        0   
+14                         0                   10                        0   
+15                         0                   17                        0   
+16                         0                   10                        0   
+17                         0                   21                        0   
+18                         0                    3                        0   
+19                         0                    5                        0   
+20                         0                    0                        0   
+21                         0                    0                        0   
+22                         0                    0                        0   
+23                         0                   31                        0   
+24                         0                    0                        0   
+25                         0                    0                        0   
+26                         0                    0                        0   
+27                         0                   21                        0   
+28                         0                    4                        0   
+29                         0                   29                        0   
+30                         0                    0                        0   
+31                         0                    0                        0   
+32                         0                    0                        0   
+33                         0                   13                        0   
+34                         0                    5                        0   
+35                         0                    0                        0   
+36                         0                   14                        0   
+37                         0                    0                        0   
+38                         0                   20                        0   
+39                         0                    5                        0   
+40                         0                   13                        0   
+41                         0                   42                        0   
+42                         0                   15                        0   
+43                         0                    0                        0   
+44                         0                    6                        0   
+45                         0                    0                        0   
+46                         0                    0                        0   
+
+    invalid_occupancy_count  invalid_coordinate_count  
+0                         0                         0  
+1                         0                         0  
+2                         0                         0  
+3                         0                         0  
+4                         0                         0  
+5                         0                         0  
+6                         0                         0  
+7                         0                         0  
+8                         0                         0  
+9                         0                         0  
+10                        0                         0  
+11                        0                         0  
+12                        0                         0  
+13                        0                         0  
+14                        0                         0  
+15                        0                         0  
+16                        0                         0  
+17                        0                         0  
+18                        0                         0  
+19                        0                         0  
+20                        0                         0  
+21                        0                         0  
+22                        0                         0  
+23                        0                         0  
+24                        0                         0  
+25                        0                         0  
+26                        0                         0  
+27                        0                         0  
+28                        0                         0  
+29                        0                         0  
+30                        0                         0  
+31                        0                         0  
+32                        0                         0  
+33                        0                         0  
+34                        0                         0  
+35                        0                         0  
+36                        0                         0  
+37                        0                         0  
+38                        0                         0  
+39                        0                         0  
+40                        0                         0  
+41                        0                         0  
+42                        0                         0  
+43                        0                         0  
+44                        0                         0  
+45                        0                         0  
+46                        0                         0  
+                                            Parameter   Value
+0                                    Number of models       1
+1   Observed protein atom conformer records (all m...  105840
+2              Unique protein atom sites (all models)  105837
+3                        Additional conformer records       3
+4              Observed protein residues (all models)   13527
+5             Observed protein residues (first model)   13527
+6         Unobserved / zero-occupancy residue records    1855
+7            Unobserved / zero-occupancy atom records     556
+8             Atom records with alternative positions       6
+9        Unique atom sites with alternative positions       3
+10                    Atom records with low occupancy     323
+11                Atom records with missing occupancy       0
+12                Atom records with invalid occupancy       0
+13              Atom records with invalid coordinates       0
+14                 Reference residue category present    True
+15                    Reference atom category present    True
+16                                  CELL 7 atom count  105837
+17            CELL 7 matches first-model atom records   False
+18                               CELL 6 residue count   13527
+19           CELL 6 matches first-model residue count    True
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[19], line 30[0m
+[0;32m     27[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mpathlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Path
+[0;32m     29[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m PDBIO, Select
+[1;32m---> 30[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;21;01m.[39;00m[38;5;21;01mMMCIFIO[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m MMCIFIO
+[0;32m     31[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPolypeptide[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m is_aa
+[0;32m     34[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124m=[39m[38;5;124m"[39m [38;5;241m*[39m [38;5;241m70[39m)
+
+[1;31mModuleNotFoundError[0m: No module named 'Bio.PDB.MMCIFIO'
+
+============================================================
+ERROR
+============================================================
+
+Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_20072\2401576057.py", line 536, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# ============================================================
+# CELL 15. SEPARATE PROTEIN CHAINS AND HETERO COMPONENTS
+# ============================================================
+# Назначение:
+# 1. Разделение белковых атомов и остатков.
+# 2. Отдельное сохранение небелковых компонентов и воды.
+# 3. Формирование сводки небелковых компонентов.
+# 4. Сохранение отдельных файлов белковых цепей.
+# 5. Проверка согласованности с CELL 6–8.
+#
+# ВАЖНО:
+# - Используется первая модель структуры.
+# - CELL 6 и CELL 7 уже содержат белковые данные.
+# - Альтернативные положения атомов анализируются в CELL 14.
+# - Небелковые компоненты не считаются автоматически
+#   лекарственными лигандами.
+# - Для цепей с идентификаторами длиннее одного символа
+#   используется mmCIF, поскольку PDB ограничивает
+#   длину идентификатора цепи одним символом.
+# ============================================================
+
+import json
+import re
+import numpy as np
+import pandas as pd
+
+from pathlib import Path
+
+from Bio.PDB import PDBIO, Select
+from Bio.PDB.MMCIFIO import MMCIFIO
+from Bio.PDB.Polypeptide import is_aa
+
+
+print("=" * 70)
+print("CELL 15. SEPARATE PROTEIN CHAINS AND HETERO COMPONENTS")
+print("=" * 70)
+
+
+# ------------------------------------------------------------
+# 1. Проверка входных данных
+# ------------------------------------------------------------
+
+required_variables = [
+    "PDB_ID",
+    "structure",
+    "PDB_RESULTS_DIR",
+    "df_atoms",
+    "df_residues",
+    "df_hetero",
+    "df_water"
+]
+
+for variable in required_variables:
+
+    if variable not in globals():
+
+        raise NameError(
+            f"Переменная {variable} не определена. "
+            "Проверьте выполнение предыдущих ячеек."
+        )
+
+
+PDB_ID = str(PDB_ID).strip().upper()
+
+if not re.fullmatch(r"[A-Z0-9]{4}", PDB_ID):
+
+    raise ValueError(
+        f"Некорректный PDB ID: {PDB_ID}"
+    )
+
+
+PDB_RESULTS_DIR = Path(PDB_RESULTS_DIR)
+
+if PDB_RESULTS_DIR.name.upper() != PDB_ID:
+
+    raise ValueError(
+        "Папка результатов не соответствует текущему PDB ID.\n"
+        f"PDB_ID: {PDB_ID}\n"
+        f"Папка: {PDB_RESULTS_DIR}"
+    )
+
+
+PDB_RESULTS_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+input_tables = {
+
+    "df_atoms": df_atoms,
+
+    "df_residues": df_residues,
+
+    "df_hetero": df_hetero,
+
+    "df_water": df_water
+
+}
+
+
+for table_name, table in input_tables.items():
+
+    if not isinstance(table, pd.DataFrame):
+
+        raise TypeError(
+            f"{table_name} должен быть pandas DataFrame."
+        )
+
+
+if df_atoms.empty:
+
+    raise ValueError(
+        "Таблица df_atoms не содержит белковых атомов."
+    )
+
+
+if df_residues.empty:
+
+    raise ValueError(
+        "Таблица df_residues не содержит белковых остатков."
+    )
+
+
+required_atom_columns = {
+
+    "pdb_id",
+
+    "chain_id",
+
+    "residue_key",
+
+    "atom_name"
+
+}
+
+
+missing_atom_columns = (
+    required_atom_columns - set(df_atoms.columns)
+)
+
+
+if missing_atom_columns:
+
+    raise KeyError(
+        "В df_atoms отсутствуют столбцы: "
+        f"{sorted(missing_atom_columns)}"
+    )
+
+
+required_residue_columns = {
+
+    "pdb_id",
+
+    "chain_id",
+
+    "residue_key"
+
+}
+
+
+missing_residue_columns = (
+    required_residue_columns - set(df_residues.columns)
+)
+
+
+if missing_residue_columns:
+
+    raise KeyError(
+        "В df_residues отсутствуют столбцы: "
+        f"{sorted(missing_residue_columns)}"
+    )
+
+
+# ------------------------------------------------------------
+# 2. Проверка принадлежности таблиц текущей структуре
+# ------------------------------------------------------------
+
+def validate_table_pdb_id(table_name, table, required=True):
+
+    if "pdb_id" not in table.columns:
+
+        if required:
+
+            raise KeyError(
+                f"В {table_name} отсутствует столбец pdb_id."
+            )
+
+        print(
+            f"WARNING: в {table_name} нет столбца pdb_id."
+        )
+
+        return
+
+    if table["pdb_id"].isna().any():
+
+        raise ValueError(
+            f"{table_name} содержит пустые значения pdb_id."
+        )
+
+    pdb_ids = (
+        table["pdb_id"]
+        .astype(str)
+        .str.strip()
+        .str.upper()
+        .unique()
+    )
+
+    if set(pdb_ids) != {PDB_ID}:
+
+        raise ValueError(
+            f"{table_name} содержит PDB ID, "
+            f"не соответствующие текущей структуре: "
+            f"{sorted(pdb_ids)}"
+        )
+
+
+validate_table_pdb_id(
+    "df_atoms",
+    df_atoms
+)
+
+validate_table_pdb_id(
+    "df_residues",
+    df_residues
+)
+
+validate_table_pdb_id(
+    "df_hetero",
+    df_hetero,
+    required=False
+)
+
+validate_table_pdb_id(
+    "df_water",
+    df_water,
+    required=False
+)
+
+
+print(f"PDB ID: {PDB_ID}")
+print(f"Results directory: {PDB_RESULTS_DIR}")
+
+
+# ------------------------------------------------------------
+# 3. Выбор первой модели
+# ------------------------------------------------------------
+
+models = list(
+    structure.get_models()
+)
+
+
+if not models:
+
+    raise ValueError(
+        "В структуре отсутствуют модели."
+    )
+
+
+first_model = models[0]
+
+MODEL_INDEX = 1
+
+
+print("\nMODEL INFORMATION")
+
+print(
+    f"Total models in structure: {len(models)}"
+)
+
+print(
+    f"Selected model ID: {first_model.id}"
+)
+
+print(
+    f"Selected model index: {MODEL_INDEX}"
+)
+
+print(
+    "Analysis scope: first model only"
+)
+
+
+# ------------------------------------------------------------
+# 4. Вспомогательные функции
+# ------------------------------------------------------------
+
+def normalize_chain_id(value):
+    """
+    Сохраняет пустой идентификатор цепи как пустую строку.
+    """
+
+    if value is None or pd.isna(value):
+
+        return ""
+
+    return str(value).strip()
+
+
+def display_chain_id(value):
+
+    normalized = normalize_chain_id(value)
+
+    return normalized if normalized else "<blank>"
+
+
+def safe_filename(value):
+
+    value = str(value).strip()
+
+    if not value:
+
+        return "blank"
+
+    return re.sub(
+        r"[^A-Za-z0-9_-]",
+        "_",
+        value
+    )
+
+
+def make_residue_key(chain_id, hetero_flag, residue_id, insertion_code):
+
+    """
+    Формат ключа согласован с CELL 6–8:
+    chain_id:hetero_flag:residue_id:insertion_code
+    """
+
+    return (
+        f"{chain_id}:"
+        f"{hetero_flag}:"
+        f"{residue_id}:"
+        f"{insertion_code}"
+    )
+
+
+def json_safe(value):
+    """
+    Рекурсивное преобразование значений pandas/NumPy
+    в JSON-совместимые типы.
+    """
+
+    if value is None:
+
+        return None
+
+    if isinstance(value, dict):
+
+        return {
+            str(key): json_safe(item)
+            for key, item in value.items()
+        }
+
+    if isinstance(value, (list, tuple, set)):
+
+        return [
+            json_safe(item)
+            for item in value
+        ]
+
+    if isinstance(value, np.ndarray):
+
+        return [
+            json_safe(item)
+            for item in value.tolist()
+        ]
+
+    if isinstance(value, (np.integer,)):
+
+        return int(value)
+
+    if isinstance(value, (np.floating, float)):
+
+        value = float(value)
+
+        return (
+            value
+            if np.isfinite(value)
+            else None
+        )
+
+    if isinstance(value, (np.bool_, bool)):
+
+        return bool(value)
+
+    if isinstance(value, Path):
+
+        return str(value)
+
+    if isinstance(value, pd.Timestamp):
+
+        return value.isoformat()
+
+    if value is pd.NA or value is pd.NaT:
+
+        return None
+
+    if isinstance(value, (str, int)):
+
+        return value
+
+    try:
+
+        missing = pd.isna(value)
+
+        if isinstance(missing, (bool, np.bool_)) and missing:
+
+            return None
+
+    except (TypeError, ValueError):
+
+        pass
+
+    return str(value)
+
+
+# ------------------------------------------------------------
+# 5. Определение белковых цепей первой модели
+# ------------------------------------------------------------
+
+protein_chain_ids = set()
+
+protein_residue_records = []
+
+structure_atom_count = 0
+
+
+for chain in first_model:
+
+    chain_id = normalize_chain_id(chain.id)
+
+    for residue in chain:
+
+        if not is_aa(
+            residue,
+            standard=False
+        ):
+
+            continue
+
+        protein_chain_ids.add(chain_id)
+
+        residue_atoms = list(
+            residue.get_atoms()
+        )
+
+        structure_atom_count += len(
+            residue_atoms
+        )
+
+        hetero_flag = str(
+            residue.id[0]
+        ).strip()
+
+        residue_id = int(
+            residue.id[1]
+        )
+
+        insertion_code = str(
+            residue.id[2]
+        ).strip()
+
+
+        residue_key = make_residue_key(
+
+            chain_id,
+
+            hetero_flag,
+
+            residue_id,
+
+            insertion_code
+
+        )
+
+
+        protein_residue_records.append({
+
+            "pdb_id": PDB_ID,
+
+            "model_index": MODEL_INDEX,
+
+            "model_id": first_model.id,
+
+            "chain_id": chain_id,
+
+            "chain_id_display": display_chain_id(
+                chain_id
+            ),
+
+            "residue_key": residue_key,
+
+            "hetero_flag": hetero_flag,
+
+            "residue_id": residue_id,
+
+            "insertion_code": insertion_code,
+
+            "residue_name": residue.resname.strip(),
+
+            "atom_count": len(residue_atoms)
+
+        })
+
+
+df_structure_protein_residues = pd.DataFrame(
+    protein_residue_records
+)
+
+
+if not protein_chain_ids:
+
+    raise ValueError(
+        "В первой модели не обнаружены белковые цепи."
+    )
+
+
+if df_structure_protein_residues["residue_key"].duplicated().any():
+
+    raise RuntimeError(
+        "Обнаружены повторяющиеся residue_key "
+        "в таблице остатков первой модели."
+    )
+
+
+print("\n" + "-" * 70)
+print("PROTEIN STRUCTURE")
+print("-" * 70)
+
+print(
+    f"Protein chains: {len(protein_chain_ids)}"
+)
+
+print(
+    f"Protein residues: {len(df_structure_protein_residues)}"
+)
+
+print(
+    f"Protein atoms in first model: {structure_atom_count}"
+)
+
+print(
+    "Chain IDs:",
+    [
+        display_chain_id(x)
+        for x in sorted(protein_chain_ids)
+    ]
+)
+
+
+# ------------------------------------------------------------
+# 6. Формирование отдельных таблиц
+# ------------------------------------------------------------
+
+# CELL 6 и CELL 7 уже содержат белковые данные.
+# Повторная фильтрация не выполняется.
+
+df_protein_atoms = df_atoms.copy()
+
+df_protein_residues = df_residues.copy()
+
+
+# Небелковые компоненты.
+
+df_hetero_components = df_hetero.copy()
+
+
+# Сохраняем исходное имя для совместимости с последующими
+# ячейками, если оно где-либо используется.
+#
+# ВАЖНО: это не подтверждённый набор лекарственных лигандов.
+# Это все небелковые компоненты из CELL 8.
+
+df_ligand_candidates = df_hetero_components.copy()
+
+
+# Вода.
+
+df_water_components = df_water.copy()
+
+
+# ------------------------------------------------------------
+# 7. Проверка согласованности CELL 6 и CELL 7
+# ------------------------------------------------------------
+
+print("\n" + "-" * 70)
+print("DATAFRAME CONSISTENCY CHECK")
+print("-" * 70)
+
+
+# 7.1. Проверка количества атомов.
+
+cell7_atom_count = len(
+    df_protein_atoms
+)
+
+atom_count_match = (
+    cell7_atom_count == structure_atom_count
+)
+
+
+print(
+    f"Atoms in structure: {structure_atom_count}"
+)
+
+print(
+    f"Atoms in CELL 7: {cell7_atom_count}"
+)
+
+print(
+    f"Atom count matches: {atom_count_match}"
+)
+
+
+# 7.2. Проверка количества остатков.
+
+structure_residue_count = len(
+    df_structure_protein_residues
+)
+
+cell6_residue_count = len(
+    df_protein_residues
+)
+
+residue_count_match = (
+    structure_residue_count == cell6_residue_count
+)
+
+
+print(
+    f"Residues in structure: {structure_residue_count}"
+)
+
+print(
+    f"Residues in CELL 6: {cell6_residue_count}"
+)
+
+print(
+    f"Residue count matches: {residue_count_match}"
+)
+
+
+# 7.3. Сверка residue_key.
+
+structure_residue_keys = set(
+    df_structure_protein_residues["residue_key"]
+    .astype(str)
+)
+
+cell6_residue_keys = set(
+    df_protein_residues["residue_key"]
+    .astype(str)
+)
+
+
+residue_keys_match = (
+    structure_residue_keys == cell6_residue_keys
+)
+
+
+missing_in_cell6 = sorted(
+    structure_residue_keys - cell6_residue_keys
+)
+
+extra_in_cell6 = sorted(
+    cell6_residue_keys - structure_residue_keys
+)
+
+
+print(
+    f"Residue keys match: {residue_keys_match}"
+)
+
+print(
+    f"Missing residue keys in CELL 6: {len(missing_in_cell6)}"
+)
+
+print(
+    f"Extra residue keys in CELL 6: {len(extra_in_cell6)}"
+)
+
+
+# 7.4. Проверка цепей.
+
+structure_chain_ids = set(
+    protein_chain_ids
+)
+
+
+cell7_chain_ids = set(
+    df_protein_atoms["chain_id"]
+    .map(normalize_chain_id)
+)
+
+
+cell6_chain_ids = set(
+    df_protein_residues["chain_id"]
+    .map(normalize_chain_id)
+)
+
+
+chain_ids_match = (
+    structure_chain_ids == cell7_chain_ids
+)
+
+
+residue_chain_ids_match = (
+    structure_chain_ids == cell6_chain_ids
+)
+
+
+print(
+    "Chain IDs in structure:",
+    sorted(structure_chain_ids)
+)
+
+print(
+    "Chain IDs in CELL 7:",
+    sorted(cell7_chain_ids)
+)
+
+print(
+    "Chain IDs in CELL 6:",
+    sorted(cell6_chain_ids)
+)
+
+print(
+    f"Structure / CELL 7 chain match: {chain_ids_match}"
+)
+
+print(
+    f"Structure / CELL 6 chain match: "
+    f"{residue_chain_ids_match}"
+)
+
+
+# 7.5. Проверка уникальности residue_key в исходных таблицах.
+
+cell6_duplicate_keys = int(
+    df_protein_residues["residue_key"].duplicated().sum()
+)
+
+
+cell7_residue_key_count = (
+    df_protein_atoms["residue_key"].nunique()
+)
+
+
+cell7_residue_key_match = (
+    cell7_residue_key_count == structure_residue_count
+)
+
+
+print(
+    f"Duplicate residue keys in CELL 6: "
+    f"{cell6_duplicate_keys}"
+)
+
+print(
+    f"Unique residue keys in CELL 7: "
+    f"{cell7_residue_key_count}"
+)
+
+print(
+    f"CELL 7 residue key count matches structure: "
+    f"{cell7_residue_key_match}"
+)
+
+
+# Критические проверки.
+
+if not atom_count_match:
+
+    raise RuntimeError(
+        "Количество белковых атомов в структуре "
+        "не совпадает с CELL 7. "
+        "Проверьте обработку altloc."
+    )
+
+
+if not residue_count_match:
+
+    raise RuntimeError(
+        "Количество белковых остатков в структуре "
+        "не совпадает с CELL 6."
+    )
+
+
+if not residue_keys_match:
+
+    raise RuntimeError(
+        "Наборы residue_key не совпадают между структурой "
+        "и CELL 6."
+    )
+
+
+if not chain_ids_match:
+
+    raise RuntimeError(
+        "Наборы цепей не совпадают между структурой "
+        "и CELL 7."
+    )
+
+
+if not residue_chain_ids_match:
+
+    raise RuntimeError(
+        "Наборы цепей не совпадают между структурой "
+        "и CELL 6."
+    )
+
+
+if cell6_duplicate_keys > 0:
+
+    raise RuntimeError(
+        "В CELL 6 обнаружены повторяющиеся residue_key."
+    )
+
+
+if not cell7_residue_key_match:
+
+    raise RuntimeError(
+        "Число уникальных residue_key в CELL 7 "
+        "не совпадает с количеством остатков структуры."
+    )
+
+
+# ------------------------------------------------------------
+# 8. Сводка небелковых компонентов
+# ------------------------------------------------------------
+
+df_component_summary = pd.DataFrame(
+
+    columns=[
+        "residue_name",
+        "component_type",
+        "occurrence_count"
+    ]
+
+)
+
+
+if not df_hetero_components.empty:
+
+    residue_name_col = next(
+
+        (
+            column
+            for column in [
+                "residue_name",
+                "resname",
+                "component_name"
+            ]
+            if column in df_hetero_components.columns
+        ),
+
+        None
+
+    )
+
+
+    component_type_col = next(
+
+        (
+            column
+            for column in [
+                "component_type",
+                "classification",
+                "component_class"
+            ]
+            if column in df_hetero_components.columns
+        ),
+
+        None
+
+    )
+
+
+    if residue_name_col is not None:
+
+        component_data = df_hetero_components.copy()
+
+
+        component_data["residue_name"] = (
+            component_data[residue_name_col]
+            .fillna("UNKNOWN")
+            .astype(str)
+            .str.strip()
+        )
+
+
+        if component_type_col is not None:
+
+            component_data["component_type"] = (
+                component_data[component_type_col]
+                .fillna("Not classified")
+                .astype(str)
+                .str.strip()
+            )
+
+        else:
+
+            component_data["component_type"] = (
+                "Not classified"
+            )
+
+
+        df_component_summary = (
+
+            component_data
+            .groupby(
+                [
+                    "residue_name",
+                    "component_type"
+                ],
+                dropna=False
+            )
+            .size()
+            .reset_index(
+                name="occurrence_count"
+            )
+
+        )
+
+
+print("\n" + "-" * 70)
+print("HETERO COMPONENTS")
+print("-" * 70)
+
+print(
+    f"Total hetero component records: "
+    f"{len(df_hetero_components)}"
+)
+
+
+if not df_component_summary.empty:
+
+    display(
+        df_component_summary
+    )
+
+else:
+
+    print(
+        "No hetero components found or residue names unavailable."
+    )
+
+
+# ------------------------------------------------------------
+# 9. Сохранение отдельных файлов белковых цепей
+# ------------------------------------------------------------
+
+class ProteinChainSelect(Select):
+
+    """
+    Сохраняет одну белковую цепь выбранной модели.
+    """
+
+    def __init__(self, chain_id, model_id):
+
+        self.chain_id = chain_id
+
+        self.model_id = model_id
+
+
+    def accept_model(self, model):
+
+        return model.id == self.model_id
+
+
+    def accept_chain(self, chain):
+
+        return (
+            normalize_chain_id(chain.id)
+            == self.chain_id
+        )
+
+
+    def accept_residue(self, residue):
+
+        return is_aa(
+            residue,
+            standard=False
+        )
+
+
+CHAIN_DIR = (
+    PDB_RESULTS_DIR / "protein_chains"
+)
+
+
+CHAIN_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+saved_chain_files = []
+
+chain_file_records = []
+
+
+for chain_index, chain_id in enumerate(
+    sorted(protein_chain_ids),
+    start=1
+):
+
+    safe_chain = safe_filename(
+        chain_id
+    )
+
+
+    output_stem = (
+        f"{PDB_ID}_chain_{chain_index:02d}_{safe_chain}"
+    )
+
+
+    selector = ProteinChainSelect(
+        chain_id,
+        first_model.id
+    )
+
+
+    # PDB поддерживает только однобуквенный chain ID.
+    # Для многосимвольных идентификаторов сохраняем mmCIF,
+    # чтобы не потерять исходный идентификатор цепи.
+
+    if len(chain_id) <= 1:
+
+        output_path = (
+            CHAIN_DIR / f"{output_stem}.pdb"
+        )
+
+        io = PDBIO()
+
+        io.set_structure(
+            structure
+        )
+
+        io.save(
+            str(output_path),
+            selector
+        )
+
+        output_format = "PDB"
+
+    else:
+
+        output_path = (
+            CHAIN_DIR / f"{output_stem}.cif"
+        )
+
+        io = MMCIFIO()
+
+        io.set_structure(
+            structure
+        )
+
+        io.save(
+            str(output_path),
+            selector
+        )
+
+        output_format = "mmCIF"
+
+
+    if not output_path.is_file():
+
+        raise FileNotFoundError(
+            f"Файл цепи не сохранён: {output_path}"
+        )
+
+
+    if output_path.stat().st_size == 0:
+
+        raise RuntimeError(
+            f"Файл цепи пустой: {output_path}"
+        )
+
+
+    saved_chain_files.append(
+        output_path
+    )
+
+
+    chain_file_records.append({
+
+        "pdb_id": PDB_ID,
+
+        "model_index": MODEL_INDEX,
+
+        "model_id": str(first_model.id),
+
+        "chain_id": chain_id,
+
+        "chain_id_display": display_chain_id(
+            chain_id
+        ),
+
+        "file_name": output_path.name,
+
+        "file_format": output_format,
+
+        "file_size_bytes": output_path.stat().st_size
+
+    })
+
+
+    print(
+        f"Saved chain {display_chain_id(chain_id)}: "
+        f"{output_path.name} [{output_format}]"
+    )
+
+
+df_chain_files = pd.DataFrame(
+    chain_file_records
+)
+
+
+# ------------------------------------------------------------
+# 10. Проверка сохранённых цепей
+# ------------------------------------------------------------
+
+print("\n" + "-" * 70)
+print("CHAIN FILE VALIDATION")
+print("-" * 70)
+
+
+if len(saved_chain_files) != len(protein_chain_ids):
+
+    raise RuntimeError(
+        "Количество сохранённых файлов "
+        "не совпадает с количеством белковых цепей."
+    )
+
+
+for path in saved_chain_files:
+
+    if not path.is_file() or path.stat().st_size == 0:
+
+        raise RuntimeError(
+            f"Некорректный файл цепи: {path}"
+        )
+
+
+    print(
+        f"{path.name}: "
+        f"{path.stat().st_size:,} bytes"
+    )
+
+
+# ------------------------------------------------------------
+# 11. Сохранение отдельных таблиц
+# ------------------------------------------------------------
+
+output_tables = {
+
+    "separated_protein_atoms": (
+        df_protein_atoms
+    ),
+
+    "separated_protein_residues": (
+        df_protein_residues
+    ),
+
+    "separated_hetero_components": (
+        df_hetero_components
+    ),
+
+    "separated_water_components": (
+        df_water_components
+    ),
+
+    "separated_structure_protein_residues": (
+        df_structure_protein_residues
+    ),
+
+    "separated_component_summary": (
+        df_component_summary
+    ),
+
+    "separated_chain_files": (
+        df_chain_files
+    )
+
+}
+
+
+saved_table_files = {}
+
+
+for name, table in output_tables.items():
+
+    output_path = (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_{name}.csv"
+    )
+
+
+    table.to_csv(
+
+        output_path,
+
+        index=False,
+
+        encoding="utf-8-sig"
+
+    )
+
+
+    saved_table_files[name] = output_path
+
+
+    print(
+        f"Saved: {output_path.name}"
+    )
+
+
+# ------------------------------------------------------------
+# 12. Сохранение JSON-сводки
+# ------------------------------------------------------------
+
+SEPARATION_JSON_PATH = (
+    PDB_RESULTS_DIR
+    / f"{PDB_ID}_component_separation.json"
+)
+
+
+separation_summary = {
+
+    "PDB_ID": PDB_ID,
+
+    "analysis_scope": {
+
+        "selected_model_index": MODEL_INDEX,
+
+        "selected_model_id": str(first_model.id),
+
+        "total_models_in_structure": len(models),
+
+        "note": (
+            "Protein chain separation uses the first model. "
+            "This is consistent with CELL 4-11."
+        )
+
+    },
+
+    "protein": {
+
+        "number_of_protein_chains": len(
+            protein_chain_ids
+        ),
+
+        "protein_chain_ids": sorted(
+            protein_chain_ids
+        ),
+
+        "number_of_protein_residues": len(
+            df_protein_residues
+        ),
+
+        "number_of_protein_atoms": len(
+            df_protein_atoms
+        )
+
+    },
+
+    "hetero_components": {
+
+        "number_of_component_records": len(
+            df_hetero_components
+        ),
+
+        "classification_available": (
+            "component_type" in df_component_summary.columns
+            and not df_component_summary.empty
+        ),
+
+        "component_summary_records": (
+            df_component_summary.to_dict(
+                orient="records"
+            )
+        ),
+
+        "note": (
+            "Hetero components are not automatically "
+            "classified as drug-like ligands."
+        )
+
+    },
+
+    "water": {
+
+        "number_of_water_component_records": len(
+            df_water_components
+        )
+
+    },
+
+    "validation": {
+
+        "atom_count_matches_structure": atom_count_match,
+
+        "residue_count_matches_structure": residue_count_match,
+
+        "residue_keys_match": residue_keys_match,
+
+        "chain_ids_match_structure": chain_ids_match,
+
+        "residue_chain_ids_match_structure": (
+            residue_chain_ids_match
+        ),
+
+        "cell7_residue_key_count_matches": (
+            cell7_residue_key_match
+        ),
+
+        "number_of_saved_chain_files": len(
+            saved_chain_files
+        )
+
+    },
+
+    "saved_chain_files": (
+
+        df_chain_files.to_dict(
+            orient="records"
+        )
+
+    )
+
+}
+
+
+with open(
+    SEPARATION_JSON_PATH,
+    "w",
+    encoding="utf-8"
+) as file:
+
+    json.dump(
+
+        json_safe(separation_summary),
+
+        file,
+
+        ensure_ascii=False,
+
+        indent=4,
+
+        allow_nan=False
+
+    )
+
+
+# ------------------------------------------------------------
+# 13. Итоговая статистика
+# ------------------------------------------------------------
+
+print("\n" + "=" * 70)
+print("COMPONENT SEPARATION SUMMARY")
+print("=" * 70)
+
+print(
+    f"Protein chains: {len(protein_chain_ids)}"
+)
+
+print(
+    f"Protein residues: {len(df_protein_residues)}"
+)
+
+print(
+    f"Protein atoms: {len(df_protein_atoms)}"
+)
+
+print(
+    f"Hetero components: {len(df_hetero_components)}"
+)
+
+print(
+    f"Water components: {len(df_water_components)}"
+)
+
+print(
+    f"Saved chain files: {len(saved_chain_files)}"
+)
+
+print(
+    f"Output directory: {PDB_RESULTS_DIR}"
+)
+
+
+# ------------------------------------------------------------
+# 14. Проверка сохранённых результатов
+# ------------------------------------------------------------
+
+all_output_files = (
+
+    list(saved_table_files.values())
+
+    + saved_chain_files
+
+    + [SEPARATION_JSON_PATH]
+
+)
+
+
+print("\n" + "-" * 70)
+print("OUTPUT FILE VERIFICATION")
+print("-" * 70)
+
+
+output_check_records = []
+
+
+for path in all_output_files:
+
+    exists = (
+
+        path.is_file()
+
+        and path.stat().st_size > 0
+
+    )
+
+
+    output_check_records.append({
+
+        "file_name": path.name,
+
+        "exists": bool(exists),
+
+        "file_size_bytes": (
+            path.stat().st_size
+            if path.is_file()
+            else 0
+        )
+
+    })
+
+
+    print(
+        f"{path.name}: "
+        f"{'OK' if exists else 'ERROR'}"
+    )
+
+
+df_cell15_output_checks = pd.DataFrame(
+    output_check_records
+)
+
+
+all_outputs_saved = bool(
+    df_cell15_output_checks["exists"].all()
+)
+
+
+if not all_outputs_saved:
+
+    raise RuntimeError(
+        "Не все результаты разделения структуры сохранены."
+    )
+
+
+# ------------------------------------------------------------
+# 15. Итог
+# ------------------------------------------------------------
+
+print("\n" + "-" * 70)
+print("CELL 15 FINAL STATUS")
+print("-" * 70)
+
+print(
+    f"Atom count validation: "
+    f"{'OK' if atom_count_match else 'ERROR'}"
+)
+
+print(
+    f"Residue count validation: "
+    f"{'OK' if residue_count_match else 'ERROR'}"
+)
+
+print(
+    f"Residue key validation: "
+    f"{'OK' if residue_keys_match else 'ERROR'}"
+)
+
+print(
+    f"Chain validation: "
+    f"{'OK' if chain_ids_match else 'ERROR'}"
+)
+
+print(
+    f"Saved output files: {len(all_output_files)}"
+)
+
+print(
+    f"Results directory: {PDB_RESULTS_DIR}"
+)
+
+print("\nСтатус: OK")
+
+print("=" * 70)
+print("CELL 15 COMPLETED")
+print("=" * 70)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[19], line 30[0m
+[0;32m     27[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mpathlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Path
+[0;32m     29[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m PDBIO, Select
+[1;32m---> 30[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;21;01m.[39;00m[38;5;21;01mMMCIFIO[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m MMCIFIO
+[0;32m     31[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mBio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPDB[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPolypeptide[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m is_aa
+[0;32m     34[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124m=[39m[38;5;124m"[39m [38;5;241m*[39m [38;5;241m70[39m)
+
+[1;31mModuleNotFoundError[0m: No module named 'Bio.PDB.MMCIFIO'
+
+
