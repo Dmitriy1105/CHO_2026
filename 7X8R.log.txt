@@ -5,10 +5,10 @@ BATCH PROCESSING LOG
 
 PDB ID: 7X8R
 
-Started: 2026-11-07T02:50:21.326508
-Finished: 2026-11-07T02:50:32.161948
+Started: 2026-11-07T03:05:44.440434
+Finished: 2026-11-07T03:05:54.780339
 
-Duration: 10.84 seconds
+Duration: 10.34 seconds
 
 Status: FAILED
 
@@ -78,41 +78,41 @@ Report file: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_struct
 8   7X8R        A                A                      20                  
 9   7X8R        A                A                      21                  
 
-  residue_name amino_acid  atom_count  has_N  has_CA  has_C  has_O  \
-0          GLN          Q           9   True    True   True   True   
-1          ARG          R          11   True    True   True   True   
-2          ASN          N           8   True    True   True   True   
-3          GLU          E           9   True    True   True   True   
-4          GLU          E           9   True    True   True   True   
-5          LYS          K           9   True    True   True   True   
-6          ALA          A           5   True    True   True   True   
-7          GLN          Q           9   True    True   True   True   
-8          ARG          R          11   True    True   True   True   
-9          GLU          E           9   True    True   True   True   
+       residue_key residue_name amino_acid  atom_count  has_N  has_CA  has_C  \
+0  ["A"," ",12,""]          GLN          Q           9   True    True   True   
+1  ["A"," ",13,""]          ARG          R          11   True    True   True   
+2  ["A"," ",14,""]          ASN          N           8   True    True   True   
+3  ["A"," ",15,""]          GLU          E           9   True    True   True   
+4  ["A"," ",16,""]          GLU          E           9   True    True   True   
+5  ["A"," ",17,""]          LYS          K           9   True    True   True   
+6  ["A"," ",18,""]          ALA          A           5   True    True   True   
+7  ["A"," ",19,""]          GLN          Q           9   True    True   True   
+8  ["A"," ",20,""]          ARG          R          11   True    True   True   
+9  ["A"," ",21,""]          GLU          E           9   True    True   True   
 
-  present_backbone_atoms missing_backbone_atoms  missing_backbone_atom_count  \
-0               N,CA,C,O                                                   0   
-1               N,CA,C,O                                                   0   
-2               N,CA,C,O                                                   0   
-3               N,CA,C,O                                                   0   
-4               N,CA,C,O                                                   0   
-5               N,CA,C,O                                                   0   
-6               N,CA,C,O                                                   0   
-7               N,CA,C,O                                                   0   
-8               N,CA,C,O                                                   0   
-9               N,CA,C,O                                                   0   
+   has_O present_backbone_atoms missing_backbone_atoms  \
+0   True               N,CA,C,O                          
+1   True               N,CA,C,O                          
+2   True               N,CA,C,O                          
+3   True               N,CA,C,O                          
+4   True               N,CA,C,O                          
+5   True               N,CA,C,O                          
+6   True               N,CA,C,O                          
+7   True               N,CA,C,O                          
+8   True               N,CA,C,O                          
+9   True               N,CA,C,O                          
 
-   is_nonstandard  is_custom_mapped  is_unknown  
-0           False             False       False  
-1           False             False       False  
-2           False             False       False  
-3           False             False       False  
-4           False             False       False  
-5           False             False       False  
-6           False             False       False  
-7           False             False       False  
-8           False             False       False  
-9           False             False       False  
+   missing_backbone_atom_count  is_nonstandard  is_custom_mapped  is_unknown  
+0                            0           False             False       False  
+1                            0           False             False       False  
+2                            0           False             False       False  
+3                            0           False             False       False  
+4                            0           False             False       False  
+5                            0           False             False       False  
+6                            0           False             False       False  
+7                            0           False             False       False  
+8                            0           False             False       False  
+9                            0           False             False       False  
   pdb_id chain_id chain_id_display  residue_count  atom_count  \
 0   7X8R        A                A            234        1940   
 1   7X8R        B                B            338        2600   
@@ -753,29 +753,47 @@ water_atoms                        0                0     True
 18                               CELL 6 residue count   1051
 19           CELL 6 matches first-model residue count   True
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mKeyError[0m                                  Traceback (most recent call last)
-Cell [1;32mIn[19], line 174[0m
-[0;32m    167[0m missing_residue_columns [38;5;241m=[39m (
-[0;32m    168[0m     required_residue_columns [38;5;241m-[39m [38;5;28mset[39m(df_residues[38;5;241m.[39mcolumns)
-[0;32m    169[0m )
-[0;32m    172[0m [38;5;28;01mif[39;00m missing_residue_columns:
-[1;32m--> 174[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(
-[0;32m    175[0m         [38;5;124m"[39m[38;5;124mВ df_residues отсутствуют столбцы: [39m[38;5;124m"[39m
-[0;32m    176[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28msorted[39m(missing_residue_columns)[38;5;132;01m}[39;00m[38;5;124m"[39m
-[0;32m    177[0m     )
-[0;32m    180[0m [38;5;66;03m# ------------------------------------------------------------[39;00m
-[0;32m    181[0m [38;5;66;03m# 2. Проверка принадлежности таблиц текущей структуре[39;00m
-[0;32m    182[0m [38;5;66;03m# ------------------------------------------------------------[39;00m
-[0;32m    184[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mvalidate_table_pdb_id[39m(table_name, table, required[38;5;241m=[39m[38;5;28;01mTrue[39;00m):
+[1;31mValueError[0m                                Traceback (most recent call last)
+Cell [1;32mIn[19], line 242[0m
+[0;32m    231[0m validate_table_pdb_id(
+[0;32m    232[0m     [38;5;124m"[39m[38;5;124mdf_residues[39m[38;5;124m"[39m,
+[0;32m    233[0m     df_residues
+[0;32m    234[0m )
+[0;32m    236[0m validate_table_pdb_id(
+[0;32m    237[0m     [38;5;124m"[39m[38;5;124mdf_hetero[39m[38;5;124m"[39m,
+[0;32m    238[0m     df_hetero,
+[0;32m    239[0m     required[38;5;241m=[39m[38;5;28;01mFalse[39;00m
+[0;32m    240[0m )
+[1;32m--> 242[0m [43mvalidate_table_pdb_id[49m[43m([49m
+[0;32m    243[0m [43m    [49m[38;5;124;43m"[39;49m[38;5;124;43mdf_water[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[0;32m    244[0m [43m    [49m[43mdf_water[49m[43m,[49m
+[0;32m    245[0m [43m    [49m[43mrequired[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m
+[0;32m    246[0m [43m)[49m
+[0;32m    249[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mPDB ID: [39m[38;5;132;01m{[39;00mPDB_ID[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[0;32m    250[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mResults directory: [39m[38;5;132;01m{[39;00mPDB_RESULTS_DIR[38;5;132;01m}[39;00m[38;5;124m"[39m)
 
-[1;31mKeyError[0m: "В df_residues отсутствуют столбцы: ['residue_key']"
+Cell [1;32mIn[19], line 219[0m, in [0;36mvalidate_table_pdb_id[1;34m(table_name, table, required)[0m
+[0;32m    208[0m pdb_ids [38;5;241m=[39m (
+[0;32m    209[0m     table[[38;5;124m"[39m[38;5;124mpdb_id[39m[38;5;124m"[39m]
+[0;32m    210[0m     [38;5;241m.[39mastype([38;5;28mstr[39m)
+[1;32m   (...)[0m
+[0;32m    213[0m     [38;5;241m.[39munique()
+[0;32m    214[0m )
+[0;32m    217[0m [38;5;28;01mif[39;00m [38;5;28mset[39m(pdb_ids) [38;5;241m!=[39m {PDB_ID}:
+[1;32m--> 219[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[0;32m    220[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00mtable_name[38;5;132;01m}[39;00m[38;5;124m содержит PDB ID, [39m[38;5;124m"[39m
+[0;32m    221[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mне соответствующие текущей структуре: [39m[38;5;124m"[39m
+[0;32m    222[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28msorted[39m(pdb_ids)[38;5;132;01m}[39;00m[38;5;124m"[39m
+[0;32m    223[0m     )
+
+[1;31mValueError[0m: df_water содержит PDB ID, не соответствующие текущей структуре: []
 
 ============================================================
 ERROR
 ============================================================
 
 Traceback (most recent call last):
-  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_18548\2401576057.py", line 536, in run_one_pdb
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_20188\2401576057.py", line 536, in run_one_pdb
     client.execute()
   File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
     return _runner_map[name].run(inner)
@@ -793,6 +811,7 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+
 # ============================================================
 # CELL 15. SEPARATE PROTEIN CHAINS AND HETERO COMPONENTS
 # ============================================================
@@ -810,15 +829,17 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 # - Небелковые компоненты не считаются автоматически
 #   лекарственными лигандами.
 # - Для цепей с идентификаторами длиннее одного символа
-#   используется mmCIF, поскольку PDB ограничивает
-#   длину идентификатора цепи одним символом.
+#   используется mmCIF.
+# - Формат residue_key полностью соответствует CELL 6–8.
 # ============================================================
+
 
 # ============================================================
 # IMPORTS
 # ============================================================
 
 import os
+import re
 import json
 import warnings
 
@@ -837,7 +858,7 @@ print("MMCIFIO:", MMCIFIO)
 
 
 # ------------------------------------------------------------
-# 1. Проверка входных данных
+# 1. ПРОВЕРКА ВХОДНЫХ ДАННЫХ
 # ------------------------------------------------------------
 
 required_variables = [
@@ -925,11 +946,8 @@ if df_residues.empty:
 required_atom_columns = {
 
     "pdb_id",
-
     "chain_id",
-
     "residue_key",
-
     "atom_name"
 
 }
@@ -951,10 +969,11 @@ if missing_atom_columns:
 required_residue_columns = {
 
     "pdb_id",
-
     "chain_id",
-
-    "residue_key"
+    "residue_key",
+    "hetero_flag",
+    "residue_id",
+    "insertion_code"
 
 }
 
@@ -973,7 +992,7 @@ if missing_residue_columns:
 
 
 # ------------------------------------------------------------
-# 2. Проверка принадлежности таблиц текущей структуре
+# 2. ПРОВЕРКА ПРИНАДЛЕЖНОСТИ ТАБЛИЦ ТЕКУЩЕЙ СТРУКТУРЕ
 # ------------------------------------------------------------
 
 def validate_table_pdb_id(table_name, table, required=True):
@@ -992,11 +1011,13 @@ def validate_table_pdb_id(table_name, table, required=True):
 
         return
 
+
     if table["pdb_id"].isna().any():
 
         raise ValueError(
             f"{table_name} содержит пустые значения pdb_id."
         )
+
 
     pdb_ids = (
         table["pdb_id"]
@@ -1005,6 +1026,7 @@ def validate_table_pdb_id(table_name, table, required=True):
         .str.upper()
         .unique()
     )
+
 
     if set(pdb_ids) != {PDB_ID}:
 
@@ -1043,7 +1065,7 @@ print(f"Results directory: {PDB_RESULTS_DIR}")
 
 
 # ------------------------------------------------------------
-# 3. Выбор первой модели
+# 3. ВЫБОР ПЕРВОЙ МОДЕЛИ
 # ------------------------------------------------------------
 
 models = list(
@@ -1083,12 +1105,14 @@ print(
 
 
 # ------------------------------------------------------------
-# 4. Вспомогательные функции
+# 4. ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 # ------------------------------------------------------------
 
 def normalize_chain_id(value):
     """
-    Сохраняет пустой идентификатор цепи как пустую строку.
+    Нормализация идентификатора цепи.
+
+    Пустой идентификатор сохраняется как пустая строка.
     """
 
     if value is None or pd.isna(value):
@@ -1120,18 +1144,32 @@ def safe_filename(value):
     )
 
 
-def make_residue_key(chain_id, hetero_flag, residue_id, insertion_code):
-
+def make_residue_key(
+    chain_id,
+    hetero_flag,
+    residue_id,
+    insertion_code
+):
     """
-    Формат ключа согласован с CELL 6–8:
-    chain_id:hetero_flag:residue_id:insertion_code
+    Формирование JSON-ключа остатка.
+
+    Формат полностью соответствует CELL 6 и CELL 7.
+
+    ВАЖНО:
+    hetero_flag не очищается через strip(),
+    поскольку пробел является частью идентификатора
+    стандартного белкового остатка.
     """
 
-    return (
-        f"{chain_id}:"
-        f"{hetero_flag}:"
-        f"{residue_id}:"
-        f"{insertion_code}"
+    return json.dumps(
+        [
+            chain_id,
+            str(hetero_flag),
+            int(residue_id),
+            str(insertion_code).strip()
+        ],
+        ensure_ascii=False,
+        separators=(",", ":")
     )
 
 
@@ -1145,12 +1183,14 @@ def json_safe(value):
 
         return None
 
+
     if isinstance(value, dict):
 
         return {
             str(key): json_safe(item)
             for key, item in value.items()
         }
+
 
     if isinstance(value, (list, tuple, set)):
 
@@ -1159,6 +1199,7 @@ def json_safe(value):
             for item in value
         ]
 
+
     if isinstance(value, np.ndarray):
 
         return [
@@ -1166,9 +1207,11 @@ def json_safe(value):
             for item in value.tolist()
         ]
 
+
     if isinstance(value, (np.integer,)):
 
         return int(value)
+
 
     if isinstance(value, (np.floating, float)):
 
@@ -1180,25 +1223,31 @@ def json_safe(value):
             else None
         )
 
+
     if isinstance(value, (np.bool_, bool)):
 
         return bool(value)
+
 
     if isinstance(value, Path):
 
         return str(value)
 
+
     if isinstance(value, pd.Timestamp):
 
         return value.isoformat()
+
 
     if value is pd.NA or value is pd.NaT:
 
         return None
 
+
     if isinstance(value, (str, int)):
 
         return value
+
 
     try:
 
@@ -1212,11 +1261,12 @@ def json_safe(value):
 
         pass
 
+
     return str(value)
 
 
 # ------------------------------------------------------------
-# 5. Определение белковых цепей первой модели
+# 5. ОПРЕДЕЛЕНИЕ БЕЛКОВЫХ ЦЕПЕЙ ПЕРВОЙ МОДЕЛИ
 # ------------------------------------------------------------
 
 protein_chain_ids = set()
@@ -1239,23 +1289,30 @@ for chain in first_model:
 
             continue
 
+
         protein_chain_ids.add(chain_id)
+
 
         residue_atoms = list(
             residue.get_atoms()
         )
 
+
         structure_atom_count += len(
             residue_atoms
         )
 
+
+        # Сохраняем hetero_flag без удаления пробелов.
         hetero_flag = str(
             residue.id[0]
-        ).strip()
+        )
+
 
         residue_id = int(
             residue.id[1]
         )
+
 
         insertion_code = str(
             residue.id[2]
@@ -1316,6 +1373,13 @@ if not protein_chain_ids:
     )
 
 
+if df_structure_protein_residues.empty:
+
+    raise ValueError(
+        "Не удалось сформировать таблицу белковых остатков."
+    )
+
+
 if df_structure_protein_residues["residue_key"].duplicated().any():
 
     raise RuntimeError(
@@ -1350,7 +1414,7 @@ print(
 
 
 # ------------------------------------------------------------
-# 6. Формирование отдельных таблиц
+# 6. ФОРМИРОВАНИЕ ОТДЕЛЬНЫХ ТАБЛИЦ
 # ------------------------------------------------------------
 
 # CELL 6 и CELL 7 уже содержат белковые данные.
@@ -1366,11 +1430,8 @@ df_protein_residues = df_residues.copy()
 df_hetero_components = df_hetero.copy()
 
 
-# Сохраняем исходное имя для совместимости с последующими
-# ячейками, если оно где-либо используется.
-#
-# ВАЖНО: это не подтверждённый набор лекарственных лигандов.
-# Это все небелковые компоненты из CELL 8.
+# Совместимое имя для последующих ячеек.
+# Это кандидаты, а не подтверждённые лекарственные лиганды.
 
 df_ligand_candidates = df_hetero_components.copy()
 
@@ -1381,7 +1442,7 @@ df_water_components = df_water.copy()
 
 
 # ------------------------------------------------------------
-# 7. Проверка согласованности CELL 6 и CELL 7
+# 7. ПРОВЕРКА СОГЛАСОВАННОСТИ CELL 6 И CELL 7
 # ------------------------------------------------------------
 
 print("\n" + "-" * 70)
@@ -1441,12 +1502,14 @@ print(
 )
 
 
-# 7.3. Сверка residue_key.
+# 7.3. Сверка residue_key между структурой,
+# CELL 6 и CELL 7.
 
 structure_residue_keys = set(
     df_structure_protein_residues["residue_key"]
     .astype(str)
 )
+
 
 cell6_residue_keys = set(
     df_protein_residues["residue_key"]
@@ -1454,30 +1517,86 @@ cell6_residue_keys = set(
 )
 
 
-residue_keys_match = (
+cell7_residue_keys = set(
+    df_protein_atoms["residue_key"]
+    .astype(str)
+)
+
+
+structure_cell6_keys_match = (
     structure_residue_keys == cell6_residue_keys
 )
+
+
+structure_cell7_keys_match = (
+    structure_residue_keys == cell7_residue_keys
+)
+
+
+cell6_cell7_keys_match = (
+    cell6_residue_keys == cell7_residue_keys
+)
+
+
+# Основной флаг совместимости CELL 6.
+
+residue_keys_match = structure_cell6_keys_match
 
 
 missing_in_cell6 = sorted(
     structure_residue_keys - cell6_residue_keys
 )
 
+
 extra_in_cell6 = sorted(
     cell6_residue_keys - structure_residue_keys
 )
 
 
+missing_in_cell7 = sorted(
+    structure_residue_keys - cell7_residue_keys
+)
+
+
+extra_in_cell7 = sorted(
+    cell7_residue_keys - structure_residue_keys
+)
+
+
 print(
-    f"Residue keys match: {residue_keys_match}"
+    f"Structure / CELL 6 keys: "
+    f"{structure_cell6_keys_match}"
 )
 
 print(
-    f"Missing residue keys in CELL 6: {len(missing_in_cell6)}"
+    f"Structure / CELL 7 keys: "
+    f"{structure_cell7_keys_match}"
 )
 
 print(
-    f"Extra residue keys in CELL 6: {len(extra_in_cell6)}"
+    f"CELL 6 / CELL 7 keys: "
+    f"{cell6_cell7_keys_match}"
+)
+
+
+print(
+    f"Missing residue keys in CELL 6: "
+    f"{len(missing_in_cell6)}"
+)
+
+print(
+    f"Extra residue keys in CELL 6: "
+    f"{len(extra_in_cell6)}"
+)
+
+print(
+    f"Missing residue keys in CELL 7: "
+    f"{len(missing_in_cell7)}"
+)
+
+print(
+    f"Extra residue keys in CELL 7: "
+    f"{len(extra_in_cell7)}"
 )
 
 
@@ -1525,9 +1644,12 @@ print(
     sorted(cell6_chain_ids)
 )
 
+
 print(
-    f"Structure / CELL 7 chain match: {chain_ids_match}"
+    f"Structure / CELL 7 chain match: "
+    f"{chain_ids_match}"
 )
+
 
 print(
     f"Structure / CELL 6 chain match: "
@@ -1535,15 +1657,20 @@ print(
 )
 
 
-# 7.5. Проверка уникальности residue_key в исходных таблицах.
+# 7.5. Проверка уникальности residue_key.
 
 cell6_duplicate_keys = int(
     df_protein_residues["residue_key"].duplicated().sum()
 )
 
 
-cell7_residue_key_count = (
-    df_protein_atoms["residue_key"].nunique()
+cell7_duplicate_atom_keys = int(
+    df_protein_atoms["residue_key"].isna().sum()
+)
+
+
+cell7_residue_key_count = len(
+    cell7_residue_keys
 )
 
 
@@ -1557,14 +1684,55 @@ print(
     f"{cell6_duplicate_keys}"
 )
 
+
+print(
+    f"Missing residue keys in CELL 7 atoms: "
+    f"{cell7_duplicate_atom_keys}"
+)
+
+
 print(
     f"Unique residue keys in CELL 7: "
     f"{cell7_residue_key_count}"
 )
 
+
 print(
     f"CELL 7 residue key count matches structure: "
     f"{cell7_residue_key_match}"
+)
+
+
+# 7.6. Проверка корректности JSON-формата CELL 6.
+
+cell6_residue_key_format_match = True
+
+
+for row in df_protein_residues.itertuples(index=False):
+
+    expected_key = make_residue_key(
+
+        row.chain_id,
+
+        row.hetero_flag,
+
+        row.residue_id,
+
+        row.insertion_code
+
+    )
+
+
+    if str(row.residue_key) != expected_key:
+
+        cell6_residue_key_format_match = False
+
+        break
+
+
+print(
+    f"CELL 6 residue key format: "
+    f"{cell6_residue_key_format_match}"
 )
 
 
@@ -1595,6 +1763,21 @@ if not residue_keys_match:
     )
 
 
+if not structure_cell7_keys_match:
+
+    raise RuntimeError(
+        "Наборы residue_key не совпадают между структурой "
+        "и CELL 7."
+    )
+
+
+if not cell6_cell7_keys_match:
+
+    raise RuntimeError(
+        "Наборы residue_key не совпадают между CELL 6 и CELL 7."
+    )
+
+
 if not chain_ids_match:
 
     raise RuntimeError(
@@ -1618,6 +1801,13 @@ if cell6_duplicate_keys > 0:
     )
 
 
+if cell7_duplicate_atom_keys > 0:
+
+    raise RuntimeError(
+        "В CELL 7 обнаружены пустые residue_key."
+    )
+
+
 if not cell7_residue_key_match:
 
     raise RuntimeError(
@@ -1626,8 +1816,16 @@ if not cell7_residue_key_match:
     )
 
 
+if not cell6_residue_key_format_match:
+
+    raise RuntimeError(
+        "Формат residue_key в CELL 6 "
+        "не соответствует алгоритму CELL 15."
+    )
+
+
 # ------------------------------------------------------------
-# 8. Сводка небелковых компонентов
+# 8. СВОДКА НЕБЕЛКОВЫХ КОМПОНЕНТОВ
 # ------------------------------------------------------------
 
 df_component_summary = pd.DataFrame(
@@ -1728,6 +1926,7 @@ print("\n" + "-" * 70)
 print("HETERO COMPONENTS")
 print("-" * 70)
 
+
 print(
     f"Total hetero component records: "
     f"{len(df_hetero_components)}"
@@ -1748,7 +1947,7 @@ else:
 
 
 # ------------------------------------------------------------
-# 9. Сохранение отдельных файлов белковых цепей
+# 9. СОХРАНЕНИЕ ОТДЕЛЬНЫХ ФАЙЛОВ БЕЛКОВЫХ ЦЕПЕЙ
 # ------------------------------------------------------------
 
 class ProteinChainSelect(Select):
@@ -1823,8 +2022,7 @@ for chain_index, chain_id in enumerate(
 
 
     # PDB поддерживает только однобуквенный chain ID.
-    # Для многосимвольных идентификаторов сохраняем mmCIF,
-    # чтобы не потерять исходный идентификатор цепи.
+    # Для многосимвольных идентификаторов используем mmCIF.
 
     if len(chain_id) <= 1:
 
@@ -1919,7 +2117,7 @@ df_chain_files = pd.DataFrame(
 
 
 # ------------------------------------------------------------
-# 10. Проверка сохранённых цепей
+# 10. ПРОВЕРКА СОХРАНЁННЫХ ЦЕПЕЙ
 # ------------------------------------------------------------
 
 print("\n" + "-" * 70)
@@ -1951,7 +2149,7 @@ for path in saved_chain_files:
 
 
 # ------------------------------------------------------------
-# 11. Сохранение отдельных таблиц
+# 11. СОХРАНЕНИЕ ОТДЕЛЬНЫХ ТАБЛИЦ
 # ------------------------------------------------------------
 
 output_tables = {
@@ -2018,7 +2216,7 @@ for name, table in output_tables.items():
 
 
 # ------------------------------------------------------------
-# 12. Сохранение JSON-сводки
+# 12. СОХРАНЕНИЕ JSON-СВОДКИ
 # ------------------------------------------------------------
 
 SEPARATION_JSON_PATH = (
@@ -2106,6 +2304,22 @@ separation_summary = {
 
         "residue_keys_match": residue_keys_match,
 
+        "structure_cell6_keys_match": (
+            structure_cell6_keys_match
+        ),
+
+        "structure_cell7_keys_match": (
+            structure_cell7_keys_match
+        ),
+
+        "cell6_cell7_keys_match": (
+            cell6_cell7_keys_match
+        ),
+
+        "cell6_residue_key_format_match": (
+            cell6_residue_key_format_match
+        ),
+
         "chain_ids_match_structure": chain_ids_match,
 
         "residue_chain_ids_match_structure": (
@@ -2155,36 +2369,43 @@ with open(
 
 
 # ------------------------------------------------------------
-# 13. Итоговая статистика
+# 13. ИТОГОВАЯ СТАТИСТИКА
 # ------------------------------------------------------------
 
 print("\n" + "=" * 70)
 print("COMPONENT SEPARATION SUMMARY")
 print("=" * 70)
 
+
 print(
     f"Protein chains: {len(protein_chain_ids)}"
 )
+
 
 print(
     f"Protein residues: {len(df_protein_residues)}"
 )
 
+
 print(
     f"Protein atoms: {len(df_protein_atoms)}"
 )
+
 
 print(
     f"Hetero components: {len(df_hetero_components)}"
 )
 
+
 print(
     f"Water components: {len(df_water_components)}"
 )
 
+
 print(
     f"Saved chain files: {len(saved_chain_files)}"
 )
+
 
 print(
     f"Output directory: {PDB_RESULTS_DIR}"
@@ -2192,7 +2413,7 @@ print(
 
 
 # ------------------------------------------------------------
-# 14. Проверка сохранённых результатов
+# 14. ПРОВЕРКА СОХРАНЁННЫХ РЕЗУЛЬТАТОВ
 # ------------------------------------------------------------
 
 all_output_files = (
@@ -2264,65 +2485,103 @@ if not all_outputs_saved:
 
 
 # ------------------------------------------------------------
-# 15. Итог
+# 15. ИТОГ
 # ------------------------------------------------------------
 
 print("\n" + "-" * 70)
 print("CELL 15 FINAL STATUS")
 print("-" * 70)
 
+
 print(
     f"Atom count validation: "
     f"{'OK' if atom_count_match else 'ERROR'}"
 )
+
 
 print(
     f"Residue count validation: "
     f"{'OK' if residue_count_match else 'ERROR'}"
 )
 
+
 print(
     f"Residue key validation: "
     f"{'OK' if residue_keys_match else 'ERROR'}"
 )
+
+
+print(
+    f"Structure / CELL 7 key validation: "
+    f"{'OK' if structure_cell7_keys_match else 'ERROR'}"
+)
+
+
+print(
+    f"CELL 6 / CELL 7 key validation: "
+    f"{'OK' if cell6_cell7_keys_match else 'ERROR'}"
+)
+
 
 print(
     f"Chain validation: "
     f"{'OK' if chain_ids_match else 'ERROR'}"
 )
 
+
 print(
     f"Saved output files: {len(all_output_files)}"
 )
 
+
 print(
     f"Results directory: {PDB_RESULTS_DIR}"
 )
+
 
 print("\nСтатус: OK")
 
 print("=" * 70)
 print("CELL 15 COMPLETED")
 print("=" * 70)
+
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mKeyError[0m                                  Traceback (most recent call last)
-Cell [1;32mIn[19], line 174[0m
-[0;32m    167[0m missing_residue_columns [38;5;241m=[39m (
-[0;32m    168[0m     required_residue_columns [38;5;241m-[39m [38;5;28mset[39m(df_residues[38;5;241m.[39mcolumns)
-[0;32m    169[0m )
-[0;32m    172[0m [38;5;28;01mif[39;00m missing_residue_columns:
-[1;32m--> 174[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(
-[0;32m    175[0m         [38;5;124m"[39m[38;5;124mВ df_residues отсутствуют столбцы: [39m[38;5;124m"[39m
-[0;32m    176[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28msorted[39m(missing_residue_columns)[38;5;132;01m}[39;00m[38;5;124m"[39m
-[0;32m    177[0m     )
-[0;32m    180[0m [38;5;66;03m# ------------------------------------------------------------[39;00m
-[0;32m    181[0m [38;5;66;03m# 2. Проверка принадлежности таблиц текущей структуре[39;00m
-[0;32m    182[0m [38;5;66;03m# ------------------------------------------------------------[39;00m
-[0;32m    184[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mvalidate_table_pdb_id[39m(table_name, table, required[38;5;241m=[39m[38;5;28;01mTrue[39;00m):
+[1;31mValueError[0m                                Traceback (most recent call last)
+Cell [1;32mIn[19], line 242[0m
+[0;32m    231[0m validate_table_pdb_id(
+[0;32m    232[0m     [38;5;124m"[39m[38;5;124mdf_residues[39m[38;5;124m"[39m,
+[0;32m    233[0m     df_residues
+[0;32m    234[0m )
+[0;32m    236[0m validate_table_pdb_id(
+[0;32m    237[0m     [38;5;124m"[39m[38;5;124mdf_hetero[39m[38;5;124m"[39m,
+[0;32m    238[0m     df_hetero,
+[0;32m    239[0m     required[38;5;241m=[39m[38;5;28;01mFalse[39;00m
+[0;32m    240[0m )
+[1;32m--> 242[0m [43mvalidate_table_pdb_id[49m[43m([49m
+[0;32m    243[0m [43m    [49m[38;5;124;43m"[39;49m[38;5;124;43mdf_water[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[0;32m    244[0m [43m    [49m[43mdf_water[49m[43m,[49m
+[0;32m    245[0m [43m    [49m[43mrequired[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m
+[0;32m    246[0m [43m)[49m
+[0;32m    249[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mPDB ID: [39m[38;5;132;01m{[39;00mPDB_ID[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[0;32m    250[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mResults directory: [39m[38;5;132;01m{[39;00mPDB_RESULTS_DIR[38;5;132;01m}[39;00m[38;5;124m"[39m)
 
-[1;31mKeyError[0m: "В df_residues отсутствуют столбцы: ['residue_key']"
+Cell [1;32mIn[19], line 219[0m, in [0;36mvalidate_table_pdb_id[1;34m(table_name, table, required)[0m
+[0;32m    208[0m pdb_ids [38;5;241m=[39m (
+[0;32m    209[0m     table[[38;5;124m"[39m[38;5;124mpdb_id[39m[38;5;124m"[39m]
+[0;32m    210[0m     [38;5;241m.[39mastype([38;5;28mstr[39m)
+[1;32m   (...)[0m
+[0;32m    213[0m     [38;5;241m.[39munique()
+[0;32m    214[0m )
+[0;32m    217[0m [38;5;28;01mif[39;00m [38;5;28mset[39m(pdb_ids) [38;5;241m!=[39m {PDB_ID}:
+[1;32m--> 219[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[0;32m    220[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00mtable_name[38;5;132;01m}[39;00m[38;5;124m содержит PDB ID, [39m[38;5;124m"[39m
+[0;32m    221[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mне соответствующие текущей структуре: [39m[38;5;124m"[39m
+[0;32m    222[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28msorted[39m(pdb_ids)[38;5;132;01m}[39;00m[38;5;124m"[39m
+[0;32m    223[0m     )
+
+[1;31mValueError[0m: df_water содержит PDB ID, не соответствующие текущей структуре: []
 
 

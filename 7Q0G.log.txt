@@ -5,12 +5,12 @@ BATCH PROCESSING LOG
 
 PDB ID: 7Q0G
 
-Started: 2026-11-07T02:49:52.851315
-Finished: 2026-11-07T02:50:04.059145
+Started: 2026-11-07T03:04:48.486953
+Finished: 2026-11-07T03:05:06.894023
 
-Duration: 11.21 seconds
+Duration: 18.41 seconds
 
-Status: FAILED
+Status: SUCCESS
 
 Kernel: python3
 
@@ -18,7 +18,15 @@ Skipped installation cells:
 3
 
 Output validation:
-{}
+{
+    "valid": true,
+    "output_dir": "C:\\apex\\APEX\\МИФИ\\СНО\\medic\\Protein_Pocket_Dataset\\07_structure_analysis\\results\\7Q0G",
+    "graph_file": "C:\\apex\\APEX\\МИФИ\\СНО\\medic\\Protein_Pocket_Dataset\\07_structure_analysis\\results\\7Q0G\\unified_representation\\7Q0G_ml_graph_data.npz",
+    "features_json": "C:\\apex\\APEX\\МИФИ\\СНО\\medic\\Protein_Pocket_Dataset\\07_structure_analysis\\results\\7Q0G\\features\\7Q0G_protein_features.json",
+    "graph_valid": true,
+    "features_valid": true,
+    "message": "Required outputs found and readable"
+}
 
 ============================================================
 NOTEBOOK OUTPUT
@@ -78,41 +86,41 @@ Report file: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_struct
 8   7Q0G        E                E                     341                  
 9   7Q0G        E                E                     342                  
 
-  residue_name amino_acid  atom_count  has_N  has_CA  has_C  has_O  \
-0          THR          T           7   True    True   True   True   
-1          ASN          N           8   True    True   True   True   
-2          LEU          L           8   True    True   True   True   
-3          CYS          C           6   True    True   True   True   
-4          PRO          P           7   True    True   True   True   
-5          PHE          F          11   True    True   True   True   
-6          GLY          G           4   True    True   True   True   
-7          GLU          E           9   True    True   True   True   
-8          VAL          V           7   True    True   True   True   
-9          PHE          F          11   True    True   True   True   
+        residue_key residue_name amino_acid  atom_count  has_N  has_CA  has_C  \
+0  ["E"," ",333,""]          THR          T           7   True    True   True   
+1  ["E"," ",334,""]          ASN          N           8   True    True   True   
+2  ["E"," ",335,""]          LEU          L           8   True    True   True   
+3  ["E"," ",336,""]          CYS          C           6   True    True   True   
+4  ["E"," ",337,""]          PRO          P           7   True    True   True   
+5  ["E"," ",338,""]          PHE          F          11   True    True   True   
+6  ["E"," ",339,""]          GLY          G           4   True    True   True   
+7  ["E"," ",340,""]          GLU          E           9   True    True   True   
+8  ["E"," ",341,""]          VAL          V           7   True    True   True   
+9  ["E"," ",342,""]          PHE          F          11   True    True   True   
 
-  present_backbone_atoms missing_backbone_atoms  missing_backbone_atom_count  \
-0               N,CA,C,O                                                   0   
-1               N,CA,C,O                                                   0   
-2               N,CA,C,O                                                   0   
-3               N,CA,C,O                                                   0   
-4               N,CA,C,O                                                   0   
-5               N,CA,C,O                                                   0   
-6               N,CA,C,O                                                   0   
-7               N,CA,C,O                                                   0   
-8               N,CA,C,O                                                   0   
-9               N,CA,C,O                                                   0   
+   has_O present_backbone_atoms missing_backbone_atoms  \
+0   True               N,CA,C,O                          
+1   True               N,CA,C,O                          
+2   True               N,CA,C,O                          
+3   True               N,CA,C,O                          
+4   True               N,CA,C,O                          
+5   True               N,CA,C,O                          
+6   True               N,CA,C,O                          
+7   True               N,CA,C,O                          
+8   True               N,CA,C,O                          
+9   True               N,CA,C,O                          
 
-   is_nonstandard  is_custom_mapped  is_unknown  
-0           False             False       False  
-1           False             False       False  
-2           False             False       False  
-3           False             False       False  
-4           False             False       False  
-5           False             False       False  
-6           False             False       False  
-7           False             False       False  
-8           False             False       False  
-9           False             False       False  
+   missing_backbone_atom_count  is_nonstandard  is_custom_mapped  is_unknown  
+0                            0           False             False       False  
+1                            0           False             False       False  
+2                            0           False             False       False  
+3                            0           False             False       False  
+4                            0           False             False       False  
+5                            0           False             False       False  
+6                            0           False             False       False  
+7                            0           False             False       False  
+8                            0           False             False       False  
+9                            0           False             False       False  
   pdb_id chain_id chain_id_display  residue_count  atom_count  \
 0   7Q0G        E                E            196        1549   
 1   7Q0G        H                H            218        1620   
@@ -1098,1577 +1106,1342 @@ Index: []
 17            CELL 7 matches first-model atom records  True
 18                               CELL 6 residue count  1063
 19           CELL 6 matches first-model residue count  True
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mKeyError[0m                                  Traceback (most recent call last)
-Cell [1;32mIn[19], line 174[0m
-[0;32m    167[0m missing_residue_columns [38;5;241m=[39m (
-[0;32m    168[0m     required_residue_columns [38;5;241m-[39m [38;5;28mset[39m(df_residues[38;5;241m.[39mcolumns)
-[0;32m    169[0m )
-[0;32m    172[0m [38;5;28;01mif[39;00m missing_residue_columns:
-[1;32m--> 174[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(
-[0;32m    175[0m         [38;5;124m"[39m[38;5;124mВ df_residues отсутствуют столбцы: [39m[38;5;124m"[39m
-[0;32m    176[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28msorted[39m(missing_residue_columns)[38;5;132;01m}[39;00m[38;5;124m"[39m
-[0;32m    177[0m     )
-[0;32m    180[0m [38;5;66;03m# ------------------------------------------------------------[39;00m
-[0;32m    181[0m [38;5;66;03m# 2. Проверка принадлежности таблиц текущей структуре[39;00m
-[0;32m    182[0m [38;5;66;03m# ------------------------------------------------------------[39;00m
-[0;32m    184[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mvalidate_table_pdb_id[39m(table_name, table, required[38;5;241m=[39m[38;5;28;01mTrue[39;00m):
+  residue_name                 component_type  occurrence_count
+0          BMA  Organic non-protein component                 1
+1           CL                    Single atom                14
+2          FUC  Organic non-protein component                 1
+3          GOL  Organic non-protein component                13
+4            K        Single metal atom / ion                14
+5          MAN  Organic non-protein component                 1
+6          NAG  Organic non-protein component                 2
+7          TAR  Organic non-protein component                 3
+    component_index                         component_id component  \
+0                 1  7Q0G|model_0|chain_E|H_GOL|701||GOL       GOL   
+1                 2  7Q0G|model_0|chain_E|H_GOL|702||GOL       GOL   
+2                 3  7Q0G|model_0|chain_E|H_GOL|703||GOL       GOL   
+3                 4  7Q0G|model_0|chain_E|H_GOL|704||GOL       GOL   
+4                 5    7Q0G|model_0|chain_E|H_CL|705||CL        CL   
+5                 6    7Q0G|model_0|chain_E|H_CL|706||CL        CL   
+6                 7    7Q0G|model_0|chain_E|H_CL|707||CL        CL   
+7                 8    7Q0G|model_0|chain_E|H_CL|708||CL        CL   
+8                 9      7Q0G|model_0|chain_E|H_K|709||K         K   
+9                10  7Q0G|model_0|chain_H|H_GOL|401||GOL       GOL   
+10               11  7Q0G|model_0|chain_H|H_GOL|402||GOL       GOL   
+11               12  7Q0G|model_0|chain_H|H_GOL|403||GOL       GOL   
+12               13  7Q0G|model_0|chain_H|H_TAR|404||TAR       TAR   
+13               14  7Q0G|model_0|chain_H|H_GOL|405||GOL       GOL   
+14               15    7Q0G|model_0|chain_H|H_CL|406||CL        CL   
+15               16      7Q0G|model_0|chain_H|H_K|407||K         K   
+16               17      7Q0G|model_0|chain_H|H_K|408||K         K   
+17               18      7Q0G|model_0|chain_H|H_K|409||K         K   
+18               19      7Q0G|model_0|chain_H|H_K|410||K         K   
+19               20      7Q0G|model_0|chain_H|H_K|411||K         K   
+20               21  7Q0G|model_0|chain_L|H_GOL|301||GOL       GOL   
+21               22    7Q0G|model_0|chain_L|H_CL|302||CL        CL   
+22               23    7Q0G|model_0|chain_L|H_CL|303||CL        CL   
+23               24      7Q0G|model_0|chain_L|H_K|304||K         K   
+24               25      7Q0G|model_0|chain_L|H_K|305||K         K   
+25               26      7Q0G|model_0|chain_L|H_K|306||K         K   
+26               27      7Q0G|model_0|chain_L|H_K|307||K         K   
+27               28      7Q0G|model_0|chain_L|H_K|308||K         K   
+28               29  7Q0G|model_0|chain_B|H_GOL|401||GOL       GOL   
+29               30  7Q0G|model_0|chain_B|H_GOL|402||GOL       GOL   
+30               31  7Q0G|model_0|chain_B|H_GOL|403||GOL       GOL   
+31               32    7Q0G|model_0|chain_B|H_CL|404||CL        CL   
+32               33    7Q0G|model_0|chain_B|H_CL|405||CL        CL   
+33               34    7Q0G|model_0|chain_B|H_CL|406||CL        CL   
+34               35      7Q0G|model_0|chain_B|H_K|407||K         K   
+35               36      7Q0G|model_0|chain_B|H_K|408||K         K   
+36               37  7Q0G|model_0|chain_A|H_TAR|301||TAR       TAR   
+37               38  7Q0G|model_0|chain_A|H_TAR|302||TAR       TAR   
+38               39  7Q0G|model_0|chain_A|H_GOL|303||GOL       GOL   
+39               40    7Q0G|model_0|chain_A|H_CL|304||CL        CL   
+40               41    7Q0G|model_0|chain_A|H_CL|305||CL        CL   
+41               42    7Q0G|model_0|chain_A|H_CL|306||CL        CL   
+42               43    7Q0G|model_0|chain_A|H_CL|307||CL        CL   
+43               44      7Q0G|model_0|chain_A|H_K|308||K         K   
+44               45    7Q0G|model_0|chain_C|H_NAG|1||NAG       NAG   
+45               46    7Q0G|model_0|chain_C|H_NAG|2||NAG       NAG   
+46               47    7Q0G|model_0|chain_C|H_BMA|3||BMA       BMA   
+47               48    7Q0G|model_0|chain_C|H_MAN|4||MAN       MAN   
+48               49    7Q0G|model_0|chain_C|H_FUC|5||FUC       FUC   
 
-[1;31mKeyError[0m: "В df_residues отсутствуют столбцы: ['residue_key']"
+                              component_name component_formula  \
+0                                   GLYCEROL          C3 H8 O3   
+1                                   GLYCEROL          C3 H8 O3   
+2                                   GLYCEROL          C3 H8 O3   
+3                                   GLYCEROL          C3 H8 O3   
+4                               CHLORIDE ION             Cl -1   
+5                               CHLORIDE ION             Cl -1   
+6                               CHLORIDE ION             Cl -1   
+7                               CHLORIDE ION             Cl -1   
+8                              POTASSIUM ION               K 1   
+9                                   GLYCEROL          C3 H8 O3   
+10                                  GLYCEROL          C3 H8 O3   
+11                                  GLYCEROL          C3 H8 O3   
+12                        D(-)-TARTARIC ACID          C4 H6 O6   
+13                                  GLYCEROL          C3 H8 O3   
+14                              CHLORIDE ION             Cl -1   
+15                             POTASSIUM ION               K 1   
+16                             POTASSIUM ION               K 1   
+17                             POTASSIUM ION               K 1   
+18                             POTASSIUM ION               K 1   
+19                             POTASSIUM ION               K 1   
+20                                  GLYCEROL          C3 H8 O3   
+21                              CHLORIDE ION             Cl -1   
+22                              CHLORIDE ION             Cl -1   
+23                             POTASSIUM ION               K 1   
+24                             POTASSIUM ION               K 1   
+25                             POTASSIUM ION               K 1   
+26                             POTASSIUM ION               K 1   
+27                             POTASSIUM ION               K 1   
+28                                  GLYCEROL          C3 H8 O3   
+29                                  GLYCEROL          C3 H8 O3   
+30                                  GLYCEROL          C3 H8 O3   
+31                              CHLORIDE ION             Cl -1   
+32                              CHLORIDE ION             Cl -1   
+33                              CHLORIDE ION             Cl -1   
+34                             POTASSIUM ION               K 1   
+35                             POTASSIUM ION               K 1   
+36                        D(-)-TARTARIC ACID          C4 H6 O6   
+37                        D(-)-TARTARIC ACID          C4 H6 O6   
+38                                  GLYCEROL          C3 H8 O3   
+39                              CHLORIDE ION             Cl -1   
+40                              CHLORIDE ION             Cl -1   
+41                              CHLORIDE ION             Cl -1   
+42                              CHLORIDE ION             Cl -1   
+43                             POTASSIUM ION               K 1   
+44  2-acetamido-2-deoxy-beta-D-glucopyranose       C8 H15 N O6   
+45  2-acetamido-2-deoxy-beta-D-glucopyranose       C8 H15 N O6   
+46                      beta-D-mannopyranose         C6 H12 O6   
+47                     alpha-D-mannopyranose         C6 H12 O6   
+48                      alpha-L-fucopyranose         C6 H12 O5   
+
+                                   component_synonyms  \
+0                       GLYCERIN; PROPANE-1,2,3-TRIOL   
+1                       GLYCERIN; PROPANE-1,2,3-TRIOL   
+2                       GLYCERIN; PROPANE-1,2,3-TRIOL   
+3                       GLYCERIN; PROPANE-1,2,3-TRIOL   
+4                                                None   
+5                                                None   
+6                                                None   
+7                                                None   
+8                                                None   
+9                       GLYCERIN; PROPANE-1,2,3-TRIOL   
+10                      GLYCERIN; PROPANE-1,2,3-TRIOL   
+11                      GLYCERIN; PROPANE-1,2,3-TRIOL   
+12                                               None   
+13                      GLYCERIN; PROPANE-1,2,3-TRIOL   
+14                                               None   
+15                                               None   
+16                                               None   
+17                                               None   
+18                                               None   
+19                                               None   
+20                      GLYCERIN; PROPANE-1,2,3-TRIOL   
+21                                               None   
+22                                               None   
+23                                               None   
+24                                               None   
+25                                               None   
+26                                               None   
+27                                               None   
+28                      GLYCERIN; PROPANE-1,2,3-TRIOL   
+29                      GLYCERIN; PROPANE-1,2,3-TRIOL   
+30                      GLYCERIN; PROPANE-1,2,3-TRIOL   
+31                                               None   
+32                                               None   
+33                                               None   
+34                                               None   
+35                                               None   
+36                                               None   
+37                                               None   
+38                      GLYCERIN; PROPANE-1,2,3-TRIOL   
+39                                               None   
+40                                               None   
+41                                               None   
+42                                               None   
+43                                               None   
+44  N-acetyl-beta-D-glucosamine; 2-acetamido-2-deo...   
+45  N-acetyl-beta-D-glucosamine; 2-acetamido-2-deo...   
+46                 beta-D-mannose; D-mannose; mannose   
+47                alpha-D-mannose; D-mannose; mannose   
+48  alpha-L-fucose; 6-deoxy-alpha-L-galactopyranos...   
+
+        chemical_component_type formal_charge mon_nstd_flag  \
+0                   non-polymer          None          None   
+1                   non-polymer          None          None   
+2                   non-polymer          None          None   
+3                   non-polymer          None          None   
+4                   non-polymer          None          None   
+5                   non-polymer          None          None   
+6                   non-polymer          None          None   
+7                   non-polymer          None          None   
+8                   non-polymer          None          None   
+9                   non-polymer          None          None   
+10                  non-polymer          None          None   
+11                  non-polymer          None          None   
+12                  non-polymer          None          None   
+13                  non-polymer          None          None   
+14                  non-polymer          None          None   
+15                  non-polymer          None          None   
+16                  non-polymer          None          None   
+17                  non-polymer          None          None   
+18                  non-polymer          None          None   
+19                  non-polymer          None          None   
+20                  non-polymer          None          None   
+21                  non-polymer          None          None   
+22                  non-polymer          None          None   
+23                  non-polymer          None          None   
+24                  non-polymer          None          None   
+25                  non-polymer          None          None   
+26                  non-polymer          None          None   
+27                  non-polymer          None          None   
+28                  non-polymer          None          None   
+29                  non-polymer          None          None   
+30                  non-polymer          None          None   
+31                  non-polymer          None          None   
+32                  non-polymer          None          None   
+33                  non-polymer          None          None   
+34                  non-polymer          None          None   
+35                  non-polymer          None          None   
+36                  non-polymer          None          None   
+37                  non-polymer          None          None   
+38                  non-polymer          None          None   
+39                  non-polymer          None          None   
+40                  non-polymer          None          None   
+41                  non-polymer          None          None   
+42                  non-polymer          None          None   
+43                  non-polymer          None          None   
+44   D-saccharide, beta linking          None          None   
+45   D-saccharide, beta linking          None          None   
+46   D-saccharide, beta linking          None          None   
+47  D-saccharide, alpha linking          None          None   
+48  L-saccharide, alpha linking          None          None   
+
+                   component_type  ...  insertion_code  hetero_flag  \
+0   Organic non-protein component  ...                        H_GOL   
+1   Organic non-protein component  ...                        H_GOL   
+2   Organic non-protein component  ...                        H_GOL   
+3   Organic non-protein component  ...                        H_GOL   
+4     Single-atom component / ion  ...                         H_CL   
+5     Single-atom component / ion  ...                         H_CL   
+6     Single-atom component / ion  ...                         H_CL   
+7     Single-atom component / ion  ...                         H_CL   
+8                       Metal ion  ...                          H_K   
+9   Organic non-protein component  ...                        H_GOL   
+10  Organic non-protein component  ...                        H_GOL   
+11  Organic non-protein component  ...                        H_GOL   
+12  Organic non-protein component  ...                        H_TAR   
+13  Organic non-protein component  ...                        H_GOL   
+14    Single-atom component / ion  ...                         H_CL   
+15                      Metal ion  ...                          H_K   
+16                      Metal ion  ...                          H_K   
+17                      Metal ion  ...                          H_K   
+18                      Metal ion  ...                          H_K   
+19                      Metal ion  ...                          H_K   
+20  Organic non-protein component  ...                        H_GOL   
+21    Single-atom component / ion  ...                         H_CL   
+22    Single-atom component / ion  ...                         H_CL   
+23                      Metal ion  ...                          H_K   
+24                      Metal ion  ...                          H_K   
+25                      Metal ion  ...                          H_K   
+26                      Metal ion  ...                          H_K   
+27                      Metal ion  ...                          H_K   
+28  Organic non-protein component  ...                        H_GOL   
+29  Organic non-protein component  ...                        H_GOL   
+30  Organic non-protein component  ...                        H_GOL   
+31    Single-atom component / ion  ...                         H_CL   
+32    Single-atom component / ion  ...                         H_CL   
+33    Single-atom component / ion  ...                         H_CL   
+34                      Metal ion  ...                          H_K   
+35                      Metal ion  ...                          H_K   
+36  Organic non-protein component  ...                        H_TAR   
+37  Organic non-protein component  ...                        H_TAR   
+38  Organic non-protein component  ...                        H_GOL   
+39    Single-atom component / ion  ...                         H_CL   
+40    Single-atom component / ion  ...                         H_CL   
+41    Single-atom component / ion  ...                         H_CL   
+42    Single-atom component / ion  ...                         H_CL   
+43                      Metal ion  ...                          H_K   
+44  Organic non-protein component  ...                        H_NAG   
+45  Organic non-protein component  ...                        H_NAG   
+46  Organic non-protein component  ...                        H_BMA   
+47  Organic non-protein component  ...                        H_MAN   
+48  Organic non-protein component  ...                        H_FUC   
+
+    number_of_atoms number_of_atom_conformers  \
+0                 6                         6   
+1                 6                         6   
+2                 6                         6   
+3                 6                         6   
+4                 1                         1   
+5                 1                         1   
+6                 1                         1   
+7                 1                         1   
+8                 1                         1   
+9                 6                         6   
+10                6                         6   
+11                6                         6   
+12               10                        10   
+13                6                         6   
+14                1                         1   
+15                1                         1   
+16                1                         1   
+17                1                         1   
+18                1                         1   
+19                1                         1   
+20                6                         6   
+21                1                         1   
+22                1                         1   
+23                1                         1   
+24                1                         1   
+25                1                         1   
+26                1                         1   
+27                1                         1   
+28                6                         6   
+29                6                         6   
+30                6                         6   
+31                1                         1   
+32                1                         1   
+33                1                         1   
+34                1                         1   
+35                1                         1   
+36               10                        10   
+37               10                        10   
+38                6                         6   
+39                1                         1   
+40                1                         1   
+41                1                         1   
+42                1                         1   
+43                1                         1   
+44               14                        14   
+45               14                        14   
+46               11                        11   
+47               11                        11   
+48               10                        10   
+
+   number_of_alternative_atom_records                  elements  \
+0                                   0          {'C': 3, 'O': 3}   
+1                                   0          {'C': 3, 'O': 3}   
+2                                   0          {'C': 3, 'O': 3}   
+3                                   0          {'C': 3, 'O': 3}   
+4                                   0                 {'CL': 1}   
+5                                   0                 {'CL': 1}   
+6                                   0                 {'CL': 1}   
+7                                   0                 {'CL': 1}   
+8                                   0                  {'K': 1}   
+9                                   0          {'C': 3, 'O': 3}   
+10                                  0          {'C': 3, 'O': 3}   
+11                                  0          {'C': 3, 'O': 3}   
+12                                  0          {'O': 6, 'C': 4}   
+13                                  0          {'C': 3, 'O': 3}   
+14                                  0                 {'CL': 1}   
+15                                  0                  {'K': 1}   
+16                                  0                  {'K': 1}   
+17                                  0                  {'K': 1}   
+18                                  0                  {'K': 1}   
+19                                  0                  {'K': 1}   
+20                                  0          {'C': 3, 'O': 3}   
+21                                  0                 {'CL': 1}   
+22                                  0                 {'CL': 1}   
+23                                  0                  {'K': 1}   
+24                                  0                  {'K': 1}   
+25                                  0                  {'K': 1}   
+26                                  0                  {'K': 1}   
+27                                  0                  {'K': 1}   
+28                                  0          {'C': 3, 'O': 3}   
+29                                  0          {'C': 3, 'O': 3}   
+30                                  0          {'C': 3, 'O': 3}   
+31                                  0                 {'CL': 1}   
+32                                  0                 {'CL': 1}   
+33                                  0                 {'CL': 1}   
+34                                  0                  {'K': 1}   
+35                                  0                  {'K': 1}   
+36                                  0          {'O': 6, 'C': 4}   
+37                                  0          {'O': 6, 'C': 4}   
+38                                  0          {'C': 3, 'O': 3}   
+39                                  0                 {'CL': 1}   
+40                                  0                 {'CL': 1}   
+41                                  0                 {'CL': 1}   
+42                                  0                 {'CL': 1}   
+43                                  0                  {'K': 1}   
+44                                  0  {'C': 8, 'N': 1, 'O': 5}   
+45                                  0  {'C': 8, 'N': 1, 'O': 5}   
+46                                  0          {'C': 6, 'O': 5}   
+47                                  0          {'C': 6, 'O': 5}   
+48                                  0          {'C': 6, 'O': 4}   
+
+   metal_elements   center_x   center_y    center_z  
+0              [] -14.262325   5.666483   80.209072  
+1              [] -20.856685  -1.577053   93.826986  
+2              [] -18.670140 -19.078158   65.740368  
+3              []  -0.310983 -13.671112   76.995828  
+4              []   1.985650 -16.771481   70.798508  
+5              [] -14.575680 -15.675560   88.534401  
+6              []  -9.581570 -25.177361   74.830757  
+7              [] -32.115829  -8.068190   74.951424  
+8             [K] -10.217040 -13.543930   87.233109  
+9              []   1.006695  -1.337072   59.646974  
+10             [] -13.996390  11.785343   52.251528  
+11             []  40.077817   4.563362   36.616173  
+12             []  12.549538   6.097178   39.353695  
+13             [] -11.600255   5.378957   62.893576  
+14             []   1.038410 -20.098900   51.097149  
+15            [K]   1.708040  10.545420   52.369911  
+16            [K] -11.741550 -15.323190   58.513599  
+17            [K]   7.956320  -9.435720   50.064461  
+18            [K]   4.231940  -0.050230   40.133171  
+19            [K]  18.063999  13.861020   36.111530  
+20             []  23.503665   5.954463   44.322551  
+21             []  21.450560  12.423090   68.330833  
+22             []  -8.040200  10.998720   68.939636  
+23            [K]  18.353720  -3.803440   59.429852  
+24            [K]  21.794201  24.763170   43.433861  
+25            [K]  26.597731   8.845870   44.700809  
+26            [K]   2.166080   4.322640   81.267807  
+27            [K]  27.792540  20.449511   20.019979  
+28             []   3.281217 -16.561775  136.194023  
+29             [] -19.001085  -7.959318  124.392530  
+30             []  -7.445472  -5.644115  112.864546  
+31             [] -29.708229 -15.702840   99.664948  
+32             [] -18.202280  -3.525530  111.243263  
+33             [] -10.478160  -7.616350   99.220398  
+34            [K]  -5.383550 -12.510030  133.401077  
+35            [K]  -4.849650  -9.224660  133.753952  
+36             [] -15.167566  -4.518501  135.202924  
+37             [] -21.954494  -0.960976  123.252457  
+38             []   2.841045  -0.565498  147.092219  
+39             [] -27.481070 -17.714880  115.076080  
+40             [] -24.478800 -18.703421  122.301613  
+41             [] -18.533440  -0.903830  152.846191  
+42             [] -38.514252   0.624460  125.366432  
+43            [K] -17.753340 -17.094339  123.222420  
+44             [] -18.188187  -2.805866   97.748438  
+45             [] -17.365405   1.869636  100.489524  
+46             [] -15.056766   7.266889   99.524072  
+47             [] -16.855844  10.919726   96.230526  
+48             [] -23.237697   1.012830   97.977589  
+
+[49 rows x 26 columns]
+                  component_type  count
+0  Organic non-protein component     21
+1    Single-atom component / ion     14
+2                      Metal ion     14
+  component  occurrence_count  total_atom_count  total_atom_conformer_count  \
+0       BMA                 1                11                          11   
+1        CL                14                14                          14   
+2       FUC                 1                10                          10   
+3       GOL                13                78                          78   
+4         K                14                14                          14   
+5       MAN                 1                11                          11   
+6       NAG                 2                28                          28   
+7       TAR                 3                30                          30   
+
+          chains  
+0              C  
+1  A, B, E, H, L  
+2              C  
+3  A, B, E, H, L  
+4  A, B, E, H, L  
+5              C  
+6              C  
+7           A, H  
+   pdb_id  model_id chain_1 residue_1  residue_number_1 insertion_code_1  \
+0    7Q0G         0       A       CYS               145                    
+1    7Q0G         0       H       CYS               144                    
+2    7Q0G         0       B       CYS               136                    
+3    7Q0G         0       L       CYS               134                    
+4    7Q0G         0       A       CYS                22                    
+5    7Q0G         0       E       CYS               391                    
+6    7Q0G         0       H       CYS                22                    
+7    7Q0G         0       E       CYS               336                    
+8    7Q0G         0       B       CYS                23                    
+9    7Q0G         0       E       CYS               379                    
+10   7Q0G         0       E       CYS               480                    
+11   7Q0G         0       L       CYS                23                    
+
+            residue_component_id_1 atom_1 chain_2 residue_2  residue_number_2  \
+0   7Q0G|model_0|chain_A||145||CYS     SG       A       CYS               201   
+1   7Q0G|model_0|chain_H||144||CYS     SG       H       CYS               200   
+2   7Q0G|model_0|chain_B||136||CYS     SG       B       CYS               196   
+3   7Q0G|model_0|chain_L||134||CYS     SG       L       CYS               194   
+4    7Q0G|model_0|chain_A||22||CYS     SG       A       CYS                96   
+5   7Q0G|model_0|chain_E||391||CYS     SG       E       CYS               525   
+6    7Q0G|model_0|chain_H||22||CYS     SG       H       CYS                95   
+7   7Q0G|model_0|chain_E||336||CYS     SG       E       CYS               361   
+8    7Q0G|model_0|chain_B||23||CYS     SG       B       CYS                89   
+9   7Q0G|model_0|chain_E||379||CYS     SG       E       CYS               432   
+10  7Q0G|model_0|chain_E||480||CYS     SG       E       CYS               488   
+11   7Q0G|model_0|chain_L||23||CYS     SG       L       CYS                88   
+
+   insertion_code_2          residue_component_id_2 atom_2  distance  \
+0                    7Q0G|model_0|chain_A||201||CYS     SG  2.031341   
+1                    7Q0G|model_0|chain_H||200||CYS     SG  2.034297   
+2                    7Q0G|model_0|chain_B||196||CYS     SG  2.039120   
+3                    7Q0G|model_0|chain_L||194||CYS     SG  2.039969   
+4                     7Q0G|model_0|chain_A||96||CYS     SG  2.041735   
+5                    7Q0G|model_0|chain_E||525||CYS     SG  2.044540   
+6                     7Q0G|model_0|chain_H||95||CYS     SG  2.044721   
+7                    7Q0G|model_0|chain_E||361||CYS     SG  2.049153   
+8                     7Q0G|model_0|chain_B||89||CYS     SG  2.067526   
+9                    7Q0G|model_0|chain_E||432||CYS     SG  2.072963   
+10                   7Q0G|model_0|chain_E||488||CYS     SG  2.073292   
+11                    7Q0G|model_0|chain_L||88||CYS     SG  2.077898   
+
+              interaction_type  
+0   Potential disulfide bridge  
+1   Potential disulfide bridge  
+2   Potential disulfide bridge  
+3   Potential disulfide bridge  
+4   Potential disulfide bridge  
+5   Potential disulfide bridge  
+6   Potential disulfide bridge  
+7   Potential disulfide bridge  
+8   Potential disulfide bridge  
+9   Potential disulfide bridge  
+10  Potential disulfide bridge  
+11  Potential disulfide bridge  
+  PDB_ID  number_of_chains_from_sequence_dictionary  \
+0   7Q0G                                          6   
+
+   number_of_chains_in_residue_table  number_of_protein_residues  \
+0                                  5                        1063   
+
+   number_of_protein_atoms  number_of_component_instances  \
+0                     8068                             49   
+
+   number_of_unique_component_types  number_of_water_residues  \
+0                                 8                       317   
+
+   number_of_atom_elements  
+0                        4  
+  element  atom_count  percentage
+0       C        5083   63.001983
+1       O        1596   19.781854
+2       N        1355   16.794745
+3       S          34    0.421418
+  chain_id  sequence_length  residue_count  atom_count  atoms_per_residue  \
+0        E              196            196        1549           7.903061   
+1        H              218            218        1620           7.431193   
+2        L              214            214        1640           7.663551   
+3        B              216            216        1656           7.666667   
+4        A              219            219        1603           7.319635   
+5        C                0              0           0                NaN   
+
+   missing_backbone_atoms  mean_B_factor  median_B_factor  mean_occupancy  
+0                       0      52.276972        45.733470             1.0  
+1                       0      40.323379        37.449755             1.0  
+2                       0      44.386486        42.069105             1.0  
+3                       0      51.004258        47.362465             1.0  
+4                       0      45.624302        42.169990             1.0  
+5                       0            NaN              NaN             NaN  
+   chain_1 chain_2  alignment_score  identical_positions  aligned_positions  \
+0        E       H            -82.5                 64.0                143   
+1        E       L            -86.0                 58.0                145   
+2        E       B            -89.0                 64.0                156   
+3        E       A            -70.0                 70.0                135   
+4        E       C              NaN                  NaN                  0   
+5        H       L            -29.5                 83.0                172   
+6        H       B            -15.5                 88.0                183   
+7        H       A            278.0                168.0                216   
+8        H       C              NaN                  NaN                  0   
+9        L       B            326.0                182.0                214   
+10       L       A            -38.0                 82.0                175   
+11       L       C              NaN                  NaN                  0   
+12       B       A            -22.0                 86.0                186   
+13       B       C              NaN                  NaN                  0   
+14       A       C              NaN                  NaN                  0   
+
+    sequence_identity_percent  \
+0                   44.755245   
+1                   40.000000   
+2                   41.025641   
+3                   51.851852   
+4                         NaN   
+5                   48.255814   
+6                   48.087432   
+7                   77.777778   
+8                         NaN   
+9                   85.046729   
+10                  46.857143   
+11                        NaN   
+12                  46.236559   
+13                        NaN   
+14                        NaN   
+
+                                    comparison_status  
+0   Global alignment; gaps excluded from identity ...  
+1   Global alignment; gaps excluded from identity ...  
+2   Global alignment; gaps excluded from identity ...  
+3   Global alignment; gaps excluded from identity ...  
+4                                      Empty sequence  
+5   Global alignment; gaps excluded from identity ...  
+6   Global alignment; gaps excluded from identity ...  
+7   Global alignment; gaps excluded from identity ...  
+8                                      Empty sequence  
+9   Global alignment; gaps excluded from identity ...  
+10  Global alignment; gaps excluded from identity ...  
+11                                     Empty sequence  
+12  Global alignment; gaps excluded from identity ...  
+13                                     Empty sequence  
+14                                     Empty sequence  
+                                    metric      value  unit       status
+0                           analysis_model          0  None  from CELL 9
+1                    uses_first_model_only       True  None  from CELL 9
+2                               atom_count       8068  None  from CELL 9
+3                            residue_count       1063  None  from CELL 9
+4                              chain_count          5  None  from CELL 9
+5  unweighted_geometric_radius_of_gyration  47.326486  None  from CELL 9
+6                             aspect_ratio   2.169815  None  from CELL 9
+7                              X dimension  88.056599     A  from CELL 9
+8                              Y dimension  71.238091     A  from CELL 9
+9                              Z dimension   154.5735     A  from CELL 9
+                                 metric        value     unit  \
+0                  Atom quality records  8068.000000  records   
+1       Alternate location atom records     0.000000  records   
+2            Low occupancy atom records          NaN  records   
+3        Missing occupancy atom records          NaN  records   
+4        Invalid occupancy atom records          NaN  records   
+5                         Mean B-factor    46.689830      A^2   
+6                       Median B-factor    42.793755      A^2   
+7                        Mean occupancy     1.000000     None   
+8         Missing backbone atom records          NaN  records   
+9   Unobserved residue records in mmCIF    22.000000  records   
+10     Unobserved atom records in mmCIF    21.000000  records   
+
+                                       status  
+0                            from CELL 14 CSV  
+1                     from atom quality table  
+2   dedicated low occupancy table unavailable  
+3                            data unavailable  
+4                            data unavailable  
+5                            from CELL 14 CSV  
+6                            from CELL 14 CSV  
+7                            from CELL 14 CSV  
+8          missing backbone table unavailable  
+9                                from CELL 10  
+10                               from CELL 10  
+  component  occurrence_count
+0        CL                14
+1         K                14
+2       GOL                13
+3       TAR                 3
+4       NAG                 2
+5       BMA                 1
+6       MAN                 1
+7       FUC                 1
+                                 metric  value      unit  \
+0                 Binding site residues    NaN  residues   
+1  Protein-component atom-pair contacts    NaN  contacts   
+2    Minimum component-protein distance    NaN         A   
+3         Mean minimum residue distance    NaN         A   
+
+                                  status  
+0  not applicable: no selected component  
+1  not applicable: no selected component  
+2  not applicable: no selected component  
+3  not applicable: no selected component  
+       category                                      metric  value      unit  \
+0  Interactions  Total component-protein atom-pair contacts      0  contacts   
+
+                                 status  
+0  CELL 19 completed; no contacts found  
+                category                              metric  value      unit  \
+0  HEM iron coordination  Potential Fe coordination contacts      0  contacts   
+
+                               status  
+0  no Fe contacts in recognized hemes  
+Empty DataFrame
+Columns: [pdb_id, model_id, chain_id, residue_number, insertion_code, heme_component, iron_atom, nitrogen_atom, distance_A]
+Index: []
+Empty DataFrame
+Columns: [model_id, chain_id, residue_number, insertion_code, heme_component, number_of_Fe_N_distances, minimum_distance_A, maximum_distance_A, mean_distance_A, std_distance_A]
+Index: []
+Empty DataFrame
+Columns: [pdb_id, model_id, heme_chain, heme_residue_number, heme_insertion_code, heme_component, iron_atom, oxy_chain, oxy_residue_number, oxy_insertion_code, oxy_component, oxygen_atom, distance_A]
+Index: []
+Empty DataFrame
+Columns: [heme_chain, heme_residue_number, heme_insertion_code, heme_component, oxy_chain, oxy_residue_number, oxy_insertion_code, oxy_component, number_of_Fe_OXY_distances, minimum_distance_A, mean_distance_A, maximum_distance_A]
+Index: []
+            category                            metric      value   unit  \
+0  Disulfide bridges  Potential disulfide bridge count  12.000000  pairs   
+1  Disulfide bridges            Minimum SG-SG distance   2.031341      A   
+2  Disulfide bridges               Mean SG-SG distance   2.051380      A   
+
+                                  status  
+0  potential SG-SG contacts from CELL 19  
+1  potential SG-SG contacts from CELL 19  
+2  potential SG-SG contacts from CELL 19  
+   pdb_id  model_id chain_1 residue_1  residue_number_1 insertion_code_1  \
+0    7Q0G         0       A       CYS               145                    
+1    7Q0G         0       H       CYS               144                    
+2    7Q0G         0       B       CYS               136                    
+3    7Q0G         0       L       CYS               134                    
+4    7Q0G         0       A       CYS                22                    
+5    7Q0G         0       E       CYS               391                    
+6    7Q0G         0       H       CYS                22                    
+7    7Q0G         0       E       CYS               336                    
+8    7Q0G         0       B       CYS                23                    
+9    7Q0G         0       E       CYS               379                    
+10   7Q0G         0       E       CYS               480                    
+11   7Q0G         0       L       CYS                23                    
+
+            residue_component_id_1 atom_1 chain_2 residue_2  residue_number_2  \
+0   7Q0G|model_0|chain_A||145||CYS     SG       A       CYS               201   
+1   7Q0G|model_0|chain_H||144||CYS     SG       H       CYS               200   
+2   7Q0G|model_0|chain_B||136||CYS     SG       B       CYS               196   
+3   7Q0G|model_0|chain_L||134||CYS     SG       L       CYS               194   
+4    7Q0G|model_0|chain_A||22||CYS     SG       A       CYS                96   
+5   7Q0G|model_0|chain_E||391||CYS     SG       E       CYS               525   
+6    7Q0G|model_0|chain_H||22||CYS     SG       H       CYS                95   
+7   7Q0G|model_0|chain_E||336||CYS     SG       E       CYS               361   
+8    7Q0G|model_0|chain_B||23||CYS     SG       B       CYS                89   
+9   7Q0G|model_0|chain_E||379||CYS     SG       E       CYS               432   
+10  7Q0G|model_0|chain_E||480||CYS     SG       E       CYS               488   
+11   7Q0G|model_0|chain_L||23||CYS     SG       L       CYS                88   
+
+   insertion_code_2          residue_component_id_2 atom_2  distance  \
+0                    7Q0G|model_0|chain_A||201||CYS     SG  2.031341   
+1                    7Q0G|model_0|chain_H||200||CYS     SG  2.034297   
+2                    7Q0G|model_0|chain_B||196||CYS     SG  2.039120   
+3                    7Q0G|model_0|chain_L||194||CYS     SG  2.039969   
+4                     7Q0G|model_0|chain_A||96||CYS     SG  2.041735   
+5                    7Q0G|model_0|chain_E||525||CYS     SG  2.044540   
+6                     7Q0G|model_0|chain_H||95||CYS     SG  2.044721   
+7                    7Q0G|model_0|chain_E||361||CYS     SG  2.049153   
+8                     7Q0G|model_0|chain_B||89||CYS     SG  2.067526   
+9                    7Q0G|model_0|chain_E||432||CYS     SG  2.072963   
+10                   7Q0G|model_0|chain_E||488||CYS     SG  2.073292   
+11                    7Q0G|model_0|chain_L||88||CYS     SG  2.077898   
+
+              interaction_type  
+0   Potential disulfide bridge  
+1   Potential disulfide bridge  
+2   Potential disulfide bridge  
+3   Potential disulfide bridge  
+4   Potential disulfide bridge  
+5   Potential disulfide bridge  
+6   Potential disulfide bridge  
+7   Potential disulfide bridge  
+8   Potential disulfide bridge  
+9   Potential disulfide bridge  
+10  Potential disulfide bridge  
+11  Potential disulfide bridge  
+             category                                     metric value  \
+0    Global structure  number_of_chains_from_sequence_dictionary     6   
+1    Global structure          number_of_chains_in_residue_table     5   
+2    Global structure                 number_of_protein_residues  1063   
+3    Global structure                    number_of_protein_atoms  8068   
+4    Global structure              number_of_component_instances    49   
+..                ...                                        ...   ...   
+104        Components                            TAR occurrences     3   
+105        Components                            NAG occurrences     2   
+106        Components                            BMA occurrences     1   
+107        Components                            MAN occurrences     1   
+108        Components                            FUC occurrences     1   
+
+          unit                status  
+0         None  from chain_sequences  
+1         None      from df_residues  
+2         None            calculated  
+3         None            calculated  
+4         None    from df_components  
+..         ...                   ...  
+104  instances    from df_components  
+105  instances    from df_components  
+106  instances    from df_components  
+107  instances    from df_components  
+108  instances    from df_components  
+
+[109 rows x 5 columns]
+===========================================================================
+CELL 22. PROTEIN FEATURE EXTRACTION
+===========================================================================
+PDB ID: 7Q0G
+PDB results directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G
+Feature directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G\features
+Analysis scope: first_model
+
+DATAFRAME DISCOVERY
+---------------------------------------------------------------------------
+atoms                         :     8068 rows | df_atoms
+residues                      :     1063 rows | df_residues
+chains                        : not available
+interactions                  :        0 rows | df_interactions
+binding_site                  :        0 rows | df_binding
+binding_atom_contacts         :        0 rows | df_binding_atom_contacts
+binding_by_chain              :        0 rows | df_binding_by_chain
+all_metal_coordination        :        0 rows | df_all_metal_coordination
+heme_iron_coordination        :        0 rows | df_metal_coordination
+disulfide_bridges             :       12 rows | df_disulfide_bridges
+components                    :       49 rows | df_components
+geometry                      : not available
+hydrogen_bonds                : not available
+hydrophobic_contacts          : not available
+altloc_atoms                  : not available
+altloc_occupancy              : not available
+low_occupancy_atoms           : not available
+missing_occupancy_atoms       : not available
+invalid_occupancy_atoms       : not available
+atom_quality                  : not available
+unobserved_residues           :       22 rows | df_unobserved_residues
+unobserved_atoms              :       21 rows | df_unobserved_atoms
+
+
+===========================================================================
+SAVING FEATURE TABLES
+===========================================================================
+
+7Q0G_global_features.csv                                          1 rows |  143 columns
+7Q0G_atom_features.csv                                         8068 rows |   23 columns
+7Q0G_residue_features.csv                                      1063 rows |   22 columns
+7Q0G_interaction_features.csv                                    12 rows |   18 columns
+7Q0G_metal_features.csv                                           0 rows |   18 columns
+7Q0G_heme_iron_coordination_features.csv                          0 rows |   18 columns
+7Q0G_binding_site_features.csv                                    0 rows |   24 columns
+7Q0G_binding_atom_contact_features.csv                            0 rows |   21 columns
+7Q0G_binding_chain_features.csv                                   0 rows |    8 columns
+7Q0G_component_features.csv                                      49 rows |   26 columns
+7Q0G_disulfide_features.csv                                      12 rows |   16 columns
+7Q0G_geometry_features.csv                                        0 rows |    0 columns
+7Q0G_altloc_features.csv                                          0 rows |    0 columns
+7Q0G_altloc_occupancy_features.csv                                0 rows |    0 columns
+7Q0G_low_occupancy_features.csv                                   0 rows |    0 columns
+7Q0G_missing_occupancy_features.csv                               0 rows |    0 columns
+7Q0G_invalid_occupancy_features.csv                               0 rows |    0 columns
+
+7Q0G_atom_quality_features.csv                                 8068 rows |   17 columns
+7Q0G_unobserved_residue_features.csv                             22 rows |   11 columns
+7Q0G_unobserved_atom_features.csv                                21 rows |   14 columns
+
+===========================================================================
+OUTPUT VALIDATION
+===========================================================================
+global_features                         : OK
+atom_features                           : OK
+residue_features                        : OK
+interaction_features                    : OK
+metal_features                          : OK
+heme_iron_coordination_features         : OK
+binding_site_features                   : OK
+binding_atom_contact_features           : OK
+binding_chain_features                  : OK
+component_features                      : OK
+disulfide_features                      : OK
+geometry_features                       : OK
+altloc_features                         : OK
+altloc_occupancy_features               : OK
+low_occupancy_features                  : OK
+missing_occupancy_features              : OK
+invalid_occupancy_features              : OK
+atom_quality_features                   : OK
+unobserved_residue_features             : OK
+unobserved_atom_features                : OK
+
+JSON structure: OK
+Atom feature rows: OK
+Residue feature rows: OK
+Combined interaction rows: OK
+Source DataFrame row counts: OK
+Validation metadata added to JSON: OK
+
+===========================================================================
+PROTEIN FEATURE EXTRACTION SUMMARY
+===========================================================================
+PDB ID: 7Q0G
+Analysis scope: first_model
+
+STRUCTURAL FEATURES
+---------------------------------------------------------------------------
+protein_atom_count: 8068
+protein_residue_count: 1063
+protein_chain_count: 5
+sequence_chain_count: 6
+component_instance_count: 49
+component_type_count: 8
+
+GEOMETRY FEATURES
+---------------------------------------------------------------------------
+Geometry feature count: 37
+geometry_analysis_model: 0
+geometry_uses_first_model_only: True
+geometry_atom_count: 8068
+geometry_residue_count: 1063
+geometry_chain_count: 5
+geometry_centroid_x: -5.848892978359065
+geometry_centroid_y: -3.445931714694276
+geometry_centroid_z: 85.92112317402054
+geometry_bounding_box_min_x: -46.63479995727539
+geometry_bounding_box_min_y: -35.549049377441406
+geometry_bounding_box_min_z: 10.268159866333008
+geometry_bounding_box_max_x: 41.42179870605469
+geometry_bounding_box_max_y: 35.68904113769531
+geometry_bounding_box_max_z: 164.84165954589844
+geometry_bounding_box_dimension_x: 88.05659866333008
+geometry_bounding_box_dimension_y: 71.23809051513672
+geometry_bounding_box_dimension_z: 154.57349967956543
+geometry_bounding_box_volume: 969637.081972109
+geometry_distance_from_centroid_minimum: 1.6057316088103248
+geometry_distance_from_centroid_mean: 43.39607892674367
+geometry_distance_from_centroid_median: 40.73434444218708
+geometry_distance_from_centroid_maximum: 84.7226723959379
+geometry_unweighted_geometric_radius_of_gyration: 47.32648620659597
+geometry_aspect_ratio: 2.1698153131535936
+geometry_coordinate_validation_invalid_coordinate_count: 0
+geometry_coordinate_validation_all_coordinates_finite: True
+geometry_atom_count_check_with_cell_7_available: True
+geometry_atom_count_check_with_cell_7_expected_atom_count: 8068
+geometry_atom_count_check_with_cell_7_observed_atom_count: 8068
+geometry_atom_count_check_with_cell_7_matches: True
+geometry_output_checks_geometry_csv: True
+geometry_output_checks_geometry_json: True
+geometry_output_checks_geometry_plot: True
+bounding_box_volume: 969637.081972109
+aspect_ratio: 2.1698153131535936
+protein_atom_count: 8068
+total_protein_atoms: 8068
+
+BINDING SITE FEATURES
+---------------------------------------------------------------------------
+binding_site_available: True
+binding_atom_contacts_available: True
+binding_chain_statistics_available: True
+binding_site_residue_count: 0
+binding_site_atom_pair_record_count: 0
+binding_site_min_residue_distance_A: None
+binding_site_mean_residue_min_distance_A: None
+binding_site_max_residue_min_distance_A: None
+binding_site_mean_atom_pair_distance_A: None
+binding_site_unique_protein_contact_atom_count: 0
+binding_site_unique_component_contact_atom_count: 0
+binding_site_chain_count: None
+
+METAL FEATURES
+---------------------------------------------------------------------------
+metal_coordination_table_available: True
+metal_coordination_record_count: 0
+metal_coordination_mean_distance_A: None
+heme_iron_coordination_table_available: True
+heme_iron_coordination_record_count: 0
+
+INTERACTION RECORDS
+---------------------------------------------------------------------------
+Selected-component records: 0
+Binding atom-pair records: 0
+Metal coordination records: 0
+Heme iron coordination records: 0
+Potential disulfide pair records: 12
+Combined interaction records: 12
+
+STRUCTURE QUALITY
+---------------------------------------------------------------------------
+unobserved_residue_record_count: 22
+unobserved_atom_record_count: 21
+quality_tables_scope: CELL 14 tables may include all models and alternate conformers; they are not restricted to the first-model atom table.
+altloc_atoms_record_count: None
+altloc_occupancy_record_count: None
+low_occupancy_atoms_record_count: None
+missing_occupancy_atoms_record_count: None
+invalid_occupancy_atoms_record_count: None
+atom_quality_record_count: 8068
+structure_quality_number_of_models: 1
+structure_quality_observed_protein_atom_conformer_records: 8068
+structure_quality_unique_protein_atom_sites: 8068
+structure_quality_additional_conformer_records: 0
+structure_quality_observed_protein_residues_all_models: 1063
+structure_quality_observed_protein_residues_first_model: 1063
+structure_quality_unobserved_residue_category_present: True
+structure_quality_unobserved_residue_records: 22
+structure_quality_unobserved_atom_category_present: True
+structure_quality_unobserved_atom_records: 21
+structure_quality_altloc_atom_record_count: 0
+structure_quality_altloc_unique_site_count: 0
+structure_quality_low_occupancy_threshold: 0.99
+structure_quality_low_occupancy_atom_record_count: 0
+structure_quality_missing_occupancy_atom_record_count: 0
+structure_quality_invalid_occupancy_atom_record_count: 0
+structure_quality_invalid_coordinate_record_count: 0
+structure_quality_altloc_and_low_occupancy_overlap: 0
+structure_quality_mean_occupancy: 1.0
+structure_quality_median_occupancy: 1.0
+structure_quality_minimum_occupancy: 1.0
+structure_quality_maximum_occupancy: 1.0
+structure_quality_cell7_comparison_cell7_atom_count: 8068
+structure_quality_cell7_comparison_first_model_atom_conformer_count: 8068
+structure_quality_cell7_comparison_first_model_unique_atom_site_count: 8068
+structure_quality_cell7_comparison_matches_first_model_atom_records: True
+structure_quality_cell7_comparison_matches_first_model_unique_atom_sites: True
+structure_quality_cell6_comparison_cell6_residue_count: 1063
+structure_quality_cell6_comparison_first_model_residue_count: 1063
+structure_quality_cell6_comparison_matches_first_model_residue_count: True
+
+OUTPUT TABLES
+---------------------------------------------------------------------------
+global_features                         :        1 rows × 143 columns
+atom_features                           :     8068 rows ×  23 columns
+residue_features                        :     1063 rows ×  22 columns
+interaction_features                    :       12 rows ×  18 columns
+metal_features                          :        0 rows ×  18 columns
+heme_iron_coordination_features         :        0 rows ×  18 columns
+binding_site_features                   :        0 rows ×  24 columns
+binding_atom_contact_features           :        0 rows ×  21 columns
+binding_chain_features                  :        0 rows ×   8 columns
+component_features                      :       49 rows ×  26 columns
+disulfide_features                      :       12 rows ×  16 columns
+geometry_features                       :        0 rows ×   0 columns
+altloc_features                         :        0 rows ×   0 columns
+altloc_occupancy_features               :        0 rows ×   0 columns
+low_occupancy_features                  :        0 rows ×   0 columns
+missing_occupancy_features              :        0 rows ×   0 columns
+invalid_occupancy_features              :        0 rows ×   0 columns
+atom_quality_features                   :     8068 rows ×  17 columns
+unobserved_residue_features             :       22 rows ×  11 columns
+unobserved_atom_features                :       21 rows ×  14 columns
+
+OUTPUT DIRECTORY
+---------------------------------------------------------------------------
+C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G\features
+
+JSON FILE
+---------------------------------------------------------------------------
+C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G\features\7Q0G_protein_features.json
+
+VALIDATION
+---------------------------------------------------------------------------
+global_features_file_exists: True
+atom_features_file_exists: True
+residue_features_file_exists: True
+interaction_features_file_exists: True
+metal_features_file_exists: True
+heme_iron_coordination_features_file_exists: True
+binding_site_features_file_exists: True
+binding_atom_contact_features_file_exists: True
+binding_chain_features_file_exists: True
+component_features_file_exists: True
+disulfide_features_file_exists: True
+geometry_features_file_exists: True
+altloc_features_file_exists: True
+altloc_occupancy_features_file_exists: True
+low_occupancy_features_file_exists: True
+missing_occupancy_features_file_exists: True
+invalid_occupancy_features_file_exists: True
+atom_quality_features_file_exists: True
+unobserved_residue_features_file_exists: True
+unobserved_atom_features_file_exists: True
+json_readable: True
+json_pdb_id_matches: True
+atom_row_count_matches: True
+residue_row_count_matches: True
+interaction_row_count_matches: True
+source_atom_row_count_preserved: True
+source_residue_row_count_preserved: True
+binding_atom_contacts_finite_distance_values: True
+metal_coordination_finite_distance_values: True
+
+STATUS: COMPLETED
+CELL 22 COMPLETED
+===========================================================================
+
+===========================================================================
+CELL 23. PROTEIN SPATIAL REPRESENTATION
+===========================================================================
+PDB ID: 7Q0G
+Analysis scope: first_model
+Spatial cutoff: 5.0 Å
+Input atom rows: 8068
+Output directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G\features
+
+ATOM DATA PREPARATION
+---------------------------------------------------------------------------
+Valid heavy atom records: 8068
+Invalid coordinate records: 0
+Excluded H/D records: 0
+Unknown element records: 0
+Duplicate atom sites: 0
+Unique residues: 1063
+
+
+ATOM NEIGHBOR SEARCH
+---------------------------------------------------------------------------
+Atoms indexed: 8068
+Atom pairs found: 94153
+
+===========================================================================
+SAVING SPATIAL GRAPH TABLES
+===========================================================================
+
+7Q0G_spatial_atom_nodes.csv                                            8068 rows
+
+7Q0G_spatial_atom_edges.csv                                           94153 rows
+7Q0G_spatial_atom_intra_residue_edges.csv                             25900 rows
+
+7Q0G_spatial_atom_inter_residue_edges.csv                             68253 rows
+7Q0G_spatial_residue_nodes.csv                                         1063 rows
+7Q0G_spatial_residue_edges.csv                                         5729 rows
+7Q0G_spatial_chain_statistics.csv                                         5 rows
+7Q0G_spatial_inter_chain_edges.csv                                     2887 rows
+
+===========================================================================
+SPATIAL GRAPH VALIDATION
+===========================================================================
+
+===========================================================================
+ATOM SPATIAL GRAPH
+===========================================================================
+node_count                         : 8068
+edge_count                         : 94153
+component_count                    : 1
+largest_component_size             : 8068
+largest_component_fraction         : 1.0
+isolated_node_count                : 0
+mean_degree                        : 23.339861179970253
+max_degree                         : 42
+graph_density                      : 0.002893251664803552
+
+ATOM DISTANCE STATISTICS
+min_distance_A                     : 1.2184592597258894
+mean_distance_A                    : 3.7103812697698144
+median_distance_A                  : 3.9887009181597524
+max_distance_A                     : 4.999996830647883
+
+INTRA-RESIDUE ATOM EDGES: 25900
+INTER-RESIDUE ATOM EDGES: 68253
+INTER-CHAIN ATOM EDGES: 2887
+
+===========================================================================
+RESIDUE SPATIAL GRAPH
+===========================================================================
+node_count                         : 1063
+edge_count                         : 5729
+component_count                    : 1
+largest_component_size             : 1063
+largest_component_fraction         : 1.0
+isolated_node_count                : 0
+mean_degree                        : 10.77892756349953
+max_degree                         : 21
+graph_density                      : 0.010149649306496733
+
+RESIDUE DISTANCE STATISTICS
+min_distance_A                     : 1.3128765102032065
+mean_min_distance_A                : 3.3291033117303934
+mean_contact_distance_A            : 4.283221834642201
+max_min_distance_A                 : 4.999425750439131
+
+===========================================================================
+CHAIN STATISTICS
+===========================================================================
+chain_id chain_id_display  atom_node_count  residue_count  intra_chain_atom_edge_count  inter_chain_atom_edge_incident_count  inter_chain_partner_count
+       A                A             1603            219                        17872                                  1380                          2
+       B                B             1656            216                        18652                                  1078                          2
+       E                E             1549            196                        17753                                  1046                          4
+       H                H             1620            218                        18351                                  1308                          2
+       L                L             1640            214                        18638                                   962                          2
+
+===========================================================================
+SAVED FILES
+===========================================================================
+atom_nodes                    : OK
+atom_edges                    : OK
+atom_intra_residue_edges      : OK
+atom_inter_residue_edges      : OK
+residue_nodes                 : OK
+residue_edges                 : OK
+chain_statistics              : OK
+inter_chain_edges             : OK
+summary                       : OK
+
+Output directory:
+C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G\features
+
+VALIDATION: PASSED
+CELL 23 COMPLETED
+===========================================================================
+
+======================================================================
+CELL 24. UNIFIED PROTEIN STRUCTURAL REPRESENTATION
+======================================================================
+PDB ID: 7Q0G
+Input directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G\features
+Output directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G\unified_representation
+
+
+INPUT DATA
+----------------------------------------------------------------------
+Atom nodes                 :     8068 rows
+Atom edges                 :    94153 rows
+Residue nodes              :     1063 rows
+Residue edges              :     5729 rows
+Global features            :        1 rows
+Binding site               :        0 rows
+Binding atom contacts      :        0 rows
+Interactions               :       12 rows
+Metal features             :        0 rows
+Atom features              :     8068 rows
+Residue features           :     1063 rows
+
+
+RESIDUE IDENTIFIER VALIDATION
+----------------------------------------------------------------------
+Binding-site source available: False
+Unique binding-site residues: 0
+Matched residue nodes: 0
+Matched atom nodes: 0
+Total residue nodes: 1063
+Total atom nodes: 8068
+
+DIRECT CONTACT ATOMS
+----------------------------------------------------------------------
+Direct-contact feature available: False
+Direct-contact atoms matched: 0
+Direct-contact mapping: {'source': None, 'contact_rows': 0, 'unique_contact_atoms': 0, 'matched_contact_atoms': 0, 'unmatched_contact_atoms': 0, 'status': 'unavailable'}
+
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_18376\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+
+
+VALIDATION
+----------------------------------------------------------------------
+Node dimensions: OK
+Coordinate dimensions: OK
+Edge index ranges: OK
+Finite numerical values: OK
+Feature names: OK
+Binding masks: OK
+Bidirectional edges: OK
+No self-loops: OK
+Node mappings: OK
+
+
+======================================================================
+UNIFIED PROTEIN REPRESENTATION SUMMARY
+======================================================================
+
+ATOM GRAPH
+----------------------------------------------------------------------
+Atom nodes:             8,068
+Atom features:          26
+Atom coordinates:       (8068, 3)
+Atom edge index:        (2, 188306)
+Atom edge features:     (188306, 2)
+
+RESIDUE GRAPH
+----------------------------------------------------------------------
+Residue nodes:          1,063
+Residue features:       23
+Residue coordinates:    (1063, 3)
+Residue edge index:     (2, 11458)
+Residue edge features:  (11458, 3)
+
+GLOBAL FEATURES
+----------------------------------------------------------------------
+Global feature count:   124
+
+BINDING SITE
+----------------------------------------------------------------------
+Binding-site residues: 0
+Matched binding residues: 0
+Binding-site atom count: 0
+Direct-contact atom count: 0
+Binding-site residue nodes: 0
+
+DIRECT CONTACT MAPPING
+----------------------------------------------------------------------
+source                        : None
+contact_rows                  : 0
+unique_contact_atoms          : 0
+matched_contact_atoms         : 0
+unmatched_contact_atoms       : 0
+status                        : unavailable
+
+SAVED FILES
+----------------------------------------------------------------------
+7Q0G_ml_graph_data.npz                          OK
+7Q0G_ml_atom_features.csv                       OK
+7Q0G_ml_residue_features.csv                    OK
+7Q0G_ml_atom_node_mapping.csv                   OK
+7Q0G_ml_residue_node_mapping.csv                OK
+7Q0G_ml_manifest.json                           OK
+7Q0G_ml_global_features.csv                     OK
+
+======================================================================
+CELL 24 COMPLETED
+======================================================================
+Unified protein representation successfully created.
+
+Output directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7Q0G\unified_representation
+
+MAIN ML OBJECTS
+X_atom                        shape=(8068, 26)        dtype=float32
+pos_atom                      shape=(8068, 3)         dtype=float32
+edge_index_atom               shape=(2, 188306)       dtype=int64
+edge_attr_atom                shape=(188306, 2)       dtype=float32
+X_residue                     shape=(1063, 23)        dtype=float32
+pos_residue                   shape=(1063, 3)         dtype=float32
+edge_index_residue            shape=(2, 11458)        dtype=int64
+edge_attr_residue             shape=(11458, 3)        dtype=float32
+X_global                      shape=(124,)            dtype=float32
+atom_node_ids                 shape=(8068,)           dtype=int64
+residue_node_ids              shape=(1063,)           dtype=int64
+is_binding_site_atom          shape=(8068,)           dtype=float32
+is_direct_contact_atom        shape=(8068,)           dtype=float32
+is_binding_site_residue       shape=(1063,)           dtype=float32
+
+Additional mapping tables:
+df_atom_node_mapping_24: (8068, 6)
+df_residue_node_mapping_24: (1063, 5)
+
+All validation checks passed.
+
 
 ============================================================
 ERROR
 ============================================================
-
-Traceback (most recent call last):
-  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_18548\2401576057.py", line 536, in run_one_pdb
-    client.execute()
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
-    return _runner_map[name].run(inner)
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
-    return fut.result(None)
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
-    return self.__get_result()
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
-    raise self._exception
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
-    await self.async_execute_cell(
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-# ============================================================
-# CELL 15. SEPARATE PROTEIN CHAINS AND HETERO COMPONENTS
-# ============================================================
-# Назначение:
-# 1. Разделение белковых атомов и остатков.
-# 2. Отдельное сохранение небелковых компонентов и воды.
-# 3. Формирование сводки небелковых компонентов.
-# 4. Сохранение отдельных файлов белковых цепей.
-# 5. Проверка согласованности с CELL 6–8.
-#
-# ВАЖНО:
-# - Используется первая модель структуры.
-# - CELL 6 и CELL 7 уже содержат белковые данные.
-# - Альтернативные положения атомов анализируются в CELL 14.
-# - Небелковые компоненты не считаются автоматически
-#   лекарственными лигандами.
-# - Для цепей с идентификаторами длиннее одного символа
-#   используется mmCIF, поскольку PDB ограничивает
-#   длину идентификатора цепи одним символом.
-# ============================================================
-
-# ============================================================
-# IMPORTS
-# ============================================================
-
-import os
-import json
-import warnings
-
-import numpy as np
-import pandas as pd
-
-from pathlib import Path
-
-from Bio.PDB import PDBIO, Select
-from Bio.PDB.mmcifio import MMCIFIO
-from Bio.PDB.Polypeptide import is_aa
-
-
-print("CELL 15 imports completed.")
-print("MMCIFIO:", MMCIFIO)
-
-
-# ------------------------------------------------------------
-# 1. Проверка входных данных
-# ------------------------------------------------------------
-
-required_variables = [
-    "PDB_ID",
-    "structure",
-    "PDB_RESULTS_DIR",
-    "df_atoms",
-    "df_residues",
-    "df_hetero",
-    "df_water"
-]
-
-for variable in required_variables:
-
-    if variable not in globals():
-
-        raise NameError(
-            f"Переменная {variable} не определена. "
-            "Проверьте выполнение предыдущих ячеек."
-        )
-
-
-PDB_ID = str(PDB_ID).strip().upper()
-
-if not re.fullmatch(r"[A-Z0-9]{4}", PDB_ID):
-
-    raise ValueError(
-        f"Некорректный PDB ID: {PDB_ID}"
-    )
-
-
-PDB_RESULTS_DIR = Path(PDB_RESULTS_DIR)
-
-if PDB_RESULTS_DIR.name.upper() != PDB_ID:
-
-    raise ValueError(
-        "Папка результатов не соответствует текущему PDB ID.\n"
-        f"PDB_ID: {PDB_ID}\n"
-        f"Папка: {PDB_RESULTS_DIR}"
-    )
-
-
-PDB_RESULTS_DIR.mkdir(
-    parents=True,
-    exist_ok=True
-)
-
-
-input_tables = {
-
-    "df_atoms": df_atoms,
-
-    "df_residues": df_residues,
-
-    "df_hetero": df_hetero,
-
-    "df_water": df_water
-
-}
-
-
-for table_name, table in input_tables.items():
-
-    if not isinstance(table, pd.DataFrame):
-
-        raise TypeError(
-            f"{table_name} должен быть pandas DataFrame."
-        )
-
-
-if df_atoms.empty:
-
-    raise ValueError(
-        "Таблица df_atoms не содержит белковых атомов."
-    )
-
-
-if df_residues.empty:
-
-    raise ValueError(
-        "Таблица df_residues не содержит белковых остатков."
-    )
-
-
-required_atom_columns = {
-
-    "pdb_id",
-
-    "chain_id",
-
-    "residue_key",
-
-    "atom_name"
-
-}
-
-
-missing_atom_columns = (
-    required_atom_columns - set(df_atoms.columns)
-)
-
-
-if missing_atom_columns:
-
-    raise KeyError(
-        "В df_atoms отсутствуют столбцы: "
-        f"{sorted(missing_atom_columns)}"
-    )
-
-
-required_residue_columns = {
-
-    "pdb_id",
-
-    "chain_id",
-
-    "residue_key"
-
-}
-
-
-missing_residue_columns = (
-    required_residue_columns - set(df_residues.columns)
-)
-
-
-if missing_residue_columns:
-
-    raise KeyError(
-        "В df_residues отсутствуют столбцы: "
-        f"{sorted(missing_residue_columns)}"
-    )
-
-
-# ------------------------------------------------------------
-# 2. Проверка принадлежности таблиц текущей структуре
-# ------------------------------------------------------------
-
-def validate_table_pdb_id(table_name, table, required=True):
-
-    if "pdb_id" not in table.columns:
-
-        if required:
-
-            raise KeyError(
-                f"В {table_name} отсутствует столбец pdb_id."
-            )
-
-        print(
-            f"WARNING: в {table_name} нет столбца pdb_id."
-        )
-
-        return
-
-    if table["pdb_id"].isna().any():
-
-        raise ValueError(
-            f"{table_name} содержит пустые значения pdb_id."
-        )
-
-    pdb_ids = (
-        table["pdb_id"]
-        .astype(str)
-        .str.strip()
-        .str.upper()
-        .unique()
-    )
-
-    if set(pdb_ids) != {PDB_ID}:
-
-        raise ValueError(
-            f"{table_name} содержит PDB ID, "
-            f"не соответствующие текущей структуре: "
-            f"{sorted(pdb_ids)}"
-        )
-
-
-validate_table_pdb_id(
-    "df_atoms",
-    df_atoms
-)
-
-validate_table_pdb_id(
-    "df_residues",
-    df_residues
-)
-
-validate_table_pdb_id(
-    "df_hetero",
-    df_hetero,
-    required=False
-)
-
-validate_table_pdb_id(
-    "df_water",
-    df_water,
-    required=False
-)
-
-
-print(f"PDB ID: {PDB_ID}")
-print(f"Results directory: {PDB_RESULTS_DIR}")
-
-
-# ------------------------------------------------------------
-# 3. Выбор первой модели
-# ------------------------------------------------------------
-
-models = list(
-    structure.get_models()
-)
-
-
-if not models:
-
-    raise ValueError(
-        "В структуре отсутствуют модели."
-    )
-
-
-first_model = models[0]
-
-MODEL_INDEX = 1
-
-
-print("\nMODEL INFORMATION")
-
-print(
-    f"Total models in structure: {len(models)}"
-)
-
-print(
-    f"Selected model ID: {first_model.id}"
-)
-
-print(
-    f"Selected model index: {MODEL_INDEX}"
-)
-
-print(
-    "Analysis scope: first model only"
-)
-
-
-# ------------------------------------------------------------
-# 4. Вспомогательные функции
-# ------------------------------------------------------------
-
-def normalize_chain_id(value):
-    """
-    Сохраняет пустой идентификатор цепи как пустую строку.
-    """
-
-    if value is None or pd.isna(value):
-
-        return ""
-
-    return str(value).strip()
-
-
-def display_chain_id(value):
-
-    normalized = normalize_chain_id(value)
-
-    return normalized if normalized else "<blank>"
-
-
-def safe_filename(value):
-
-    value = str(value).strip()
-
-    if not value:
-
-        return "blank"
-
-    return re.sub(
-        r"[^A-Za-z0-9_-]",
-        "_",
-        value
-    )
-
-
-def make_residue_key(chain_id, hetero_flag, residue_id, insertion_code):
-
-    """
-    Формат ключа согласован с CELL 6–8:
-    chain_id:hetero_flag:residue_id:insertion_code
-    """
-
-    return (
-        f"{chain_id}:"
-        f"{hetero_flag}:"
-        f"{residue_id}:"
-        f"{insertion_code}"
-    )
-
-
-def json_safe(value):
-    """
-    Рекурсивное преобразование значений pandas/NumPy
-    в JSON-совместимые типы.
-    """
-
-    if value is None:
-
-        return None
-
-    if isinstance(value, dict):
-
-        return {
-            str(key): json_safe(item)
-            for key, item in value.items()
-        }
-
-    if isinstance(value, (list, tuple, set)):
-
-        return [
-            json_safe(item)
-            for item in value
-        ]
-
-    if isinstance(value, np.ndarray):
-
-        return [
-            json_safe(item)
-            for item in value.tolist()
-        ]
-
-    if isinstance(value, (np.integer,)):
-
-        return int(value)
-
-    if isinstance(value, (np.floating, float)):
-
-        value = float(value)
-
-        return (
-            value
-            if np.isfinite(value)
-            else None
-        )
-
-    if isinstance(value, (np.bool_, bool)):
-
-        return bool(value)
-
-    if isinstance(value, Path):
-
-        return str(value)
-
-    if isinstance(value, pd.Timestamp):
-
-        return value.isoformat()
-
-    if value is pd.NA or value is pd.NaT:
-
-        return None
-
-    if isinstance(value, (str, int)):
-
-        return value
-
-    try:
-
-        missing = pd.isna(value)
-
-        if isinstance(missing, (bool, np.bool_)) and missing:
-
-            return None
-
-    except (TypeError, ValueError):
-
-        pass
-
-    return str(value)
-
-
-# ------------------------------------------------------------
-# 5. Определение белковых цепей первой модели
-# ------------------------------------------------------------
-
-protein_chain_ids = set()
-
-protein_residue_records = []
-
-structure_atom_count = 0
-
-
-for chain in first_model:
-
-    chain_id = normalize_chain_id(chain.id)
-
-    for residue in chain:
-
-        if not is_aa(
-            residue,
-            standard=False
-        ):
-
-            continue
-
-        protein_chain_ids.add(chain_id)
-
-        residue_atoms = list(
-            residue.get_atoms()
-        )
-
-        structure_atom_count += len(
-            residue_atoms
-        )
-
-        hetero_flag = str(
-            residue.id[0]
-        ).strip()
-
-        residue_id = int(
-            residue.id[1]
-        )
-
-        insertion_code = str(
-            residue.id[2]
-        ).strip()
-
-
-        residue_key = make_residue_key(
-
-            chain_id,
-
-            hetero_flag,
-
-            residue_id,
-
-            insertion_code
-
-        )
-
-
-        protein_residue_records.append({
-
-            "pdb_id": PDB_ID,
-
-            "model_index": MODEL_INDEX,
-
-            "model_id": first_model.id,
-
-            "chain_id": chain_id,
-
-            "chain_id_display": display_chain_id(
-                chain_id
-            ),
-
-            "residue_key": residue_key,
-
-            "hetero_flag": hetero_flag,
-
-            "residue_id": residue_id,
-
-            "insertion_code": insertion_code,
-
-            "residue_name": residue.resname.strip(),
-
-            "atom_count": len(residue_atoms)
-
-        })
-
-
-df_structure_protein_residues = pd.DataFrame(
-    protein_residue_records
-)
-
-
-if not protein_chain_ids:
-
-    raise ValueError(
-        "В первой модели не обнаружены белковые цепи."
-    )
-
-
-if df_structure_protein_residues["residue_key"].duplicated().any():
-
-    raise RuntimeError(
-        "Обнаружены повторяющиеся residue_key "
-        "в таблице остатков первой модели."
-    )
-
-
-print("\n" + "-" * 70)
-print("PROTEIN STRUCTURE")
-print("-" * 70)
-
-print(
-    f"Protein chains: {len(protein_chain_ids)}"
-)
-
-print(
-    f"Protein residues: {len(df_structure_protein_residues)}"
-)
-
-print(
-    f"Protein atoms in first model: {structure_atom_count}"
-)
-
-print(
-    "Chain IDs:",
-    [
-        display_chain_id(x)
-        for x in sorted(protein_chain_ids)
-    ]
-)
-
-
-# ------------------------------------------------------------
-# 6. Формирование отдельных таблиц
-# ------------------------------------------------------------
-
-# CELL 6 и CELL 7 уже содержат белковые данные.
-# Повторная фильтрация не выполняется.
-
-df_protein_atoms = df_atoms.copy()
-
-df_protein_residues = df_residues.copy()
-
-
-# Небелковые компоненты.
-
-df_hetero_components = df_hetero.copy()
-
-
-# Сохраняем исходное имя для совместимости с последующими
-# ячейками, если оно где-либо используется.
-#
-# ВАЖНО: это не подтверждённый набор лекарственных лигандов.
-# Это все небелковые компоненты из CELL 8.
-
-df_ligand_candidates = df_hetero_components.copy()
-
-
-# Вода.
-
-df_water_components = df_water.copy()
-
-
-# ------------------------------------------------------------
-# 7. Проверка согласованности CELL 6 и CELL 7
-# ------------------------------------------------------------
-
-print("\n" + "-" * 70)
-print("DATAFRAME CONSISTENCY CHECK")
-print("-" * 70)
-
-
-# 7.1. Проверка количества атомов.
-
-cell7_atom_count = len(
-    df_protein_atoms
-)
-
-atom_count_match = (
-    cell7_atom_count == structure_atom_count
-)
-
-
-print(
-    f"Atoms in structure: {structure_atom_count}"
-)
-
-print(
-    f"Atoms in CELL 7: {cell7_atom_count}"
-)
-
-print(
-    f"Atom count matches: {atom_count_match}"
-)
-
-
-# 7.2. Проверка количества остатков.
-
-structure_residue_count = len(
-    df_structure_protein_residues
-)
-
-cell6_residue_count = len(
-    df_protein_residues
-)
-
-residue_count_match = (
-    structure_residue_count == cell6_residue_count
-)
-
-
-print(
-    f"Residues in structure: {structure_residue_count}"
-)
-
-print(
-    f"Residues in CELL 6: {cell6_residue_count}"
-)
-
-print(
-    f"Residue count matches: {residue_count_match}"
-)
-
-
-# 7.3. Сверка residue_key.
-
-structure_residue_keys = set(
-    df_structure_protein_residues["residue_key"]
-    .astype(str)
-)
-
-cell6_residue_keys = set(
-    df_protein_residues["residue_key"]
-    .astype(str)
-)
-
-
-residue_keys_match = (
-    structure_residue_keys == cell6_residue_keys
-)
-
-
-missing_in_cell6 = sorted(
-    structure_residue_keys - cell6_residue_keys
-)
-
-extra_in_cell6 = sorted(
-    cell6_residue_keys - structure_residue_keys
-)
-
-
-print(
-    f"Residue keys match: {residue_keys_match}"
-)
-
-print(
-    f"Missing residue keys in CELL 6: {len(missing_in_cell6)}"
-)
-
-print(
-    f"Extra residue keys in CELL 6: {len(extra_in_cell6)}"
-)
-
-
-# 7.4. Проверка цепей.
-
-structure_chain_ids = set(
-    protein_chain_ids
-)
-
-
-cell7_chain_ids = set(
-    df_protein_atoms["chain_id"]
-    .map(normalize_chain_id)
-)
-
-
-cell6_chain_ids = set(
-    df_protein_residues["chain_id"]
-    .map(normalize_chain_id)
-)
-
-
-chain_ids_match = (
-    structure_chain_ids == cell7_chain_ids
-)
-
-
-residue_chain_ids_match = (
-    structure_chain_ids == cell6_chain_ids
-)
-
-
-print(
-    "Chain IDs in structure:",
-    sorted(structure_chain_ids)
-)
-
-print(
-    "Chain IDs in CELL 7:",
-    sorted(cell7_chain_ids)
-)
-
-print(
-    "Chain IDs in CELL 6:",
-    sorted(cell6_chain_ids)
-)
-
-print(
-    f"Structure / CELL 7 chain match: {chain_ids_match}"
-)
-
-print(
-    f"Structure / CELL 6 chain match: "
-    f"{residue_chain_ids_match}"
-)
-
-
-# 7.5. Проверка уникальности residue_key в исходных таблицах.
-
-cell6_duplicate_keys = int(
-    df_protein_residues["residue_key"].duplicated().sum()
-)
-
-
-cell7_residue_key_count = (
-    df_protein_atoms["residue_key"].nunique()
-)
-
-
-cell7_residue_key_match = (
-    cell7_residue_key_count == structure_residue_count
-)
-
-
-print(
-    f"Duplicate residue keys in CELL 6: "
-    f"{cell6_duplicate_keys}"
-)
-
-print(
-    f"Unique residue keys in CELL 7: "
-    f"{cell7_residue_key_count}"
-)
-
-print(
-    f"CELL 7 residue key count matches structure: "
-    f"{cell7_residue_key_match}"
-)
-
-
-# Критические проверки.
-
-if not atom_count_match:
-
-    raise RuntimeError(
-        "Количество белковых атомов в структуре "
-        "не совпадает с CELL 7. "
-        "Проверьте обработку altloc."
-    )
-
-
-if not residue_count_match:
-
-    raise RuntimeError(
-        "Количество белковых остатков в структуре "
-        "не совпадает с CELL 6."
-    )
-
-
-if not residue_keys_match:
-
-    raise RuntimeError(
-        "Наборы residue_key не совпадают между структурой "
-        "и CELL 6."
-    )
-
-
-if not chain_ids_match:
-
-    raise RuntimeError(
-        "Наборы цепей не совпадают между структурой "
-        "и CELL 7."
-    )
-
-
-if not residue_chain_ids_match:
-
-    raise RuntimeError(
-        "Наборы цепей не совпадают между структурой "
-        "и CELL 6."
-    )
-
-
-if cell6_duplicate_keys > 0:
-
-    raise RuntimeError(
-        "В CELL 6 обнаружены повторяющиеся residue_key."
-    )
-
-
-if not cell7_residue_key_match:
-
-    raise RuntimeError(
-        "Число уникальных residue_key в CELL 7 "
-        "не совпадает с количеством остатков структуры."
-    )
-
-
-# ------------------------------------------------------------
-# 8. Сводка небелковых компонентов
-# ------------------------------------------------------------
-
-df_component_summary = pd.DataFrame(
-
-    columns=[
-        "residue_name",
-        "component_type",
-        "occurrence_count"
-    ]
-
-)
-
-
-if not df_hetero_components.empty:
-
-    residue_name_col = next(
-
-        (
-            column
-            for column in [
-                "residue_name",
-                "resname",
-                "component_name"
-            ]
-            if column in df_hetero_components.columns
-        ),
-
-        None
-
-    )
-
-
-    component_type_col = next(
-
-        (
-            column
-            for column in [
-                "component_type",
-                "classification",
-                "component_class"
-            ]
-            if column in df_hetero_components.columns
-        ),
-
-        None
-
-    )
-
-
-    if residue_name_col is not None:
-
-        component_data = df_hetero_components.copy()
-
-
-        component_data["residue_name"] = (
-            component_data[residue_name_col]
-            .fillna("UNKNOWN")
-            .astype(str)
-            .str.strip()
-        )
-
-
-        if component_type_col is not None:
-
-            component_data["component_type"] = (
-                component_data[component_type_col]
-                .fillna("Not classified")
-                .astype(str)
-                .str.strip()
-            )
-
-        else:
-
-            component_data["component_type"] = (
-                "Not classified"
-            )
-
-
-        df_component_summary = (
-
-            component_data
-            .groupby(
-                [
-                    "residue_name",
-                    "component_type"
-                ],
-                dropna=False
-            )
-            .size()
-            .reset_index(
-                name="occurrence_count"
-            )
-
-        )
-
-
-print("\n" + "-" * 70)
-print("HETERO COMPONENTS")
-print("-" * 70)
-
-print(
-    f"Total hetero component records: "
-    f"{len(df_hetero_components)}"
-)
-
-
-if not df_component_summary.empty:
-
-    display(
-        df_component_summary
-    )
-
-else:
-
-    print(
-        "No hetero components found or residue names unavailable."
-    )
-
-
-# ------------------------------------------------------------
-# 9. Сохранение отдельных файлов белковых цепей
-# ------------------------------------------------------------
-
-class ProteinChainSelect(Select):
-
-    """
-    Сохраняет одну белковую цепь выбранной модели.
-    """
-
-    def __init__(self, chain_id, model_id):
-
-        self.chain_id = chain_id
-
-        self.model_id = model_id
-
-
-    def accept_model(self, model):
-
-        return model.id == self.model_id
-
-
-    def accept_chain(self, chain):
-
-        return (
-            normalize_chain_id(chain.id)
-            == self.chain_id
-        )
-
-
-    def accept_residue(self, residue):
-
-        return is_aa(
-            residue,
-            standard=False
-        )
-
-
-CHAIN_DIR = (
-    PDB_RESULTS_DIR / "protein_chains"
-)
-
-
-CHAIN_DIR.mkdir(
-    parents=True,
-    exist_ok=True
-)
-
-
-saved_chain_files = []
-
-chain_file_records = []
-
-
-for chain_index, chain_id in enumerate(
-    sorted(protein_chain_ids),
-    start=1
-):
-
-    safe_chain = safe_filename(
-        chain_id
-    )
-
-
-    output_stem = (
-        f"{PDB_ID}_chain_{chain_index:02d}_{safe_chain}"
-    )
-
-
-    selector = ProteinChainSelect(
-        chain_id,
-        first_model.id
-    )
-
-
-    # PDB поддерживает только однобуквенный chain ID.
-    # Для многосимвольных идентификаторов сохраняем mmCIF,
-    # чтобы не потерять исходный идентификатор цепи.
-
-    if len(chain_id) <= 1:
-
-        output_path = (
-            CHAIN_DIR / f"{output_stem}.pdb"
-        )
-
-        io = PDBIO()
-
-        io.set_structure(
-            structure
-        )
-
-        io.save(
-            str(output_path),
-            selector
-        )
-
-        output_format = "PDB"
-
-    else:
-
-        output_path = (
-            CHAIN_DIR / f"{output_stem}.cif"
-        )
-
-        io = MMCIFIO()
-
-        io.set_structure(
-            structure
-        )
-
-        io.save(
-            str(output_path),
-            selector
-        )
-
-        output_format = "mmCIF"
-
-
-    if not output_path.is_file():
-
-        raise FileNotFoundError(
-            f"Файл цепи не сохранён: {output_path}"
-        )
-
-
-    if output_path.stat().st_size == 0:
-
-        raise RuntimeError(
-            f"Файл цепи пустой: {output_path}"
-        )
-
-
-    saved_chain_files.append(
-        output_path
-    )
-
-
-    chain_file_records.append({
-
-        "pdb_id": PDB_ID,
-
-        "model_index": MODEL_INDEX,
-
-        "model_id": str(first_model.id),
-
-        "chain_id": chain_id,
-
-        "chain_id_display": display_chain_id(
-            chain_id
-        ),
-
-        "file_name": output_path.name,
-
-        "file_format": output_format,
-
-        "file_size_bytes": output_path.stat().st_size
-
-    })
-
-
-    print(
-        f"Saved chain {display_chain_id(chain_id)}: "
-        f"{output_path.name} [{output_format}]"
-    )
-
-
-df_chain_files = pd.DataFrame(
-    chain_file_records
-)
-
-
-# ------------------------------------------------------------
-# 10. Проверка сохранённых цепей
-# ------------------------------------------------------------
-
-print("\n" + "-" * 70)
-print("CHAIN FILE VALIDATION")
-print("-" * 70)
-
-
-if len(saved_chain_files) != len(protein_chain_ids):
-
-    raise RuntimeError(
-        "Количество сохранённых файлов "
-        "не совпадает с количеством белковых цепей."
-    )
-
-
-for path in saved_chain_files:
-
-    if not path.is_file() or path.stat().st_size == 0:
-
-        raise RuntimeError(
-            f"Некорректный файл цепи: {path}"
-        )
-
-
-    print(
-        f"{path.name}: "
-        f"{path.stat().st_size:,} bytes"
-    )
-
-
-# ------------------------------------------------------------
-# 11. Сохранение отдельных таблиц
-# ------------------------------------------------------------
-
-output_tables = {
-
-    "separated_protein_atoms": (
-        df_protein_atoms
-    ),
-
-    "separated_protein_residues": (
-        df_protein_residues
-    ),
-
-    "separated_hetero_components": (
-        df_hetero_components
-    ),
-
-    "separated_water_components": (
-        df_water_components
-    ),
-
-    "separated_structure_protein_residues": (
-        df_structure_protein_residues
-    ),
-
-    "separated_component_summary": (
-        df_component_summary
-    ),
-
-    "separated_chain_files": (
-        df_chain_files
-    )
-
-}
-
-
-saved_table_files = {}
-
-
-for name, table in output_tables.items():
-
-    output_path = (
-        PDB_RESULTS_DIR
-        / f"{PDB_ID}_{name}.csv"
-    )
-
-
-    table.to_csv(
-
-        output_path,
-
-        index=False,
-
-        encoding="utf-8-sig"
-
-    )
-
-
-    saved_table_files[name] = output_path
-
-
-    print(
-        f"Saved: {output_path.name}"
-    )
-
-
-# ------------------------------------------------------------
-# 12. Сохранение JSON-сводки
-# ------------------------------------------------------------
-
-SEPARATION_JSON_PATH = (
-    PDB_RESULTS_DIR
-    / f"{PDB_ID}_component_separation.json"
-)
-
-
-separation_summary = {
-
-    "PDB_ID": PDB_ID,
-
-    "analysis_scope": {
-
-        "selected_model_index": MODEL_INDEX,
-
-        "selected_model_id": str(first_model.id),
-
-        "total_models_in_structure": len(models),
-
-        "note": (
-            "Protein chain separation uses the first model. "
-            "This is consistent with CELL 4-11."
-        )
-
-    },
-
-    "protein": {
-
-        "number_of_protein_chains": len(
-            protein_chain_ids
-        ),
-
-        "protein_chain_ids": sorted(
-            protein_chain_ids
-        ),
-
-        "number_of_protein_residues": len(
-            df_protein_residues
-        ),
-
-        "number_of_protein_atoms": len(
-            df_protein_atoms
-        )
-
-    },
-
-    "hetero_components": {
-
-        "number_of_component_records": len(
-            df_hetero_components
-        ),
-
-        "classification_available": (
-            "component_type" in df_component_summary.columns
-            and not df_component_summary.empty
-        ),
-
-        "component_summary_records": (
-            df_component_summary.to_dict(
-                orient="records"
-            )
-        ),
-
-        "note": (
-            "Hetero components are not automatically "
-            "classified as drug-like ligands."
-        )
-
-    },
-
-    "water": {
-
-        "number_of_water_component_records": len(
-            df_water_components
-        )
-
-    },
-
-    "validation": {
-
-        "atom_count_matches_structure": atom_count_match,
-
-        "residue_count_matches_structure": residue_count_match,
-
-        "residue_keys_match": residue_keys_match,
-
-        "chain_ids_match_structure": chain_ids_match,
-
-        "residue_chain_ids_match_structure": (
-            residue_chain_ids_match
-        ),
-
-        "cell7_residue_key_count_matches": (
-            cell7_residue_key_match
-        ),
-
-        "number_of_saved_chain_files": len(
-            saved_chain_files
-        )
-
-    },
-
-    "saved_chain_files": (
-
-        df_chain_files.to_dict(
-            orient="records"
-        )
-
-    )
-
-}
-
-
-with open(
-    SEPARATION_JSON_PATH,
-    "w",
-    encoding="utf-8"
-) as file:
-
-    json.dump(
-
-        json_safe(separation_summary),
-
-        file,
-
-        ensure_ascii=False,
-
-        indent=4,
-
-        allow_nan=False
-
-    )
-
-
-# ------------------------------------------------------------
-# 13. Итоговая статистика
-# ------------------------------------------------------------
-
-print("\n" + "=" * 70)
-print("COMPONENT SEPARATION SUMMARY")
-print("=" * 70)
-
-print(
-    f"Protein chains: {len(protein_chain_ids)}"
-)
-
-print(
-    f"Protein residues: {len(df_protein_residues)}"
-)
-
-print(
-    f"Protein atoms: {len(df_protein_atoms)}"
-)
-
-print(
-    f"Hetero components: {len(df_hetero_components)}"
-)
-
-print(
-    f"Water components: {len(df_water_components)}"
-)
-
-print(
-    f"Saved chain files: {len(saved_chain_files)}"
-)
-
-print(
-    f"Output directory: {PDB_RESULTS_DIR}"
-)
-
-
-# ------------------------------------------------------------
-# 14. Проверка сохранённых результатов
-# ------------------------------------------------------------
-
-all_output_files = (
-
-    list(saved_table_files.values())
-
-    + saved_chain_files
-
-    + [SEPARATION_JSON_PATH]
-
-)
-
-
-print("\n" + "-" * 70)
-print("OUTPUT FILE VERIFICATION")
-print("-" * 70)
-
-
-output_check_records = []
-
-
-for path in all_output_files:
-
-    exists = (
-
-        path.is_file()
-
-        and path.stat().st_size > 0
-
-    )
-
-
-    output_check_records.append({
-
-        "file_name": path.name,
-
-        "exists": bool(exists),
-
-        "file_size_bytes": (
-            path.stat().st_size
-            if path.is_file()
-            else 0
-        )
-
-    })
-
-
-    print(
-        f"{path.name}: "
-        f"{'OK' if exists else 'ERROR'}"
-    )
-
-
-df_cell15_output_checks = pd.DataFrame(
-    output_check_records
-)
-
-
-all_outputs_saved = bool(
-    df_cell15_output_checks["exists"].all()
-)
-
-
-if not all_outputs_saved:
-
-    raise RuntimeError(
-        "Не все результаты разделения структуры сохранены."
-    )
-
-
-# ------------------------------------------------------------
-# 15. Итог
-# ------------------------------------------------------------
-
-print("\n" + "-" * 70)
-print("CELL 15 FINAL STATUS")
-print("-" * 70)
-
-print(
-    f"Atom count validation: "
-    f"{'OK' if atom_count_match else 'ERROR'}"
-)
-
-print(
-    f"Residue count validation: "
-    f"{'OK' if residue_count_match else 'ERROR'}"
-)
-
-print(
-    f"Residue key validation: "
-    f"{'OK' if residue_keys_match else 'ERROR'}"
-)
-
-print(
-    f"Chain validation: "
-    f"{'OK' if chain_ids_match else 'ERROR'}"
-)
-
-print(
-    f"Saved output files: {len(all_output_files)}"
-)
-
-print(
-    f"Results directory: {PDB_RESULTS_DIR}"
-)
-
-print("\nСтатус: OK")
-
-print("=" * 70)
-print("CELL 15 COMPLETED")
-print("=" * 70)
-------------------
-
-
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mKeyError[0m                                  Traceback (most recent call last)
-Cell [1;32mIn[19], line 174[0m
-[0;32m    167[0m missing_residue_columns [38;5;241m=[39m (
-[0;32m    168[0m     required_residue_columns [38;5;241m-[39m [38;5;28mset[39m(df_residues[38;5;241m.[39mcolumns)
-[0;32m    169[0m )
-[0;32m    172[0m [38;5;28;01mif[39;00m missing_residue_columns:
-[1;32m--> 174[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(
-[0;32m    175[0m         [38;5;124m"[39m[38;5;124mВ df_residues отсутствуют столбцы: [39m[38;5;124m"[39m
-[0;32m    176[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28msorted[39m(missing_residue_columns)[38;5;132;01m}[39;00m[38;5;124m"[39m
-[0;32m    177[0m     )
-[0;32m    180[0m [38;5;66;03m# ------------------------------------------------------------[39;00m
-[0;32m    181[0m [38;5;66;03m# 2. Проверка принадлежности таблиц текущей структуре[39;00m
-[0;32m    182[0m [38;5;66;03m# ------------------------------------------------------------[39;00m
-[0;32m    184[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mvalidate_table_pdb_id[39m(table_name, table, required[38;5;241m=[39m[38;5;28;01mTrue[39;00m):
-
-[1;31mKeyError[0m: "В df_residues отсутствуют столбцы: ['residue_key']"
 
 
