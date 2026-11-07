@@ -1,0 +1,899 @@
+
+============================================================
+BATCH PROCESSING LOG
+============================================================
+
+PDB ID: 7WTT
+
+Started: 2026-11-07T03:38:01.780817
+Finished: 2026-11-07T03:38:35.115774
+
+Duration: 33.33 seconds
+
+Status: FAILED
+
+Kernel: python3
+
+Skipped installation cells:
+3
+
+Executed notebook saved:
+False
+
+Output validation:
+{}
+
+============================================================
+NOTEBOOK OUTPUT
+============================================================
+
+Batch PDB ID: 7WTT
+Component configuration: {}
+Notebook kernel: python3
+
+===========================================================================
+PROTEIN STRUCTURE ANALYSIS
+===========================================================================
+Processing mode:    SINGLE
+Selection source:   external input
+---------------------------------------------------------------------------
+Project root:       C:\apex\APEX\МИФИ\СНО\medic
+Dataset root:       C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset
+Selection CSV:      C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\05_final_dataset\protein_final_100.csv
+---------------------------------------------------------------------------
+Available PDBs:     100
+Processing count:   1
+Start index:        0
+Processing limit:   None
+---------------------------------------------------------------------------
+Current PDB ID:     7WTT
+Is selected PDB:    True
+Selection order:    11
+Functional category: Structural
+---------------------------------------------------------------------------
+Project directory:  C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis
+Data directory:     C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\structures
+Results root:       C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results
+Current PDB folder: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7WTT
+Current CIF file:   C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\structures\7WTT.cif
+---------------------------------------------------------------------------
+PDB IDS TO PROCESS:
+  1. 7WTT
+===========================================================================
+CELL 2 CONFIGURATION COMPLETED
+
+======================================================================
+PROTEIN STRUCTURE ANALYSIS REPORT
+======================================================================
+PDB ID: 7WTT
+Report file: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7WTT\7WTT_analysis_report.txt
+ 
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mgaierror[0m                                  Traceback (most recent call last)
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py:239[0m, in [0;36mHTTPConnection._new_conn[1;34m(self)[0m
+[0;32m    238[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 239[0m     sock [38;5;241m=[39m [43mconnection[49m[38;5;241;43m.[39;49m[43mcreate_connection[49m[43m([49m
+[0;32m    240[0m [43m        [49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_dns_host[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mport[49m[43m)[49m[43m,[49m
+[0;32m    241[0m [43m        [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mtimeout[49m[43m,[49m
+[0;32m    242[0m [43m        [49m[43msource_address[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msource_address[49m[43m,[49m
+[0;32m    243[0m [43m        [49m[43msocket_options[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msocket_options[49m[43m,[49m
+[0;32m    244[0m [43m    [49m[43m)[49m
+[0;32m    245[0m [38;5;28;01mexcept[39;00m socket[38;5;241m.[39mgaierror [38;5;28;01mas[39;00m e:
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py:60[0m, in [0;36mcreate_connection[1;34m(address, timeout, source_address, socket_options)[0m
+[0;32m     58[0m     [38;5;28;01mraise[39;00m LocationParseError([38;5;124mf[39m[38;5;124m"[39m[38;5;124m'[39m[38;5;132;01m{[39;00mhost[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m, label empty or too long[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;28;01mNone[39;00m
+[1;32m---> 60[0m [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m [43msocket[49m[38;5;241;43m.[39;49m[43mgetaddrinfo[49m[43m([49m[43mhost[49m[43m,[49m[43m [49m[43mport[49m[43m,[49m[43m [49m[43mfamily[49m[43m,[49m[43m [49m[43msocket[49m[38;5;241;43m.[39;49m[43mSOCK_STREAM[49m[43m)[49m:
+[0;32m     61[0m     af, socktype, proto, canonname, sa [38;5;241m=[39m res
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\socket.py:955[0m, in [0;36mgetaddrinfo[1;34m(host, port, family, type, proto, flags)[0m
+[0;32m    954[0m addrlist [38;5;241m=[39m []
+[1;32m--> 955[0m [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m [43m_socket[49m[38;5;241;43m.[39;49m[43mgetaddrinfo[49m[43m([49m[43mhost[49m[43m,[49m[43m [49m[43mport[49m[43m,[49m[43m [49m[43mfamily[49m[43m,[49m[43m [49m[38;5;28;43mtype[39;49m[43m,[49m[43m [49m[43mproto[49m[43m,[49m[43m [49m[43mflags[49m[43m)[49m:
+[0;32m    956[0m     af, socktype, proto, canonname, sa [38;5;241m=[39m res
+
+[1;31mgaierror[0m: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+[1;31mNameResolutionError[0m                       Traceback (most recent call last)
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:793[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    792[0m [38;5;66;03m# Make the request on the HTTPConnection object[39;00m
+[1;32m--> 793[0m response [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_make_request(
+[0;32m    794[0m     conn,
+[0;32m    795[0m     method,
+[0;32m    796[0m     url,
+[0;32m    797[0m     timeout[38;5;241m=[39mtimeout_obj,
+[0;32m    798[0m     body[38;5;241m=[39mbody,
+[0;32m    799[0m     headers[38;5;241m=[39mheaders,
+[0;32m    800[0m     chunked[38;5;241m=[39mchunked,
+[0;32m    801[0m     retries[38;5;241m=[39mretries,
+[0;32m    802[0m     response_conn[38;5;241m=[39mresponse_conn,
+[0;32m    803[0m     preload_content[38;5;241m=[39mpreload_content,
+[0;32m    804[0m     decode_content[38;5;241m=[39mdecode_content,
+[0;32m    805[0m     [38;5;241m*[39m[38;5;241m*[39mresponse_kw,
+[0;32m    806[0m )
+[0;32m    808[0m [38;5;66;03m# Everything went great![39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:494[0m, in [0;36mHTTPConnectionPool._make_request[1;34m(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)[0m
+[0;32m    493[0m         new_e [38;5;241m=[39m _wrap_proxy_error(new_e, conn[38;5;241m.[39mproxy[38;5;241m.[39mscheme)
+[1;32m--> 494[0m     [38;5;28;01mraise[39;00m new_e
+[0;32m    496[0m [38;5;66;03m# conn.request() calls http.client.*.request, not the method in[39;00m
+[0;32m    497[0m [38;5;66;03m# urllib3.request. It also calls makefile (recv) on the socket.[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:470[0m, in [0;36mHTTPConnectionPool._make_request[1;34m(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)[0m
+[0;32m    469[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 470[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_validate_conn[49m[43m([49m[43mconn[49m[43m)[49m
+[0;32m    471[0m [38;5;28;01mexcept[39;00m (SocketTimeout, BaseSSLError) [38;5;28;01mas[39;00m e:
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1125[0m, in [0;36mHTTPSConnectionPool._validate_conn[1;34m(self, conn)[0m
+[0;32m   1124[0m [38;5;28;01mif[39;00m conn[38;5;241m.[39mis_closed:
+[1;32m-> 1125[0m     [43mconn[49m[38;5;241;43m.[39;49m[43mconnect[49m[43m([49m[43m)[49m
+[0;32m   1127[0m [38;5;66;03m# TODO revise this, see https://github.com/urllib3/urllib3/issues/2791[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py:827[0m, in [0;36mHTTPSConnection.connect[1;34m(self)[0m
+[0;32m    826[0m sock: socket[38;5;241m.[39msocket [38;5;241m|[39m ssl[38;5;241m.[39mSSLSocket
+[1;32m--> 827[0m [38;5;28mself[39m[38;5;241m.[39msock [38;5;241m=[39m sock [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_new_conn[49m[43m([49m[43m)[49m
+[0;32m    828[0m server_hostname: [38;5;28mstr[39m [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mhost
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py:246[0m, in [0;36mHTTPConnection._new_conn[1;34m(self)[0m
+[0;32m    245[0m [38;5;28;01mexcept[39;00m socket[38;5;241m.[39mgaierror [38;5;28;01mas[39;00m e:
+[1;32m--> 246[0m     [38;5;28;01mraise[39;00m NameResolutionError([38;5;28mself[39m[38;5;241m.[39mhost, [38;5;28mself[39m, e) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01me[39;00m
+[0;32m    247[0m [38;5;28;01mexcept[39;00m SocketTimeout [38;5;28;01mas[39;00m e:
+
+[1;31mNameResolutionError[0m: HTTPSConnection(host='files.rcsb.org', port=443): Failed to resolve 'files.rcsb.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+[1;31mMaxRetryError[0m                             Traceback (most recent call last)
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py:696[0m, in [0;36mHTTPAdapter.send[1;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[0;32m    695[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 696[0m     resp [38;5;241m=[39m [43mconn[49m[38;5;241;43m.[39;49m[43murlopen[49m[43m([49m
+[0;32m    697[0m [43m        [49m[43mmethod[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mmethod[49m[43m,[49m
+[0;32m    698[0m [43m        [49m[43murl[49m[38;5;241;43m=[39;49m[43murl[49m[43m,[49m
+[0;32m    699[0m [43m        [49m[43mbody[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mbody[49m[43m,[49m[43m  [49m[38;5;66;43;03m# type: ignore[arg-type]  # urllib3 stubs don't accept Iterable[bytes | str][39;49;00m
+[0;32m    700[0m [43m        [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m[43m  [49m[38;5;66;43;03m# type: ignore[arg-type]  # urllib3#3072[39;49;00m
+[0;32m    701[0m [43m        [49m[43mredirect[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    702[0m [43m        [49m[43massert_same_host[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    703[0m [43m        [49m[43mpreload_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    704[0m [43m        [49m[43mdecode_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    705[0m [43m        [49m[43mretries[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmax_retries[49m[43m,[49m
+[0;32m    706[0m [43m        [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mresolved_timeout[49m[43m,[49m
+[0;32m    707[0m [43m        [49m[43mchunked[49m[38;5;241;43m=[39;49m[43mchunked[49m[43m,[49m
+[0;32m    708[0m [43m    [49m[43m)[49m
+[0;32m    710[0m [38;5;28;01mexcept[39;00m (ProtocolError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m err:
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:886[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    874[0m     log[38;5;241m.[39mwarning(
+[0;32m    875[0m         [38;5;124m"[39m[38;5;124mRetrying ([39m[38;5;132;01m%r[39;00m[38;5;124m) after connection broken by [39m[38;5;124m'[39m[38;5;132;01m%r[39;00m[38;5;124m'[39m[38;5;124m: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m,
+[0;32m    876[0m         retries,
+[1;32m   (...)[0m
+[0;32m    884[0m         extra[38;5;241m=[39m{[38;5;124m"[39m[38;5;124m__urllib3-retry-warning[39m[38;5;124m"[39m: {[38;5;124m"[39m[38;5;124mhost[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39mhost}},
+[0;32m    885[0m     )
+[1;32m--> 886[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39murlopen(
+[0;32m    887[0m         method,
+[0;32m    888[0m         url,
+[0;32m    889[0m         body,
+[0;32m    890[0m         headers,
+[0;32m    891[0m         retries,
+[0;32m    892[0m         redirect,
+[0;32m    893[0m         assert_same_host,
+[0;32m    894[0m         timeout[38;5;241m=[39mtimeout,
+[0;32m    895[0m         pool_timeout[38;5;241m=[39mpool_timeout,
+[0;32m    896[0m         release_conn[38;5;241m=[39mrelease_conn,
+[0;32m    897[0m         chunked[38;5;241m=[39mchunked,
+[0;32m    898[0m         body_pos[38;5;241m=[39mbody_pos,
+[0;32m    899[0m         preload_content[38;5;241m=[39mpreload_content,
+[0;32m    900[0m         decode_content[38;5;241m=[39mdecode_content,
+[0;32m    901[0m         [38;5;241m*[39m[38;5;241m*[39mresponse_kw,
+[0;32m    902[0m     )
+[0;32m    904[0m [38;5;66;03m# Handle redirect?[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:886[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    874[0m     log[38;5;241m.[39mwarning(
+[0;32m    875[0m         [38;5;124m"[39m[38;5;124mRetrying ([39m[38;5;132;01m%r[39;00m[38;5;124m) after connection broken by [39m[38;5;124m'[39m[38;5;132;01m%r[39;00m[38;5;124m'[39m[38;5;124m: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m,
+[0;32m    876[0m         retries,
+[1;32m   (...)[0m
+[0;32m    884[0m         extra[38;5;241m=[39m{[38;5;124m"[39m[38;5;124m__urllib3-retry-warning[39m[38;5;124m"[39m: {[38;5;124m"[39m[38;5;124mhost[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39mhost}},
+[0;32m    885[0m     )
+[1;32m--> 886[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39murlopen(
+[0;32m    887[0m         method,
+[0;32m    888[0m         url,
+[0;32m    889[0m         body,
+[0;32m    890[0m         headers,
+[0;32m    891[0m         retries,
+[0;32m    892[0m         redirect,
+[0;32m    893[0m         assert_same_host,
+[0;32m    894[0m         timeout[38;5;241m=[39mtimeout,
+[0;32m    895[0m         pool_timeout[38;5;241m=[39mpool_timeout,
+[0;32m    896[0m         release_conn[38;5;241m=[39mrelease_conn,
+[0;32m    897[0m         chunked[38;5;241m=[39mchunked,
+[0;32m    898[0m         body_pos[38;5;241m=[39mbody_pos,
+[0;32m    899[0m         preload_content[38;5;241m=[39mpreload_content,
+[0;32m    900[0m         decode_content[38;5;241m=[39mdecode_content,
+[0;32m    901[0m         [38;5;241m*[39m[38;5;241m*[39mresponse_kw,
+[0;32m    902[0m     )
+[0;32m    904[0m [38;5;66;03m# Handle redirect?[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:886[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    874[0m     log[38;5;241m.[39mwarning(
+[0;32m    875[0m         [38;5;124m"[39m[38;5;124mRetrying ([39m[38;5;132;01m%r[39;00m[38;5;124m) after connection broken by [39m[38;5;124m'[39m[38;5;132;01m%r[39;00m[38;5;124m'[39m[38;5;124m: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m,
+[0;32m    876[0m         retries,
+[1;32m   (...)[0m
+[0;32m    884[0m         extra[38;5;241m=[39m{[38;5;124m"[39m[38;5;124m__urllib3-retry-warning[39m[38;5;124m"[39m: {[38;5;124m"[39m[38;5;124mhost[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39mhost}},
+[0;32m    885[0m     )
+[1;32m--> 886[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39murlopen(
+[0;32m    887[0m         method,
+[0;32m    888[0m         url,
+[0;32m    889[0m         body,
+[0;32m    890[0m         headers,
+[0;32m    891[0m         retries,
+[0;32m    892[0m         redirect,
+[0;32m    893[0m         assert_same_host,
+[0;32m    894[0m         timeout[38;5;241m=[39mtimeout,
+[0;32m    895[0m         pool_timeout[38;5;241m=[39mpool_timeout,
+[0;32m    896[0m         release_conn[38;5;241m=[39mrelease_conn,
+[0;32m    897[0m         chunked[38;5;241m=[39mchunked,
+[0;32m    898[0m         body_pos[38;5;241m=[39mbody_pos,
+[0;32m    899[0m         preload_content[38;5;241m=[39mpreload_content,
+[0;32m    900[0m         decode_content[38;5;241m=[39mdecode_content,
+[0;32m    901[0m         [38;5;241m*[39m[38;5;241m*[39mresponse_kw,
+[0;32m    902[0m     )
+[0;32m    904[0m [38;5;66;03m# Handle redirect?[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:847[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    845[0m     new_e [38;5;241m=[39m ProtocolError([38;5;124m"[39m[38;5;124mConnection aborted.[39m[38;5;124m"[39m, new_e)
+[1;32m--> 847[0m retries [38;5;241m=[39m [43mretries[49m[38;5;241;43m.[39;49m[43mincrement[49m[43m([49m
+[0;32m    848[0m [43m    [49m[43mmethod[49m[43m,[49m[43m [49m[43murl[49m[43m,[49m[43m [49m[43merror[49m[38;5;241;43m=[39;49m[43mnew_e[49m[43m,[49m[43m [49m[43m_pool[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43m_stacktrace[49m[38;5;241;43m=[39;49m[43msys[49m[38;5;241;43m.[39;49m[43mexc_info[49m[43m([49m[43m)[49m[43m[[49m[38;5;241;43m2[39;49m[43m][49m
+[0;32m    849[0m [43m[49m[43m)[49m
+[0;32m    850[0m retries[38;5;241m.[39msleep()
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py:555[0m, in [0;36mRetry.increment[1;34m(self, method, url, response, error, _pool, _stacktrace)[0m
+[0;32m    554[0m     reason [38;5;241m=[39m error [38;5;129;01mor[39;00m ResponseError(cause)
+[1;32m--> 555[0m     [38;5;28;01mraise[39;00m MaxRetryError(_pool, url, reason) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mreason[39;00m  [38;5;66;03m# type: ignore[arg-type][39;00m
+[0;32m    557[0m log[38;5;241m.[39mdebug([38;5;124m"[39m[38;5;124mIncremented Retry for (url=[39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m): [39m[38;5;132;01m%r[39;00m[38;5;124m"[39m, url, new_retry)
+
+[1;31mMaxRetryError[0m: HTTPSConnectionPool(host='files.rcsb.org', port=443): Max retries exceeded with url: /download/7WTT.cif (Caused by NameResolutionError("HTTPSConnection(host='files.rcsb.org', port=443): Failed to resolve 'files.rcsb.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+[1;31mConnectionError[0m                           Traceback (most recent call last)
+Cell [1;32mIn[7], line 227[0m
+[0;32m    221[0m [38;5;28mprint[39m(
+[0;32m    222[0m     [38;5;124mf[39m[38;5;124m"[39m[38;5;124mЗагрузка структуры [39m[38;5;132;01m{[39;00mPDB_ID[38;5;132;01m}[39;00m[38;5;124m из RCSB PDB...[39m[38;5;124m"[39m
+[0;32m    223[0m )
+[0;32m    225[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 227[0m     [38;5;28;01mwith[39;00m [43msession[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m
+[0;32m    228[0m [43m        [49m[43mURL[49m[43m,[49m
+[0;32m    229[0m [43m        [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43m([49m[38;5;241;43m15[39;49m[43m,[49m[43m [49m[38;5;241;43m120[39;49m[43m)[49m
+[0;32m    230[0m [43m    [49m[43m)[49m [38;5;28;01mas[39;00m response:
+[0;32m    232[0m         response[38;5;241m.[39mraise_for_status()
+[0;32m    234[0m         content [38;5;241m=[39m response[38;5;241m.[39mcontent
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py:671[0m, in [0;36mSession.get[1;34m(self, url, params, **kwargs)[0m
+[0;32m    661[0m [38;5;250m[39m[38;5;124mr[39m[38;5;124;03m"""Sends a GET request. Returns :class:`Response` object.[39;00m
+[0;32m    662[0m 
+[0;32m    663[0m [38;5;124;03m:param url: URL for the new :class:`Request` object.[39;00m
+[1;32m   (...)[0m
+[0;32m    667[0m [38;5;124;03m:rtype: requests.Response[39;00m
+[0;32m    668[0m [38;5;124;03m"""[39;00m
+[0;32m    670[0m kwargs[38;5;241m.[39msetdefault([38;5;124m"[39m[38;5;124mallow_redirects[39m[38;5;124m"[39m, [38;5;28;01mTrue[39;00m)
+[1;32m--> 671[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mrequest([38;5;124m"[39m[38;5;124mGET[39m[38;5;124m"[39m, url, params[38;5;241m=[39mparams, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py:651[0m, in [0;36mSession.request[1;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
+[0;32m    646[0m send_kwargs [38;5;241m=[39m {
+[0;32m    647[0m     [38;5;124m"[39m[38;5;124mtimeout[39m[38;5;124m"[39m: timeout,
+[0;32m    648[0m     [38;5;124m"[39m[38;5;124mallow_redirects[39m[38;5;124m"[39m: allow_redirects,
+[0;32m    649[0m }
+[0;32m    650[0m send_kwargs[38;5;241m.[39mupdate(settings)
+[1;32m--> 651[0m resp [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39msend(prep, [38;5;241m*[39m[38;5;241m*[39msend_kwargs)
+[0;32m    653[0m [38;5;28;01mreturn[39;00m resp
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py:784[0m, in [0;36mSession.send[1;34m(self, request, **kwargs)[0m
+[0;32m    781[0m start [38;5;241m=[39m preferred_clock()
+[0;32m    783[0m [38;5;66;03m# Send the request[39;00m
+[1;32m--> 784[0m r [38;5;241m=[39m adapter[38;5;241m.[39msend(request, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m    786[0m [38;5;66;03m# Total elapsed time of the request (approximately)[39;00m
+[0;32m    787[0m elapsed [38;5;241m=[39m preferred_clock() [38;5;241m-[39m start
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py:729[0m, in [0;36mHTTPAdapter.send[1;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[0;32m    725[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(e[38;5;241m.[39mreason, _SSLError):
+[0;32m    726[0m         [38;5;66;03m# This branch is for urllib3 v1.22 and later.[39;00m
+[0;32m    727[0m         [38;5;28;01mraise[39;00m SSLError(e, request[38;5;241m=[39mrequest)
+[1;32m--> 729[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
+[0;32m    731[0m [38;5;28;01mexcept[39;00m ClosedPoolError [38;5;28;01mas[39;00m e:
+[0;32m    732[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
+
+[1;31mConnectionError[0m: HTTPSConnectionPool(host='files.rcsb.org', port=443): Max retries exceeded with url: /download/7WTT.cif (Caused by NameResolutionError("HTTPSConnection(host='files.rcsb.org', port=443): Failed to resolve 'files.rcsb.org' ([Errno 11001] getaddrinfo failed)"))
+
+============================================================
+ERROR
+============================================================
+
+Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import requests
+
+from pathlib import Path
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+
+# ============================================================
+# 1. VALIDATE PDB ID
+# ============================================================
+
+PDB_ID = str(
+    PDB_ID
+).strip().upper()
+
+if (
+    len(PDB_ID) != 4
+    or not PDB_ID.isalnum()
+):
+    raise ValueError(
+        f"Некорректный PDB ID: {PDB_ID}. "
+        "Ожидается 4 буквенно-цифровых символа."
+    )
+
+
+# ============================================================
+# 2. PATH CONFIGURATION
+# ============================================================
+
+CIF_PATH = DATA_DIR / f"{PDB_ID}.cif"
+
+TEMP_CIF_PATH = DATA_DIR / f"{PDB_ID}.cif.tmp"
+
+URL = (
+    f"https://files.rcsb.org/download/{PDB_ID}.cif"
+)
+
+DATA_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+# ============================================================
+# 3. FILE CONTENT SEARCH
+# ============================================================
+
+def file_contains_token(
+    path,
+    token,
+    chunk_size=1024 * 1024
+):
+    """
+    Поиск текстового маркера во всём файле
+    с последовательным чтением блоков.
+
+    Учитывается возможное пересечение маркера
+    между соседними блоками.
+    """
+
+    token = token.encode("ascii")
+
+    overlap_size = max(
+        len(token) - 1,
+        0
+    )
+
+    overlap = b""
+
+    with open(path, "rb") as file:
+
+        while True:
+
+            chunk = file.read(
+                chunk_size
+            )
+
+            if not chunk:
+                break
+
+            data = overlap + chunk
+
+            if token in data:
+                return True
+
+            overlap = data[-overlap_size:] if overlap_size else b""
+
+    return False
+
+
+# ============================================================
+# 4. CIF FILE VALIDATION
+# ============================================================
+
+def validate_cif_file(path):
+    """
+    Минимальная структурная проверка mmCIF.
+
+    Проверяется:
+    - существование файла;
+    - минимальный размер;
+    - data-блок в начале файла;
+    - наличие atom_site во всём файле.
+
+    Важно:
+    atom_site может располагаться значительно
+    дальше первых 100 KB.
+    """
+
+    path = Path(path)
+
+    if not path.exists():
+        return False
+
+    try:
+
+        if path.stat().st_size < 100:
+            return False
+
+        # Проверяем начало файла.
+        with open(path, "rb") as file:
+
+            header = file.read(4096)
+
+        if not header.strip():
+            return False
+
+        if b"data_" not in header:
+            return False
+
+        # Проверяем atom_site по всему файлу.
+        if not file_contains_token(
+            path,
+            "_atom_site."
+        ):
+            return False
+
+        return True
+
+    except OSError:
+        return False
+
+
+# ============================================================
+# 5. PREPARE SESSION WITH RETRIES
+# ============================================================
+
+retry_strategy = Retry(
+    total=3,
+    connect=3,
+    read=3,
+    status=3,
+    backoff_factor=2,
+    status_forcelist=[
+        429,
+        500,
+        502,
+        503,
+        504
+    ],
+    allowed_methods=[
+        "GET"
+    ],
+    raise_on_status=False
+)
+
+adapter = HTTPAdapter(
+    max_retries=retry_strategy
+)
+
+session = requests.Session()
+
+session.mount(
+    "https://",
+    adapter
+)
+
+session.headers.update({
+    "User-Agent": "ProteinStructureAnalyzer/1.0"
+})
+
+
+# ============================================================
+# 6. CHECK EXISTING FILE
+# ============================================================
+
+if validate_cif_file(CIF_PATH):
+
+    print(
+        f"Используется существующий файл: {PDB_ID}"
+    )
+
+else:
+
+    print(
+        f"Требуется загрузка структуры {PDB_ID}."
+    )
+
+    if CIF_PATH.exists():
+
+        print(
+            "Существующий файл не прошёл проверку. "
+            "Он будет заменён после успешной загрузки."
+        )
+
+    # ========================================================
+    # 7. DOWNLOAD STRUCTURE
+    # ========================================================
+
+    print(
+        f"Загрузка структуры {PDB_ID} из RCSB PDB..."
+    )
+
+    try:
+
+        with session.get(
+            URL,
+            timeout=(15, 120)
+        ) as response:
+
+            response.raise_for_status()
+
+            content = response.content
+
+        if not content:
+            raise RuntimeError(
+                f"RCSB вернул пустой файл для {PDB_ID}."
+            )
+
+        # Проверка data-блока в начале ответа.
+        header = content[:4096]
+
+        if b"data_" not in header:
+
+            raise RuntimeError(
+                f"Полученный файл {PDB_ID} "
+                "не содержит корректного data-блока "
+                "в начале файла."
+            )
+
+        # Проверка atom_site по всему ответу,
+        # а не только в первых 100 KB.
+        if b"_atom_site." not in content:
+
+            raise RuntimeError(
+                f"В загруженном файле {PDB_ID} "
+                "не найдена секция atom_site."
+            )
+
+        # ====================================================
+        # 8. SAFE TEMPORARY WRITE
+        # ====================================================
+
+        try:
+
+            TEMP_CIF_PATH.write_bytes(
+                content
+            )
+
+            if not validate_cif_file(
+                TEMP_CIF_PATH
+            ):
+
+                raise RuntimeError(
+                    "Временный mmCIF-файл "
+                    "не прошёл структурную проверку."
+                )
+
+            # Основной файл заменяется только
+            # после успешной проверки временного файла.
+            TEMP_CIF_PATH.replace(
+                CIF_PATH
+            )
+
+        finally:
+
+            if TEMP_CIF_PATH.exists():
+
+                TEMP_CIF_PATH.unlink()
+
+
+    finally:
+
+        session.close()
+
+
+# ============================================================
+# 9. FINAL VALIDATION
+# ============================================================
+
+if not validate_cif_file(CIF_PATH):
+
+    raise RuntimeError(
+        f"Файл структуры {PDB_ID} "
+        f"не прошёл финальную проверку:\n{CIF_PATH}"
+    )
+
+
+# ============================================================
+# 10. DOWNLOAD SUMMARY
+# ============================================================
+
+file_size_kb = (
+    CIF_PATH.stat().st_size / 1024
+)
+
+print("\nSTRUCTURE DOWNLOAD")
+print("-" * 60)
+
+print("PDB ID:", PDB_ID)
+print("URL:", URL)
+print("File:", CIF_PATH.resolve())
+print("Size:", f"{file_size_kb:.2f} KB")
+print("Validation: PASSED")
+
+print("-" * 60)
+
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mgaierror[0m                                  Traceback (most recent call last)
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py:239[0m, in [0;36mHTTPConnection._new_conn[1;34m(self)[0m
+[0;32m    238[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 239[0m     sock [38;5;241m=[39m [43mconnection[49m[38;5;241;43m.[39;49m[43mcreate_connection[49m[43m([49m
+[0;32m    240[0m [43m        [49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_dns_host[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mport[49m[43m)[49m[43m,[49m
+[0;32m    241[0m [43m        [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mtimeout[49m[43m,[49m
+[0;32m    242[0m [43m        [49m[43msource_address[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msource_address[49m[43m,[49m
+[0;32m    243[0m [43m        [49m[43msocket_options[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msocket_options[49m[43m,[49m
+[0;32m    244[0m [43m    [49m[43m)[49m
+[0;32m    245[0m [38;5;28;01mexcept[39;00m socket[38;5;241m.[39mgaierror [38;5;28;01mas[39;00m e:
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py:60[0m, in [0;36mcreate_connection[1;34m(address, timeout, source_address, socket_options)[0m
+[0;32m     58[0m     [38;5;28;01mraise[39;00m LocationParseError([38;5;124mf[39m[38;5;124m"[39m[38;5;124m'[39m[38;5;132;01m{[39;00mhost[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m, label empty or too long[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;28;01mNone[39;00m
+[1;32m---> 60[0m [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m [43msocket[49m[38;5;241;43m.[39;49m[43mgetaddrinfo[49m[43m([49m[43mhost[49m[43m,[49m[43m [49m[43mport[49m[43m,[49m[43m [49m[43mfamily[49m[43m,[49m[43m [49m[43msocket[49m[38;5;241;43m.[39;49m[43mSOCK_STREAM[49m[43m)[49m:
+[0;32m     61[0m     af, socktype, proto, canonname, sa [38;5;241m=[39m res
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\socket.py:955[0m, in [0;36mgetaddrinfo[1;34m(host, port, family, type, proto, flags)[0m
+[0;32m    954[0m addrlist [38;5;241m=[39m []
+[1;32m--> 955[0m [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m [43m_socket[49m[38;5;241;43m.[39;49m[43mgetaddrinfo[49m[43m([49m[43mhost[49m[43m,[49m[43m [49m[43mport[49m[43m,[49m[43m [49m[43mfamily[49m[43m,[49m[43m [49m[38;5;28;43mtype[39;49m[43m,[49m[43m [49m[43mproto[49m[43m,[49m[43m [49m[43mflags[49m[43m)[49m:
+[0;32m    956[0m     af, socktype, proto, canonname, sa [38;5;241m=[39m res
+
+[1;31mgaierror[0m: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+[1;31mNameResolutionError[0m                       Traceback (most recent call last)
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:793[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    792[0m [38;5;66;03m# Make the request on the HTTPConnection object[39;00m
+[1;32m--> 793[0m response [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_make_request(
+[0;32m    794[0m     conn,
+[0;32m    795[0m     method,
+[0;32m    796[0m     url,
+[0;32m    797[0m     timeout[38;5;241m=[39mtimeout_obj,
+[0;32m    798[0m     body[38;5;241m=[39mbody,
+[0;32m    799[0m     headers[38;5;241m=[39mheaders,
+[0;32m    800[0m     chunked[38;5;241m=[39mchunked,
+[0;32m    801[0m     retries[38;5;241m=[39mretries,
+[0;32m    802[0m     response_conn[38;5;241m=[39mresponse_conn,
+[0;32m    803[0m     preload_content[38;5;241m=[39mpreload_content,
+[0;32m    804[0m     decode_content[38;5;241m=[39mdecode_content,
+[0;32m    805[0m     [38;5;241m*[39m[38;5;241m*[39mresponse_kw,
+[0;32m    806[0m )
+[0;32m    808[0m [38;5;66;03m# Everything went great![39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:494[0m, in [0;36mHTTPConnectionPool._make_request[1;34m(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)[0m
+[0;32m    493[0m         new_e [38;5;241m=[39m _wrap_proxy_error(new_e, conn[38;5;241m.[39mproxy[38;5;241m.[39mscheme)
+[1;32m--> 494[0m     [38;5;28;01mraise[39;00m new_e
+[0;32m    496[0m [38;5;66;03m# conn.request() calls http.client.*.request, not the method in[39;00m
+[0;32m    497[0m [38;5;66;03m# urllib3.request. It also calls makefile (recv) on the socket.[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:470[0m, in [0;36mHTTPConnectionPool._make_request[1;34m(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)[0m
+[0;32m    469[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 470[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_validate_conn[49m[43m([49m[43mconn[49m[43m)[49m
+[0;32m    471[0m [38;5;28;01mexcept[39;00m (SocketTimeout, BaseSSLError) [38;5;28;01mas[39;00m e:
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1125[0m, in [0;36mHTTPSConnectionPool._validate_conn[1;34m(self, conn)[0m
+[0;32m   1124[0m [38;5;28;01mif[39;00m conn[38;5;241m.[39mis_closed:
+[1;32m-> 1125[0m     [43mconn[49m[38;5;241;43m.[39;49m[43mconnect[49m[43m([49m[43m)[49m
+[0;32m   1127[0m [38;5;66;03m# TODO revise this, see https://github.com/urllib3/urllib3/issues/2791[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py:827[0m, in [0;36mHTTPSConnection.connect[1;34m(self)[0m
+[0;32m    826[0m sock: socket[38;5;241m.[39msocket [38;5;241m|[39m ssl[38;5;241m.[39mSSLSocket
+[1;32m--> 827[0m [38;5;28mself[39m[38;5;241m.[39msock [38;5;241m=[39m sock [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_new_conn[49m[43m([49m[43m)[49m
+[0;32m    828[0m server_hostname: [38;5;28mstr[39m [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mhost
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py:246[0m, in [0;36mHTTPConnection._new_conn[1;34m(self)[0m
+[0;32m    245[0m [38;5;28;01mexcept[39;00m socket[38;5;241m.[39mgaierror [38;5;28;01mas[39;00m e:
+[1;32m--> 246[0m     [38;5;28;01mraise[39;00m NameResolutionError([38;5;28mself[39m[38;5;241m.[39mhost, [38;5;28mself[39m, e) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01me[39;00m
+[0;32m    247[0m [38;5;28;01mexcept[39;00m SocketTimeout [38;5;28;01mas[39;00m e:
+
+[1;31mNameResolutionError[0m: HTTPSConnection(host='files.rcsb.org', port=443): Failed to resolve 'files.rcsb.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+[1;31mMaxRetryError[0m                             Traceback (most recent call last)
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py:696[0m, in [0;36mHTTPAdapter.send[1;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[0;32m    695[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 696[0m     resp [38;5;241m=[39m [43mconn[49m[38;5;241;43m.[39;49m[43murlopen[49m[43m([49m
+[0;32m    697[0m [43m        [49m[43mmethod[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mmethod[49m[43m,[49m
+[0;32m    698[0m [43m        [49m[43murl[49m[38;5;241;43m=[39;49m[43murl[49m[43m,[49m
+[0;32m    699[0m [43m        [49m[43mbody[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mbody[49m[43m,[49m[43m  [49m[38;5;66;43;03m# type: ignore[arg-type]  # urllib3 stubs don't accept Iterable[bytes | str][39;49;00m
+[0;32m    700[0m [43m        [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mrequest[49m[38;5;241;43m.[39;49m[43mheaders[49m[43m,[49m[43m  [49m[38;5;66;43;03m# type: ignore[arg-type]  # urllib3#3072[39;49;00m
+[0;32m    701[0m [43m        [49m[43mredirect[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    702[0m [43m        [49m[43massert_same_host[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    703[0m [43m        [49m[43mpreload_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    704[0m [43m        [49m[43mdecode_content[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[0;32m    705[0m [43m        [49m[43mretries[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmax_retries[49m[43m,[49m
+[0;32m    706[0m [43m        [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mresolved_timeout[49m[43m,[49m
+[0;32m    707[0m [43m        [49m[43mchunked[49m[38;5;241;43m=[39;49m[43mchunked[49m[43m,[49m
+[0;32m    708[0m [43m    [49m[43m)[49m
+[0;32m    710[0m [38;5;28;01mexcept[39;00m (ProtocolError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m err:
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:886[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    874[0m     log[38;5;241m.[39mwarning(
+[0;32m    875[0m         [38;5;124m"[39m[38;5;124mRetrying ([39m[38;5;132;01m%r[39;00m[38;5;124m) after connection broken by [39m[38;5;124m'[39m[38;5;132;01m%r[39;00m[38;5;124m'[39m[38;5;124m: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m,
+[0;32m    876[0m         retries,
+[1;32m   (...)[0m
+[0;32m    884[0m         extra[38;5;241m=[39m{[38;5;124m"[39m[38;5;124m__urllib3-retry-warning[39m[38;5;124m"[39m: {[38;5;124m"[39m[38;5;124mhost[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39mhost}},
+[0;32m    885[0m     )
+[1;32m--> 886[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39murlopen(
+[0;32m    887[0m         method,
+[0;32m    888[0m         url,
+[0;32m    889[0m         body,
+[0;32m    890[0m         headers,
+[0;32m    891[0m         retries,
+[0;32m    892[0m         redirect,
+[0;32m    893[0m         assert_same_host,
+[0;32m    894[0m         timeout[38;5;241m=[39mtimeout,
+[0;32m    895[0m         pool_timeout[38;5;241m=[39mpool_timeout,
+[0;32m    896[0m         release_conn[38;5;241m=[39mrelease_conn,
+[0;32m    897[0m         chunked[38;5;241m=[39mchunked,
+[0;32m    898[0m         body_pos[38;5;241m=[39mbody_pos,
+[0;32m    899[0m         preload_content[38;5;241m=[39mpreload_content,
+[0;32m    900[0m         decode_content[38;5;241m=[39mdecode_content,
+[0;32m    901[0m         [38;5;241m*[39m[38;5;241m*[39mresponse_kw,
+[0;32m    902[0m     )
+[0;32m    904[0m [38;5;66;03m# Handle redirect?[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:886[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    874[0m     log[38;5;241m.[39mwarning(
+[0;32m    875[0m         [38;5;124m"[39m[38;5;124mRetrying ([39m[38;5;132;01m%r[39;00m[38;5;124m) after connection broken by [39m[38;5;124m'[39m[38;5;132;01m%r[39;00m[38;5;124m'[39m[38;5;124m: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m,
+[0;32m    876[0m         retries,
+[1;32m   (...)[0m
+[0;32m    884[0m         extra[38;5;241m=[39m{[38;5;124m"[39m[38;5;124m__urllib3-retry-warning[39m[38;5;124m"[39m: {[38;5;124m"[39m[38;5;124mhost[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39mhost}},
+[0;32m    885[0m     )
+[1;32m--> 886[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39murlopen(
+[0;32m    887[0m         method,
+[0;32m    888[0m         url,
+[0;32m    889[0m         body,
+[0;32m    890[0m         headers,
+[0;32m    891[0m         retries,
+[0;32m    892[0m         redirect,
+[0;32m    893[0m         assert_same_host,
+[0;32m    894[0m         timeout[38;5;241m=[39mtimeout,
+[0;32m    895[0m         pool_timeout[38;5;241m=[39mpool_timeout,
+[0;32m    896[0m         release_conn[38;5;241m=[39mrelease_conn,
+[0;32m    897[0m         chunked[38;5;241m=[39mchunked,
+[0;32m    898[0m         body_pos[38;5;241m=[39mbody_pos,
+[0;32m    899[0m         preload_content[38;5;241m=[39mpreload_content,
+[0;32m    900[0m         decode_content[38;5;241m=[39mdecode_content,
+[0;32m    901[0m         [38;5;241m*[39m[38;5;241m*[39mresponse_kw,
+[0;32m    902[0m     )
+[0;32m    904[0m [38;5;66;03m# Handle redirect?[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:886[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    874[0m     log[38;5;241m.[39mwarning(
+[0;32m    875[0m         [38;5;124m"[39m[38;5;124mRetrying ([39m[38;5;132;01m%r[39;00m[38;5;124m) after connection broken by [39m[38;5;124m'[39m[38;5;132;01m%r[39;00m[38;5;124m'[39m[38;5;124m: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m,
+[0;32m    876[0m         retries,
+[1;32m   (...)[0m
+[0;32m    884[0m         extra[38;5;241m=[39m{[38;5;124m"[39m[38;5;124m__urllib3-retry-warning[39m[38;5;124m"[39m: {[38;5;124m"[39m[38;5;124mhost[39m[38;5;124m"[39m: [38;5;28mself[39m[38;5;241m.[39mhost}},
+[0;32m    885[0m     )
+[1;32m--> 886[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39murlopen(
+[0;32m    887[0m         method,
+[0;32m    888[0m         url,
+[0;32m    889[0m         body,
+[0;32m    890[0m         headers,
+[0;32m    891[0m         retries,
+[0;32m    892[0m         redirect,
+[0;32m    893[0m         assert_same_host,
+[0;32m    894[0m         timeout[38;5;241m=[39mtimeout,
+[0;32m    895[0m         pool_timeout[38;5;241m=[39mpool_timeout,
+[0;32m    896[0m         release_conn[38;5;241m=[39mrelease_conn,
+[0;32m    897[0m         chunked[38;5;241m=[39mchunked,
+[0;32m    898[0m         body_pos[38;5;241m=[39mbody_pos,
+[0;32m    899[0m         preload_content[38;5;241m=[39mpreload_content,
+[0;32m    900[0m         decode_content[38;5;241m=[39mdecode_content,
+[0;32m    901[0m         [38;5;241m*[39m[38;5;241m*[39mresponse_kw,
+[0;32m    902[0m     )
+[0;32m    904[0m [38;5;66;03m# Handle redirect?[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:847[0m, in [0;36mHTTPConnectionPool.urlopen[1;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)[0m
+[0;32m    845[0m     new_e [38;5;241m=[39m ProtocolError([38;5;124m"[39m[38;5;124mConnection aborted.[39m[38;5;124m"[39m, new_e)
+[1;32m--> 847[0m retries [38;5;241m=[39m [43mretries[49m[38;5;241;43m.[39;49m[43mincrement[49m[43m([49m
+[0;32m    848[0m [43m    [49m[43mmethod[49m[43m,[49m[43m [49m[43murl[49m[43m,[49m[43m [49m[43merror[49m[38;5;241;43m=[39;49m[43mnew_e[49m[43m,[49m[43m [49m[43m_pool[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43m_stacktrace[49m[38;5;241;43m=[39;49m[43msys[49m[38;5;241;43m.[39;49m[43mexc_info[49m[43m([49m[43m)[49m[43m[[49m[38;5;241;43m2[39;49m[43m][49m
+[0;32m    849[0m [43m[49m[43m)[49m
+[0;32m    850[0m retries[38;5;241m.[39msleep()
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py:555[0m, in [0;36mRetry.increment[1;34m(self, method, url, response, error, _pool, _stacktrace)[0m
+[0;32m    554[0m     reason [38;5;241m=[39m error [38;5;129;01mor[39;00m ResponseError(cause)
+[1;32m--> 555[0m     [38;5;28;01mraise[39;00m MaxRetryError(_pool, url, reason) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mreason[39;00m  [38;5;66;03m# type: ignore[arg-type][39;00m
+[0;32m    557[0m log[38;5;241m.[39mdebug([38;5;124m"[39m[38;5;124mIncremented Retry for (url=[39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m): [39m[38;5;132;01m%r[39;00m[38;5;124m"[39m, url, new_retry)
+
+[1;31mMaxRetryError[0m: HTTPSConnectionPool(host='files.rcsb.org', port=443): Max retries exceeded with url: /download/7WTT.cif (Caused by NameResolutionError("HTTPSConnection(host='files.rcsb.org', port=443): Failed to resolve 'files.rcsb.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+[1;31mConnectionError[0m                           Traceback (most recent call last)
+Cell [1;32mIn[7], line 227[0m
+[0;32m    221[0m [38;5;28mprint[39m(
+[0;32m    222[0m     [38;5;124mf[39m[38;5;124m"[39m[38;5;124mЗагрузка структуры [39m[38;5;132;01m{[39;00mPDB_ID[38;5;132;01m}[39;00m[38;5;124m из RCSB PDB...[39m[38;5;124m"[39m
+[0;32m    223[0m )
+[0;32m    225[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 227[0m     [38;5;28;01mwith[39;00m [43msession[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m
+[0;32m    228[0m [43m        [49m[43mURL[49m[43m,[49m
+[0;32m    229[0m [43m        [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43m([49m[38;5;241;43m15[39;49m[43m,[49m[43m [49m[38;5;241;43m120[39;49m[43m)[49m
+[0;32m    230[0m [43m    [49m[43m)[49m [38;5;28;01mas[39;00m response:
+[0;32m    232[0m         response[38;5;241m.[39mraise_for_status()
+[0;32m    234[0m         content [38;5;241m=[39m response[38;5;241m.[39mcontent
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py:671[0m, in [0;36mSession.get[1;34m(self, url, params, **kwargs)[0m
+[0;32m    661[0m [38;5;250m[39m[38;5;124mr[39m[38;5;124;03m"""Sends a GET request. Returns :class:`Response` object.[39;00m
+[0;32m    662[0m 
+[0;32m    663[0m [38;5;124;03m:param url: URL for the new :class:`Request` object.[39;00m
+[1;32m   (...)[0m
+[0;32m    667[0m [38;5;124;03m:rtype: requests.Response[39;00m
+[0;32m    668[0m [38;5;124;03m"""[39;00m
+[0;32m    670[0m kwargs[38;5;241m.[39msetdefault([38;5;124m"[39m[38;5;124mallow_redirects[39m[38;5;124m"[39m, [38;5;28;01mTrue[39;00m)
+[1;32m--> 671[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mrequest([38;5;124m"[39m[38;5;124mGET[39m[38;5;124m"[39m, url, params[38;5;241m=[39mparams, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py:651[0m, in [0;36mSession.request[1;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
+[0;32m    646[0m send_kwargs [38;5;241m=[39m {
+[0;32m    647[0m     [38;5;124m"[39m[38;5;124mtimeout[39m[38;5;124m"[39m: timeout,
+[0;32m    648[0m     [38;5;124m"[39m[38;5;124mallow_redirects[39m[38;5;124m"[39m: allow_redirects,
+[0;32m    649[0m }
+[0;32m    650[0m send_kwargs[38;5;241m.[39mupdate(settings)
+[1;32m--> 651[0m resp [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39msend(prep, [38;5;241m*[39m[38;5;241m*[39msend_kwargs)
+[0;32m    653[0m [38;5;28;01mreturn[39;00m resp
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py:784[0m, in [0;36mSession.send[1;34m(self, request, **kwargs)[0m
+[0;32m    781[0m start [38;5;241m=[39m preferred_clock()
+[0;32m    783[0m [38;5;66;03m# Send the request[39;00m
+[1;32m--> 784[0m r [38;5;241m=[39m adapter[38;5;241m.[39msend(request, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m    786[0m [38;5;66;03m# Total elapsed time of the request (approximately)[39;00m
+[0;32m    787[0m elapsed [38;5;241m=[39m preferred_clock() [38;5;241m-[39m start
+
+File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py:729[0m, in [0;36mHTTPAdapter.send[1;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[0;32m    725[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(e[38;5;241m.[39mreason, _SSLError):
+[0;32m    726[0m         [38;5;66;03m# This branch is for urllib3 v1.22 and later.[39;00m
+[0;32m    727[0m         [38;5;28;01mraise[39;00m SSLError(e, request[38;5;241m=[39mrequest)
+[1;32m--> 729[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
+[0;32m    731[0m [38;5;28;01mexcept[39;00m ClosedPoolError [38;5;28;01mas[39;00m e:
+[0;32m    732[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
+
+[1;31mConnectionError[0m: HTTPSConnectionPool(host='files.rcsb.org', port=443): Max retries exceeded with url: /download/7WTT.cif (Caused by NameResolutionError("HTTPSConnection(host='files.rcsb.org', port=443): Failed to resolve 'files.rcsb.org' ([Errno 11001] getaddrinfo failed)"))
+
+
