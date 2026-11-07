@@ -1,0 +1,3944 @@
+# ============================================================
+# CELL 20. FINAL STRUCTURAL AND FUNCTIONAL METRICS
+# ============================================================
+# Назначение:
+# 1. Собрать основные характеристики структуры.
+# 2. Рассчитать метрики белковых цепей.
+# 3. Сравнить аминокислотные последовательности цепей.
+# 4. Систематизировать геометрические характеристики белка.
+# 5. Систематизировать показатели качества структуры.
+# 6. Оценить состав небелковых компонентов.
+# 7. Систематизировать показатели binding site.
+# 8. Систематизировать контакты выбранного компонента с белком.
+# 9. Сравнить расстояния Fe-N во всех копиях HEM.
+# 10. Систематизировать контакты Fe-OXY.
+# 11. Включить результаты анализа дисульфидных мостиков.
+# 12. Сформировать сводные таблицы и JSON-отчет.
+#
+# Согласованность:
+# - PDB_RESULTS_DIR — индивидуальная папка структуры;
+# - df_atoms — белковые атомы первой модели;
+# - df_residues — белковые остатки первой модели;
+# - structure — исходная структура Bio.PDB из CELL 4;
+# - component_structure — совместимая структура из CELL 17,
+#   если она ссылается на исходный объект;
+# - Fe-N и Fe-OXY — первая модель;
+# - CELL 18 — таблицы binding site и атомных контактов;
+# - CELL 19 — таблицы взаимодействий, Fe-контактов и S-S.
+#
+# Важно:
+# Геометрическая близость не доказывает наличие химической связи.
+# Отсутствующие данные не заменяются нулевыми значениями.
+# ============================================================
+
+import json
+import re
+import numpy as np
+import pandas as pd
+
+from pathlib import Path
+from Bio.Align import PairwiseAligner
+from IPython.display import display
+
+
+# ============================================================
+# 1. INPUT VALIDATION
+# ============================================================
+
+required_variables = [
+    "PDB_ID",
+    "PDB_RESULTS_DIR",
+    "df_atoms",
+    "df_residues",
+    "df_hetero",
+    "df_water",
+    "chain_sequences"
+]
+
+missing_variables = [
+    name
+    for name in required_variables
+    if name not in globals()
+]
+
+if missing_variables:
+    raise NameError(
+        "Не найдены обязательные переменные: "
+        + ", ".join(missing_variables)
+    )
+
+
+PDB_ID = str(PDB_ID).strip().upper()
+
+if len(PDB_ID) != 4 or not PDB_ID.isalnum():
+    raise ValueError(f"Некорректный PDB_ID: {PDB_ID}")
+
+
+PDB_RESULTS_DIR = Path(PDB_RESULTS_DIR)
+
+PDB_RESULTS_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+required_dataframes = {
+    "df_atoms": df_atoms,
+    "df_residues": df_residues,
+    "df_hetero": df_hetero,
+    "df_water": df_water
+}
+
+for name, dataframe in required_dataframes.items():
+
+    if not isinstance(dataframe, pd.DataFrame):
+        raise TypeError(
+            f"{name} должен быть pandas DataFrame."
+        )
+
+    if "pdb_id" in dataframe.columns and not dataframe.empty:
+
+        ids = (
+            dataframe["pdb_id"]
+            .dropna()
+            .astype(str)
+            .str.upper()
+            .unique()
+        )
+
+        if len(ids) and any(value != PDB_ID for value in ids):
+            raise ValueError(
+                f"{name} содержит записи другого PDB: {ids}"
+            )
+
+
+if not isinstance(chain_sequences, dict):
+    raise TypeError(
+        "chain_sequences должен быть словарем."
+    )
+
+
+if df_atoms.empty:
+    raise ValueError(
+        "df_atoms пуст. Невозможно рассчитать геометрию белка."
+    )
+
+
+if not {"x", "y", "z"}.issubset(df_atoms.columns):
+    raise ValueError(
+        "В df_atoms отсутствуют координаты x, y, z."
+    )
+
+
+# ------------------------------------------------------------
+# 1.1. Структура Bio.PDB
+# ------------------------------------------------------------
+# Предпочтительно использовать исходный объект structure из CELL 4.
+# component_structure из CELL 17 допускается как fallback,
+# но не должен быть независимой повторно загруженной копией,
+# если далее требуется сопоставление объектов CELL 17 и CELL 18.
+# ------------------------------------------------------------
+
+cell20_structure = globals().get("structure")
+
+if cell20_structure is None:
+    cell20_structure = globals().get("component_structure")
+
+component_structure_available = (
+    cell20_structure is not None
+    and hasattr(cell20_structure, "get_models")
+)
+
+if component_structure_available:
+
+    structure_id = str(
+        getattr(cell20_structure, "id", "")
+    ).strip().upper()
+
+    if structure_id and structure_id != PDB_ID:
+        raise ValueError(
+            f"Структура относится к {structure_id}, "
+            f"а текущий PDB_ID={PDB_ID}"
+        )
+
+    cell20_models = list(
+        cell20_structure.get_models()
+    )
+
+    if not cell20_models:
+        raise ValueError(
+            "В структуре Bio.PDB отсутствуют модели."
+        )
+
+    analysis_model = cell20_models[0]
+
+    analysis_model_id = analysis_model.id
+
+else:
+
+    cell20_models = []
+
+    analysis_model = None
+
+    analysis_model_id = None
+
+
+print("=" * 75)
+print("CELL 20. FINAL STRUCTURAL AND FUNCTIONAL METRICS")
+print("=" * 75)
+
+print("PDB ID:", PDB_ID)
+print("Output directory:", PDB_RESULTS_DIR)
+
+if component_structure_available:
+
+    print("Models in structure:", len(cell20_models))
+    print("Analyzed model:", analysis_model_id)
+
+else:
+
+    print(
+        "WARNING: Bio.PDB structure unavailable. "
+        "Fe-N and Fe-OXY calculations will be skipped."
+    )
+
+
+# ============================================================
+# 2. HELPER FUNCTIONS
+# ============================================================
+
+def numeric_values(series):
+
+    return pd.to_numeric(
+        series,
+        errors="coerce"
+    ).dropna()
+
+
+def safe_mean(series):
+
+    values = numeric_values(series)
+
+    return (
+        float(values.mean())
+        if not values.empty
+        else np.nan
+    )
+
+
+def safe_median(series):
+
+    values = numeric_values(series)
+
+    return (
+        float(values.median())
+        if not values.empty
+        else np.nan
+    )
+
+
+def safe_std(series):
+
+    values = numeric_values(series)
+
+    return (
+        float(values.std())
+        if len(values) >= 2
+        else np.nan
+    )
+
+
+def safe_percentage(numerator, denominator):
+
+    if pd.isna(numerator) or pd.isna(denominator):
+        return np.nan
+
+    if denominator == 0:
+        return np.nan
+
+    return float(
+        100.0 * numerator / denominator
+    )
+
+
+def get_first_existing_column(dataframe, candidates):
+
+    if dataframe is None:
+        return None
+
+    for column in candidates:
+
+        if column in dataframe.columns:
+            return column
+
+    return None
+
+
+def dataframe_or_empty(variable_names):
+
+    if isinstance(variable_names, str):
+        variable_names = [variable_names]
+
+    for name in variable_names:
+
+        value = globals().get(name)
+
+        if isinstance(value, pd.DataFrame):
+            return value.copy(), name
+
+    return pd.DataFrame(), None
+
+
+def json_safe(value):
+
+    """Рекурсивное преобразование значений в JSON-совместимый формат."""
+
+    if isinstance(value, dict):
+
+        return {
+            str(key): json_safe(item)
+            for key, item in value.items()
+        }
+
+    if isinstance(value, (list, tuple)):
+
+        return [
+            json_safe(item)
+            for item in value
+        ]
+
+    if isinstance(value, np.ndarray):
+        return json_safe(value.tolist())
+
+    if isinstance(value, (np.integer,)):
+        return int(value)
+
+    if isinstance(value, (np.floating, float)):
+
+        value = float(value)
+
+        return (
+            value
+            if np.isfinite(value)
+            else None
+        )
+
+    if isinstance(value, (np.bool_, bool)):
+        return bool(value)
+
+    if isinstance(value, Path):
+        return str(value)
+
+    if value is None:
+        return None
+
+    if isinstance(value, (str, int)):
+        return value
+
+    # pd.NA, pd.NaT и другие скалярные пропуски.
+    try:
+
+        missing = pd.isna(value)
+
+        if isinstance(missing, (bool, np.bool_)) and missing:
+            return None
+
+    except (TypeError, ValueError):
+        pass
+
+    return str(value)
+
+
+def read_csv_if_exists(filenames):
+
+    if isinstance(filenames, str):
+        filenames = [filenames]
+
+    for filename in filenames:
+
+        path = PDB_RESULTS_DIR / filename
+
+        if not path.is_file():
+            continue
+
+        try:
+
+            dataframe = pd.read_csv(path)
+
+            print(
+                f"Loaded: {filename} "
+                f"({len(dataframe)} records)"
+            )
+
+            return dataframe
+
+        except Exception as error:
+
+            print(
+                f"WARNING: Не удалось прочитать "
+                f"{filename}: {error}"
+            )
+
+    return pd.DataFrame()
+
+
+def read_json_if_exists(filename):
+
+    path = PDB_RESULTS_DIR / filename
+
+    if not path.is_file():
+        return {}
+
+    try:
+
+        with open(path, "r", encoding="utf-8") as file:
+            return json.load(file)
+
+    except Exception as error:
+
+        print(
+            f"WARNING: Не удалось прочитать "
+            f"{filename}: {error}"
+        )
+
+        return {}
+
+
+def add_metric(
+    collection,
+    category,
+    metric,
+    value,
+    unit=None,
+    status="calculated"
+):
+
+    collection.append({
+
+        "category": category,
+
+        "metric": metric,
+
+        "value": json_safe(value),
+
+        "unit": unit,
+
+        "status": status
+
+    })
+
+
+def normalize_chain(value):
+
+    if value is None:
+        return ""
+
+    try:
+
+        if pd.isna(value):
+            return ""
+
+    except (TypeError, ValueError):
+        pass
+
+    return str(value).strip()
+
+
+def normalize_category(value):
+
+    if value is None:
+        return ""
+
+    return re.sub(
+        r"\s+",
+        " ",
+        str(value).strip().upper().replace("_", " ")
+    )
+
+
+def get_atom_element(atom):
+
+    element = getattr(atom, "element", None)
+
+    if element is not None:
+
+        element = str(element).strip().upper()
+
+        if element not in {"", "?", ".", "X"}:
+            return element
+
+    atom_name = "".join(
+        character
+        for character in atom.get_fullname().strip().upper()
+        if character.isalpha()
+    )
+
+    return atom_name[0] if atom_name else "UNKNOWN"
+
+
+def get_valid_coordinate(atom):
+
+    coordinate = np.asarray(
+        atom.coord,
+        dtype=float
+    )
+
+    if coordinate.shape != (3,):
+        return None
+
+    if not np.isfinite(coordinate).all():
+        return None
+
+    return coordinate
+
+
+def get_residue_number(residue):
+
+    try:
+        return int(residue.id[1])
+
+    except (TypeError, ValueError, IndexError):
+        return None
+
+
+def get_insertion_code(residue):
+
+    try:
+        return str(residue.id[2]).strip()
+
+    except (TypeError, IndexError):
+        return ""
+
+
+def get_residue_hetero_flag(residue):
+
+    try:
+        return str(residue.id[0]).strip()
+
+    except (TypeError, IndexError):
+        return ""
+
+
+def get_selected_atoms(residue):
+
+    """
+    Возвращает выбранное Bio.PDB представление атомов.
+    Для DisorderedAtom используется выбранный конформер,
+    что соответствует обычному get_atoms() в CELL 17–19.
+    """
+
+    return list(residue.get_atoms())
+
+
+# ============================================================
+# 3. GLOBAL STRUCTURE METRICS
+# ============================================================
+
+number_of_chains = len(chain_sequences)
+
+number_of_protein_residues = len(df_residues)
+
+number_of_protein_atoms = len(df_atoms)
+
+number_of_water_residues = len(df_water)
+
+
+# ------------------------------------------------------------
+# 3.1. Проверка фактического количества белковых цепей
+# ------------------------------------------------------------
+
+residue_chain_column = get_first_existing_column(
+    df_residues,
+    ["chain_id", "chain"]
+)
+
+if residue_chain_column is not None:
+
+    actual_residue_chains = (
+        df_residues[residue_chain_column]
+        .apply(normalize_chain)
+        .nunique()
+    )
+
+else:
+
+    actual_residue_chains = np.nan
+
+
+# ------------------------------------------------------------
+# 3.2. Element composition
+# ------------------------------------------------------------
+
+if "element" in df_atoms.columns:
+
+    element_counts = (
+
+        df_atoms["element"]
+
+        .fillna("Unknown")
+
+        .astype(str)
+
+        .str.strip()
+
+        .str.upper()
+
+        .replace("", "UNKNOWN")
+
+        .value_counts()
+
+    )
+
+else:
+
+    element_counts = pd.Series(dtype=int)
+
+
+number_of_elements = len(element_counts)
+
+
+df_element_distribution = (
+
+    element_counts
+
+    .rename_axis("element")
+
+    .reset_index(name="atom_count")
+
+)
+
+if not df_element_distribution.empty:
+
+    df_element_distribution["percentage"] = (
+
+        100.0
+        * df_element_distribution["atom_count"]
+        / number_of_protein_atoms
+
+    )
+
+
+# ============================================================
+# 4. NON-PROTEIN COMPONENT METRICS
+# ============================================================
+
+# CELL 17: df_components — предпочтительный источник.
+# CELL 8: df_hetero — резервный источник.
+#
+# Количество экземпляров и количество типов компонентов
+# рассчитываются отдельно.
+# ============================================================
+
+df_components_source, components_source_name = (
+    dataframe_or_empty([
+        "df_components",
+        "df_component_analysis"
+    ])
+)
+
+
+if df_components_source.empty:
+
+    df_components_source = read_csv_if_exists(
+        [
+            f"{PDB_ID}_components.csv",
+            f"{PDB_ID}_component_occurrences.csv"
+        ]
+    )
+
+    if not df_components_source.empty:
+        components_source_name = "CELL 17 CSV"
+
+
+if not df_components_source.empty:
+
+    component_code_column = get_first_existing_column(
+
+        df_components_source,
+
+        [
+            "component",
+            "residue_name",
+            "resname",
+            "component_code"
+        ]
+
+    )
+
+    if component_code_column is not None:
+
+        component_codes = (
+
+            df_components_source[component_code_column]
+
+            .dropna()
+
+            .astype(str)
+
+            .str.strip()
+
+            .str.upper()
+
+        )
+
+        component_codes = component_codes[
+            component_codes != ""
+        ]
+
+        # CELL 17 components.csv — таблица экземпляров компонентов.
+        # Не удаляем строки по одному component_id:
+        # один и тот же код может встречаться в нескольких местах.
+
+        number_of_component_instances = len(
+            df_components_source
+        )
+
+        number_of_unique_component_types = (
+            component_codes.nunique()
+        )
+
+        component_counts = component_codes.value_counts()
+
+        component_count_status = (
+            f"from {components_source_name}"
+        )
+
+    else:
+
+        component_counts = pd.Series(dtype=int)
+
+        number_of_component_instances = np.nan
+
+        number_of_unique_component_types = np.nan
+
+        component_count_status = (
+            "component code column unavailable"
+        )
+
+
+elif not df_hetero.empty:
+
+    component_code_column = get_first_existing_column(
+
+        df_hetero,
+
+        [
+            "residue_name",
+            "resname",
+            "component"
+        ]
+
+    )
+
+    if component_code_column is not None:
+
+        instance_columns = [
+
+            column
+
+            for column in [
+
+                "model_id",
+                "chain_id",
+                "chain",
+                "residue_key",
+                "residue_number",
+                "residue_id",
+                "insertion_code",
+                component_code_column
+
+            ]
+
+            if column in df_hetero.columns
+
+        ]
+
+        if instance_columns:
+
+            component_records = (
+                df_hetero[instance_columns].drop_duplicates()
+            )
+
+        else:
+
+            component_records = df_hetero.copy()
+
+
+        component_codes = (
+
+            component_records[component_code_column]
+
+            .dropna()
+
+            .astype(str)
+
+            .str.strip()
+
+            .str.upper()
+
+        )
+
+        component_codes = component_codes[
+            component_codes != ""
+        ]
+
+        number_of_component_instances = len(
+            component_records
+        )
+
+        number_of_unique_component_types = (
+            component_codes.nunique()
+        )
+
+        component_counts = component_codes.value_counts()
+
+        component_count_status = (
+            "calculated from df_hetero"
+        )
+
+    else:
+
+        component_counts = pd.Series(dtype=int)
+
+        number_of_component_instances = np.nan
+
+        number_of_unique_component_types = np.nan
+
+        component_count_status = (
+            "component code column unavailable"
+        )
+
+else:
+
+    component_counts = pd.Series(dtype=int)
+
+    number_of_component_instances = 0
+
+    number_of_unique_component_types = 0
+
+    component_count_status = (
+        "no non-water hetero components detected"
+    )
+
+
+global_metrics = {
+
+    "PDB_ID": PDB_ID,
+
+    "number_of_chains_from_sequence_dictionary": number_of_chains,
+
+    "number_of_chains_in_residue_table": actual_residue_chains,
+
+    "number_of_protein_residues": number_of_protein_residues,
+
+    "number_of_protein_atoms": number_of_protein_atoms,
+
+    "number_of_component_instances": (
+        number_of_component_instances
+    ),
+
+    "number_of_unique_component_types": (
+        number_of_unique_component_types
+    ),
+
+    "number_of_water_residues": number_of_water_residues,
+
+    "number_of_atom_elements": number_of_elements
+
+}
+
+
+df_global_metrics = pd.DataFrame(
+    [global_metrics]
+)
+
+
+df_component_distribution = (
+
+    component_counts
+
+    .rename_axis("component")
+
+    .reset_index(name="occurrence_count")
+
+)
+
+
+# ============================================================
+# 5. PROTEIN CHAIN METRICS
+# ============================================================
+
+chain_metric_data = []
+
+
+chain_column = get_first_existing_column(
+    df_residues,
+    ["chain_id", "chain"]
+)
+
+atom_chain_column = get_first_existing_column(
+    df_atoms,
+    ["chain_id", "chain"]
+)
+
+
+for chain_id, sequence in chain_sequences.items():
+
+    chain_key = normalize_chain(chain_id)
+
+    if chain_column is not None:
+
+        chain_residues = df_residues[
+
+            df_residues[chain_column]
+            .apply(normalize_chain)
+            == chain_key
+
+        ]
+
+    else:
+
+        chain_residues = pd.DataFrame()
+
+
+    if atom_chain_column is not None:
+
+        chain_atoms = df_atoms[
+
+            df_atoms[atom_chain_column]
+            .apply(normalize_chain)
+            == chain_key
+
+        ]
+
+    else:
+
+        chain_atoms = pd.DataFrame()
+
+
+    sequence_length = len(str(sequence))
+
+    residue_count = len(chain_residues)
+
+    atom_count = len(chain_atoms)
+
+
+    missing_backbone_count = np.nan
+
+    missing_backbone_column = get_first_existing_column(
+
+        chain_residues,
+
+        [
+            "missing_backbone_atom_count",
+            "missing_backbone_atoms"
+        ]
+
+    )
+
+    if missing_backbone_column is not None:
+
+        values = chain_residues[missing_backbone_column]
+
+        if pd.api.types.is_numeric_dtype(values):
+
+            missing_backbone_count = int(
+                pd.to_numeric(
+                    values,
+                    errors="coerce"
+                ).fillna(0).sum()
+            )
+
+
+    mean_bfactor = (
+
+        safe_mean(chain_atoms["bfactor"])
+
+        if "bfactor" in chain_atoms.columns
+
+        else np.nan
+
+    )
+
+    median_bfactor = (
+
+        safe_median(chain_atoms["bfactor"])
+
+        if "bfactor" in chain_atoms.columns
+
+        else np.nan
+
+    )
+
+    mean_occupancy = (
+
+        safe_mean(chain_atoms["occupancy"])
+
+        if "occupancy" in chain_atoms.columns
+
+        else np.nan
+
+    )
+
+
+    chain_metric_data.append({
+
+        "chain_id": chain_key,
+
+        "sequence_length": sequence_length,
+
+        "residue_count": residue_count,
+
+        "atom_count": atom_count,
+
+        "atoms_per_residue": (
+
+            atom_count / residue_count
+
+            if residue_count > 0
+
+            else np.nan
+
+        ),
+
+        "missing_backbone_atoms": missing_backbone_count,
+
+        "mean_B_factor": mean_bfactor,
+
+        "median_B_factor": median_bfactor,
+
+        "mean_occupancy": mean_occupancy
+
+    })
+
+
+df_final_chain_metrics = pd.DataFrame(
+    chain_metric_data
+)
+
+
+# ============================================================
+# 6. SEQUENCE IDENTITY BETWEEN CHAINS
+# ============================================================
+
+aligner = PairwiseAligner()
+
+aligner.mode = "global"
+
+aligner.match_score = 2.0
+
+aligner.mismatch_score = -1.0
+
+aligner.open_gap_score = -3.0
+
+aligner.extend_gap_score = -0.5
+
+
+chain_identity_data = []
+
+chain_ids = list(chain_sequences.keys())
+
+
+for i in range(len(chain_ids)):
+
+    for j in range(i + 1, len(chain_ids)):
+
+        chain_a = chain_ids[i]
+
+        chain_b = chain_ids[j]
+
+        sequence_a = str(chain_sequences[chain_a])
+
+        sequence_b = str(chain_sequences[chain_b])
+
+
+        if not sequence_a or not sequence_b:
+
+            chain_identity_data.append({
+
+                "chain_1": str(chain_a),
+
+                "chain_2": str(chain_b),
+
+                "alignment_score": np.nan,
+
+                "identical_positions": np.nan,
+
+                "aligned_positions": 0,
+
+                "sequence_identity_percent": np.nan,
+
+                "comparison_status": "Empty sequence"
+
+            })
+
+            continue
+
+
+        alignment = aligner.align(
+            sequence_a,
+            sequence_b
+        )[0]
+
+
+        alignment_indices = alignment.indices
+
+        identical_positions = 0
+
+        aligned_positions = 0
+
+
+        for position_a, position_b in zip(
+
+            alignment_indices[0],
+
+            alignment_indices[1]
+
+        ):
+
+            # В знаменатель входят только позиции,
+            # в которых имеются остатки обеих цепей.
+            if position_a < 0 or position_b < 0:
+                continue
+
+            aligned_positions += 1
+
+            if sequence_a[position_a] == sequence_b[position_b]:
+                identical_positions += 1
+
+
+        identity = safe_percentage(
+            identical_positions,
+            aligned_positions
+        )
+
+
+        chain_identity_data.append({
+
+            "chain_1": str(chain_a),
+
+            "chain_2": str(chain_b),
+
+            "alignment_score": float(alignment.score),
+
+            "identical_positions": identical_positions,
+
+            "aligned_positions": aligned_positions,
+
+            "sequence_identity_percent": identity,
+
+            "comparison_status": (
+                "Global alignment; gaps excluded from identity denominator"
+            )
+
+        })
+
+
+df_chain_identity = pd.DataFrame(
+    chain_identity_data
+)
+
+
+# ============================================================
+# 7. GEOMETRY METRICS
+# ============================================================
+
+geometry_metric_data = []
+
+
+df_geometry_file = read_csv_if_exists(
+    f"{PDB_ID}_geometry.csv"
+)
+
+
+if not df_geometry_file.empty:
+
+    for column in df_geometry_file.columns:
+
+        if column.lower() in {
+            "pdb_id",
+            "status",
+            "output_checks"
+        }:
+            continue
+
+        if len(df_geometry_file) == 1:
+
+            value = df_geometry_file.iloc[0][column]
+
+            if pd.api.types.is_numeric_dtype(
+                df_geometry_file[column]
+            ):
+
+                geometry_metric_data.append({
+
+                    "metric": column,
+
+                    "value": json_safe(value),
+
+                    "unit": None,
+
+                    "status": "from CELL 9"
+
+                })
+
+
+if not geometry_metric_data:
+
+    geometry_summary = globals().get(
+        "geometry_summary",
+        None
+    )
+
+    if isinstance(geometry_summary, dict):
+
+        for metric_name, value in geometry_summary.items():
+
+            if isinstance(value, (int, float, np.number)):
+
+                geometry_metric_data.append({
+
+                    "metric": str(metric_name),
+
+                    "value": json_safe(value),
+
+                    "unit": None,
+
+                    "status": "from CELL 9"
+
+                })
+
+
+if "radius_of_gyration" in globals():
+
+    if not any(
+        "gyration" in str(item["metric"]).lower()
+        for item in geometry_metric_data
+    ):
+
+        geometry_metric_data.append({
+
+            "metric": "Geometric radius of gyration",
+
+            "value": json_safe(radius_of_gyration),
+
+            "unit": "A",
+
+            "status": "from CELL 9"
+
+        })
+
+
+if "dimensions" in globals():
+
+    try:
+
+        dimensions_array = np.asarray(
+            dimensions,
+            dtype=float
+        ).reshape(-1)
+
+        if dimensions_array.size == 3:
+
+            for axis, value in zip(
+                ["X", "Y", "Z"],
+                dimensions_array
+            ):
+
+                geometry_metric_data.append({
+
+                    "metric": f"{axis} dimension",
+
+                    "value": float(value),
+
+                    "unit": "A",
+
+                    "status": "from CELL 9"
+
+                })
+
+    except (TypeError, ValueError):
+        pass
+
+
+if not geometry_metric_data:
+
+    geometry_metric_data.append({
+
+        "metric": "Geometry metrics",
+
+        "value": np.nan,
+
+        "unit": None,
+
+        "status": "CELL 9 geometry results unavailable"
+
+    })
+
+
+df_final_geometry_metrics = pd.DataFrame(
+
+    geometry_metric_data,
+
+    columns=[
+        "metric",
+        "value",
+        "unit",
+        "status"
+    ]
+
+)
+
+
+# ============================================================
+# 8. STRUCTURE QUALITY METRICS
+# ============================================================
+
+quality_metric_data = []
+
+
+df_atom_quality_source, atom_quality_source_name = (
+    dataframe_or_empty([
+        "df_atom_quality",
+        "df_structure_quality_atoms"
+    ])
+)
+
+
+if df_atom_quality_source.empty:
+
+    df_atom_quality_source = read_csv_if_exists(
+        f"{PDB_ID}_atom_quality.csv"
+    )
+
+    if not df_atom_quality_source.empty:
+        atom_quality_source_name = "CELL 14 CSV"
+
+
+df_altloc_source, altloc_source_name = (
+    dataframe_or_empty([
+        "df_altloc_atoms",
+        "df_altloc"
+    ])
+)
+
+
+if df_altloc_source.empty:
+
+    df_altloc_source = read_csv_if_exists(
+        f"{PDB_ID}_altloc_atoms.csv"
+    )
+
+    if not df_altloc_source.empty:
+        altloc_source_name = "CELL 14 CSV"
+
+
+df_low_occupancy_source, low_occupancy_source_name = (
+    dataframe_or_empty([
+        "df_low_occupancy_atoms",
+        "df_low_occupancy"
+    ])
+)
+
+
+if df_low_occupancy_source.empty:
+
+    df_low_occupancy_source = read_csv_if_exists(
+        f"{PDB_ID}_low_occupancy_atoms.csv"
+    )
+
+    if not df_low_occupancy_source.empty:
+        low_occupancy_source_name = "CELL 14 CSV"
+
+
+df_missing_occupancy_source, _ = dataframe_or_empty([
+    "df_missing_occupancy_atoms"
+])
+
+
+if df_missing_occupancy_source.empty:
+
+    df_missing_occupancy_source = read_csv_if_exists(
+        f"{PDB_ID}_missing_occupancy_atoms.csv"
+    )
+
+
+df_invalid_occupancy_source, _ = dataframe_or_empty([
+    "df_invalid_occupancy_atoms"
+])
+
+
+if df_invalid_occupancy_source.empty:
+
+    df_invalid_occupancy_source = read_csv_if_exists(
+        f"{PDB_ID}_invalid_occupancy_atoms.csv"
+    )
+
+
+if not df_atom_quality_source.empty:
+
+    quality_atom_count = len(
+        df_atom_quality_source
+    )
+
+    quality_status = (
+        f"from {atom_quality_source_name}"
+    )
+
+    quality_mean_bfactor = (
+
+        safe_mean(df_atom_quality_source["bfactor"])
+
+        if "bfactor" in df_atom_quality_source.columns
+
+        else np.nan
+
+    )
+
+    quality_median_bfactor = (
+
+        safe_median(df_atom_quality_source["bfactor"])
+
+        if "bfactor" in df_atom_quality_source.columns
+
+        else np.nan
+
+    )
+
+    quality_mean_occupancy = (
+
+        safe_mean(df_atom_quality_source["occupancy"])
+
+        if "occupancy" in df_atom_quality_source.columns
+
+        else np.nan
+
+    )
+
+else:
+
+    quality_atom_count = np.nan
+
+    quality_status = (
+        "CELL 14 atom-level table unavailable"
+    )
+
+    quality_mean_bfactor = np.nan
+
+    quality_median_bfactor = np.nan
+
+    quality_mean_occupancy = np.nan
+
+
+# ------------------------------------------------------------
+# 8.1. Alternate conformations
+# ------------------------------------------------------------
+
+if not df_altloc_source.empty:
+
+    altloc_record_count = len(
+        df_altloc_source
+    )
+
+    altloc_status = (
+        f"from {altloc_source_name or 'CELL 14'}"
+    )
+
+elif (
+    not df_atom_quality_source.empty
+    and "altloc" in df_atom_quality_source.columns
+):
+
+    altloc_values = (
+
+        df_atom_quality_source["altloc"]
+
+        .fillna("")
+
+        .astype(str)
+
+        .str.strip()
+
+    )
+
+    altloc_record_count = int(
+        (altloc_values != "").sum()
+    )
+
+    altloc_status = (
+        "from atom quality table"
+    )
+
+else:
+
+    altloc_record_count = np.nan
+
+    altloc_status = (
+        "altloc data unavailable"
+    )
+
+
+# ------------------------------------------------------------
+# 8.2. Occupancy records
+# ------------------------------------------------------------
+
+if not df_low_occupancy_source.empty:
+
+    low_occupancy_count = len(
+        df_low_occupancy_source
+    )
+
+    low_occupancy_status = (
+        f"from {low_occupancy_source_name or 'CELL 14'}"
+    )
+
+else:
+
+    low_occupancy_count = np.nan
+
+    low_occupancy_status = (
+        "dedicated low occupancy table unavailable"
+    )
+
+
+missing_occupancy_count = (
+
+    len(df_missing_occupancy_source)
+
+    if not df_missing_occupancy_source.empty
+
+    else np.nan
+
+)
+
+
+invalid_occupancy_count = (
+
+    len(df_invalid_occupancy_source)
+
+    if not df_invalid_occupancy_source.empty
+
+    else np.nan
+
+)
+
+
+quality_metric_data.extend([
+
+    {
+
+        "metric": "Atom quality records",
+
+        "value": quality_atom_count,
+
+        "unit": "records",
+
+        "status": quality_status
+
+    },
+
+    {
+
+        "metric": "Alternate location atom records",
+
+        "value": altloc_record_count,
+
+        "unit": "records",
+
+        "status": altloc_status
+
+    },
+
+    {
+
+        "metric": "Low occupancy atom records",
+
+        "value": low_occupancy_count,
+
+        "unit": "records",
+
+        "status": low_occupancy_status
+
+    },
+
+    {
+
+        "metric": "Missing occupancy atom records",
+
+        "value": missing_occupancy_count,
+
+        "unit": "records",
+
+        "status": (
+            "from CELL 14"
+            if pd.notna(missing_occupancy_count)
+            else "data unavailable"
+        )
+
+    },
+
+    {
+
+        "metric": "Invalid occupancy atom records",
+
+        "value": invalid_occupancy_count,
+
+        "unit": "records",
+
+        "status": (
+            "from CELL 14"
+            if pd.notna(invalid_occupancy_count)
+            else "data unavailable"
+        )
+
+    },
+
+    {
+
+        "metric": "Mean B-factor",
+
+        "value": quality_mean_bfactor,
+
+        "unit": "A^2",
+
+        "status": quality_status
+
+    },
+
+    {
+
+        "metric": "Median B-factor",
+
+        "value": quality_median_bfactor,
+
+        "unit": "A^2",
+
+        "status": quality_status
+
+    },
+
+    {
+
+        "metric": "Mean occupancy",
+
+        "value": quality_mean_occupancy,
+
+        "unit": None,
+
+        "status": quality_status
+
+    }
+
+])
+
+
+# ------------------------------------------------------------
+# 8.3. Missing backbone atoms
+# ------------------------------------------------------------
+
+missing_backbone_source, missing_backbone_source_name = (
+    dataframe_or_empty([
+        "missing_backbone_df",
+        "df_missing_backbone_atoms"
+    ])
+)
+
+
+if missing_backbone_source.empty:
+
+    missing_backbone_source = read_csv_if_exists(
+        f"{PDB_ID}_missing_backbone_atoms.csv"
+    )
+
+    if not missing_backbone_source.empty:
+        missing_backbone_source_name = "CELL 6 CSV"
+
+
+if not missing_backbone_source.empty:
+
+    missing_backbone_count = len(
+        missing_backbone_source
+    )
+
+    missing_backbone_status = (
+        f"from {missing_backbone_source_name or 'CELL 6'}"
+    )
+
+else:
+
+    missing_backbone_count = np.nan
+
+    missing_backbone_status = (
+        "missing backbone table unavailable"
+    )
+
+
+quality_metric_data.append({
+
+    "metric": "Missing backbone atom records",
+
+    "value": missing_backbone_count,
+
+    "unit": "records",
+
+    "status": missing_backbone_status
+
+})
+
+
+# ------------------------------------------------------------
+# 8.4. Unobserved residues and atoms from mmCIF
+# ------------------------------------------------------------
+
+df_unobserved_residues_source, _ = dataframe_or_empty([
+    "df_unobserved_residues",
+    "df_missing_residues"
+])
+
+
+if df_unobserved_residues_source.empty:
+
+    df_unobserved_residues_source = read_csv_if_exists(
+        f"{PDB_ID}_unobserved_residues.csv"
+    )
+
+
+df_unobserved_atoms_source, _ = dataframe_or_empty([
+    "df_unobserved_atoms",
+    "df_missing_atoms"
+])
+
+
+if df_unobserved_atoms_source.empty:
+
+    df_unobserved_atoms_source = read_csv_if_exists(
+        f"{PDB_ID}_unobserved_atoms.csv"
+    )
+
+
+unobserved_residue_count = (
+
+    len(df_unobserved_residues_source)
+
+    if not df_unobserved_residues_source.empty
+
+    else np.nan
+
+)
+
+
+unobserved_atom_count = (
+
+    len(df_unobserved_atoms_source)
+
+    if not df_unobserved_atoms_source.empty
+
+    else np.nan
+
+)
+
+
+quality_metric_data.extend([
+
+    {
+
+        "metric": "Unobserved residue records in mmCIF",
+
+        "value": unobserved_residue_count,
+
+        "unit": "records",
+
+        "status": (
+            "from CELL 10"
+            if pd.notna(unobserved_residue_count)
+            else "data unavailable"
+        )
+
+    },
+
+    {
+
+        "metric": "Unobserved atom records in mmCIF",
+
+        "value": unobserved_atom_count,
+
+        "unit": "records",
+
+        "status": (
+            "from CELL 10"
+            if pd.notna(unobserved_atom_count)
+            else "data unavailable"
+        )
+
+    }
+
+])
+
+
+df_final_quality_metrics = pd.DataFrame(
+    quality_metric_data
+)
+
+
+# ============================================================
+# 9. COMPONENT DISTRIBUTION TABLE
+# ============================================================
+
+component_metric_data = []
+
+if not component_counts.empty:
+
+    for component, count in component_counts.items():
+
+        component_metric_data.append({
+
+            "component": str(component),
+
+            "occurrence_count": int(count),
+
+            "status": component_count_status
+
+        })
+
+
+df_final_component_metrics = pd.DataFrame(
+
+    component_metric_data,
+
+    columns=[
+        "component",
+        "occurrence_count",
+        "status"
+    ]
+
+)
+
+
+# ============================================================
+# 10. BINDING SITE METRICS
+# ============================================================
+# CELL 18:
+# - df_binding — таблица по остаткам binding site;
+# - df_binding_atom_contacts — атомные пары контактов.
+#
+# Если переменные недоступны, используются имена файлов
+# CELL 18: *_binding_site.csv и *_binding_atom_contacts.csv.
+# ============================================================
+
+df_binding_residue_source, binding_residue_source_name = (
+    dataframe_or_empty([
+        "df_binding",
+        "df_binding_by_residue",
+        "df_binding_residues"
+    ])
+)
+
+
+df_binding_atom_source, binding_atom_source_name = (
+    dataframe_or_empty([
+        "df_binding_atom_contacts",
+        "df_atom_contacts",
+        "df_binding_contacts"
+    ])
+)
+
+
+if df_binding_residue_source.empty:
+
+    df_binding_residue_source = read_csv_if_exists(
+        [
+            f"{PDB_ID}_binding_site.csv",
+            f"{PDB_ID}_binding_site_by_residue.csv"
+        ]
+    )
+
+    if not df_binding_residue_source.empty:
+        binding_residue_source_name = "CELL 18 CSV"
+
+
+if df_binding_atom_source.empty:
+
+    df_binding_atom_source = read_csv_if_exists(
+        [
+            f"{PDB_ID}_binding_atom_contacts.csv",
+            f"{PDB_ID}_binding_site_atom_contacts.csv"
+        ]
+    )
+
+    if not df_binding_atom_source.empty:
+        binding_atom_source_name = "CELL 18 CSV"
+
+
+selected_component_available = (
+    globals().get("selected_component") is not None
+)
+
+
+if not selected_component_available:
+
+    binding_residue_count = np.nan
+
+    binding_atom_pair_count = np.nan
+
+    binding_minimum_distance = np.nan
+
+    binding_mean_residue_distance = np.nan
+
+    binding_status = (
+        "not applicable: no selected component"
+    )
+
+else:
+
+    if not df_binding_residue_source.empty:
+
+        binding_residue_count = len(
+            df_binding_residue_source
+        )
+
+        minimum_distance_column = get_first_existing_column(
+
+            df_binding_residue_source,
+
+            [
+                "minimum_distance",
+                "min_distance",
+                "minimum_distance_A",
+                "min_distance_A"
+            ]
+
+        )
+
+        if minimum_distance_column is not None:
+
+            minimum_distances = numeric_values(
+                df_binding_residue_source[minimum_distance_column]
+            )
+
+            binding_minimum_distance = (
+
+                float(minimum_distances.min())
+
+                if not minimum_distances.empty
+
+                else np.nan
+
+            )
+
+            binding_mean_residue_distance = (
+
+                float(minimum_distances.mean())
+
+                if not minimum_distances.empty
+
+                else np.nan
+
+            )
+
+        else:
+
+            binding_minimum_distance = np.nan
+
+            binding_mean_residue_distance = np.nan
+
+
+        binding_status = (
+            f"from {binding_residue_source_name}"
+        )
+
+    else:
+
+        binding_residue_count = 0
+
+        binding_minimum_distance = np.nan
+
+        binding_mean_residue_distance = np.nan
+
+        binding_status = (
+            "no binding-site residue records available"
+        )
+
+
+    if not df_binding_atom_source.empty:
+
+        binding_atom_pair_count = len(
+            df_binding_atom_source
+        )
+
+        binding_atom_status = (
+            f"from {binding_atom_source_name}"
+        )
+
+    elif not df_binding_residue_source.empty:
+
+        atom_contacts_column = get_first_existing_column(
+
+            df_binding_residue_source,
+
+            [
+                "atom_contacts",
+                "number_of_atom_contacts",
+                "contact_count"
+            ]
+
+        )
+
+        if atom_contacts_column is not None:
+
+            binding_atom_pair_count = int(
+
+                pd.to_numeric(
+
+                    df_binding_residue_source[atom_contacts_column],
+
+                    errors="coerce"
+
+                ).fillna(0).sum()
+
+            )
+
+            binding_atom_status = (
+                "summed from residue-level contact counts"
+            )
+
+        else:
+
+            binding_atom_pair_count = np.nan
+
+            binding_atom_status = (
+                "atom contact table unavailable"
+            )
+
+    else:
+
+        binding_atom_pair_count = np.nan
+
+        binding_atom_status = (
+            "atom contact table unavailable"
+        )
+
+
+df_final_binding_metrics = pd.DataFrame([
+
+    {
+
+        "metric": "Binding site residues",
+
+        "value": binding_residue_count,
+
+        "unit": "residues",
+
+        "status": binding_status
+
+    },
+
+    {
+
+        "metric": "Protein-component atom-pair contacts",
+
+        "value": binding_atom_pair_count,
+
+        "unit": "contacts",
+
+        "status": (
+            binding_atom_status
+            if selected_component_available
+            else binding_status
+        )
+
+    },
+
+    {
+
+        "metric": "Minimum component-protein distance",
+
+        "value": binding_minimum_distance,
+
+        "unit": "A",
+
+        "status": binding_status
+
+    },
+
+    {
+
+        "metric": "Mean minimum residue distance",
+
+        "value": binding_mean_residue_distance,
+
+        "unit": "A",
+
+        "status": binding_status
+
+    }
+
+])
+
+
+# ============================================================
+# 11. SELECTED COMPONENT INTERACTION METRICS
+# ============================================================
+
+df_interactions_source, interaction_source_name = (
+    dataframe_or_empty([
+        "df_interactions"
+    ])
+)
+
+
+interaction_metric_data = []
+
+
+if interaction_source_name is None:
+
+    interaction_status = (
+        "CELL 19 interaction table unavailable"
+    )
+
+    total_interactions = np.nan
+
+else:
+
+    total_interactions = len(
+        df_interactions_source
+    )
+
+    interaction_status = (
+
+        "from CELL 19"
+
+        if not df_interactions_source.empty
+
+        else "CELL 19 completed; no contacts found"
+
+    )
+
+
+add_metric(
+    interaction_metric_data,
+    "Interactions",
+    "Total component-protein atom-pair contacts",
+    total_interactions,
+    "contacts",
+    interaction_status
+)
+
+
+if (
+    not df_interactions_source.empty
+    and "interaction_type" in df_interactions_source.columns
+):
+
+    interaction_counts = (
+        df_interactions_source["interaction_type"]
+        .fillna("Unknown")
+        .astype(str)
+        .value_counts()
+    )
+
+    for interaction_type, count in interaction_counts.items():
+
+        interaction_metric_data.append({
+
+            "category": "Interactions",
+
+            "metric": str(interaction_type),
+
+            "value": int(count),
+
+            "unit": "records",
+
+            "status": "distance-based classification"
+
+        })
+
+
+df_final_interaction_metrics = pd.DataFrame(
+
+    interaction_metric_data,
+
+    columns=[
+        "category",
+        "metric",
+        "value",
+        "unit",
+        "status"
+    ]
+
+)
+
+
+# ============================================================
+# 12. HEM IRON COORDINATION METRICS
+# ============================================================
+# CELL 19:
+# df_metal_coordination — контакты Fe в распознанных гемах.
+# df_all_metal_coordination — общая таблица металлических контактов.
+#
+# Возможные neighbor_type:
+# PROTEIN
+# Same HEME component
+# OXY
+# OTHER_COMPONENT
+#
+# Названия категорий нормализуются перед сравнением.
+# ============================================================
+
+df_heme_fe_source, heme_source_name = (
+    dataframe_or_empty([
+        "df_metal_coordination"
+    ])
+)
+
+
+df_all_metal_source, all_metal_source_name = (
+    dataframe_or_empty([
+        "df_all_metal_coordination"
+    ])
+)
+
+
+heme_metric_data = []
+
+
+if heme_source_name is None:
+
+    heme_status = (
+        "CELL 19 heme table unavailable"
+    )
+
+    total_fe_contacts = np.nan
+
+else:
+
+    total_fe_contacts = len(
+        df_heme_fe_source
+    )
+
+    heme_status = (
+
+        "from CELL 19"
+
+        if not df_heme_fe_source.empty
+
+        else "no Fe contacts in recognized hemes"
+
+    )
+
+
+add_metric(
+    heme_metric_data,
+    "HEM iron coordination",
+    "Potential Fe coordination contacts",
+    total_fe_contacts,
+    "contacts",
+    heme_status
+)
+
+
+if not df_heme_fe_source.empty:
+
+    if "neighbor_type" in df_heme_fe_source.columns:
+
+        normalized_neighbor_types = (
+
+            df_heme_fe_source["neighbor_type"]
+
+            .fillna("UNKNOWN")
+
+            .apply(normalize_category)
+
+        )
+
+        protein_fe = df_heme_fe_source[
+            normalized_neighbor_types == "PROTEIN"
+        ]
+
+        heme_fe = df_heme_fe_source[
+            normalized_neighbor_types == "SAME HEME COMPONENT"
+        ]
+
+        oxy_fe = df_heme_fe_source[
+            normalized_neighbor_types == "OXY"
+        ]
+
+        other_fe = df_heme_fe_source[
+            normalized_neighbor_types == "OTHER COMPONENT"
+        ]
+
+    else:
+
+        protein_fe = pd.DataFrame()
+
+        heme_fe = pd.DataFrame()
+
+        oxy_fe = pd.DataFrame()
+
+        other_fe = pd.DataFrame()
+
+
+    add_metric(
+        heme_metric_data,
+        "HEM iron coordination",
+        "Potential protein-Fe contacts",
+        len(protein_fe),
+        "contacts",
+        heme_status
+    )
+
+    add_metric(
+        heme_metric_data,
+        "HEM iron coordination",
+        "Intracomponent Fe contacts in HEM",
+        len(heme_fe),
+        "contacts",
+        heme_status
+    )
+
+    add_metric(
+        heme_metric_data,
+        "HEM iron coordination",
+        "Potential Fe-OXY contacts",
+        len(oxy_fe),
+        "contacts",
+        heme_status
+    )
+
+    add_metric(
+        heme_metric_data,
+        "HEM iron coordination",
+        "Potential Fe contacts with other components",
+        len(other_fe),
+        "contacts",
+        heme_status
+    )
+
+
+    distance_column = get_first_existing_column(
+        df_heme_fe_source,
+        ["distance", "distance_A"]
+    )
+
+    if distance_column is not None:
+
+        all_fe_distances = numeric_values(
+            df_heme_fe_source[distance_column]
+        )
+
+        add_metric(
+            heme_metric_data,
+            "HEM iron coordination",
+            "Minimum Fe-neighbor distance",
+            (
+                float(all_fe_distances.min())
+                if not all_fe_distances.empty
+                else np.nan
+            ),
+            "A",
+            heme_status
+        )
+
+
+    if not protein_fe.empty and distance_column is not None:
+
+        protein_distances = numeric_values(
+            protein_fe[distance_column]
+        )
+
+        add_metric(
+            heme_metric_data,
+            "HEM iron coordination",
+            "Minimum Fe-protein distance",
+            (
+                float(protein_distances.min())
+                if not protein_distances.empty
+                else np.nan
+            ),
+            "A",
+            heme_status
+        )
+
+
+    if not oxy_fe.empty and distance_column is not None:
+
+        oxy_distances = numeric_values(
+            oxy_fe[distance_column]
+        )
+
+        add_metric(
+            heme_metric_data,
+            "HEM iron coordination",
+            "Minimum Fe-OXY distance",
+            (
+                float(oxy_distances.min())
+                if not oxy_distances.empty
+                else np.nan
+            ),
+            "A",
+            heme_status
+        )
+
+
+df_final_heme_metrics = pd.DataFrame(
+
+    heme_metric_data,
+
+    columns=[
+        "category",
+        "metric",
+        "value",
+        "unit",
+        "status"
+    ]
+
+)
+
+
+# ============================================================
+# 13. Fe-N DISTANCES WITHIN ALL HEM COMPONENTS
+# ============================================================
+# Расстояния рассчитываются отдельно для каждой копии HEM.
+# Учитываются атомы Fe и N внутри одного остатка HEM.
+# Используется первая модель и выбранное Bio.PDB представление
+# альтернативных конформеров.
+# ============================================================
+
+fe_n_distance_data = []
+
+
+if component_structure_available:
+
+    for chain in analysis_model:
+
+        for residue in chain:
+
+            residue_code = (
+                residue.get_resname().strip().upper()
+            )
+
+            if residue_code != "HEM":
+                continue
+
+
+            atoms = get_selected_atoms(residue)
+
+
+            fe_atoms = [
+
+                atom
+
+                for atom in atoms
+
+                if get_atom_element(atom) == "FE"
+
+            ]
+
+
+            nitrogen_atoms = [
+
+                atom
+
+                for atom in atoms
+
+                if get_atom_element(atom) == "N"
+
+            ]
+
+
+            for fe_atom in fe_atoms:
+
+                fe_coordinate = get_valid_coordinate(
+                    fe_atom
+                )
+
+                if fe_coordinate is None:
+                    continue
+
+
+                for nitrogen_atom in nitrogen_atoms:
+
+                    nitrogen_coordinate = get_valid_coordinate(
+                        nitrogen_atom
+                    )
+
+                    if nitrogen_coordinate is None:
+                        continue
+
+
+                    distance = float(
+
+                        np.linalg.norm(
+                            fe_coordinate - nitrogen_coordinate
+                        )
+
+                    )
+
+
+                    fe_n_distance_data.append({
+
+                        "pdb_id": PDB_ID,
+
+                        "model_id": analysis_model_id,
+
+                        "chain_id": str(chain.id),
+
+                        "residue_number": get_residue_number(residue),
+
+                        "insertion_code": get_insertion_code(residue),
+
+                        "heme_component": residue_code,
+
+                        "iron_atom": fe_atom.get_name().strip(),
+
+                        "nitrogen_atom": nitrogen_atom.get_name().strip(),
+
+                        "distance_A": distance
+
+                    })
+
+
+df_fe_n_distances = pd.DataFrame(
+
+    fe_n_distance_data,
+
+    columns=[
+
+        "pdb_id",
+        "model_id",
+        "chain_id",
+        "residue_number",
+        "insertion_code",
+        "heme_component",
+        "iron_atom",
+        "nitrogen_atom",
+        "distance_A"
+
+    ]
+
+)
+
+
+if not df_fe_n_distances.empty:
+
+    df_fe_n_summary = (
+
+        df_fe_n_distances
+
+        .groupby(
+
+            [
+                "model_id",
+                "chain_id",
+                "residue_number",
+                "insertion_code",
+                "heme_component"
+            ],
+
+            dropna=False
+
+        )
+
+        .agg(
+
+            number_of_Fe_N_distances=(
+                "distance_A",
+                "count"
+            ),
+
+            minimum_distance_A=(
+                "distance_A",
+                "min"
+            ),
+
+            maximum_distance_A=(
+                "distance_A",
+                "max"
+            ),
+
+            mean_distance_A=(
+                "distance_A",
+                "mean"
+            ),
+
+            std_distance_A=(
+                "distance_A",
+                "std"
+            )
+
+        )
+
+        .reset_index()
+
+    )
+
+else:
+
+    df_fe_n_summary = pd.DataFrame(
+
+        columns=[
+
+            "model_id",
+            "chain_id",
+            "residue_number",
+            "insertion_code",
+            "heme_component",
+            "number_of_Fe_N_distances",
+            "minimum_distance_A",
+            "maximum_distance_A",
+            "mean_distance_A",
+            "std_distance_A"
+
+        ]
+
+    )
+
+
+# ============================================================
+# 14. Fe-OXY DISTANCES
+# ============================================================
+# Рассчитываются геометрические расстояния между Fe в HEM
+# и кислородными атомами остатков OXY/O2 первой модели.
+#
+# Это геометрическая оценка, а не доказательство связывания O2.
+# ============================================================
+
+fe_oxy_distance_data = []
+
+
+if component_structure_available:
+
+    fe_records = []
+
+    oxy_records = []
+
+
+    for chain in analysis_model:
+
+        for residue in chain:
+
+            residue_code = (
+                residue.get_resname().strip().upper()
+            )
+
+            atoms = get_selected_atoms(residue)
+
+
+            # В этой таблице учитываются только HEM,
+            # чтобы область анализа совпадала с Fe-N.
+            if residue_code == "HEM":
+
+                for atom in atoms:
+
+                    if get_atom_element(atom) != "FE":
+                        continue
+
+                    coordinate = get_valid_coordinate(atom)
+
+                    if coordinate is None:
+                        continue
+
+                    fe_records.append({
+
+                        "chain_id": str(chain.id),
+
+                        "residue_number": get_residue_number(residue),
+
+                        "insertion_code": get_insertion_code(residue),
+
+                        "heme_component": residue_code,
+
+                        "atom": atom,
+
+                        "coordinate": coordinate
+
+                    })
+
+
+            elif residue_code in {"OXY", "O2"}:
+
+                for atom in atoms:
+
+                    if get_atom_element(atom) != "O":
+                        continue
+
+                    coordinate = get_valid_coordinate(atom)
+
+                    if coordinate is None:
+                        continue
+
+                    oxy_records.append({
+
+                        "chain_id": str(chain.id),
+
+                        "residue_number": get_residue_number(residue),
+
+                        "insertion_code": get_insertion_code(residue),
+
+                        "oxy_component": residue_code,
+
+                        "atom": atom,
+
+                        "coordinate": coordinate
+
+                    })
+
+
+    for fe_record in fe_records:
+
+        for oxy_record in oxy_records:
+
+            distance = float(
+
+                np.linalg.norm(
+
+                    fe_record["coordinate"]
+                    -
+                    oxy_record["coordinate"]
+
+                )
+
+            )
+
+
+            fe_oxy_distance_data.append({
+
+                "pdb_id": PDB_ID,
+
+                "model_id": analysis_model_id,
+
+                "heme_chain": fe_record["chain_id"],
+
+                "heme_residue_number": (
+                    fe_record["residue_number"]
+                ),
+
+                "heme_insertion_code": (
+                    fe_record["insertion_code"]
+                ),
+
+                "heme_component": fe_record["heme_component"],
+
+                "iron_atom": fe_record["atom"].get_name().strip(),
+
+                "oxy_chain": oxy_record["chain_id"],
+
+                "oxy_residue_number": (
+                    oxy_record["residue_number"]
+                ),
+
+                "oxy_insertion_code": (
+                    oxy_record["insertion_code"]
+                ),
+
+                "oxy_component": oxy_record["oxy_component"],
+
+                "oxygen_atom": oxy_record["atom"].get_name().strip(),
+
+                "distance_A": distance
+
+            })
+
+
+df_fe_oxy_distances = pd.DataFrame(
+
+    fe_oxy_distance_data,
+
+    columns=[
+
+        "pdb_id",
+        "model_id",
+        "heme_chain",
+        "heme_residue_number",
+        "heme_insertion_code",
+        "heme_component",
+        "iron_atom",
+        "oxy_chain",
+        "oxy_residue_number",
+        "oxy_insertion_code",
+        "oxy_component",
+        "oxygen_atom",
+        "distance_A"
+
+    ]
+
+)
+
+
+if not df_fe_oxy_distances.empty:
+
+    df_fe_oxy_summary = (
+
+        df_fe_oxy_distances
+
+        .groupby(
+
+            [
+                "heme_chain",
+                "heme_residue_number",
+                "heme_insertion_code",
+                "heme_component",
+                "oxy_chain",
+                "oxy_residue_number",
+                "oxy_insertion_code",
+                "oxy_component"
+            ],
+
+            dropna=False
+
+        )
+
+        .agg(
+
+            number_of_Fe_OXY_distances=(
+                "distance_A",
+                "count"
+            ),
+
+            minimum_distance_A=(
+                "distance_A",
+                "min"
+            ),
+
+            mean_distance_A=(
+                "distance_A",
+                "mean"
+            ),
+
+            maximum_distance_A=(
+                "distance_A",
+                "max"
+            )
+
+        )
+
+        .reset_index()
+
+    )
+
+else:
+
+    df_fe_oxy_summary = pd.DataFrame(
+
+        columns=[
+
+            "heme_chain",
+            "heme_residue_number",
+            "heme_insertion_code",
+            "heme_component",
+            "oxy_chain",
+            "oxy_residue_number",
+            "oxy_insertion_code",
+            "oxy_component",
+            "number_of_Fe_OXY_distances",
+            "minimum_distance_A",
+            "mean_distance_A",
+            "maximum_distance_A"
+
+        ]
+
+    )
+
+
+# ============================================================
+# 15. DISULFIDE BRIDGE METRICS
+# ============================================================
+
+df_disulfide_source, disulfide_source_name = (
+    dataframe_or_empty([
+        "df_disulfide_bridges"
+    ])
+)
+
+
+if disulfide_source_name is None:
+
+    df_disulfide_source = read_csv_if_exists(
+        f"{PDB_ID}_disulfide_bridges.csv"
+    )
+
+    if not df_disulfide_source.empty:
+        disulfide_source_name = "CELL 19 CSV"
+
+
+if disulfide_source_name is None:
+
+    disulfide_count = np.nan
+
+    disulfide_status = (
+        "CELL 19 disulfide table unavailable"
+    )
+
+else:
+
+    disulfide_count = len(
+        df_disulfide_source
+    )
+
+    disulfide_status = (
+
+        "potential SG-SG contacts from CELL 19"
+
+        if disulfide_count > 0
+
+        else "CELL 19 completed; no pairs within cutoff"
+
+    )
+
+
+disulfide_metric_data = []
+
+
+add_metric(
+    disulfide_metric_data,
+    "Disulfide bridges",
+    "Potential disulfide bridge count",
+    disulfide_count,
+    "pairs",
+    disulfide_status
+)
+
+
+disulfide_distance_column = get_first_existing_column(
+
+    df_disulfide_source,
+
+    ["distance", "distance_A"]
+
+)
+
+
+if (
+    not df_disulfide_source.empty
+    and disulfide_distance_column is not None
+):
+
+    disulfide_distances = numeric_values(
+        df_disulfide_source[disulfide_distance_column]
+    )
+
+    add_metric(
+        disulfide_metric_data,
+        "Disulfide bridges",
+        "Minimum SG-SG distance",
+        (
+            float(disulfide_distances.min())
+            if not disulfide_distances.empty
+            else np.nan
+        ),
+        "A",
+        disulfide_status
+    )
+
+    add_metric(
+        disulfide_metric_data,
+        "Disulfide bridges",
+        "Mean SG-SG distance",
+        (
+            float(disulfide_distances.mean())
+            if not disulfide_distances.empty
+            else np.nan
+        ),
+        "A",
+        disulfide_status
+    )
+
+
+df_final_disulfide_metrics = pd.DataFrame(
+
+    disulfide_metric_data,
+
+    columns=[
+        "category",
+        "metric",
+        "value",
+        "unit",
+        "status"
+    ]
+
+)
+
+
+# ============================================================
+# 16. BUILD MASTER METRICS TABLE
+# ============================================================
+
+master_metric_data = []
+
+
+# ------------------------------------------------------------
+# 16.1. Global metrics
+# ------------------------------------------------------------
+
+for metric_name, metric_value in global_metrics.items():
+
+    if metric_name == "PDB_ID":
+        continue
+
+    if "component" in metric_name:
+
+        status = component_count_status
+
+    elif "chains_from_sequence" in metric_name:
+
+        status = "from chain_sequences"
+
+    elif "chains_in_residue" in metric_name:
+
+        status = "from df_residues"
+
+    else:
+
+        status = "calculated"
+
+
+    add_metric(
+        master_metric_data,
+        "Global structure",
+        metric_name,
+        metric_value,
+        None,
+        status
+    )
+
+
+# ------------------------------------------------------------
+# 16.2. Append metric DataFrames
+# ------------------------------------------------------------
+
+def append_metric_dataframe(
+    dataframe,
+    category,
+    metric_column="metric",
+    value_column="value",
+    unit_column="unit",
+    status_column="status"
+):
+
+    if dataframe is None or dataframe.empty:
+        return
+
+    for _, row in dataframe.iterrows():
+
+        unit = (
+            row[unit_column]
+            if unit_column in dataframe.columns
+            else None
+        )
+
+        status = (
+            row[status_column]
+            if status_column in dataframe.columns
+            else "calculated"
+        )
+
+        add_metric(
+            master_metric_data,
+            category,
+            row[metric_column],
+            row[value_column],
+            unit,
+            status
+        )
+
+
+append_metric_dataframe(
+    df_final_geometry_metrics,
+    "Geometry"
+)
+
+append_metric_dataframe(
+    df_final_quality_metrics,
+    "Structure quality"
+)
+
+append_metric_dataframe(
+    df_final_binding_metrics,
+    "Binding site"
+)
+
+append_metric_dataframe(
+    df_final_interaction_metrics,
+    "Interactions",
+    metric_column="metric",
+    value_column="value"
+)
+
+append_metric_dataframe(
+    df_final_heme_metrics,
+    "HEM iron coordination"
+)
+
+append_metric_dataframe(
+    df_final_disulfide_metrics,
+    "Disulfide bridges"
+)
+
+
+# ------------------------------------------------------------
+# 16.3. Chain metrics
+# ------------------------------------------------------------
+
+for _, row in df_final_chain_metrics.iterrows():
+
+    chain_id = row["chain_id"]
+
+    for metric_name in [
+
+        "sequence_length",
+        "residue_count",
+        "atom_count",
+        "atoms_per_residue",
+        "missing_backbone_atoms",
+        "mean_B_factor",
+        "median_B_factor",
+        "mean_occupancy"
+
+    ]:
+
+        add_metric(
+            master_metric_data,
+            f"Chain {chain_id}",
+            metric_name,
+            row[metric_name],
+            None,
+            "calculated from first-model tables"
+        )
+
+
+# ------------------------------------------------------------
+# 16.4. Sequence identity
+# ------------------------------------------------------------
+
+for _, row in df_chain_identity.iterrows():
+
+    add_metric(
+        master_metric_data,
+        "Sequence comparison",
+        f"Identity {row['chain_1']}-{row['chain_2']}",
+        row["sequence_identity_percent"],
+        "%",
+        row["comparison_status"]
+    )
+
+
+# ------------------------------------------------------------
+# 16.5. Component occurrence counts
+# ------------------------------------------------------------
+
+for _, row in df_final_component_metrics.iterrows():
+
+    add_metric(
+        master_metric_data,
+        "Components",
+        f"{row['component']} occurrences",
+        row["occurrence_count"],
+        "instances",
+        row["status"]
+    )
+
+
+# ------------------------------------------------------------
+# 16.6. Fe-N distances
+# ------------------------------------------------------------
+
+if not df_fe_n_summary.empty:
+
+    for _, row in df_fe_n_summary.iterrows():
+
+        category = (
+
+            f"HEM Fe-N chain {row['chain_id']}, "
+            f"residue {row['residue_number']}"
+
+        )
+
+        for metric_name in [
+
+            "number_of_Fe_N_distances",
+            "minimum_distance_A",
+            "maximum_distance_A",
+            "mean_distance_A",
+            "std_distance_A"
+
+        ]:
+
+            unit = (
+                "A"
+                if metric_name.endswith("_A")
+                else "distances"
+            )
+
+            add_metric(
+                master_metric_data,
+                category,
+                metric_name,
+                row[metric_name],
+                unit,
+                "calculated from first model"
+            )
+
+
+# ------------------------------------------------------------
+# 16.7. Fe-OXY distances
+# ------------------------------------------------------------
+
+if not df_fe_oxy_summary.empty:
+
+    for _, row in df_fe_oxy_summary.iterrows():
+
+        category = (
+
+            f"HEM Fe-OXY chain {row['heme_chain']}, "
+            f"residue {row['heme_residue_number']}"
+
+        )
+
+        for metric_name in [
+
+            "number_of_Fe_OXY_distances",
+            "minimum_distance_A",
+            "mean_distance_A",
+            "maximum_distance_A"
+
+        ]:
+
+            unit = (
+                "A"
+                if metric_name.endswith("_A")
+                else "distances"
+            )
+
+            add_metric(
+                master_metric_data,
+                category,
+                metric_name,
+                row[metric_name],
+                unit,
+                "calculated from first model"
+            )
+
+
+df_final_metrics = pd.DataFrame(
+
+    master_metric_data,
+
+    columns=[
+        "category",
+        "metric",
+        "value",
+        "unit",
+        "status"
+    ]
+
+)
+
+
+# ============================================================
+# 17. DISPLAY RESULTS
+# ============================================================
+
+print("\n" + "=" * 75)
+print("1. GLOBAL STRUCTURE METRICS")
+print("=" * 75)
+
+display(df_global_metrics)
+
+
+print("\n" + "=" * 75)
+print("2. ATOM ELEMENT DISTRIBUTION")
+print("=" * 75)
+
+display(df_element_distribution)
+
+
+print("\n" + "=" * 75)
+print("3. PROTEIN CHAIN METRICS")
+print("=" * 75)
+
+display(df_final_chain_metrics)
+
+
+print("\n" + "=" * 75)
+print("4. SEQUENCE IDENTITY BETWEEN CHAINS")
+print("=" * 75)
+
+display(df_chain_identity)
+
+
+print("\n" + "=" * 75)
+print("5. GEOMETRY METRICS")
+print("=" * 75)
+
+display(df_final_geometry_metrics)
+
+
+print("\n" + "=" * 75)
+print("6. STRUCTURE QUALITY METRICS")
+print("=" * 75)
+
+display(df_final_quality_metrics)
+
+
+print("\n" + "=" * 75)
+print("7. COMPONENT DISTRIBUTION")
+print("=" * 75)
+
+display(df_component_distribution)
+
+
+print("\n" + "=" * 75)
+print("8. BINDING SITE METRICS")
+print("=" * 75)
+
+display(df_final_binding_metrics)
+
+
+print("\n" + "=" * 75)
+print("9. SELECTED COMPONENT INTERACTION METRICS")
+print("=" * 75)
+
+display(df_final_interaction_metrics)
+
+
+print("\n" + "=" * 75)
+print("10. HEM IRON COORDINATION METRICS")
+print("=" * 75)
+
+display(df_final_heme_metrics)
+
+
+print("\n" + "=" * 75)
+print("11. Fe-N DISTANCES")
+print("=" * 75)
+
+display(df_fe_n_distances)
+
+print("\nFe-N summary by HEM:")
+
+display(df_fe_n_summary)
+
+
+print("\n" + "=" * 75)
+print("12. Fe-OXY DISTANCES")
+print("=" * 75)
+
+display(df_fe_oxy_distances)
+
+print("\nFe-OXY summary:")
+
+display(df_fe_oxy_summary)
+
+
+print("\n" + "=" * 75)
+print("13. DISULFIDE BRIDGE METRICS")
+print("=" * 75)
+
+display(df_final_disulfide_metrics)
+
+
+if not df_disulfide_source.empty:
+
+    print("\nPotential disulfide bridges:")
+
+    display(df_disulfide_source)
+
+
+print("\n" + "=" * 75)
+print("14. MASTER METRICS TABLE")
+print("=" * 75)
+
+display(df_final_metrics)
+
+
+# ============================================================
+# 18. SAVE CSV FILES
+# ============================================================
+
+metrics_files = {
+
+    "global": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_global_metrics.csv"
+    ),
+
+    "elements": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_element_distribution.csv"
+    ),
+
+    "chains": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_chain_metrics.csv"
+    ),
+
+    "chain_identity": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_chain_identity.csv"
+    ),
+
+    "geometry": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_geometry_metrics.csv"
+    ),
+
+    "quality": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_quality_metrics.csv"
+    ),
+
+    "components": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_component_metrics.csv"
+    ),
+
+    "component_distribution": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_component_distribution.csv"
+    ),
+
+    "binding": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_binding_metrics.csv"
+    ),
+
+    "interactions": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_interaction_metrics.csv"
+    ),
+
+    "heme": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_heme_metrics.csv"
+    ),
+
+    "fe_n_distances": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_fe_n_distances.csv"
+    ),
+
+    "fe_n_summary": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_fe_n_summary.csv"
+    ),
+
+    "fe_oxy_distances": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_fe_oxy_distances.csv"
+    ),
+
+    "fe_oxy_summary": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_fe_oxy_summary.csv"
+    ),
+
+    "disulfide_metrics": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_final_disulfide_metrics.csv"
+    ),
+
+    "all_metrics": (
+        PDB_RESULTS_DIR
+        / f"{PDB_ID}_all_final_metrics.csv"
+    )
+
+}
+
+
+dataframes_to_save = {
+
+    "global": df_global_metrics,
+
+    "elements": df_element_distribution,
+
+    "chains": df_final_chain_metrics,
+
+    "chain_identity": df_chain_identity,
+
+    "geometry": df_final_geometry_metrics,
+
+    "quality": df_final_quality_metrics,
+
+    "components": df_final_component_metrics,
+
+    "component_distribution": df_component_distribution,
+
+    "binding": df_final_binding_metrics,
+
+    "interactions": df_final_interaction_metrics,
+
+    "heme": df_final_heme_metrics,
+
+    "fe_n_distances": df_fe_n_distances,
+
+    "fe_n_summary": df_fe_n_summary,
+
+    "fe_oxy_distances": df_fe_oxy_distances,
+
+    "fe_oxy_summary": df_fe_oxy_summary,
+
+    "disulfide_metrics": df_final_disulfide_metrics,
+
+    "all_metrics": df_final_metrics
+
+}
+
+
+for name, dataframe in dataframes_to_save.items():
+
+    dataframe.to_csv(
+
+        metrics_files[name],
+
+        index=False,
+
+        encoding="utf-8-sig"
+
+    )
+
+
+# ============================================================
+# 19. FINAL VALIDATION
+# ============================================================
+
+print("\n" + "=" * 75)
+print("FINAL METRICS VALIDATION")
+print("=" * 75)
+
+
+validation_results = {
+
+    "PDB_ID_valid": (
+        len(PDB_ID) == 4
+        and PDB_ID.isalnum()
+    ),
+
+    "PDB_RESULTS_DIR_exists": (
+        PDB_RESULTS_DIR.exists()
+    ),
+
+    "df_atoms_not_empty": (
+        not df_atoms.empty
+    ),
+
+    "df_residues_is_dataframe": (
+        isinstance(df_residues, pd.DataFrame)
+    ),
+
+    "global_metrics_created": (
+        not df_global_metrics.empty
+    ),
+
+    "chain_metrics_created": (
+        isinstance(df_final_chain_metrics, pd.DataFrame)
+    ),
+
+    "master_metrics_created": (
+        isinstance(df_final_metrics, pd.DataFrame)
+    ),
+
+    "Fe_N_distances_valid": (
+
+        df_fe_n_distances.empty
+
+        or (
+
+            df_fe_n_distances["distance_A"].notna().all()
+
+            and
+            np.isfinite(
+                df_fe_n_distances["distance_A"].to_numpy(
+                    dtype=float
+                )
+            ).all()
+
+            and
+            (df_fe_n_distances["distance_A"] >= 0).all()
+
+        )
+
+    ),
+
+    "Fe_OXY_distances_valid": (
+
+        df_fe_oxy_distances.empty
+
+        or (
+
+            df_fe_oxy_distances["distance_A"].notna().all()
+
+            and
+            np.isfinite(
+                df_fe_oxy_distances["distance_A"].to_numpy(
+                    dtype=float
+                )
+            ).all()
+
+            and
+            (df_fe_oxy_distances["distance_A"] >= 0).all()
+
+        )
+
+    ),
+
+    "component_count_not_negative": (
+
+        pd.isna(number_of_component_instances)
+
+        or number_of_component_instances >= 0
+
+    ),
+
+    "binding_contact_count_not_negative": (
+
+        pd.isna(binding_atom_pair_count)
+
+        or binding_atom_pair_count >= 0
+
+    )
+
+}
+
+
+# ------------------------------------------------------------
+# 19.1. Проверка файлов CSV
+# ------------------------------------------------------------
+
+for name, path in metrics_files.items():
+
+    validation_results[
+        f"file_{name}_exists"
+    ] = (
+        path.is_file()
+        and path.stat().st_size > 0
+    )
+
+
+failed_validations = [
+
+    name
+
+    for name, valid in validation_results.items()
+
+    if not valid
+
+]
+
+
+for name, valid in validation_results.items():
+
+    print(
+        f"{name}: {'OK' if valid else 'CHECK'}"
+    )
+
+
+print("\nSAVED FILES")
+
+for name, path in metrics_files.items():
+
+    print(
+
+        f"[{'OK' if path.exists() else 'ERROR'}] "
+
+        f"{path.name}",
+
+        "|",
+
+        path.stat().st_size if path.exists() else 0,
+
+        "bytes"
+
+    )
+
+
+# ============================================================
+# 20. SAVE JSON SUMMARY
+# ============================================================
+
+final_metrics_json = {
+
+    "pdb_id": PDB_ID,
+
+    "model_scope": {
+
+        "source_model_count": (
+            len(cell20_models)
+            if component_structure_available
+            else None
+        ),
+
+        "analyzed_model_id": analysis_model_id,
+
+        "scope": "First model only"
+
+    },
+
+    "global_metrics": global_metrics,
+
+    "component_count_status": component_count_status,
+
+    "data_sources": {
+
+        "protein_atoms": (
+            "CELL 7 df_atoms; first model"
+        ),
+
+        "protein_residues": (
+            "CELL 6 df_residues; first model"
+        ),
+
+        "hetero_components": (
+            components_source_name
+            or "CELL 8 df_hetero"
+        ),
+
+        "geometry": (
+            "CELL 9 output"
+        ),
+
+        "structure_quality": (
+            "CELL 14 output, where available"
+        ),
+
+        "binding_site": (
+            "CELL 18 residue and atom contact tables, where available"
+        ),
+
+        "component_interactions": (
+            "CELL 19 df_interactions"
+        ),
+
+        "heme_iron_coordination": (
+            "CELL 19 df_metal_coordination"
+        ),
+
+        "universal_metal_coordination": (
+            "CELL 19 df_all_metal_coordination"
+        ),
+
+        "disulfide_bridges": (
+            "CELL 19 df_disulfide_bridges"
+        )
+
+    },
+
+    "counts": {
+
+        "chain_metric_records": len(
+            df_final_chain_metrics
+        ),
+
+        "chain_identity_comparisons": len(
+            df_chain_identity
+        ),
+
+        "geometry_metrics": len(
+            df_final_geometry_metrics
+        ),
+
+        "quality_metrics": len(
+            df_final_quality_metrics
+        ),
+
+        "component_types": len(
+            df_final_component_metrics
+        ),
+
+        "binding_metrics": len(
+            df_final_binding_metrics
+        ),
+
+        "interaction_metrics": len(
+            df_final_interaction_metrics
+        ),
+
+        "heme_metrics": len(
+            df_final_heme_metrics
+        ),
+
+        "Fe_N_distances": len(
+            df_fe_n_distances
+        ),
+
+        "Fe_N_HEM_summaries": len(
+            df_fe_n_summary
+        ),
+
+        "Fe_OXY_distances": len(
+            df_fe_oxy_distances
+        ),
+
+        "Fe_OXY_summaries": len(
+            df_fe_oxy_summary
+        ),
+
+        "potential_disulfide_bridges": (
+            disulfide_count
+        ),
+
+        "master_metrics": len(
+            df_final_metrics
+        )
+
+    },
+
+    "interpretation_notes": [
+
+        "Protein geometry is based on protein atoms from df_atoms.",
+
+        "Water and non-protein components are excluded from protein geometry.",
+
+        "Chain sequence identity is calculated using global pairwise alignment.",
+
+        "Gaps are excluded from the sequence identity denominator.",
+
+        "Binding-site metrics refer to the selected component from CELL 17-18.",
+
+        "Fe-N distances are calculated separately for each HEM component.",
+
+        "Fe-OXY distances are calculated between HEM iron and OXY/O2 oxygen atoms.",
+
+        "Fe-N and Fe-OXY distances use the selected Bio.PDB atom conformer.",
+
+        "Metal contacts are geometric candidates, not definitive coordination bonds.",
+
+        "Polar atom proximity is not proof of a hydrogen bond.",
+
+        "Potential disulfide bridges require chemical connectivity confirmation.",
+
+        "Alternate conformer occupancy values are not automatically treated as low quality.",
+
+        "Missing source tables are reported as unavailable rather than zero.",
+
+        "Component occurrence counts refer to structural instances, not unique chemical identities."
+
+    ],
+
+    "metric_tables": {
+
+        name: path.name
+
+        for name, path in metrics_files.items()
+
+    },
+
+    "validation": validation_results,
+
+    "validation_status": (
+
+        "PASSED"
+
+        if not failed_validations
+
+        else "CHECK_REQUIRED"
+
+    )
+
+}
+
+
+metrics_json_path = (
+
+    PDB_RESULTS_DIR
+    / f"{PDB_ID}_final_metrics.json"
+
+)
+
+
+with open(
+
+    metrics_json_path,
+
+    "w",
+
+    encoding="utf-8"
+
+) as file:
+
+    json.dump(
+
+        json_safe(final_metrics_json),
+
+        file,
+
+        ensure_ascii=False,
+
+        indent=4,
+
+        allow_nan=False
+
+    )
+
+
+validation_results["json_summary_exists"] = (
+
+    metrics_json_path.is_file()
+
+    and metrics_json_path.stat().st_size > 0
+
+)
+
+
+# Если JSON не удалось создать, это отдельная ошибка.
+if not validation_results["json_summary_exists"]:
+
+    failed_validations.append(
+        "json_summary_exists"
+    )
+
+
+# ============================================================
+# 21. FINAL REPORT
+# ============================================================
+
+print("\n" + "=" * 75)
+print("FINAL METRICS CALCULATION COMPLETED")
+print("=" * 75)
+
+print("PDB ID:", PDB_ID)
+
+print("Protein chains from sequence dictionary:", number_of_chains)
+
+print("Protein chains in residue table:", actual_residue_chains)
+
+print("Protein residues:", number_of_protein_residues)
+
+print("Protein atoms:", number_of_protein_atoms)
+
+print("Component instances:", number_of_component_instances)
+
+print("Unique component types:", number_of_unique_component_types)
+
+print("HEM Fe-N distances:", len(df_fe_n_distances))
+
+print("Fe-OXY distances:", len(df_fe_oxy_distances))
+
+print("Potential disulfide bridges:", disulfide_count)
+
+print("Master metrics:", len(df_final_metrics))
+
+print("Output directory:", PDB_RESULTS_DIR)
+
+
+if failed_validations:
+
+    print("\nWARNING: Some validation checks require attention:")
+
+    for name in sorted(set(failed_validations)):
+        print(" -", name)
+
+else:
+
+    print("\nAll CELL 20 validation checks passed.")
+
+
+print("\nJSON SUMMARY:")
+
+print(
+    f"[{'OK' if metrics_json_path.exists() else 'ERROR'}] "
+    f"{metrics_json_path.name}"
+)
+
+
+print("=" * 75)
+print("CELL 20 COMPLETED")
+print("=" * 75)
