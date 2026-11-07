@@ -1,0 +1,3099 @@
+======================================================================
+BATCH DIAGNOSTICS
+======================================================================
+
+STATUS COUNTS:
+status
+FAILED     88
+SUCCESS    12
+Name: count, dtype: int64
+
+SUCCESS: 12
+FAILED: 88
+
+FAILED PDB IDS:
+['7WTT', '3O2R', '3NV0', '7Z16', '7WSO', '7PR4', '7W38', '3OFG', '7XNX', '3P1A', '7W1Z', '7OYK', '7WIG', '7PS6', '7XCT', '7YMS', '3NY7', '3P0Y', '7Y3G', '7YE4', '7P4R', '7W5Z', '7PCA', '7WU2', '3OS8', '7YE6', '3P3O', '7Z13', '7PEF', '7XD0', '7PU4', '3OR7', '7W2Y', '3O0A', '7XMT', '3PC8', '21ZV', '3O1C', '7Y7M', '3PSN', '7W4C', '3NWS', '7Z38', '3POZ', '7VZ4', '3OZZ', '7Y75', '3P8V', '7XCP', '3O1X', '7XW6', '3NZL', '7W4F', '3OSX', '21ZW', '7Q8Z', '7Q2T', '7Y76', '3P8Y', '7X3W', '3OCM', '7WZ4', '7OX3', '7W9K', '7OYI', '7XSZ', '3O2P', '3P6E', '7X6O', '7P8R', '7XOV', '7YI0', '3NUL', '3OM1', '7Z6Q', '7OWD', '7VZ8', '3OW6', '11PH', '3OCI', '22IQ', '7OZT', '3P6H', '7WU3', '3PAM', '7XD1', '7P0J', '7W2K']
+
+ERROR DETAILS:
+
+----------------------------------------------------------------------
+PDB: 7WTT
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3O2R
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3NV0
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Z16
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7WSO
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7PR4
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7W38
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3OFG
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7XNX
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3P1A
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7W1Z
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7OYK
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7WIG
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7PS6
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7XCT
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7YMS
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3NY7
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3P0Y
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Y3G
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7YE4
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7P4R
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7W5Z
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7PCA
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7WU2
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3OS8
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7YE6
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3P3O
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Z13
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7PEF
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7XD0
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7PU4
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3OR7
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7W2Y
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3O0A
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7XMT
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3PC8
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 21ZV
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3O1C
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Y7M
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3PSN
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7W4C
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3NWS
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Z38
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3POZ
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7VZ4
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3OZZ
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Y75
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3P8V
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7XCP
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3O1X
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7XW6
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3NZL
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7W4F
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3OSX
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 21ZW
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Q8Z
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Q2T
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Y76
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3P8Y
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7X3W
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3OCM
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7WZ4
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7OX3
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7W9K
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7OYI
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7XSZ
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3O2P
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3P6E
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7X6O
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7P8R
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7XOV
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7YI0
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3NUL
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3OM1
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7Z6Q
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7OWD
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7VZ8
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3OW6
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 11PH
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3OCI
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 22IQ
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7OZT
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3P6H
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7WU3
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 3PAM
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7XD1
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7P0J
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+----------------------------------------------------------------------
+PDB: 7W2K
+ERROR: Traceback (most recent call last):
+  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_6016\2537468296.py", line 846, in run_one_pdb
+    client.execute()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
+    return _runner_map[name].run(inner)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
+    return fut.result(None)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
+    return self.__get_result()
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# ============================================================
+# CELL 3. DOWNLOAD PDB STRUCTURE (mmCIF)
+# ============================================================
+# Назначение:
+# 1. Загрузка mmCIF-файла для текущей структуры PDB.
+# 2. Повторное использование ранее загруженных файлов.
+# 3. Проверка data-блока и секции atom_site по всему файлу.
+# 4. Повторные попытки при временных сетевых ошибках.
+# 5. Безопасная замена повреждённого файла.
+# ============================================================
+
+import reque
+
+======================================================================
