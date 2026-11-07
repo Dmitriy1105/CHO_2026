@@ -5,12 +5,12 @@ BATCH PROCESSING LOG
 
 PDB ID: 7X8R
 
-Started: 2026-11-07T03:05:44.440434
-Finished: 2026-11-07T03:05:54.780339
+Started: 2026-11-07T03:13:41.600239
+Finished: 2026-11-07T03:13:58.681749
 
-Duration: 10.34 seconds
+Duration: 17.08 seconds
 
-Status: FAILED
+Status: SUCCESS
 
 Kernel: python3
 
@@ -18,7 +18,15 @@ Skipped installation cells:
 3
 
 Output validation:
-{}
+{
+    "valid": true,
+    "output_dir": "C:\\apex\\APEX\\МИФИ\\СНО\\medic\\Protein_Pocket_Dataset\\07_structure_analysis\\results\\7X8R",
+    "graph_file": "C:\\apex\\APEX\\МИФИ\\СНО\\medic\\Protein_Pocket_Dataset\\07_structure_analysis\\results\\7X8R\\unified_representation\\7X8R_ml_graph_data.npz",
+    "features_json": "C:\\apex\\APEX\\МИФИ\\СНО\\medic\\Protein_Pocket_Dataset\\07_structure_analysis\\results\\7X8R\\features\\7X8R_protein_features.json",
+    "graph_valid": true,
+    "features_valid": true,
+    "message": "Required outputs found and readable"
+}
 
 ============================================================
 NOTEBOOK OUTPUT
@@ -752,1836 +760,823 @@ water_atoms                        0                0     True
 17            CELL 7 matches first-model atom records   True
 18                               CELL 6 residue count   1051
 19           CELL 6 matches first-model residue count   True
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mValueError[0m                                Traceback (most recent call last)
-Cell [1;32mIn[19], line 242[0m
-[0;32m    231[0m validate_table_pdb_id(
-[0;32m    232[0m     [38;5;124m"[39m[38;5;124mdf_residues[39m[38;5;124m"[39m,
-[0;32m    233[0m     df_residues
-[0;32m    234[0m )
-[0;32m    236[0m validate_table_pdb_id(
-[0;32m    237[0m     [38;5;124m"[39m[38;5;124mdf_hetero[39m[38;5;124m"[39m,
-[0;32m    238[0m     df_hetero,
-[0;32m    239[0m     required[38;5;241m=[39m[38;5;28;01mFalse[39;00m
-[0;32m    240[0m )
-[1;32m--> 242[0m [43mvalidate_table_pdb_id[49m[43m([49m
-[0;32m    243[0m [43m    [49m[38;5;124;43m"[39;49m[38;5;124;43mdf_water[39;49m[38;5;124;43m"[39;49m[43m,[49m
-[0;32m    244[0m [43m    [49m[43mdf_water[49m[43m,[49m
-[0;32m    245[0m [43m    [49m[43mrequired[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m
-[0;32m    246[0m [43m)[49m
-[0;32m    249[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mPDB ID: [39m[38;5;132;01m{[39;00mPDB_ID[38;5;132;01m}[39;00m[38;5;124m"[39m)
-[0;32m    250[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mResults directory: [39m[38;5;132;01m{[39;00mPDB_RESULTS_DIR[38;5;132;01m}[39;00m[38;5;124m"[39m)
+  residue_name                 component_type  occurrence_count
+0          BYI  Organic non-protein component                 1
+   component_index                         component_id component  \
+0                1  7X8R|model_0|chain_R|H_BYI|601||BYI       BYI   
 
-Cell [1;32mIn[19], line 219[0m, in [0;36mvalidate_table_pdb_id[1;34m(table_name, table, required)[0m
-[0;32m    208[0m pdb_ids [38;5;241m=[39m (
-[0;32m    209[0m     table[[38;5;124m"[39m[38;5;124mpdb_id[39m[38;5;124m"[39m]
-[0;32m    210[0m     [38;5;241m.[39mastype([38;5;28mstr[39m)
-[1;32m   (...)[0m
-[0;32m    213[0m     [38;5;241m.[39munique()
-[0;32m    214[0m )
-[0;32m    217[0m [38;5;28;01mif[39;00m [38;5;28mset[39m(pdb_ids) [38;5;241m!=[39m {PDB_ID}:
-[1;32m--> 219[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[0;32m    220[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00mtable_name[38;5;132;01m}[39;00m[38;5;124m содержит PDB ID, [39m[38;5;124m"[39m
-[0;32m    221[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mне соответствующие текущей структуре: [39m[38;5;124m"[39m
-[0;32m    222[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28msorted[39m(pdb_ids)[38;5;132;01m}[39;00m[38;5;124m"[39m
-[0;32m    223[0m     )
+                                      component_name  component_formula  \
+0  2,4-bis(3-methoxy-4-thiophen-2-ylcarbonyloxy-p...  C54 H52 N4 O16 S2   
 
-[1;31mValueError[0m: df_water содержит PDB ID, не соответствующие текущей структуре: []
+  component_synonyms chemical_component_type formal_charge mon_nstd_flag  \
+0               None             non-polymer          None          None   
+
+                  component_type  ...  insertion_code  hetero_flag  \
+0  Organic non-protein component  ...                        H_BYI   
+
+   number_of_atoms number_of_atom_conformers  \
+0               76                        76   
+
+  number_of_alternative_atom_records                            elements  \
+0                                  0  {'C': 54, 'N': 4, 'O': 16, 'S': 2}   
+
+  metal_elements    center_x    center_y    center_z  
+0             []  130.978183  143.686145  178.241263  
+
+[1 rows x 26 columns]
+                  component_type  count
+0  Organic non-protein component      1
+  component  occurrence_count  total_atom_count  total_atom_conformer_count  \
+0       BYI                 1                76                          76   
+
+  chains  
+0      R  
+  pdb_id  model_id chain_1 residue_1  residue_number_1 insertion_code_1  \
+0   7X8R         0       N       CYS                99                    
+1   7X8R         0       R       CYS               226                    
+2   7X8R         0       N       CYS                22                    
+
+           residue_component_id_1 atom_1 chain_2 residue_2  residue_number_2  \
+0   7X8R|model_0|chain_N||99||CYS     SG       N       CYS               107   
+1  7X8R|model_0|chain_R||226||CYS     SG       R       CYS               296   
+2   7X8R|model_0|chain_N||22||CYS     SG       N       CYS                96   
+
+  insertion_code_2          residue_component_id_2 atom_2  distance  \
+0                   7X8R|model_0|chain_N||107||CYS     SG  2.026215   
+1                   7X8R|model_0|chain_R||296||CYS     SG  2.030413   
+2                    7X8R|model_0|chain_N||96||CYS     SG  2.032456   
+
+             interaction_type  
+0  Potential disulfide bridge  
+1  Potential disulfide bridge  
+2  Potential disulfide bridge  
+  PDB_ID  number_of_chains_from_sequence_dictionary  \
+0   7X8R                                          5   
+
+   number_of_chains_in_residue_table  number_of_protein_residues  \
+0                                  5                        1051   
+
+   number_of_protein_atoms  number_of_component_instances  \
+0                     8417                              1   
+
+   number_of_unique_component_types  number_of_water_residues  \
+0                                 1                         0   
+
+   number_of_atom_elements  
+0                        4  
+  element  atom_count  percentage
+0       C        5360   63.680646
+1       O        1542   18.320067
+2       N        1466   17.417132
+3       S          49    0.582155
+  chain_id  sequence_length  residue_count  atom_count  atoms_per_residue  \
+0        A              234            234        1940           8.290598   
+1        B              338            338        2600           7.692308   
+2        G               55             55         424           7.709091   
+3        N              126            126         961           7.626984   
+4        R              298            298        2492           8.362416   
+
+   missing_backbone_atoms  mean_B_factor  median_B_factor  mean_occupancy  
+0                       0      34.702567            29.97        0.998454  
+1                       0      29.534931            20.00        0.999615  
+2                       0      65.314292            60.63        0.997642  
+3                       0      38.062508            35.29        0.998959  
+4                       0      73.527436            67.49        0.999599  
+  chain_1 chain_2  alignment_score  identical_positions  aligned_positions  \
+0       A       B           -131.5                   79                177   
+1       A       G            -90.0                   34                 55   
+2       A       N            -80.0                   55                113   
+3       A       R           -121.0                   75                204   
+4       B       G           -137.0                   34                 55   
+5       B       N           -125.0                   64                119   
+6       B       R           -137.0                   87                225   
+7       G       N            -54.0                   23                 47   
+8       G       R           -117.0                   34                 55   
+9       N       R           -114.5                   50                108   
+
+   sequence_identity_percent  \
+0                  44.632768   
+1                  61.818182   
+2                  48.672566   
+3                  36.764706   
+4                  61.818182   
+5                  53.781513   
+6                  38.666667   
+7                  48.936170   
+8                  61.818182   
+9                  46.296296   
+
+                                   comparison_status  
+0  Global alignment; gaps excluded from identity ...  
+1  Global alignment; gaps excluded from identity ...  
+2  Global alignment; gaps excluded from identity ...  
+3  Global alignment; gaps excluded from identity ...  
+4  Global alignment; gaps excluded from identity ...  
+5  Global alignment; gaps excluded from identity ...  
+6  Global alignment; gaps excluded from identity ...  
+7  Global alignment; gaps excluded from identity ...  
+8  Global alignment; gaps excluded from identity ...  
+9  Global alignment; gaps excluded from identity ...  
+                                    metric      value  unit       status
+0                           analysis_model          0  None  from CELL 9
+1                    uses_first_model_only       True  None  from CELL 9
+2                               atom_count       8417  None  from CELL 9
+3                            residue_count       1051  None  from CELL 9
+4                              chain_count          5  None  from CELL 9
+5  unweighted_geometric_radius_of_gyration  36.157403  None  from CELL 9
+6                             aspect_ratio   2.148156  None  from CELL 9
+7                              X dimension  66.666008     A  from CELL 9
+8                              Y dimension  86.104004     A  from CELL 9
+9                              Z dimension    143.209     A  from CELL 9
+                                 metric        value     unit  \
+0                  Atom quality records  8417.000000  records   
+1       Alternate location atom records     0.000000  records   
+2            Low occupancy atom records     7.000000  records   
+3        Missing occupancy atom records          NaN  records   
+4        Invalid occupancy atom records          NaN  records   
+5                         Mean B-factor    46.526732      A^2   
+6                       Median B-factor    35.110000      A^2   
+7                        Mean occupancy     0.999168     None   
+8         Missing backbone atom records          NaN  records   
+9   Unobserved residue records in mmCIF   338.000000  records   
+10     Unobserved atom records in mmCIF          NaN  records   
+
+                                status  
+0                     from CELL 14 CSV  
+1              from atom quality table  
+2                     from CELL 14 CSV  
+3                     data unavailable  
+4                     data unavailable  
+5                     from CELL 14 CSV  
+6                     from CELL 14 CSV  
+7                     from CELL 14 CSV  
+8   missing backbone table unavailable  
+9                         from CELL 10  
+10                    data unavailable  
+  component  occurrence_count
+0       BYI                 1
+                                 metric  value      unit  \
+0                 Binding site residues    NaN  residues   
+1  Protein-component atom-pair contacts    NaN  contacts   
+2    Minimum component-protein distance    NaN         A   
+3         Mean minimum residue distance    NaN         A   
+
+                                  status  
+0  not applicable: no selected component  
+1  not applicable: no selected component  
+2  not applicable: no selected component  
+3  not applicable: no selected component  
+       category                                      metric  value      unit  \
+0  Interactions  Total component-protein atom-pair contacts      0  contacts   
+
+                                 status  
+0  CELL 19 completed; no contacts found  
+                category                              metric  value      unit  \
+0  HEM iron coordination  Potential Fe coordination contacts      0  contacts   
+
+                               status  
+0  no Fe contacts in recognized hemes  
+Empty DataFrame
+Columns: [pdb_id, model_id, chain_id, residue_number, insertion_code, heme_component, iron_atom, nitrogen_atom, distance_A]
+Index: []
+Empty DataFrame
+Columns: [model_id, chain_id, residue_number, insertion_code, heme_component, number_of_Fe_N_distances, minimum_distance_A, maximum_distance_A, mean_distance_A, std_distance_A]
+Index: []
+Empty DataFrame
+Columns: [pdb_id, model_id, heme_chain, heme_residue_number, heme_insertion_code, heme_component, iron_atom, oxy_chain, oxy_residue_number, oxy_insertion_code, oxy_component, oxygen_atom, distance_A]
+Index: []
+Empty DataFrame
+Columns: [heme_chain, heme_residue_number, heme_insertion_code, heme_component, oxy_chain, oxy_residue_number, oxy_insertion_code, oxy_component, number_of_Fe_OXY_distances, minimum_distance_A, mean_distance_A, maximum_distance_A]
+Index: []
+            category                            metric     value   unit  \
+0  Disulfide bridges  Potential disulfide bridge count  3.000000  pairs   
+1  Disulfide bridges            Minimum SG-SG distance  2.026215      A   
+2  Disulfide bridges               Mean SG-SG distance  2.029695      A   
+
+                                  status  
+0  potential SG-SG contacts from CELL 19  
+1  potential SG-SG contacts from CELL 19  
+2  potential SG-SG contacts from CELL 19  
+  pdb_id  model_id chain_1 residue_1  residue_number_1 insertion_code_1  \
+0   7X8R         0       N       CYS                99                    
+1   7X8R         0       R       CYS               226                    
+2   7X8R         0       N       CYS                22                    
+
+           residue_component_id_1 atom_1 chain_2 residue_2  residue_number_2  \
+0   7X8R|model_0|chain_N||99||CYS     SG       N       CYS               107   
+1  7X8R|model_0|chain_R||226||CYS     SG       R       CYS               296   
+2   7X8R|model_0|chain_N||22||CYS     SG       N       CYS                96   
+
+  insertion_code_2          residue_component_id_2 atom_2  distance  \
+0                   7X8R|model_0|chain_N||107||CYS     SG  2.026215   
+1                   7X8R|model_0|chain_R||296||CYS     SG  2.030413   
+2                    7X8R|model_0|chain_N||96||CYS     SG  2.032456   
+
+             interaction_type  
+0  Potential disulfide bridge  
+1  Potential disulfide bridge  
+2  Potential disulfide bridge  
+               category                                     metric      value  \
+0      Global structure  number_of_chains_from_sequence_dictionary          5   
+1      Global structure          number_of_chains_in_residue_table          5   
+2      Global structure                 number_of_protein_residues       1051   
+3      Global structure                    number_of_protein_atoms       8417   
+4      Global structure              number_of_component_instances          1   
+..                  ...                                        ...        ...   
+84  Sequence comparison                               Identity B-R  38.666667   
+85  Sequence comparison                               Identity G-N   48.93617   
+86  Sequence comparison                               Identity G-R  61.818182   
+87  Sequence comparison                               Identity N-R  46.296296   
+88           Components                            BYI occurrences          1   
+
+         unit                                             status  
+0        None                               from chain_sequences  
+1        None                                   from df_residues  
+2        None                                         calculated  
+3        None                                         calculated  
+4        None                                 from df_components  
+..        ...                                                ...  
+84          %  Global alignment; gaps excluded from identity ...  
+85          %  Global alignment; gaps excluded from identity ...  
+86          %  Global alignment; gaps excluded from identity ...  
+87          %  Global alignment; gaps excluded from identity ...  
+88  instances                                 from df_components  
+
+[89 rows x 5 columns]
+===========================================================================
+CELL 22. PROTEIN FEATURE EXTRACTION
+===========================================================================
+PDB ID: 7X8R
+PDB results directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R
+Feature directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R\features
+Analysis scope: first_model
+
+DATAFRAME DISCOVERY
+---------------------------------------------------------------------------
+atoms                         :     8417 rows | df_atoms
+residues                      :     1051 rows | df_residues
+chains                        : not available
+interactions                  :        0 rows | df_interactions
+binding_site                  :        0 rows | df_binding
+binding_atom_contacts         :        0 rows | df_binding_atom_contacts
+binding_by_chain              :        0 rows | df_binding_by_chain
+all_metal_coordination        :        0 rows | df_all_metal_coordination
+heme_iron_coordination        :        0 rows | df_metal_coordination
+disulfide_bridges             :        3 rows | df_disulfide_bridges
+components                    :        1 rows | df_components
+geometry                      : not available
+hydrogen_bonds                : not available
+hydrophobic_contacts          : not available
+altloc_atoms                  : not available
+altloc_occupancy              : not available
+low_occupancy_atoms           : not available
+missing_occupancy_atoms       : not available
+invalid_occupancy_atoms       : not available
+atom_quality                  : not available
+unobserved_residues           :      338 rows | df_unobserved_residues
+unobserved_atoms              : not available
+
+
+===========================================================================
+
+SAVING FEATURE TABLES
+===========================================================================
+7X8R_global_features.csv                                          1 rows |  136 columns
+7X8R_atom_features.csv                                         8417 rows |   23 columns
+7X8R_residue_features.csv                                      1051 rows |   22 columns
+7X8R_interaction_features.csv                                     3 rows |   18 columns
+7X8R_metal_features.csv                                           0 rows |   18 columns
+7X8R_heme_iron_coordination_features.csv                          0 rows |   18 columns
+7X8R_binding_site_features.csv                                    0 rows |   24 columns
+7X8R_binding_atom_contact_features.csv                            0 rows |   21 columns
+7X8R_binding_chain_features.csv                                   0 rows |    8 columns
+7X8R_component_features.csv                                       1 rows |   26 columns
+7X8R_disulfide_features.csv                                       3 rows |   16 columns
+7X8R_geometry_features.csv                                        0 rows |    0 columns
+7X8R_altloc_features.csv                                          0 rows |    0 columns
+7X8R_altloc_occupancy_features.csv                                0 rows |    0 columns
+7X8R_low_occupancy_features.csv                                   7 rows |   17 columns
+7X8R_missing_occupancy_features.csv                               0 rows |    0 columns
+7X8R_invalid_occupancy_features.csv                               0 rows |    0 columns
+
+7X8R_atom_quality_features.csv                                 8417 rows |   17 columns
+7X8R_unobserved_residue_features.csv                            338 rows |   11 columns
+7X8R_unobserved_atom_features.csv                                 0 rows |    0 columns
+
+===========================================================================
+OUTPUT VALIDATION
+===========================================================================
+global_features                         : OK
+atom_features                           : OK
+residue_features                        : OK
+interaction_features                    : OK
+metal_features                          : OK
+heme_iron_coordination_features         : OK
+binding_site_features                   : OK
+binding_atom_contact_features           : OK
+binding_chain_features                  : OK
+component_features                      : OK
+disulfide_features                      : OK
+geometry_features                       : OK
+altloc_features                         : OK
+altloc_occupancy_features               : OK
+low_occupancy_features                  : OK
+missing_occupancy_features              : OK
+invalid_occupancy_features              : OK
+atom_quality_features                   : OK
+unobserved_residue_features             : OK
+unobserved_atom_features                : OK
+
+
+JSON structure: OK
+Atom feature rows: OK
+Residue feature rows: OK
+Combined interaction rows: OK
+Source DataFrame row counts: OK
+Validation metadata added to JSON: OK
+
+===========================================================================
+PROTEIN FEATURE EXTRACTION SUMMARY
+===========================================================================
+PDB ID: 7X8R
+Analysis scope: first_model
+
+STRUCTURAL FEATURES
+---------------------------------------------------------------------------
+protein_atom_count: 8417
+protein_residue_count: 1051
+protein_chain_count: 5
+sequence_chain_count: 5
+component_instance_count: 1
+component_type_count: 1
+
+GEOMETRY FEATURES
+---------------------------------------------------------------------------
+Geometry feature count: 37
+geometry_analysis_model: 0
+geometry_uses_first_model_only: True
+geometry_atom_count: 8417
+geometry_residue_count: 1051
+geometry_chain_count: 5
+geometry_centroid_x: 135.9753985917666
+geometry_centroid_y: 136.41984742835254
+geometry_centroid_z: 125.72769623872318
+geometry_bounding_box_min_x: 101.21199798583984
+geometry_bounding_box_min_y: 93.2760009765625
+geometry_bounding_box_min_z: 72.06199645996094
+geometry_bounding_box_max_x: 167.8780059814453
+geometry_bounding_box_max_y: 179.3800048828125
+geometry_bounding_box_max_z: 215.27099609375
+geometry_bounding_box_dimension_x: 66.66600799560547
+geometry_bounding_box_dimension_y: 86.10400390625
+geometry_bounding_box_dimension_z: 143.20899963378906
+geometry_bounding_box_volume: 822049.7622724437
+geometry_distance_from_centroid_minimum: 3.076694173157059
+geometry_distance_from_centroid_mean: 33.46658191234834
+geometry_distance_from_centroid_median: 31.752123290317225
+geometry_distance_from_centroid_maximum: 90.12906847119959
+geometry_unweighted_geometric_radius_of_gyration: 36.157403077494806
+geometry_aspect_ratio: 2.1481562184318763
+geometry_coordinate_validation_invalid_coordinate_count: 0
+geometry_coordinate_validation_all_coordinates_finite: True
+geometry_atom_count_check_with_cell_7_available: True
+geometry_atom_count_check_with_cell_7_expected_atom_count: 8417
+geometry_atom_count_check_with_cell_7_observed_atom_count: 8417
+geometry_atom_count_check_with_cell_7_matches: True
+geometry_output_checks_geometry_csv: True
+geometry_output_checks_geometry_json: True
+geometry_output_checks_geometry_plot: True
+bounding_box_volume: 822049.7622724437
+aspect_ratio: 2.1481562184318763
+protein_atom_count: 8417
+total_protein_atoms: 8417
+
+BINDING SITE FEATURES
+---------------------------------------------------------------------------
+binding_site_available: True
+binding_atom_contacts_available: True
+binding_chain_statistics_available: True
+binding_site_residue_count: 0
+binding_site_atom_pair_record_count: 0
+binding_site_min_residue_distance_A: None
+binding_site_mean_residue_min_distance_A: None
+binding_site_max_residue_min_distance_A: None
+binding_site_mean_atom_pair_distance_A: None
+binding_site_unique_protein_contact_atom_count: 0
+binding_site_unique_component_contact_atom_count: 0
+binding_site_chain_count: None
+
+METAL FEATURES
+---------------------------------------------------------------------------
+metal_coordination_table_available: True
+metal_coordination_record_count: 0
+metal_coordination_mean_distance_A: None
+heme_iron_coordination_table_available: True
+heme_iron_coordination_record_count: 0
+
+INTERACTION RECORDS
+---------------------------------------------------------------------------
+Selected-component records: 0
+Binding atom-pair records: 0
+Metal coordination records: 0
+Heme iron coordination records: 0
+Potential disulfide pair records: 3
+Combined interaction records: 3
+
+STRUCTURE QUALITY
+---------------------------------------------------------------------------
+unobserved_residue_record_count: 338
+unobserved_atom_record_count: None
+quality_tables_scope: CELL 14 tables may include all models and alternate conformers; they are not restricted to the first-model atom table.
+altloc_atoms_record_count: None
+altloc_occupancy_record_count: None
+low_occupancy_atoms_record_count: 7
+missing_occupancy_atoms_record_count: None
+invalid_occupancy_atoms_record_count: None
+atom_quality_record_count: 8417
+structure_quality_number_of_models: 1
+structure_quality_observed_protein_atom_conformer_records: 8417
+structure_quality_unique_protein_atom_sites: 8417
+structure_quality_additional_conformer_records: 0
+structure_quality_observed_protein_residues_all_models: 1051
+structure_quality_observed_protein_residues_first_model: 1051
+structure_quality_unobserved_residue_category_present: True
+structure_quality_unobserved_residue_records: 338
+structure_quality_unobserved_atom_category_present: False
+structure_quality_unobserved_atom_records: 0
+structure_quality_altloc_atom_record_count: 0
+structure_quality_altloc_unique_site_count: 0
+structure_quality_low_occupancy_threshold: 0.99
+structure_quality_low_occupancy_atom_record_count: 7
+structure_quality_missing_occupancy_atom_record_count: 0
+structure_quality_invalid_occupancy_atom_record_count: 0
+structure_quality_invalid_coordinate_record_count: 0
+structure_quality_altloc_and_low_occupancy_overlap: 0
+structure_quality_mean_occupancy: 0.999168349768326
+structure_quality_median_occupancy: 1.0
+structure_quality_minimum_occupancy: 0.0
+structure_quality_maximum_occupancy: 1.0
+structure_quality_cell7_comparison_cell7_atom_count: 8417
+structure_quality_cell7_comparison_first_model_atom_conformer_count: 8417
+structure_quality_cell7_comparison_first_model_unique_atom_site_count: 8417
+structure_quality_cell7_comparison_matches_first_model_atom_records: True
+structure_quality_cell7_comparison_matches_first_model_unique_atom_sites: True
+structure_quality_cell6_comparison_cell6_residue_count: 1051
+structure_quality_cell6_comparison_first_model_residue_count: 1051
+structure_quality_cell6_comparison_matches_first_model_residue_count: True
+
+OUTPUT TABLES
+---------------------------------------------------------------------------
+global_features                         :        1 rows × 136 columns
+atom_features                           :     8417 rows ×  23 columns
+residue_features                        :     1051 rows ×  22 columns
+interaction_features                    :        3 rows ×  18 columns
+metal_features                          :        0 rows ×  18 columns
+heme_iron_coordination_features         :        0 rows ×  18 columns
+binding_site_features                   :        0 rows ×  24 columns
+binding_atom_contact_features           :        0 rows ×  21 columns
+binding_chain_features                  :        0 rows ×   8 columns
+component_features                      :        1 rows ×  26 columns
+disulfide_features                      :        3 rows ×  16 columns
+geometry_features                       :        0 rows ×   0 columns
+altloc_features                         :        0 rows ×   0 columns
+altloc_occupancy_features               :        0 rows ×   0 columns
+low_occupancy_features                  :        7 rows ×  17 columns
+missing_occupancy_features              :        0 rows ×   0 columns
+invalid_occupancy_features              :        0 rows ×   0 columns
+atom_quality_features                   :     8417 rows ×  17 columns
+unobserved_residue_features             :      338 rows ×  11 columns
+unobserved_atom_features                :        0 rows ×   0 columns
+
+OUTPUT DIRECTORY
+---------------------------------------------------------------------------
+C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R\features
+
+JSON FILE
+---------------------------------------------------------------------------
+C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R\features\7X8R_protein_features.json
+
+VALIDATION
+---------------------------------------------------------------------------
+global_features_file_exists: True
+atom_features_file_exists: True
+residue_features_file_exists: True
+interaction_features_file_exists: True
+metal_features_file_exists: True
+heme_iron_coordination_features_file_exists: True
+binding_site_features_file_exists: True
+binding_atom_contact_features_file_exists: True
+binding_chain_features_file_exists: True
+component_features_file_exists: True
+disulfide_features_file_exists: True
+geometry_features_file_exists: True
+altloc_features_file_exists: True
+altloc_occupancy_features_file_exists: True
+low_occupancy_features_file_exists: True
+missing_occupancy_features_file_exists: True
+invalid_occupancy_features_file_exists: True
+atom_quality_features_file_exists: True
+unobserved_residue_features_file_exists: True
+unobserved_atom_features_file_exists: True
+json_readable: True
+json_pdb_id_matches: True
+atom_row_count_matches: True
+residue_row_count_matches: True
+interaction_row_count_matches: True
+source_atom_row_count_preserved: True
+source_residue_row_count_preserved: True
+binding_atom_contacts_finite_distance_values: True
+metal_coordination_finite_distance_values: True
+
+STATUS: COMPLETED
+CELL 22 COMPLETED
+===========================================================================
+
+===========================================================================
+CELL 23. PROTEIN SPATIAL REPRESENTATION
+===========================================================================
+PDB ID: 7X8R
+Analysis scope: first_model
+Spatial cutoff: 5.0 Å
+Input atom rows: 8417
+Output directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R\features
+
+ATOM DATA PREPARATION
+---------------------------------------------------------------------------
+Valid heavy atom records: 8417
+Invalid coordinate records: 0
+Excluded H/D records: 0
+Unknown element records: 0
+Duplicate atom sites: 0
+Unique residues: 1051
+
+
+ATOM NEIGHBOR SEARCH
+---------------------------------------------------------------------------
+Atoms indexed: 8417
+Atom pairs found: 99378
+
+===========================================================================
+SAVING SPATIAL GRAPH TABLES
+===========================================================================
+
+7X8R_spatial_atom_nodes.csv                                            8417 rows
+
+7X8R_spatial_atom_edges.csv                                           99378 rows
+7X8R_spatial_atom_intra_residue_edges.csv                             28398 rows
+
+7X8R_spatial_atom_inter_residue_edges.csv                             70980 rows
+7X8R_spatial_residue_nodes.csv                                         1051 rows
+7X8R_spatial_residue_edges.csv                                         5811 rows
+7X8R_spatial_chain_statistics.csv                                         5 rows
+7X8R_spatial_inter_chain_edges.csv                                     2944 rows
+
+===========================================================================
+SPATIAL GRAPH VALIDATION
+===========================================================================
+
+===========================================================================
+ATOM SPATIAL GRAPH
+===========================================================================
+node_count                         : 8417
+edge_count                         : 99378
+component_count                    : 1
+largest_component_size             : 8417
+largest_component_fraction         : 1.0
+isolated_node_count                : 0
+mean_degree                        : 23.613639063799454
+max_degree                         : 42
+graph_density                      : 0.0028058031206986043
+
+ATOM DISTANCE STATISTICS
+min_distance_A                     : 1.2182189375832688
+mean_distance_A                    : 3.707311196753459
+median_distance_A                  : 3.983330982600357
+max_distance_A                     : 4.999973850885015
+
+INTRA-RESIDUE ATOM EDGES: 28398
+INTER-RESIDUE ATOM EDGES: 70980
+INTER-CHAIN ATOM EDGES: 2944
+
+===========================================================================
+RESIDUE SPATIAL GRAPH
+===========================================================================
+node_count                         : 1051
+edge_count                         : 5811
+component_count                    : 1
+largest_component_size             : 1051
+largest_component_fraction         : 1.0
+isolated_node_count                : 0
+mean_degree                        : 11.058039961941008
+max_degree                         : 21
+graph_density                      : 0.010531466630420008
+
+RESIDUE DISTANCE STATISTICS
+min_distance_A                     : 1.3176648609349852
+mean_min_distance_A                : 3.278030119133594
+mean_contact_distance_A            : 4.268002145868425
+max_min_distance_A                 : 4.999633748517894
+
+===========================================================================
+CHAIN STATISTICS
+===========================================================================
+chain_id chain_id_display  atom_node_count  residue_count  intra_chain_atom_edge_count  inter_chain_atom_edge_incident_count  inter_chain_partner_count
+       A                A             1940            234                        21721                                  1584                          3
+       B                B             2600            338                        30848                                  2073                          4
+       G                G              424             55                         4125                                  1004                          1
+       N                N              961            126                        11141                                   649                          2
+       R                R             2492            298                        28599                                   578                          2
+
+===========================================================================
+SAVED FILES
+===========================================================================
+atom_nodes                    : OK
+atom_edges                    : OK
+atom_intra_residue_edges      : OK
+atom_inter_residue_edges      : OK
+residue_nodes                 : OK
+residue_edges                 : OK
+chain_statistics              : OK
+inter_chain_edges             : OK
+summary                       : OK
+
+Output directory:
+C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R\features
+
+VALIDATION: PASSED
+CELL 23 COMPLETED
+===========================================================================
+
+======================================================================
+CELL 24. UNIFIED PROTEIN STRUCTURAL REPRESENTATION
+======================================================================
+PDB ID: 7X8R
+Input directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R\features
+Output directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R\unified_representation
+
+
+INPUT DATA
+----------------------------------------------------------------------
+Atom nodes                 :     8417 rows
+Atom edges                 :    99378 rows
+Residue nodes              :     1051 rows
+Residue edges              :     5811 rows
+Global features            :        1 rows
+Binding site               :        0 rows
+Binding atom contacts      :        0 rows
+Interactions               :        3 rows
+Metal features             :        0 rows
+Atom features              :     8417 rows
+Residue features           :     1051 rows
+
+
+RESIDUE IDENTIFIER VALIDATION
+----------------------------------------------------------------------
+Binding-site source available: False
+Unique binding-site residues: 0
+Matched residue nodes: 0
+Matched atom nodes: 0
+Total residue nodes: 1051
+Total atom nodes: 8417
+
+DIRECT CONTACT ATOMS
+----------------------------------------------------------------------
+Direct-contact feature available: False
+Direct-contact atoms matched: 0
+Direct-contact mapping: {'source': None, 'contact_rows': 0, 'unique_contact_atoms': 0, 'matched_contact_atoms': 0, 'unmatched_contact_atoms': 0, 'status': 'unavailable'}
+
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+C:\Users\apex_\AppData\Local\Temp\ipykernel_14704\3546154450.py:484: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  numeric[col] = converted.fillna(
+
+
+VALIDATION
+----------------------------------------------------------------------
+Node dimensions: OK
+Coordinate dimensions: OK
+Edge index ranges: OK
+Finite numerical values: OK
+Feature names: OK
+Binding masks: OK
+Bidirectional edges: OK
+No self-loops: OK
+Node mappings: OK
+
+
+======================================================================
+UNIFIED PROTEIN REPRESENTATION SUMMARY
+======================================================================
+
+ATOM GRAPH
+----------------------------------------------------------------------
+Atom nodes:             8,417
+Atom features:          27
+Atom coordinates:       (8417, 3)
+Atom edge index:        (2, 198756)
+Atom edge features:     (198756, 2)
+
+RESIDUE GRAPH
+----------------------------------------------------------------------
+Residue nodes:          1,051
+Residue features:       23
+Residue coordinates:    (1051, 3)
+Residue edge index:     (2, 11622)
+Residue edge features:  (11622, 3)
+
+GLOBAL FEATURES
+----------------------------------------------------------------------
+Global feature count:   117
+
+BINDING SITE
+----------------------------------------------------------------------
+Binding-site residues: 0
+Matched binding residues: 0
+Binding-site atom count: 0
+Direct-contact atom count: 0
+Binding-site residue nodes: 0
+
+DIRECT CONTACT MAPPING
+----------------------------------------------------------------------
+source                        : None
+contact_rows                  : 0
+unique_contact_atoms          : 0
+matched_contact_atoms         : 0
+unmatched_contact_atoms       : 0
+status                        : unavailable
+
+SAVED FILES
+----------------------------------------------------------------------
+7X8R_ml_graph_data.npz                          OK
+7X8R_ml_atom_features.csv                       OK
+7X8R_ml_residue_features.csv                    OK
+7X8R_ml_atom_node_mapping.csv                   OK
+7X8R_ml_residue_node_mapping.csv                OK
+7X8R_ml_manifest.json                           OK
+7X8R_ml_global_features.csv                     OK
+
+======================================================================
+CELL 24 COMPLETED
+======================================================================
+Unified protein representation successfully created.
+
+Output directory: C:\apex\APEX\МИФИ\СНО\medic\Protein_Pocket_Dataset\07_structure_analysis\results\7X8R\unified_representation
+
+MAIN ML OBJECTS
+X_atom                        shape=(8417, 27)        dtype=float32
+pos_atom                      shape=(8417, 3)         dtype=float32
+edge_index_atom               shape=(2, 198756)       dtype=int64
+edge_attr_atom                shape=(198756, 2)       dtype=float32
+X_residue                     shape=(1051, 23)        dtype=float32
+pos_residue                   shape=(1051, 3)         dtype=float32
+edge_index_residue            shape=(2, 11622)        dtype=int64
+edge_attr_residue             shape=(11622, 3)        dtype=float32
+X_global                      shape=(117,)            dtype=float32
+atom_node_ids                 shape=(8417,)           dtype=int64
+residue_node_ids              shape=(1051,)           dtype=int64
+is_binding_site_atom          shape=(8417,)           dtype=float32
+is_direct_contact_atom        shape=(8417,)           dtype=float32
+is_binding_site_residue       shape=(1051,)           dtype=float32
+
+Additional mapping tables:
+df_atom_node_mapping_24: (8417, 6)
+df_residue_node_mapping_24: (1051, 5)
+
+All validation checks passed.
+
 
 ============================================================
 ERROR
 ============================================================
-
-Traceback (most recent call last):
-  File "C:\Users\apex_\AppData\Local\Temp\ipykernel_20188\2401576057.py", line 536, in run_one_pdb
-    client.execute()
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 171, in wrapped
-    return _runner_map[name].run(inner)
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 128, in run
-    return fut.result(None)
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 458, in result
-    return self.__get_result()
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
-    raise self._exception
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
-    await self.async_execute_cell(
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\apex_\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-
-# ============================================================
-# CELL 15. SEPARATE PROTEIN CHAINS AND HETERO COMPONENTS
-# ============================================================
-# Назначение:
-# 1. Разделение белковых атомов и остатков.
-# 2. Отдельное сохранение небелковых компонентов и воды.
-# 3. Формирование сводки небелковых компонентов.
-# 4. Сохранение отдельных файлов белковых цепей.
-# 5. Проверка согласованности с CELL 6–8.
-#
-# ВАЖНО:
-# - Используется первая модель структуры.
-# - CELL 6 и CELL 7 уже содержат белковые данные.
-# - Альтернативные положения атомов анализируются в CELL 14.
-# - Небелковые компоненты не считаются автоматически
-#   лекарственными лигандами.
-# - Для цепей с идентификаторами длиннее одного символа
-#   используется mmCIF.
-# - Формат residue_key полностью соответствует CELL 6–8.
-# ============================================================
-
-
-# ============================================================
-# IMPORTS
-# ============================================================
-
-import os
-import re
-import json
-import warnings
-
-import numpy as np
-import pandas as pd
-
-from pathlib import Path
-
-from Bio.PDB import PDBIO, Select
-from Bio.PDB.mmcifio import MMCIFIO
-from Bio.PDB.Polypeptide import is_aa
-
-
-print("CELL 15 imports completed.")
-print("MMCIFIO:", MMCIFIO)
-
-
-# ------------------------------------------------------------
-# 1. ПРОВЕРКА ВХОДНЫХ ДАННЫХ
-# ------------------------------------------------------------
-
-required_variables = [
-    "PDB_ID",
-    "structure",
-    "PDB_RESULTS_DIR",
-    "df_atoms",
-    "df_residues",
-    "df_hetero",
-    "df_water"
-]
-
-for variable in required_variables:
-
-    if variable not in globals():
-
-        raise NameError(
-            f"Переменная {variable} не определена. "
-            "Проверьте выполнение предыдущих ячеек."
-        )
-
-
-PDB_ID = str(PDB_ID).strip().upper()
-
-if not re.fullmatch(r"[A-Z0-9]{4}", PDB_ID):
-
-    raise ValueError(
-        f"Некорректный PDB ID: {PDB_ID}"
-    )
-
-
-PDB_RESULTS_DIR = Path(PDB_RESULTS_DIR)
-
-if PDB_RESULTS_DIR.name.upper() != PDB_ID:
-
-    raise ValueError(
-        "Папка результатов не соответствует текущему PDB ID.\n"
-        f"PDB_ID: {PDB_ID}\n"
-        f"Папка: {PDB_RESULTS_DIR}"
-    )
-
-
-PDB_RESULTS_DIR.mkdir(
-    parents=True,
-    exist_ok=True
-)
-
-
-input_tables = {
-
-    "df_atoms": df_atoms,
-
-    "df_residues": df_residues,
-
-    "df_hetero": df_hetero,
-
-    "df_water": df_water
-
-}
-
-
-for table_name, table in input_tables.items():
-
-    if not isinstance(table, pd.DataFrame):
-
-        raise TypeError(
-            f"{table_name} должен быть pandas DataFrame."
-        )
-
-
-if df_atoms.empty:
-
-    raise ValueError(
-        "Таблица df_atoms не содержит белковых атомов."
-    )
-
-
-if df_residues.empty:
-
-    raise ValueError(
-        "Таблица df_residues не содержит белковых остатков."
-    )
-
-
-required_atom_columns = {
-
-    "pdb_id",
-    "chain_id",
-    "residue_key",
-    "atom_name"
-
-}
-
-
-missing_atom_columns = (
-    required_atom_columns - set(df_atoms.columns)
-)
-
-
-if missing_atom_columns:
-
-    raise KeyError(
-        "В df_atoms отсутствуют столбцы: "
-        f"{sorted(missing_atom_columns)}"
-    )
-
-
-required_residue_columns = {
-
-    "pdb_id",
-    "chain_id",
-    "residue_key",
-    "hetero_flag",
-    "residue_id",
-    "insertion_code"
-
-}
-
-
-missing_residue_columns = (
-    required_residue_columns - set(df_residues.columns)
-)
-
-
-if missing_residue_columns:
-
-    raise KeyError(
-        "В df_residues отсутствуют столбцы: "
-        f"{sorted(missing_residue_columns)}"
-    )
-
-
-# ------------------------------------------------------------
-# 2. ПРОВЕРКА ПРИНАДЛЕЖНОСТИ ТАБЛИЦ ТЕКУЩЕЙ СТРУКТУРЕ
-# ------------------------------------------------------------
-
-def validate_table_pdb_id(table_name, table, required=True):
-
-    if "pdb_id" not in table.columns:
-
-        if required:
-
-            raise KeyError(
-                f"В {table_name} отсутствует столбец pdb_id."
-            )
-
-        print(
-            f"WARNING: в {table_name} нет столбца pdb_id."
-        )
-
-        return
-
-
-    if table["pdb_id"].isna().any():
-
-        raise ValueError(
-            f"{table_name} содержит пустые значения pdb_id."
-        )
-
-
-    pdb_ids = (
-        table["pdb_id"]
-        .astype(str)
-        .str.strip()
-        .str.upper()
-        .unique()
-    )
-
-
-    if set(pdb_ids) != {PDB_ID}:
-
-        raise ValueError(
-            f"{table_name} содержит PDB ID, "
-            f"не соответствующие текущей структуре: "
-            f"{sorted(pdb_ids)}"
-        )
-
-
-validate_table_pdb_id(
-    "df_atoms",
-    df_atoms
-)
-
-validate_table_pdb_id(
-    "df_residues",
-    df_residues
-)
-
-validate_table_pdb_id(
-    "df_hetero",
-    df_hetero,
-    required=False
-)
-
-validate_table_pdb_id(
-    "df_water",
-    df_water,
-    required=False
-)
-
-
-print(f"PDB ID: {PDB_ID}")
-print(f"Results directory: {PDB_RESULTS_DIR}")
-
-
-# ------------------------------------------------------------
-# 3. ВЫБОР ПЕРВОЙ МОДЕЛИ
-# ------------------------------------------------------------
-
-models = list(
-    structure.get_models()
-)
-
-
-if not models:
-
-    raise ValueError(
-        "В структуре отсутствуют модели."
-    )
-
-
-first_model = models[0]
-
-MODEL_INDEX = 1
-
-
-print("\nMODEL INFORMATION")
-
-print(
-    f"Total models in structure: {len(models)}"
-)
-
-print(
-    f"Selected model ID: {first_model.id}"
-)
-
-print(
-    f"Selected model index: {MODEL_INDEX}"
-)
-
-print(
-    "Analysis scope: first model only"
-)
-
-
-# ------------------------------------------------------------
-# 4. ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
-# ------------------------------------------------------------
-
-def normalize_chain_id(value):
-    """
-    Нормализация идентификатора цепи.
-
-    Пустой идентификатор сохраняется как пустая строка.
-    """
-
-    if value is None or pd.isna(value):
-
-        return ""
-
-    return str(value).strip()
-
-
-def display_chain_id(value):
-
-    normalized = normalize_chain_id(value)
-
-    return normalized if normalized else "<blank>"
-
-
-def safe_filename(value):
-
-    value = str(value).strip()
-
-    if not value:
-
-        return "blank"
-
-    return re.sub(
-        r"[^A-Za-z0-9_-]",
-        "_",
-        value
-    )
-
-
-def make_residue_key(
-    chain_id,
-    hetero_flag,
-    residue_id,
-    insertion_code
-):
-    """
-    Формирование JSON-ключа остатка.
-
-    Формат полностью соответствует CELL 6 и CELL 7.
-
-    ВАЖНО:
-    hetero_flag не очищается через strip(),
-    поскольку пробел является частью идентификатора
-    стандартного белкового остатка.
-    """
-
-    return json.dumps(
-        [
-            chain_id,
-            str(hetero_flag),
-            int(residue_id),
-            str(insertion_code).strip()
-        ],
-        ensure_ascii=False,
-        separators=(",", ":")
-    )
-
-
-def json_safe(value):
-    """
-    Рекурсивное преобразование значений pandas/NumPy
-    в JSON-совместимые типы.
-    """
-
-    if value is None:
-
-        return None
-
-
-    if isinstance(value, dict):
-
-        return {
-            str(key): json_safe(item)
-            for key, item in value.items()
-        }
-
-
-    if isinstance(value, (list, tuple, set)):
-
-        return [
-            json_safe(item)
-            for item in value
-        ]
-
-
-    if isinstance(value, np.ndarray):
-
-        return [
-            json_safe(item)
-            for item in value.tolist()
-        ]
-
-
-    if isinstance(value, (np.integer,)):
-
-        return int(value)
-
-
-    if isinstance(value, (np.floating, float)):
-
-        value = float(value)
-
-        return (
-            value
-            if np.isfinite(value)
-            else None
-        )
-
-
-    if isinstance(value, (np.bool_, bool)):
-
-        return bool(value)
-
-
-    if isinstance(value, Path):
-
-        return str(value)
-
-
-    if isinstance(value, pd.Timestamp):
-
-        return value.isoformat()
-
-
-    if value is pd.NA or value is pd.NaT:
-
-        return None
-
-
-    if isinstance(value, (str, int)):
-
-        return value
-
-
-    try:
-
-        missing = pd.isna(value)
-
-        if isinstance(missing, (bool, np.bool_)) and missing:
-
-            return None
-
-    except (TypeError, ValueError):
-
-        pass
-
-
-    return str(value)
-
-
-# ------------------------------------------------------------
-# 5. ОПРЕДЕЛЕНИЕ БЕЛКОВЫХ ЦЕПЕЙ ПЕРВОЙ МОДЕЛИ
-# ------------------------------------------------------------
-
-protein_chain_ids = set()
-
-protein_residue_records = []
-
-structure_atom_count = 0
-
-
-for chain in first_model:
-
-    chain_id = normalize_chain_id(chain.id)
-
-    for residue in chain:
-
-        if not is_aa(
-            residue,
-            standard=False
-        ):
-
-            continue
-
-
-        protein_chain_ids.add(chain_id)
-
-
-        residue_atoms = list(
-            residue.get_atoms()
-        )
-
-
-        structure_atom_count += len(
-            residue_atoms
-        )
-
-
-        # Сохраняем hetero_flag без удаления пробелов.
-        hetero_flag = str(
-            residue.id[0]
-        )
-
-
-        residue_id = int(
-            residue.id[1]
-        )
-
-
-        insertion_code = str(
-            residue.id[2]
-        ).strip()
-
-
-        residue_key = make_residue_key(
-
-            chain_id,
-
-            hetero_flag,
-
-            residue_id,
-
-            insertion_code
-
-        )
-
-
-        protein_residue_records.append({
-
-            "pdb_id": PDB_ID,
-
-            "model_index": MODEL_INDEX,
-
-            "model_id": first_model.id,
-
-            "chain_id": chain_id,
-
-            "chain_id_display": display_chain_id(
-                chain_id
-            ),
-
-            "residue_key": residue_key,
-
-            "hetero_flag": hetero_flag,
-
-            "residue_id": residue_id,
-
-            "insertion_code": insertion_code,
-
-            "residue_name": residue.resname.strip(),
-
-            "atom_count": len(residue_atoms)
-
-        })
-
-
-df_structure_protein_residues = pd.DataFrame(
-    protein_residue_records
-)
-
-
-if not protein_chain_ids:
-
-    raise ValueError(
-        "В первой модели не обнаружены белковые цепи."
-    )
-
-
-if df_structure_protein_residues.empty:
-
-    raise ValueError(
-        "Не удалось сформировать таблицу белковых остатков."
-    )
-
-
-if df_structure_protein_residues["residue_key"].duplicated().any():
-
-    raise RuntimeError(
-        "Обнаружены повторяющиеся residue_key "
-        "в таблице остатков первой модели."
-    )
-
-
-print("\n" + "-" * 70)
-print("PROTEIN STRUCTURE")
-print("-" * 70)
-
-print(
-    f"Protein chains: {len(protein_chain_ids)}"
-)
-
-print(
-    f"Protein residues: {len(df_structure_protein_residues)}"
-)
-
-print(
-    f"Protein atoms in first model: {structure_atom_count}"
-)
-
-print(
-    "Chain IDs:",
-    [
-        display_chain_id(x)
-        for x in sorted(protein_chain_ids)
-    ]
-)
-
-
-# ------------------------------------------------------------
-# 6. ФОРМИРОВАНИЕ ОТДЕЛЬНЫХ ТАБЛИЦ
-# ------------------------------------------------------------
-
-# CELL 6 и CELL 7 уже содержат белковые данные.
-# Повторная фильтрация не выполняется.
-
-df_protein_atoms = df_atoms.copy()
-
-df_protein_residues = df_residues.copy()
-
-
-# Небелковые компоненты.
-
-df_hetero_components = df_hetero.copy()
-
-
-# Совместимое имя для последующих ячеек.
-# Это кандидаты, а не подтверждённые лекарственные лиганды.
-
-df_ligand_candidates = df_hetero_components.copy()
-
-
-# Вода.
-
-df_water_components = df_water.copy()
-
-
-# ------------------------------------------------------------
-# 7. ПРОВЕРКА СОГЛАСОВАННОСТИ CELL 6 И CELL 7
-# ------------------------------------------------------------
-
-print("\n" + "-" * 70)
-print("DATAFRAME CONSISTENCY CHECK")
-print("-" * 70)
-
-
-# 7.1. Проверка количества атомов.
-
-cell7_atom_count = len(
-    df_protein_atoms
-)
-
-atom_count_match = (
-    cell7_atom_count == structure_atom_count
-)
-
-
-print(
-    f"Atoms in structure: {structure_atom_count}"
-)
-
-print(
-    f"Atoms in CELL 7: {cell7_atom_count}"
-)
-
-print(
-    f"Atom count matches: {atom_count_match}"
-)
-
-
-# 7.2. Проверка количества остатков.
-
-structure_residue_count = len(
-    df_structure_protein_residues
-)
-
-cell6_residue_count = len(
-    df_protein_residues
-)
-
-residue_count_match = (
-    structure_residue_count == cell6_residue_count
-)
-
-
-print(
-    f"Residues in structure: {structure_residue_count}"
-)
-
-print(
-    f"Residues in CELL 6: {cell6_residue_count}"
-)
-
-print(
-    f"Residue count matches: {residue_count_match}"
-)
-
-
-# 7.3. Сверка residue_key между структурой,
-# CELL 6 и CELL 7.
-
-structure_residue_keys = set(
-    df_structure_protein_residues["residue_key"]
-    .astype(str)
-)
-
-
-cell6_residue_keys = set(
-    df_protein_residues["residue_key"]
-    .astype(str)
-)
-
-
-cell7_residue_keys = set(
-    df_protein_atoms["residue_key"]
-    .astype(str)
-)
-
-
-structure_cell6_keys_match = (
-    structure_residue_keys == cell6_residue_keys
-)
-
-
-structure_cell7_keys_match = (
-    structure_residue_keys == cell7_residue_keys
-)
-
-
-cell6_cell7_keys_match = (
-    cell6_residue_keys == cell7_residue_keys
-)
-
-
-# Основной флаг совместимости CELL 6.
-
-residue_keys_match = structure_cell6_keys_match
-
-
-missing_in_cell6 = sorted(
-    structure_residue_keys - cell6_residue_keys
-)
-
-
-extra_in_cell6 = sorted(
-    cell6_residue_keys - structure_residue_keys
-)
-
-
-missing_in_cell7 = sorted(
-    structure_residue_keys - cell7_residue_keys
-)
-
-
-extra_in_cell7 = sorted(
-    cell7_residue_keys - structure_residue_keys
-)
-
-
-print(
-    f"Structure / CELL 6 keys: "
-    f"{structure_cell6_keys_match}"
-)
-
-print(
-    f"Structure / CELL 7 keys: "
-    f"{structure_cell7_keys_match}"
-)
-
-print(
-    f"CELL 6 / CELL 7 keys: "
-    f"{cell6_cell7_keys_match}"
-)
-
-
-print(
-    f"Missing residue keys in CELL 6: "
-    f"{len(missing_in_cell6)}"
-)
-
-print(
-    f"Extra residue keys in CELL 6: "
-    f"{len(extra_in_cell6)}"
-)
-
-print(
-    f"Missing residue keys in CELL 7: "
-    f"{len(missing_in_cell7)}"
-)
-
-print(
-    f"Extra residue keys in CELL 7: "
-    f"{len(extra_in_cell7)}"
-)
-
-
-# 7.4. Проверка цепей.
-
-structure_chain_ids = set(
-    protein_chain_ids
-)
-
-
-cell7_chain_ids = set(
-    df_protein_atoms["chain_id"]
-    .map(normalize_chain_id)
-)
-
-
-cell6_chain_ids = set(
-    df_protein_residues["chain_id"]
-    .map(normalize_chain_id)
-)
-
-
-chain_ids_match = (
-    structure_chain_ids == cell7_chain_ids
-)
-
-
-residue_chain_ids_match = (
-    structure_chain_ids == cell6_chain_ids
-)
-
-
-print(
-    "Chain IDs in structure:",
-    sorted(structure_chain_ids)
-)
-
-print(
-    "Chain IDs in CELL 7:",
-    sorted(cell7_chain_ids)
-)
-
-print(
-    "Chain IDs in CELL 6:",
-    sorted(cell6_chain_ids)
-)
-
-
-print(
-    f"Structure / CELL 7 chain match: "
-    f"{chain_ids_match}"
-)
-
-
-print(
-    f"Structure / CELL 6 chain match: "
-    f"{residue_chain_ids_match}"
-)
-
-
-# 7.5. Проверка уникальности residue_key.
-
-cell6_duplicate_keys = int(
-    df_protein_residues["residue_key"].duplicated().sum()
-)
-
-
-cell7_duplicate_atom_keys = int(
-    df_protein_atoms["residue_key"].isna().sum()
-)
-
-
-cell7_residue_key_count = len(
-    cell7_residue_keys
-)
-
-
-cell7_residue_key_match = (
-    cell7_residue_key_count == structure_residue_count
-)
-
-
-print(
-    f"Duplicate residue keys in CELL 6: "
-    f"{cell6_duplicate_keys}"
-)
-
-
-print(
-    f"Missing residue keys in CELL 7 atoms: "
-    f"{cell7_duplicate_atom_keys}"
-)
-
-
-print(
-    f"Unique residue keys in CELL 7: "
-    f"{cell7_residue_key_count}"
-)
-
-
-print(
-    f"CELL 7 residue key count matches structure: "
-    f"{cell7_residue_key_match}"
-)
-
-
-# 7.6. Проверка корректности JSON-формата CELL 6.
-
-cell6_residue_key_format_match = True
-
-
-for row in df_protein_residues.itertuples(index=False):
-
-    expected_key = make_residue_key(
-
-        row.chain_id,
-
-        row.hetero_flag,
-
-        row.residue_id,
-
-        row.insertion_code
-
-    )
-
-
-    if str(row.residue_key) != expected_key:
-
-        cell6_residue_key_format_match = False
-
-        break
-
-
-print(
-    f"CELL 6 residue key format: "
-    f"{cell6_residue_key_format_match}"
-)
-
-
-# Критические проверки.
-
-if not atom_count_match:
-
-    raise RuntimeError(
-        "Количество белковых атомов в структуре "
-        "не совпадает с CELL 7. "
-        "Проверьте обработку altloc."
-    )
-
-
-if not residue_count_match:
-
-    raise RuntimeError(
-        "Количество белковых остатков в структуре "
-        "не совпадает с CELL 6."
-    )
-
-
-if not residue_keys_match:
-
-    raise RuntimeError(
-        "Наборы residue_key не совпадают между структурой "
-        "и CELL 6."
-    )
-
-
-if not structure_cell7_keys_match:
-
-    raise RuntimeError(
-        "Наборы residue_key не совпадают между структурой "
-        "и CELL 7."
-    )
-
-
-if not cell6_cell7_keys_match:
-
-    raise RuntimeError(
-        "Наборы residue_key не совпадают между CELL 6 и CELL 7."
-    )
-
-
-if not chain_ids_match:
-
-    raise RuntimeError(
-        "Наборы цепей не совпадают между структурой "
-        "и CELL 7."
-    )
-
-
-if not residue_chain_ids_match:
-
-    raise RuntimeError(
-        "Наборы цепей не совпадают между структурой "
-        "и CELL 6."
-    )
-
-
-if cell6_duplicate_keys > 0:
-
-    raise RuntimeError(
-        "В CELL 6 обнаружены повторяющиеся residue_key."
-    )
-
-
-if cell7_duplicate_atom_keys > 0:
-
-    raise RuntimeError(
-        "В CELL 7 обнаружены пустые residue_key."
-    )
-
-
-if not cell7_residue_key_match:
-
-    raise RuntimeError(
-        "Число уникальных residue_key в CELL 7 "
-        "не совпадает с количеством остатков структуры."
-    )
-
-
-if not cell6_residue_key_format_match:
-
-    raise RuntimeError(
-        "Формат residue_key в CELL 6 "
-        "не соответствует алгоритму CELL 15."
-    )
-
-
-# ------------------------------------------------------------
-# 8. СВОДКА НЕБЕЛКОВЫХ КОМПОНЕНТОВ
-# ------------------------------------------------------------
-
-df_component_summary = pd.DataFrame(
-
-    columns=[
-        "residue_name",
-        "component_type",
-        "occurrence_count"
-    ]
-
-)
-
-
-if not df_hetero_components.empty:
-
-    residue_name_col = next(
-
-        (
-            column
-            for column in [
-                "residue_name",
-                "resname",
-                "component_name"
-            ]
-            if column in df_hetero_components.columns
-        ),
-
-        None
-
-    )
-
-
-    component_type_col = next(
-
-        (
-            column
-            for column in [
-                "component_type",
-                "classification",
-                "component_class"
-            ]
-            if column in df_hetero_components.columns
-        ),
-
-        None
-
-    )
-
-
-    if residue_name_col is not None:
-
-        component_data = df_hetero_components.copy()
-
-
-        component_data["residue_name"] = (
-            component_data[residue_name_col]
-            .fillna("UNKNOWN")
-            .astype(str)
-            .str.strip()
-        )
-
-
-        if component_type_col is not None:
-
-            component_data["component_type"] = (
-                component_data[component_type_col]
-                .fillna("Not classified")
-                .astype(str)
-                .str.strip()
-            )
-
-        else:
-
-            component_data["component_type"] = (
-                "Not classified"
-            )
-
-
-        df_component_summary = (
-
-            component_data
-            .groupby(
-                [
-                    "residue_name",
-                    "component_type"
-                ],
-                dropna=False
-            )
-            .size()
-            .reset_index(
-                name="occurrence_count"
-            )
-
-        )
-
-
-print("\n" + "-" * 70)
-print("HETERO COMPONENTS")
-print("-" * 70)
-
-
-print(
-    f"Total hetero component records: "
-    f"{len(df_hetero_components)}"
-)
-
-
-if not df_component_summary.empty:
-
-    display(
-        df_component_summary
-    )
-
-else:
-
-    print(
-        "No hetero components found or residue names unavailable."
-    )
-
-
-# ------------------------------------------------------------
-# 9. СОХРАНЕНИЕ ОТДЕЛЬНЫХ ФАЙЛОВ БЕЛКОВЫХ ЦЕПЕЙ
-# ------------------------------------------------------------
-
-class ProteinChainSelect(Select):
-
-    """
-    Сохраняет одну белковую цепь выбранной модели.
-    """
-
-    def __init__(self, chain_id, model_id):
-
-        self.chain_id = chain_id
-
-        self.model_id = model_id
-
-
-    def accept_model(self, model):
-
-        return model.id == self.model_id
-
-
-    def accept_chain(self, chain):
-
-        return (
-            normalize_chain_id(chain.id)
-            == self.chain_id
-        )
-
-
-    def accept_residue(self, residue):
-
-        return is_aa(
-            residue,
-            standard=False
-        )
-
-
-CHAIN_DIR = (
-    PDB_RESULTS_DIR / "protein_chains"
-)
-
-
-CHAIN_DIR.mkdir(
-    parents=True,
-    exist_ok=True
-)
-
-
-saved_chain_files = []
-
-chain_file_records = []
-
-
-for chain_index, chain_id in enumerate(
-    sorted(protein_chain_ids),
-    start=1
-):
-
-    safe_chain = safe_filename(
-        chain_id
-    )
-
-
-    output_stem = (
-        f"{PDB_ID}_chain_{chain_index:02d}_{safe_chain}"
-    )
-
-
-    selector = ProteinChainSelect(
-        chain_id,
-        first_model.id
-    )
-
-
-    # PDB поддерживает только однобуквенный chain ID.
-    # Для многосимвольных идентификаторов используем mmCIF.
-
-    if len(chain_id) <= 1:
-
-        output_path = (
-            CHAIN_DIR / f"{output_stem}.pdb"
-        )
-
-        io = PDBIO()
-
-        io.set_structure(
-            structure
-        )
-
-        io.save(
-            str(output_path),
-            selector
-        )
-
-        output_format = "PDB"
-
-    else:
-
-        output_path = (
-            CHAIN_DIR / f"{output_stem}.cif"
-        )
-
-        io = MMCIFIO()
-
-        io.set_structure(
-            structure
-        )
-
-        io.save(
-            str(output_path),
-            selector
-        )
-
-        output_format = "mmCIF"
-
-
-    if not output_path.is_file():
-
-        raise FileNotFoundError(
-            f"Файл цепи не сохранён: {output_path}"
-        )
-
-
-    if output_path.stat().st_size == 0:
-
-        raise RuntimeError(
-            f"Файл цепи пустой: {output_path}"
-        )
-
-
-    saved_chain_files.append(
-        output_path
-    )
-
-
-    chain_file_records.append({
-
-        "pdb_id": PDB_ID,
-
-        "model_index": MODEL_INDEX,
-
-        "model_id": str(first_model.id),
-
-        "chain_id": chain_id,
-
-        "chain_id_display": display_chain_id(
-            chain_id
-        ),
-
-        "file_name": output_path.name,
-
-        "file_format": output_format,
-
-        "file_size_bytes": output_path.stat().st_size
-
-    })
-
-
-    print(
-        f"Saved chain {display_chain_id(chain_id)}: "
-        f"{output_path.name} [{output_format}]"
-    )
-
-
-df_chain_files = pd.DataFrame(
-    chain_file_records
-)
-
-
-# ------------------------------------------------------------
-# 10. ПРОВЕРКА СОХРАНЁННЫХ ЦЕПЕЙ
-# ------------------------------------------------------------
-
-print("\n" + "-" * 70)
-print("CHAIN FILE VALIDATION")
-print("-" * 70)
-
-
-if len(saved_chain_files) != len(protein_chain_ids):
-
-    raise RuntimeError(
-        "Количество сохранённых файлов "
-        "не совпадает с количеством белковых цепей."
-    )
-
-
-for path in saved_chain_files:
-
-    if not path.is_file() or path.stat().st_size == 0:
-
-        raise RuntimeError(
-            f"Некорректный файл цепи: {path}"
-        )
-
-
-    print(
-        f"{path.name}: "
-        f"{path.stat().st_size:,} bytes"
-    )
-
-
-# ------------------------------------------------------------
-# 11. СОХРАНЕНИЕ ОТДЕЛЬНЫХ ТАБЛИЦ
-# ------------------------------------------------------------
-
-output_tables = {
-
-    "separated_protein_atoms": (
-        df_protein_atoms
-    ),
-
-    "separated_protein_residues": (
-        df_protein_residues
-    ),
-
-    "separated_hetero_components": (
-        df_hetero_components
-    ),
-
-    "separated_water_components": (
-        df_water_components
-    ),
-
-    "separated_structure_protein_residues": (
-        df_structure_protein_residues
-    ),
-
-    "separated_component_summary": (
-        df_component_summary
-    ),
-
-    "separated_chain_files": (
-        df_chain_files
-    )
-
-}
-
-
-saved_table_files = {}
-
-
-for name, table in output_tables.items():
-
-    output_path = (
-        PDB_RESULTS_DIR
-        / f"{PDB_ID}_{name}.csv"
-    )
-
-
-    table.to_csv(
-
-        output_path,
-
-        index=False,
-
-        encoding="utf-8-sig"
-
-    )
-
-
-    saved_table_files[name] = output_path
-
-
-    print(
-        f"Saved: {output_path.name}"
-    )
-
-
-# ------------------------------------------------------------
-# 12. СОХРАНЕНИЕ JSON-СВОДКИ
-# ------------------------------------------------------------
-
-SEPARATION_JSON_PATH = (
-    PDB_RESULTS_DIR
-    / f"{PDB_ID}_component_separation.json"
-)
-
-
-separation_summary = {
-
-    "PDB_ID": PDB_ID,
-
-    "analysis_scope": {
-
-        "selected_model_index": MODEL_INDEX,
-
-        "selected_model_id": str(first_model.id),
-
-        "total_models_in_structure": len(models),
-
-        "note": (
-            "Protein chain separation uses the first model. "
-            "This is consistent with CELL 4-11."
-        )
-
-    },
-
-    "protein": {
-
-        "number_of_protein_chains": len(
-            protein_chain_ids
-        ),
-
-        "protein_chain_ids": sorted(
-            protein_chain_ids
-        ),
-
-        "number_of_protein_residues": len(
-            df_protein_residues
-        ),
-
-        "number_of_protein_atoms": len(
-            df_protein_atoms
-        )
-
-    },
-
-    "hetero_components": {
-
-        "number_of_component_records": len(
-            df_hetero_components
-        ),
-
-        "classification_available": (
-            "component_type" in df_component_summary.columns
-            and not df_component_summary.empty
-        ),
-
-        "component_summary_records": (
-            df_component_summary.to_dict(
-                orient="records"
-            )
-        ),
-
-        "note": (
-            "Hetero components are not automatically "
-            "classified as drug-like ligands."
-        )
-
-    },
-
-    "water": {
-
-        "number_of_water_component_records": len(
-            df_water_components
-        )
-
-    },
-
-    "validation": {
-
-        "atom_count_matches_structure": atom_count_match,
-
-        "residue_count_matches_structure": residue_count_match,
-
-        "residue_keys_match": residue_keys_match,
-
-        "structure_cell6_keys_match": (
-            structure_cell6_keys_match
-        ),
-
-        "structure_cell7_keys_match": (
-            structure_cell7_keys_match
-        ),
-
-        "cell6_cell7_keys_match": (
-            cell6_cell7_keys_match
-        ),
-
-        "cell6_residue_key_format_match": (
-            cell6_residue_key_format_match
-        ),
-
-        "chain_ids_match_structure": chain_ids_match,
-
-        "residue_chain_ids_match_structure": (
-            residue_chain_ids_match
-        ),
-
-        "cell7_residue_key_count_matches": (
-            cell7_residue_key_match
-        ),
-
-        "number_of_saved_chain_files": len(
-            saved_chain_files
-        )
-
-    },
-
-    "saved_chain_files": (
-
-        df_chain_files.to_dict(
-            orient="records"
-        )
-
-    )
-
-}
-
-
-with open(
-    SEPARATION_JSON_PATH,
-    "w",
-    encoding="utf-8"
-) as file:
-
-    json.dump(
-
-        json_safe(separation_summary),
-
-        file,
-
-        ensure_ascii=False,
-
-        indent=4,
-
-        allow_nan=False
-
-    )
-
-
-# ------------------------------------------------------------
-# 13. ИТОГОВАЯ СТАТИСТИКА
-# ------------------------------------------------------------
-
-print("\n" + "=" * 70)
-print("COMPONENT SEPARATION SUMMARY")
-print("=" * 70)
-
-
-print(
-    f"Protein chains: {len(protein_chain_ids)}"
-)
-
-
-print(
-    f"Protein residues: {len(df_protein_residues)}"
-)
-
-
-print(
-    f"Protein atoms: {len(df_protein_atoms)}"
-)
-
-
-print(
-    f"Hetero components: {len(df_hetero_components)}"
-)
-
-
-print(
-    f"Water components: {len(df_water_components)}"
-)
-
-
-print(
-    f"Saved chain files: {len(saved_chain_files)}"
-)
-
-
-print(
-    f"Output directory: {PDB_RESULTS_DIR}"
-)
-
-
-# ------------------------------------------------------------
-# 14. ПРОВЕРКА СОХРАНЁННЫХ РЕЗУЛЬТАТОВ
-# ------------------------------------------------------------
-
-all_output_files = (
-
-    list(saved_table_files.values())
-
-    + saved_chain_files
-
-    + [SEPARATION_JSON_PATH]
-
-)
-
-
-print("\n" + "-" * 70)
-print("OUTPUT FILE VERIFICATION")
-print("-" * 70)
-
-
-output_check_records = []
-
-
-for path in all_output_files:
-
-    exists = (
-
-        path.is_file()
-
-        and path.stat().st_size > 0
-
-    )
-
-
-    output_check_records.append({
-
-        "file_name": path.name,
-
-        "exists": bool(exists),
-
-        "file_size_bytes": (
-            path.stat().st_size
-            if path.is_file()
-            else 0
-        )
-
-    })
-
-
-    print(
-        f"{path.name}: "
-        f"{'OK' if exists else 'ERROR'}"
-    )
-
-
-df_cell15_output_checks = pd.DataFrame(
-    output_check_records
-)
-
-
-all_outputs_saved = bool(
-    df_cell15_output_checks["exists"].all()
-)
-
-
-if not all_outputs_saved:
-
-    raise RuntimeError(
-        "Не все результаты разделения структуры сохранены."
-    )
-
-
-# ------------------------------------------------------------
-# 15. ИТОГ
-# ------------------------------------------------------------
-
-print("\n" + "-" * 70)
-print("CELL 15 FINAL STATUS")
-print("-" * 70)
-
-
-print(
-    f"Atom count validation: "
-    f"{'OK' if atom_count_match else 'ERROR'}"
-)
-
-
-print(
-    f"Residue count validation: "
-    f"{'OK' if residue_count_match else 'ERROR'}"
-)
-
-
-print(
-    f"Residue key validation: "
-    f"{'OK' if residue_keys_match else 'ERROR'}"
-)
-
-
-print(
-    f"Structure / CELL 7 key validation: "
-    f"{'OK' if structure_cell7_keys_match else 'ERROR'}"
-)
-
-
-print(
-    f"CELL 6 / CELL 7 key validation: "
-    f"{'OK' if cell6_cell7_keys_match else 'ERROR'}"
-)
-
-
-print(
-    f"Chain validation: "
-    f"{'OK' if chain_ids_match else 'ERROR'}"
-)
-
-
-print(
-    f"Saved output files: {len(all_output_files)}"
-)
-
-
-print(
-    f"Results directory: {PDB_RESULTS_DIR}"
-)
-
-
-print("\nСтатус: OK")
-
-print("=" * 70)
-print("CELL 15 COMPLETED")
-print("=" * 70)
-
-------------------
-
-
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mValueError[0m                                Traceback (most recent call last)
-Cell [1;32mIn[19], line 242[0m
-[0;32m    231[0m validate_table_pdb_id(
-[0;32m    232[0m     [38;5;124m"[39m[38;5;124mdf_residues[39m[38;5;124m"[39m,
-[0;32m    233[0m     df_residues
-[0;32m    234[0m )
-[0;32m    236[0m validate_table_pdb_id(
-[0;32m    237[0m     [38;5;124m"[39m[38;5;124mdf_hetero[39m[38;5;124m"[39m,
-[0;32m    238[0m     df_hetero,
-[0;32m    239[0m     required[38;5;241m=[39m[38;5;28;01mFalse[39;00m
-[0;32m    240[0m )
-[1;32m--> 242[0m [43mvalidate_table_pdb_id[49m[43m([49m
-[0;32m    243[0m [43m    [49m[38;5;124;43m"[39;49m[38;5;124;43mdf_water[39;49m[38;5;124;43m"[39;49m[43m,[49m
-[0;32m    244[0m [43m    [49m[43mdf_water[49m[43m,[49m
-[0;32m    245[0m [43m    [49m[43mrequired[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m
-[0;32m    246[0m [43m)[49m
-[0;32m    249[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mPDB ID: [39m[38;5;132;01m{[39;00mPDB_ID[38;5;132;01m}[39;00m[38;5;124m"[39m)
-[0;32m    250[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mResults directory: [39m[38;5;132;01m{[39;00mPDB_RESULTS_DIR[38;5;132;01m}[39;00m[38;5;124m"[39m)
-
-Cell [1;32mIn[19], line 219[0m, in [0;36mvalidate_table_pdb_id[1;34m(table_name, table, required)[0m
-[0;32m    208[0m pdb_ids [38;5;241m=[39m (
-[0;32m    209[0m     table[[38;5;124m"[39m[38;5;124mpdb_id[39m[38;5;124m"[39m]
-[0;32m    210[0m     [38;5;241m.[39mastype([38;5;28mstr[39m)
-[1;32m   (...)[0m
-[0;32m    213[0m     [38;5;241m.[39munique()
-[0;32m    214[0m )
-[0;32m    217[0m [38;5;28;01mif[39;00m [38;5;28mset[39m(pdb_ids) [38;5;241m!=[39m {PDB_ID}:
-[1;32m--> 219[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[0;32m    220[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00mtable_name[38;5;132;01m}[39;00m[38;5;124m содержит PDB ID, [39m[38;5;124m"[39m
-[0;32m    221[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mне соответствующие текущей структуре: [39m[38;5;124m"[39m
-[0;32m    222[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28msorted[39m(pdb_ids)[38;5;132;01m}[39;00m[38;5;124m"[39m
-[0;32m    223[0m     )
-
-[1;31mValueError[0m: df_water содержит PDB ID, не соответствующие текущей структуре: []
 
 
